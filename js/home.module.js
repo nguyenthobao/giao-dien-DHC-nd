@@ -26,7 +26,7 @@ $(document).ready(function () {
                         items: 1
                     },
                     600: {
-                        items: 4
+                        items: 2
                     },
                     1000: {
                         items: 4
@@ -51,7 +51,7 @@ $(document).ready(function () {
             var promotionData = result.data.results;
             $('#list-promotion-home').html('');
             $.each(promotionData, function (k, v) {
-                var html = '<div class="col-12 col-md-6 promotion-item">';
+                var html = '<div class="col-12 col-md-6 promotion-item" data-id="' + v.promotion_id + '">';
                     html += '<img src="' + v.promotion_image + '" title="' + v.promotion_name + '" alt="' + v.promotion_name + '">';
                     html += '</div>';
 
@@ -75,7 +75,7 @@ $(document).ready(function () {
             }),
             success: function (result) {
                 $('#modalForm').modal('show');
-                console.log(result);
+
                 $('#modalFormLabel').text(result.data.result.point_name);
                 var pointImage = JSON.parse(result.data.result.point_images);
                 html = '<div class="row img-point">';
@@ -94,6 +94,33 @@ $(document).ready(function () {
                         html += '<div class="row margin30 point-description">'+result.data.result.point_detail+'</div>';
                     html += '</div>';
                 html += '</div>';
+                $('#form-body').html(html);
+            },
+            error: function (e) {
+                alert('Có lỗi');
+            }
+        });
+    });
+    
+    $('body').on('click', '.promotion-item', function () {
+        var promotionId = $(this).data('id');
+
+        $.ajax({
+            url: baseApi + 'promotion/get-promotion',
+            method: 'POST',
+            dataType: 'json',
+            data: JSON.stringify({
+                promotion_id: promotionId
+            }),
+            success: function (result) {
+                $('#modalForm').modal('show');
+                $('#modalFormLabel').text(result.data.result.promotion_name);
+
+                html = '<div class="row img-point">';
+                html += '<div class="col-12"><img src="'+result.data.result.promotion_image+'" alt=""></div>';
+                html += '</div>';
+                html += '<div class="row margin30 point-description">'+result.data.result.promotion_detail+'</div>';
+
                 $('#form-body').html(html);
             },
             error: function (e) {

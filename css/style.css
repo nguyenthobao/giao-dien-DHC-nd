@@ -184,6 +184,7 @@ main input:checked + label {
 
 /*News css*/
 .news-item {
+	cursor: pointer;
     display: flex;
     margin-bottom: 30px;
 }
@@ -210,6 +211,35 @@ main input:checked + label {
 .img-news {
     padding-right: 0;
     margin-right: -15px;
+}
+
+@media (max-width: 1199px) {
+	.img-news {
+		padding-right: 0;
+		margin-right: 20px;
+	}
+}
+
+@media (max-width: 767px) {
+	.img-news {
+		padding-right: 0;
+		margin-right: 0 !important;
+	}
+
+	.news-content {
+		padding-left: 0 !important;
+	}
+}
+
+@media (max-width: 991px) and (min-width: 766px){
+	.img-news {
+		padding-right: 0;
+		margin-right: 50px;
+	}
+
+	.news-content {
+		padding-left: 25px !important;
+	}
 }
 
 .img-news img {
