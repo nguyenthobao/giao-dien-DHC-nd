@@ -176,3 +176,52 @@ main input:checked + label {
 	cursor: pointer;
 	margin-bottom: 30px;
 }
+
+/*News css*/
+.news-item {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.news-title {
+    color: #000;
+    font-weight: bold;
+}
+
+#content4 a:hover {
+    text-decoration: none;
+}
+
+.news-title:hover {
+    color: #4caf50;
+}
+
+.news-note {
+    color: #9E9E9E;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.img-news {
+    padding-right: 0;
+    margin-right: -15px;
+}
+
+.img-news img {
+    width: 170px;
+    height: 185px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.news-content {
+    padding-left: 0;
+}
+
+.news-description {
+    color: #9E9E9E;
+    line-height: 19px;
+}

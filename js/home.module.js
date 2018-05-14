@@ -8,12 +8,10 @@ $(document).ready(function () {
             pointData = result.data.results;
             $('.point-list').html('');
             $.each(pointData, function (k, v) {
-                html = '<div class="item-point">';
-                html += '<a href="#">';
+                html = '<div class="item-point" data-toggle="modal" data-target="#modalForm">';
                 var pointImage = JSON.parse(v.point_images);
                 html += '<img src="' + pointImage[0] + '" class="img-thumbnail" alt="' + v.point_name + '">';
                 html += '<h5 class="point-title">' + v.point_name + '</h5>';
-                html += '</a>';
                 html += '</div>';
                 $('.point-list').append(html);
             });
