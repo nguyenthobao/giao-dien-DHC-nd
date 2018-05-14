@@ -15,7 +15,7 @@ function getListPromotion() {
             $('#list-promotion').html('');
             $.each(promotionData, function (k, v) {
                 var html = '<div class="col-12 col-md-6 promotion-item">';
-                html += '<img src="' + v.promotion_image + '" class="img-fluid" title="' + v.promotion_name + '" alt="' + v.promotion_name + '">';
+                html += '<img src="' + v.promotion_image + '" title="' + v.promotion_name + '" alt="' + v.promotion_name + '">';
                 html += '</div>';
 
                 $('#list-promotion').append(html);
