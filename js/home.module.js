@@ -87,9 +87,15 @@ $(document).ready(function () {
                             html += '<h5 class="point-name col-12">'+result.data.result.point_name+'</h5>';
                             html += '<span class="point-note col-12">'+result.data.result.point_note+'</span>';
                         html += '</div>';
-                        html += '<div class="row margin30">';
-                            html += '<button type="button" class="btn col-5 book-seat">Đặt chỗ</button>';
-                            html += '<button type="button" class="btn col-5 point-marker">Chỉ đường</button>';
+                        html += '<div class="container">';
+                            html += '<div class="row margin30">';
+                                html += '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">';
+                                    html += '<button type="button" class="btn col-12 book-seat">Đặt chỗ</button>';
+                                html += '</div>';
+                                html += '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">';
+                                    html += '<button type="button" class="btn col-12 point-marker">Chỉ đường</button>';
+                                html += '</div>';
+                            html += '</div>';
                         html += '</div><hr>';
                         html += '<div class="row margin30 point-description">'+result.data.result.point_detail+'</div>';
                     html += '</div>';
