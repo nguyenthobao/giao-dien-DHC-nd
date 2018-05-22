@@ -25,16 +25,15 @@ $(document).ready(function () {
 
 
     $('#tab2').change(function () {
-        console.log(isMobile.any()[0]);
-        /*wheelzoom(document.querySelector('img.map', {initialZoom: 2}));*/
-        if(isMobile.any()[0] == 'Android' && urlAndroid != '')
-        {
+        if(isMobile.any() !== null) {
+            if((isMobile.any()[0] == 'iPhone' || isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != '')
+            {
+                window.location.href = urlIOs;
+            } else {
+                window.location.href = urlAndroid;
+            }
+        } else {
             window.location.href = urlAndroid;
-        }
-
-        if((isMobile.any()[0] == 'iPhone' || isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != '')
-        {
-            window.location.href = urlIOs;
         }
     });
 });
