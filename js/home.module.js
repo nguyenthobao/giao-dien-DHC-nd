@@ -176,6 +176,6 @@ $(document).ready(function () {
     });
 
     $('body').on('click', '.book-seat', function () {
-        window.location.href="tel://+841657194531";
+        window.location.href="call://+84898181777";
     });
 });
