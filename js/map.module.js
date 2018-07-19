@@ -25,15 +25,23 @@ $(document).ready(function () {
 
 
     $('#tab2').change(function () {
-        if(isMobile.any() !== null) {
-            if((isMobile.any()[0] == 'iPhone' || isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != '')
-            {
-                window.location.href = urlIOs;
-            } else {
-                window.location.href = urlAndroid;
-            }
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function showPosition(position) {
+               console.log("Latitude: " + position.coords.latitude);
+                console.log("Longitude: " + position.coords.longitude);
+            });
         } else {
-            window.location.href = urlAndroid;
+            x.innerHTML = "Geolocation is not supported by this browser.";
         }
+        // if(isMobile.any() !== null) {
+        //     if((isMobile.any()[0] == 'iPhone' || isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != '')
+        //     {
+        //         window.location.href = urlIOs;
+        //     } else {
+        //         window.location.href = urlAndroid;
+        //     }
+        // } else {
+        //     window.location.href = urlAndroid;
+        // }
     });
 });
