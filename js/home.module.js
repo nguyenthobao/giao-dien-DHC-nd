@@ -140,7 +140,6 @@ $(document).ready(function () {
     });
 
     $('body').on('click', '.point-marker', function () {
-        alert('tai sao');
         var isMobile = {
             Android: function() {
                 return navigator.userAgent.match(/Android/i);
