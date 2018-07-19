@@ -25,14 +25,52 @@ $(document).ready(function () {
 
 
     $('#tab2').change(function () {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function showPosition(position) {
-               console.log("Latitude: " + position.coords.latitude);
-                console.log("Longitude: " + position.coords.longitude);
-            });
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
+        var apiGeolocationSuccess = function(position) {
+            alert("API geolocation success!" +
+                "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
+        };
+
+        var tryAPIGeolocation = function() {
+            jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDCa1LUe1vOczX1hO_iGYgyo8p_jYuGOPU", function(success) {
+                apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
+            })
+                .fail(function(err) {
+                    alert("API Geolocation error! "+err);
+                });
+        };
+
+        var browserGeolocationSuccess = function(position) {
+            alert("Browser geolocation success!" +
+                "lat = " + position.coords.latitude + "" +
+                "lng = " + position.coords.longitude);
+        };
+
+        var browserGeolocationFail = function(error) {
+            switch (error.code) {
+                case error.TIMEOUT:
+                    alert("Browser geolocation error !Timeout.");
+                    break;
+                case error.PERMISSION_DENIED:
+                    if(error.message.indexOf("Only secure origins are allowed") == 0) {
+                        tryAPIGeolocation();
+                    }
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Browser geolocation error !Position unavailable.");
+                    break;
+            }
+        };
+
+        var tryGeolocation = function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    browserGeolocationSuccess,
+                    browserGeolocationFail,
+                    {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
+            }
+        };
+
+        tryGeolocation();
         // if(isMobile.any() !== null) {
         //     if((isMobile.any()[0] == 'iPhone' || isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != '')
         //     {
