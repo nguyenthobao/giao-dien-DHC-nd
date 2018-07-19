@@ -24,16 +24,16 @@ $(document).ready(function () {
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
 
 
-    // $('#tab2').change(function () {
-    //     if(isMobile.any() !== null) {
-    //         if((isMobile.any()[0] == 'iPhone' || isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != '')
-    //         {
-    //             window.location.href = urlIOs;
-    //         } else {
-    //             window.location.href = urlAndroid;
-    //         }
-    //     } else {
-    //         window.location.href = urlAndroid;
-    //     }
-    // });
+    $('#tab2').change(function () {
+        if(isMobile.any() !== null) {
+            if((isMobile.any()[0] == 'iPhone' || isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != '')
+            {
+                window.location.href = urlIOs;
+            } else {
+                window.location.href = urlAndroid;
+            }
+        } else {
+            window.location.href = urlAndroid;
+        }
+    });
 });
