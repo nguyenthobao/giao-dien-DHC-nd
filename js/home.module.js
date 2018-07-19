@@ -8,6 +8,10 @@ $(document).ready(function () {
             pointData = result.data.results;
             $('.point-list').html('');
             $.each(pointData, function (k, v) {
+		if (v.point_type == 9)
+		{
+		  return;
+		}
                 html = '<div class="item-point" data-id="' + v.point_id + '">';
                 var pointImage = JSON.parse(v.point_images);
                 html += '<img src="' + pointImage[0] + '" class="img-thumbnail" alt="' + v.point_name + '">';
@@ -159,7 +163,7 @@ $(document).ready(function () {
 
         console.log(isMobile.any());
 
-        urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.dhc';
+        urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
         urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
 
         if(isMobile.any() !== null) {
