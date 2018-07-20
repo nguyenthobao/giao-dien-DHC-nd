@@ -183,6 +183,7 @@
         $('body').on('click','#tab2',function () {
             $('main > label').hide();
             $('main > input').hide();
+            $('.container').attr('style','min-width: 100%');
         });
         $('body').on('mouseup','#mapdhc,.zoomImg',function () {
              $('#marker').show();
