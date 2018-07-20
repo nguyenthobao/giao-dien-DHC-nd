@@ -22,7 +22,7 @@ $(document).ready(function () {
                 $('#marker').css("margin-left", x+"px");
                 $('#marker').show();
             }
-            alert(x+ '......'+ y);
+            alert(x+ '......'+ y +','+$('#mapdhc')[0].width+'....'+$('#mapdhc')[0].height);
         };
 
         var tryAPIGeolocation = function() {
