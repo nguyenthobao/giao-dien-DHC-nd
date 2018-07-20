@@ -265,7 +265,7 @@ main input:checked + label {
     #mapdhc{
         padding-top:120px;
         padding-left: 140px;
-        transform: scaleX(6.0) scaleY(3.0);
+        transform: scaleX(6.0) scaleY(6.0);
     }
     .img-news {
         margin-left: -15px;
