@@ -80,8 +80,8 @@ main input:checked + label {
     display: block;
 }
 #mapdhc{
-    padding-top:100px;
-    padding-left: 500px;
+    padding-top:300px;
+    padding-left: 430px;
     transform: scale(3.0);
 }
 #download {
