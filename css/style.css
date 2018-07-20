@@ -79,7 +79,9 @@ main input:checked + label {
 #tab4:checked ~ #content4 {
     display: block;
 }
-
+#mapdhc{
+    transform: scale(3.0);
+}
 #download {
     border-radius: 8px;
     position: fixed;
