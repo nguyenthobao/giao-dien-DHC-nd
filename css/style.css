@@ -251,8 +251,7 @@ main input:checked + label {
         display: block !important;
     }
     #mapdhc{
-
-        transform: scale(1.0);
+        transform: scale(3.0);
     }
     .img-news {
         margin-left: -15px;
