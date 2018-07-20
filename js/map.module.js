@@ -15,8 +15,14 @@ $(document).ready(function () {
             // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
             var x= parseFloat( getXPixcelValue(15.971174, 108.017871));
             var y= parseFloat( getYPixcelValue(15.971174, 108.017871));
-
-            alert(x+ '......'+y);
+            if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
+                $('#marker').hide();
+            } else{
+                $('#marker').css("margin-top", y+"px");
+                $('#marker').css("margin-left", x+"px");
+                $('#marker').show();
+            }
+            alert($('#mapdhc')[0].width+ '......'+ $('#mapdhc')[0].height);
         };
 
         var tryAPIGeolocation = function() {
