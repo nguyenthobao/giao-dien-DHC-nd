@@ -180,8 +180,9 @@
         $('body').on('click','#mapdhc,.zoomImg',function () {
              // $('#marker').hide();
         });
-        $('body').on('click','#tab1,#tab3,#tab4',function () {
-            $('#title').show();
+        $('body').on('click','#tab2',function () {
+            $('main > label').hide();
+            $('main > input').hide();
         });
         $('body').on('mouseup','#mapdhc,.zoomImg',function () {
              $('#marker').show();
