@@ -11,8 +11,10 @@ $(document).ready(function () {
         var apiGeolocationSuccess = function(position) {
             // alert("API geolocation success!" +
             //     "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
-            var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
-            var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
+            // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
+            // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
+            var x= parseFloat( getXPixcelValue(15.971174, 108.017871));
+            var y= parseFloat( getYPixcelValue(15.971174, 108.017871));
 
             alert(x+ '......'+y);
         };
