@@ -80,17 +80,7 @@ main input:checked + label {
     display: block;
 }
 
-#download {
-    border-radius: 8px;
-    position: fixed;
-    margin-bottom: 0px;
-    color: white;
-    margin-left: 80%;
-    height: 35px;
-    width: 116px;
-    border: none;
-    background-color: hsl(0, 100%, 10%);
-}
+
 
 #marker {
     width: 20px;
@@ -244,6 +234,17 @@ main input:checked + label {
         /*padding-left: 430px;*/
         transform: scale(1.0);
     }
+    #download {
+        border-radius: 8px;
+        position: fixed;
+        margin-bottom: 0px;
+        color: white;
+        margin-left:80%;
+        height: 35px;
+        width: 116px;
+        border: none;
+        background-color: hsl(0, 100%, 10%);
+    }
 }
 
 @media (max-width: 425px) {
@@ -251,8 +252,8 @@ main input:checked + label {
         display: block !important;
     }
     #mapdhc{
-        padding-top:100px;
-        padding-left: 50px;
+        padding-top:150px;
+        padding-left: 100px;
         transform: scale(4.0);
     }
     .img-news {
@@ -263,6 +264,16 @@ main input:checked + label {
     .img-news img {
         width: 100% !important;
         height: auto !important;
+    }
+    #download {
+        border-radius: 8px;
+        padding-top: 0px;
+        color: white;
+        margin-left: 20%;
+        height: 35px;
+        width: 116px;
+        border: none;
+        background-color: hsl(0, 100%, 10%);
     }
 
 }
