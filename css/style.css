@@ -251,8 +251,8 @@ main input:checked + label {
         display: block !important;
     }
     #mapdhc{
-        padding-top:300px;
-        padding-left: 200px;
+        padding-top:100px;
+        padding-left: 50px;
         transform: scale(4.0);
     }
     .img-news {
