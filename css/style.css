@@ -12,6 +12,17 @@ body {
         color: #555;
         /*background: #eee;*/
     }
+    #download {
+        border-radius: 8px;
+        position: fixed;
+        margin-bottom: 0px;
+        color: white;
+        margin-left:80%;
+        height: 35px;
+        width: 116px;
+        border: none;
+        background-color: hsl(0, 100%, 10%);
+    }
 }
 
 main {
