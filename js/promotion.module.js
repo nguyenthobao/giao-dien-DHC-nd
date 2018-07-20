@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    $('#title').show();
     $('#tab3').change(function () {
         /*Get all promotion*/
         getListPromotion()

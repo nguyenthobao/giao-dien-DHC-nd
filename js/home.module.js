@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    $('#title').show();
     /*Get all point in home*/
     $.ajax({
         url: baseApi + 'point/get-all-point',
