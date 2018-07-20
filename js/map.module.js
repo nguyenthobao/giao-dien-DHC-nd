@@ -13,8 +13,8 @@ $(document).ready(function () {
             //     "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
             // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
             // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
-            var x= parseFloat( getXPixcelValue(15.969910, 108.019169)/(9798/$('#mapdhc')[0].width));
-            var y= parseFloat( getYPixcelValue(15.969910, 108.019169)/(7046/$('#mapdhc')[0].height));
+            var x= parseFloat( getXPixcelValue(15.967649, 108.019897)/(9798/$('#mapdhc')[0].width));
+            var y= parseFloat( getYPixcelValue(15.967649, 108.019897)/(7046/$('#mapdhc')[0].height));
             if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
                 // $('#marker').hide();
             } else{
