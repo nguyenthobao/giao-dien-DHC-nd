@@ -7,16 +7,6 @@ $(document).ready(function () {
     var scaleY = 1;
     var x = -1, y = -1;
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
-    $('#mapdhc').on('click', function () {
-        var p = document.getElementById('marker');
-        var style = p.currentStyle || window.getComputedStyle(p);
-        var u = (style.marginTop).substring(0, 4);
-        var v = (style.marginLeft).substring(0, 4);
-        console.log(u, v, y, x, Math.abs(u - y), Math.abs(v - x));
-        if (Math.abs(u - y) > 30 || Math.abs(v - x) > 30)
-            $('#marker').hide();
-        else $('#marker').show();
-    });
     $('#tab2').change(function () {
         var apiGeolocationSuccess = function (position) {
             // alert("API geolocation success!" +
