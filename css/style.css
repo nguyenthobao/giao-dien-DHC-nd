@@ -87,7 +87,7 @@ main input:checked + label {
 #download {
     border-radius: 8px;
     position: fixed;
-    margin-top: 25px;
+    margin-bottom: 0px;
     color: white;
     margin-left: 80%;
     height: 35px;
