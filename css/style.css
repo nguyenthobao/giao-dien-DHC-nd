@@ -14,10 +14,10 @@ body {
     }
     #download {
         border-radius: 8px;
-        position: fixed;
-        margin-bottom: 0px;
+        position: absolute;
+        margin-top: 50px;
         color: white;
-        margin-left:80%;
+        margin-left:88%;
         height: 35px;
         width: 116px;
         border: none;
@@ -247,10 +247,10 @@ main input:checked + label {
     }
     #download {
         border-radius: 8px;
-        position: fixed;
-        margin-bottom: 0px;
+        position: absolute;
+        margin-top: 50px;
         color: white;
-        margin-left:80%;
+        margin-left:88%;
         height: 35px;
         width: 116px;
         border: none;
