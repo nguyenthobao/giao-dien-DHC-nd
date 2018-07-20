@@ -180,7 +180,10 @@
             });
 
         $('body').on('click','#mapdhc,.zoomImg',function () {
-            // $('#marker').hide();
+             $('#marker').hide();
+        });
+        $('body').on('mouseup','#mapdhc,.zoomImg',function () {
+             $('#marker').show();
         });
     });
 </script>
