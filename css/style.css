@@ -278,11 +278,11 @@ main input:checked + label {
     }
     #download {
         border-radius: 8px;
-        padding-top: 300px;
+        position: fixed;
         color: white;
-        margin-left: 20%;
+        margin-top: 200px;
         height: 35px;
-        width: 116px;
+        width: 100%;
         border: none;
         background-color: hsl(0, 100%, 10%);
     }
