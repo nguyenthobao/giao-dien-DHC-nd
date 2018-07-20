@@ -265,7 +265,7 @@ main input:checked + label {
     #mapdhc{
         padding-top:100px;
         padding-left: 120px;
-        transform: scale(4.0);
+        transform: scale(6.0);
     }
     .img-news {
         margin-left: -15px;
@@ -280,7 +280,7 @@ main input:checked + label {
         border-radius: 8px;
         position: fixed;
         color: white;
-        margin-top: 650px;
+        margin-top: 800px;
         margin-left: 0px;
 padding-left: -5px;
         height: 35px;
