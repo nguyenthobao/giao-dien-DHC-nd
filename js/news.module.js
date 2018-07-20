@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $('#title').show();
     $('#tab4').change(function () {
         /*Get all news*/
         getListNews();
