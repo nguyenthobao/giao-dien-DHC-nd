@@ -263,7 +263,7 @@ main input:checked + label {
         display: block !important;
     }
     #mapdhc{
-        padding-top:120px;
+        padding-top:100px;
         padding-left: 120px;
         transform: scale(4.0);
     }
@@ -280,9 +280,9 @@ main input:checked + label {
         border-radius: 8px;
         position: fixed;
         color: white;
-        margin-top: 200px;
-        margin-left: 0px;
-        padding-top: 100px;
+        margin-top: 550px;
+        margin-left: -5px;
+
         height: 35px;
         width: 100%;
         border: none;
