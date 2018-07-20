@@ -278,7 +278,7 @@ main input:checked + label {
     }
     #download {
         border-radius: 8px;
-        padding-top: 0px;
+        padding-top: 300px;
         color: white;
         margin-left: 20%;
         height: 35px;
