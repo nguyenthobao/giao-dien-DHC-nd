@@ -280,11 +280,11 @@ main input:checked + label {
         border-radius: 8px;
         position: fixed;
         color: white;
-        margin-top: 550px;
-        margin-left: -5px;
-
+        margin-top: 600px;
+        margin-left: 0px;
+padding-left: -5px;
         height: 35px;
-        width: 100%;
+        width: 30%;
         border: none;
         background-color: hsl(0, 100%, 10%);
     }
