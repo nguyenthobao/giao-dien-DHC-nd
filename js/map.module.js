@@ -12,7 +12,8 @@ $(document).ready(function () {
         var style = p.currentStyle || window.getComputedStyle(p);
         var u = (style.marginTop).substring(0, 4);
         var v = (style.marginLeft).substring(0, 4);
-        if (!Math.abs(u - y) < 100 || !Math.abs(v - x) < 100)
+        console.log(u,v,y,x,Math.abs(u - y), Math.abs(v - x));
+        if (Math.abs(u - y)>30 || Math.abs(v - x) >30)
             $('#marker').hide();
     });
     $('body').on('mousedown', '#mapdhc', function () {
