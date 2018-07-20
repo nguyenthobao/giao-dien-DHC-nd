@@ -1,12 +1,20 @@
 $(document).ready(function () {
     urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
-
+    var topLeftRealX = 0;
+    var topLeftRealY = 0;
+    var scaleX = 1;
+    var scaleY = 1;
+    getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
 
     $('#tab2').change(function () {
         var apiGeolocationSuccess = function(position) {
-            alert("API geolocation success!" +
-                "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
+            // alert("API geolocation success!" +
+            //     "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
+            var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
+            var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
+
+            alert(x+ '......'+y);
         };
 
         var tryAPIGeolocation = function() {
@@ -14,20 +22,20 @@ $(document).ready(function () {
                 apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
             })
                 .fail(function(err) {
-                    alert("API Geolocation error! "+err);
+                    alert("Không tìm được vị trí của bạn! ");
                 });
         };
 
         var browserGeolocationSuccess = function(position) {
-            alert("Browser geolocation success!" +
-                "lat = " + position.coords.latitude + "" +
-                "lng = " + position.coords.longitude);
+            // alert("Browser geolocation success!" +
+            //     "lat = " + position.coords.latitude + "" +
+            //     "lng = " + position.coords.longitude);
         };
 
         var browserGeolocationFail = function(error) {
             switch (error.code) {
                 case error.TIMEOUT:
-                    alert("Browser geolocation error !Timeout.");
+                    alert("Tìm kiếm vị trí của bạn quá thời gian cho phép");
                     break;
                 case error.PERMISSION_DENIED:
                     if(error.message.indexOf("Only secure origins are allowed") == 0) {
@@ -35,7 +43,7 @@ $(document).ready(function () {
                     }
                     break;
                 case error.POSITION_UNAVAILABLE:
-                    alert("Browser geolocation error !Position unavailable.");
+                    alert("Trình duyệt bạn dùng không hỗ trợ tìm vị trí hoặc chức năng đã bị tắt");
                     break;
             }
         };
@@ -85,3 +93,36 @@ $(document).ready(function () {
         }
     });
 });
+function getOriginal1( lat1,lng1,lat2,lng2,x1, y1,x2,y2) {
+    var realX1 = getX1Value(lat1, lng1);
+    var realX2 = getX1Value(lat2, lng2);
+    var realY1 = getY1Value(lat1, lng1);
+    var realY2 = getY1Value(lat2, lng2);
+    topLeftRealX = realX1 - x1 * (realX2 - realX1) / (x2 - x1);
+    topLeftRealY = realY1 - y1 * (realY2 - realY1) / (y2 - y1);
+    var deltaX = realX2 - realX1;
+    var deltaY = realY2 - realY1;
+    scaleX = deltaX / (x2 - x1);
+    scaleY = deltaY / (y2 - y1);
+}
+function getXPixcelValue( lat,  lng) {
+    var l1 = topLeftRealX;//-79815182.874506816,-80785543.091131881
+    var xValue = getX1Value(lat, lng);
+    return (xValue - l1) / scaleX;
+}
+function getYPixcelValue( lat,  lng) {
+    var l1 = topLeftRealY;
+    var yValue = getY1Value(lat, lng);
+    return (yValue - l1) / scaleY;
+}
+function getX1Value( late,  lng) {
+    var TILE_SIZE = 268435471;
+    return TILE_SIZE * (0.5 + lng / 360);
+}
+function getY1Value( late,  lng) {
+    var siny = Math.sin(late * Math.PI / 180);
+    var TILE_SIZE = 268435471;
+    siny = (siny > -0.999999) ? siny : -0.999999;
+    siny = (siny < 0.999999) ? siny : 0.999999;
+    return TILE_SIZE * (0.5 - Math.log((1 + siny) / (1 - siny)) / (4 * Math.PI));
+}
