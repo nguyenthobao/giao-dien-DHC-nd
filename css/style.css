@@ -290,6 +290,17 @@ main input:checked + label {
     .news-content {
         padding-left: 25px !important;
     }
+    #download {
+        border-radius: 8px;
+        position: fixed;
+        margin-bottom: 0px;
+        color: white;
+        margin-left:80%;
+        height: 35px;
+        width: 116px;
+        border: none;
+        background-color: hsl(0, 100%, 10%);
+    }
 }
 
 .img-news img {
