@@ -79,11 +79,7 @@ main input:checked + label {
 #tab4:checked ~ #content4 {
     display: block;
 }
-#mapdhc{
-    padding-top:300px;
-    padding-left: 430px;
-    transform: scale(3.0);
-}
+
 #download {
     border-radius: 8px;
     position: fixed;
@@ -243,13 +239,21 @@ main input:checked + label {
         padding-right: 0;
         margin-right: 20px;
     }
+    #mapdhc{
+        padding-top:300px;
+        padding-left: 430px;
+        transform: scale(3.0);
+    }
 }
 
 @media (max-width: 425px) {
     .news-item {
         display: block !important;
     }
+    #mapdhc{
 
+        transform: scale(2.0);
+    }
     .img-news {
         margin-left: -15px;
         margin-bottom: 15px;
@@ -267,7 +271,10 @@ main input:checked + label {
         padding-right: 0;
         margin-right: 50px;
     }
+    #mapdhc{
 
+        transform: scale(1.0);
+    }
     .news-content {
         padding-left: 25px !important;
     }
