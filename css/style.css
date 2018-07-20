@@ -276,6 +276,9 @@ main input:checked + label {
         width: 100% !important;
         height: auto !important;
     }
+    body{
+        height: 1200px;
+    }
     #download {
         border-radius: 8px;
         position: fixed;
