@@ -174,9 +174,7 @@
             .css('display', 'block')
             .parent()
             .zoom({
-                callback: function () {
-                    $('#mapdhc').colorbox({href: $('#mapdhc').attr('src')});
-                }
+                on: 'grab'
             });
     });
 </script>
