@@ -264,7 +264,7 @@ main input:checked + label {
     }
     #mapdhc{
         padding-top:120px;
-        padding-left: 140px;
+        padding-left: 125px;
         transform: scaleX(6.0) scaleY(6.0);
     }
     .img-news {
