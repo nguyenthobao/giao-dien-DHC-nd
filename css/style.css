@@ -281,6 +281,8 @@ main input:checked + label {
         position: fixed;
         color: white;
         margin-top: 200px;
+        margin-left: 0px;
+        padding-top: 100px;
         height: 35px;
         width: 100%;
         border: none;
