@@ -173,7 +173,12 @@
             .wrap('<span style="display:inline-block"></span>')
             .css('display', 'block')
             .parent()
-            .zoom();
+            .zoom({
+                url: 'photo-big.jpg',
+                callback: function () {
+                    $(this).colorbox({href: this.src});
+                }
+            });
     });
 </script>
 </html>
