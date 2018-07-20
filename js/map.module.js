@@ -5,48 +5,59 @@ $(document).ready(function () {
     var topLeftRealY = 0;
     var scaleX = 1;
     var scaleY = 1;
+    var x = -1, y = -1;
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
-
+    $('body').on('mouseup', '#mapdhc', function () {
+        var p = document.getElementById('marker');
+        var style = p.currentStyle || window.getComputedStyle(p);
+        var u = (style.marginTop).substring(0, 4);
+        var v = (style.marginLeft).substring(0, 4);
+        if (!Math.abs(u - y) < 100 || !Math.abs(v - x) < 100)
+            $('#marker').hide();
+    });
+    $('body').on('mousedown', '#mapdhc', function () {
+        $('#marker').show();
+    });
     $('#tab2').change(function () {
-        var apiGeolocationSuccess = function(position) {
+        var apiGeolocationSuccess = function (position) {
             // alert("API geolocation success!" +
             //     "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
             // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
             // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
-            var x= parseFloat( getXPixcelValue(15.967649, 108.019897)/(9798/$('#mapdhc')[0].width));
-            var y= parseFloat( getYPixcelValue(15.967649, 108.019897)/(7046/$('#mapdhc')[0].height));
+            x = parseFloat(getXPixcelValue(15.967649, 108.019897) / (9798 / $('#mapdhc')[0].width));
+            y = parseFloat(getYPixcelValue(15.967649, 108.019897) / (7046 / $('#mapdhc')[0].height));
             if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
-                // $('#marker').hide();
-            } else{
-                $('#marker').css("margin-top", y+"px");
-                $('#marker').css("margin-left", x+"px");
+                $('#marker').hide();
+            } else {
+                $('#marker').css("margin-top", (y - 15) + "px");
+                $('#marker').css("margin-left", x + "px");
                 $('#marker').show();
             }
-            alert(x+ '......'+ y +','+$('#mapdhc')[0].width+'....'+$('#mapdhc')[0].height);
+            // alert(x + '......' + y + ',' + $('#mapdhc')[0].width + '....' + $('#mapdhc')[0].height);
         };
 
-        var tryAPIGeolocation = function() {
-            jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDCa1LUe1vOczX1hO_iGYgyo8p_jYuGOPU", function(success) {
+        var tryAPIGeolocation = function () {
+            jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDCa1LUe1vOczX1hO_iGYgyo8p_jYuGOPU", function (success) {
                 apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
             })
-                .fail(function(err) {
+                .fail(function (err) {
                     alert("Không tìm được vị trí của bạn! ");
                 });
         };
 
-        var browserGeolocationSuccess = function(position) {
+        var browserGeolocationSuccess = function (position) {
             // alert("Browser geolocation success!" +
             //     "lat = " + position.coords.latitude + "" +
             //     "lng = " + position.coords.longitude);
         };
 
-        var browserGeolocationFail = function(error) {
+        var browserGeolocationFail = function (error) {
             switch (error.code) {
                 case error.TIMEOUT:
                     alert("Tìm kiếm vị trí của bạn quá thời gian cho phép");
                     break;
                 case error.PERMISSION_DENIED:
-                    if(error.message.indexOf("Only secure origins are allowed") == 0) {
+                    if (error.message.indexOf("Only secure origins are allowed") == 0) {
                         tryAPIGeolocation();
                     }
                     break;
@@ -56,7 +67,7 @@ $(document).ready(function () {
             }
         };
 
-        var tryGeolocation = function() {
+        var tryGeolocation = function () {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     browserGeolocationSuccess,
@@ -68,30 +79,29 @@ $(document).ready(function () {
         tryGeolocation();
 
     });
-    $('body').on('click','#download',function(){
+    $('body').on('click', '#download', function () {
         var isMobile = {
-            Android: function() {
+            Android: function () {
                 return navigator.userAgent.match(/Android/i);
             },
-            BlackBerry: function() {
+            BlackBerry: function () {
                 return navigator.userAgent.match(/BlackBerry/i);
             },
-            iOS: function() {
+            iOS: function () {
                 return navigator.userAgent.match(/iPhone|iPad|iPod/i);
             },
-            Opera: function() {
+            Opera: function () {
                 return navigator.userAgent.match(/Opera Mini/i);
             },
-            Windows: function() {
+            Windows: function () {
                 return navigator.userAgent.match(/IEMobile/i);
             },
-            any: function() {
+            any: function () {
                 return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
             }
         };
-        if(isMobile.any() !== null) {
-            if((isMobile.any()[0] == 'iPhone' || isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != '')
-            {
+        if (isMobile.any() !== null) {
+            if ((isMobile.any()[0] == 'iPhone' || isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != '') {
                 window.location.href = urlIOs;
             } else {
                 window.location.href = urlAndroid;
@@ -101,7 +111,8 @@ $(document).ready(function () {
         }
     });
 });
-function getOriginal1( lat1,lng1,lat2,lng2,x1, y1,x2,y2) {
+
+function getOriginal1(lat1, lng1, lat2, lng2, x1, y1, x2, y2) {
     var realX1 = getX1Value(lat1, lng1);
     var realX2 = getX1Value(lat2, lng2);
     var realY1 = getY1Value(lat1, lng1);
@@ -113,21 +124,25 @@ function getOriginal1( lat1,lng1,lat2,lng2,x1, y1,x2,y2) {
     scaleX = deltaX / (x2 - x1);
     scaleY = deltaY / (y2 - y1);
 }
-function getXPixcelValue( lat,  lng) {
+
+function getXPixcelValue(lat, lng) {
     var l1 = topLeftRealX;//-79815182.874506816,-80785543.091131881
     var xValue = getX1Value(lat, lng);
     return (xValue - l1) / scaleX;
 }
-function getYPixcelValue( lat,  lng) {
+
+function getYPixcelValue(lat, lng) {
     var l1 = topLeftRealY;
     var yValue = getY1Value(lat, lng);
     return (yValue - l1) / scaleY;
 }
-function getX1Value( late,  lng) {
+
+function getX1Value(late, lng) {
     var TILE_SIZE = 268435471;
     return TILE_SIZE * (0.5 + lng / 360);
 }
-function getY1Value( late,  lng) {
+
+function getY1Value(late, lng) {
     var siny = Math.sin(late * Math.PI / 180);
     var TILE_SIZE = 268435471;
     siny = (siny > -0.999999) ? siny : -0.999999;
