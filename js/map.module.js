@@ -52,10 +52,10 @@ $(document).ready(function () {
                 if (x >$('#mapdhc')[0].getBoundingClientRect().width || x < 0 || y > $('#mapdhc')[0].getBoundingClientRect().height || y < 0) {
                    // $('#marker').hide();
                 } else {
-                    $('#marker').css("margin-top", (y/3 - 15) + "px");
-                    $('#marker').css("margin-left", x/3 + "px");
+                    $('#marker').css("margin-top", (5*y/12 - 15) + "px");
+                    $('#marker').css("margin-left", (x/3 +50)+ "px");
                     $('#marker').show();
-                    // document.getElementById('marker').scrollIntoView();
+                     document.getElementById('marker').scrollIntoView();
                 }
             }
 
