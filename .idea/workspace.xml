@@ -4,6 +4,7 @@
     <list default="true" id="a371e09c-094e-4ee6-a00c-907fd1dc9577" name="Default" comment="update dhc user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change beforePath="$PROJECT_DIR$/js/map.module.js" afterPath="$PROJECT_DIR$/js/map.module.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -11,6 +12,18 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -44,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="263" column="5" lean-forward="true" selection-start-line="263" selection-start-column="5" selection-end-line="263" selection-end-column="5" />
+            <state relative-caret-position="189">
+              <caret line="270" column="28" lean-forward="true" selection-start-line="270" selection-start-column="28" selection-end-line="270" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -72,16 +85,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map.module.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="map.module.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/map.module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="54" column="54" lean-forward="false" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
+            <state relative-caret-position="102">
+              <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
               <folding>
-                <element signature="e#3278#3685#0" expanded="false" />
-                <element signature="e#3748#3933#0" expanded="false" />
-                <element signature="e#3990#4594#0" expanded="false" />
-                <element signature="e#4638#4937#0" expanded="false" />
+                <element signature="e#3157#3564#0" expanded="false" />
+                <element signature="e#3627#3812#0" expanded="false" />
+                <element signature="e#3869#4473#0" expanded="false" />
+                <element signature="e#4517#4816#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -90,8 +103,8 @@
       <file leaf-file-name="rác.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webfonts/rác.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="326" column="62" lean-forward="true" selection-start-line="326" selection-start-column="62" selection-end-line="326" selection-end-column="62" />
+            <state relative-caret-position="438">
+              <caret line="29" column="5" lean-forward="true" selection-start-line="0" selection-start-column="1" selection-end-line="29" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -160,8 +173,8 @@
         <option value="$PROJECT_DIR$/js/promotion.module.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/webfonts/rác.java" />
-        <option value="$PROJECT_DIR$/js/map.module.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/js/map.module.js" />
       </list>
     </option>
   </component>
@@ -305,356 +318,356 @@
       <workItem from="1532047898964" duration="478000" />
       <workItem from="1532051903922" duration="25938000" />
       <workItem from="1532128036612" duration="6860000" />
-      <workItem from="1532140440193" duration="12450000" />
+      <workItem from="1532140440193" duration="17213000" />
     </task>
-    <task id="LOCAL-00176" summary="update dhc user">
-      <created>1532146553380</created>
-      <option name="number" value="00176" />
-      <option name="presentableId" value="LOCAL-00176" />
+    <task id="LOCAL-00227" summary="update dhc user">
+      <created>1532158630020</created>
+      <option name="number" value="00227" />
+      <option name="presentableId" value="LOCAL-00227" />
       <option name="project" value="LOCAL" />
-      <updated>1532146553380</updated>
+      <updated>1532158630020</updated>
     </task>
-    <task id="LOCAL-00177" summary="update dhc user">
-      <created>1532146686005</created>
-      <option name="number" value="00177" />
-      <option name="presentableId" value="LOCAL-00177" />
+    <task id="LOCAL-00228" summary="update dhc user">
+      <created>1532158681363</created>
+      <option name="number" value="00228" />
+      <option name="presentableId" value="LOCAL-00228" />
       <option name="project" value="LOCAL" />
-      <updated>1532146686005</updated>
+      <updated>1532158681363</updated>
     </task>
-    <task id="LOCAL-00178" summary="update dhc user">
-      <created>1532146815364</created>
-      <option name="number" value="00178" />
-      <option name="presentableId" value="LOCAL-00178" />
+    <task id="LOCAL-00229" summary="update dhc user">
+      <created>1532158747223</created>
+      <option name="number" value="00229" />
+      <option name="presentableId" value="LOCAL-00229" />
       <option name="project" value="LOCAL" />
-      <updated>1532146815364</updated>
+      <updated>1532158747223</updated>
     </task>
-    <task id="LOCAL-00179" summary="update dhc user">
-      <created>1532146893801</created>
-      <option name="number" value="00179" />
-      <option name="presentableId" value="LOCAL-00179" />
+    <task id="LOCAL-00230" summary="update dhc user">
+      <created>1532158812519</created>
+      <option name="number" value="00230" />
+      <option name="presentableId" value="LOCAL-00230" />
       <option name="project" value="LOCAL" />
-      <updated>1532146893801</updated>
+      <updated>1532158812519</updated>
     </task>
-    <task id="LOCAL-00180" summary="update dhc user">
-      <created>1532147180080</created>
-      <option name="number" value="00180" />
-      <option name="presentableId" value="LOCAL-00180" />
+    <task id="LOCAL-00231" summary="update dhc user">
+      <created>1532158961948</created>
+      <option name="number" value="00231" />
+      <option name="presentableId" value="LOCAL-00231" />
       <option name="project" value="LOCAL" />
-      <updated>1532147180080</updated>
+      <updated>1532158961948</updated>
     </task>
-    <task id="LOCAL-00181" summary="update dhc user">
-      <created>1532147234137</created>
-      <option name="number" value="00181" />
-      <option name="presentableId" value="LOCAL-00181" />
+    <task id="LOCAL-00232" summary="update dhc user">
+      <created>1532159017068</created>
+      <option name="number" value="00232" />
+      <option name="presentableId" value="LOCAL-00232" />
       <option name="project" value="LOCAL" />
-      <updated>1532147234137</updated>
+      <updated>1532159017068</updated>
     </task>
-    <task id="LOCAL-00182" summary="update dhc user">
-      <created>1532147468928</created>
-      <option name="number" value="00182" />
-      <option name="presentableId" value="LOCAL-00182" />
+    <task id="LOCAL-00233" summary="update dhc user">
+      <created>1532159062411</created>
+      <option name="number" value="00233" />
+      <option name="presentableId" value="LOCAL-00233" />
       <option name="project" value="LOCAL" />
-      <updated>1532147468928</updated>
+      <updated>1532159062411</updated>
     </task>
-    <task id="LOCAL-00183" summary="update dhc user">
-      <created>1532147580698</created>
-      <option name="number" value="00183" />
-      <option name="presentableId" value="LOCAL-00183" />
+    <task id="LOCAL-00234" summary="update dhc user">
+      <created>1532159131358</created>
+      <option name="number" value="00234" />
+      <option name="presentableId" value="LOCAL-00234" />
       <option name="project" value="LOCAL" />
-      <updated>1532147580698</updated>
+      <updated>1532159131358</updated>
     </task>
-    <task id="LOCAL-00184" summary="update dhc user">
-      <created>1532147639466</created>
-      <option name="number" value="00184" />
-      <option name="presentableId" value="LOCAL-00184" />
+    <task id="LOCAL-00235" summary="update dhc user">
+      <created>1532159191835</created>
+      <option name="number" value="00235" />
+      <option name="presentableId" value="LOCAL-00235" />
       <option name="project" value="LOCAL" />
-      <updated>1532147639466</updated>
+      <updated>1532159191835</updated>
     </task>
-    <task id="LOCAL-00185" summary="update dhc user">
-      <created>1532147816348</created>
-      <option name="number" value="00185" />
-      <option name="presentableId" value="LOCAL-00185" />
+    <task id="LOCAL-00236" summary="update dhc user">
+      <created>1532159252535</created>
+      <option name="number" value="00236" />
+      <option name="presentableId" value="LOCAL-00236" />
       <option name="project" value="LOCAL" />
-      <updated>1532147816348</updated>
+      <updated>1532159252535</updated>
     </task>
-    <task id="LOCAL-00186" summary="update dhc user">
-      <created>1532147901531</created>
-      <option name="number" value="00186" />
-      <option name="presentableId" value="LOCAL-00186" />
+    <task id="LOCAL-00237" summary="update dhc user">
+      <created>1532159304823</created>
+      <option name="number" value="00237" />
+      <option name="presentableId" value="LOCAL-00237" />
       <option name="project" value="LOCAL" />
-      <updated>1532147901531</updated>
+      <updated>1532159304823</updated>
     </task>
-    <task id="LOCAL-00187" summary="update dhc user">
-      <created>1532148578052</created>
-      <option name="number" value="00187" />
-      <option name="presentableId" value="LOCAL-00187" />
+    <task id="LOCAL-00238" summary="update dhc user">
+      <created>1532159373521</created>
+      <option name="number" value="00238" />
+      <option name="presentableId" value="LOCAL-00238" />
       <option name="project" value="LOCAL" />
-      <updated>1532148578052</updated>
+      <updated>1532159373521</updated>
     </task>
-    <task id="LOCAL-00188" summary="update dhc user">
-      <created>1532148704991</created>
-      <option name="number" value="00188" />
-      <option name="presentableId" value="LOCAL-00188" />
+    <task id="LOCAL-00239" summary="update dhc user">
+      <created>1532159414457</created>
+      <option name="number" value="00239" />
+      <option name="presentableId" value="LOCAL-00239" />
       <option name="project" value="LOCAL" />
-      <updated>1532148704991</updated>
+      <updated>1532159414457</updated>
     </task>
-    <task id="LOCAL-00189" summary="update dhc user">
-      <created>1532148778170</created>
-      <option name="number" value="00189" />
-      <option name="presentableId" value="LOCAL-00189" />
+    <task id="LOCAL-00240" summary="update dhc user">
+      <created>1532159467465</created>
+      <option name="number" value="00240" />
+      <option name="presentableId" value="LOCAL-00240" />
       <option name="project" value="LOCAL" />
-      <updated>1532148778170</updated>
+      <updated>1532159467465</updated>
     </task>
-    <task id="LOCAL-00190" summary="update dhc user">
-      <created>1532148901268</created>
-      <option name="number" value="00190" />
-      <option name="presentableId" value="LOCAL-00190" />
+    <task id="LOCAL-00241" summary="update dhc user">
+      <created>1532159521635</created>
+      <option name="number" value="00241" />
+      <option name="presentableId" value="LOCAL-00241" />
       <option name="project" value="LOCAL" />
-      <updated>1532148901268</updated>
+      <updated>1532159521635</updated>
     </task>
-    <task id="LOCAL-00191" summary="update dhc user">
-      <created>1532148976968</created>
-      <option name="number" value="00191" />
-      <option name="presentableId" value="LOCAL-00191" />
+    <task id="LOCAL-00242" summary="update dhc user">
+      <created>1532159636105</created>
+      <option name="number" value="00242" />
+      <option name="presentableId" value="LOCAL-00242" />
       <option name="project" value="LOCAL" />
-      <updated>1532148976968</updated>
+      <updated>1532159636105</updated>
     </task>
-    <task id="LOCAL-00192" summary="update dhc user">
-      <created>1532149066138</created>
-      <option name="number" value="00192" />
-      <option name="presentableId" value="LOCAL-00192" />
+    <task id="LOCAL-00243" summary="update dhc user">
+      <created>1532159759180</created>
+      <option name="number" value="00243" />
+      <option name="presentableId" value="LOCAL-00243" />
       <option name="project" value="LOCAL" />
-      <updated>1532149066138</updated>
+      <updated>1532159759180</updated>
     </task>
-    <task id="LOCAL-00193" summary="update dhc user">
-      <created>1532149217065</created>
-      <option name="number" value="00193" />
-      <option name="presentableId" value="LOCAL-00193" />
+    <task id="LOCAL-00244" summary="update dhc user">
+      <created>1532159920668</created>
+      <option name="number" value="00244" />
+      <option name="presentableId" value="LOCAL-00244" />
       <option name="project" value="LOCAL" />
-      <updated>1532149217065</updated>
+      <updated>1532159920668</updated>
     </task>
-    <task id="LOCAL-00194" summary="update dhc user">
-      <created>1532149294002</created>
-      <option name="number" value="00194" />
-      <option name="presentableId" value="LOCAL-00194" />
+    <task id="LOCAL-00245" summary="update dhc user">
+      <created>1532159992039</created>
+      <option name="number" value="00245" />
+      <option name="presentableId" value="LOCAL-00245" />
       <option name="project" value="LOCAL" />
-      <updated>1532149294002</updated>
+      <updated>1532159992039</updated>
     </task>
-    <task id="LOCAL-00195" summary="update dhc user">
-      <created>1532149371580</created>
-      <option name="number" value="00195" />
-      <option name="presentableId" value="LOCAL-00195" />
+    <task id="LOCAL-00246" summary="update dhc user">
+      <created>1532160073916</created>
+      <option name="number" value="00246" />
+      <option name="presentableId" value="LOCAL-00246" />
       <option name="project" value="LOCAL" />
-      <updated>1532149371580</updated>
+      <updated>1532160073917</updated>
     </task>
-    <task id="LOCAL-00196" summary="update dhc user">
-      <created>1532150050328</created>
-      <option name="number" value="00196" />
-      <option name="presentableId" value="LOCAL-00196" />
+    <task id="LOCAL-00247" summary="update dhc user">
+      <created>1532160201265</created>
+      <option name="number" value="00247" />
+      <option name="presentableId" value="LOCAL-00247" />
       <option name="project" value="LOCAL" />
-      <updated>1532150050328</updated>
+      <updated>1532160201265</updated>
     </task>
-    <task id="LOCAL-00197" summary="update dhc user">
-      <created>1532154650440</created>
-      <option name="number" value="00197" />
-      <option name="presentableId" value="LOCAL-00197" />
+    <task id="LOCAL-00248" summary="update dhc user">
+      <created>1532160517787</created>
+      <option name="number" value="00248" />
+      <option name="presentableId" value="LOCAL-00248" />
       <option name="project" value="LOCAL" />
-      <updated>1532154650441</updated>
+      <updated>1532160517787</updated>
     </task>
-    <task id="LOCAL-00198" summary="update dhc user">
-      <created>1532154845537</created>
-      <option name="number" value="00198" />
-      <option name="presentableId" value="LOCAL-00198" />
+    <task id="LOCAL-00249" summary="update dhc user">
+      <created>1532160631085</created>
+      <option name="number" value="00249" />
+      <option name="presentableId" value="LOCAL-00249" />
       <option name="project" value="LOCAL" />
-      <updated>1532154845537</updated>
+      <updated>1532160631085</updated>
     </task>
-    <task id="LOCAL-00199" summary="update dhc user">
-      <created>1532154932662</created>
-      <option name="number" value="00199" />
-      <option name="presentableId" value="LOCAL-00199" />
+    <task id="LOCAL-00250" summary="update dhc user">
+      <created>1532160683209</created>
+      <option name="number" value="00250" />
+      <option name="presentableId" value="LOCAL-00250" />
       <option name="project" value="LOCAL" />
-      <updated>1532154932663</updated>
+      <updated>1532160683209</updated>
     </task>
-    <task id="LOCAL-00200" summary="update dhc user">
-      <created>1532155031275</created>
-      <option name="number" value="00200" />
-      <option name="presentableId" value="LOCAL-00200" />
+    <task id="LOCAL-00251" summary="update dhc user">
+      <created>1532160750507</created>
+      <option name="number" value="00251" />
+      <option name="presentableId" value="LOCAL-00251" />
       <option name="project" value="LOCAL" />
-      <updated>1532155031275</updated>
+      <updated>1532160750507</updated>
     </task>
-    <task id="LOCAL-00201" summary="update dhc user">
-      <created>1532155138582</created>
-      <option name="number" value="00201" />
-      <option name="presentableId" value="LOCAL-00201" />
+    <task id="LOCAL-00252" summary="update dhc user">
+      <created>1532160798828</created>
+      <option name="number" value="00252" />
+      <option name="presentableId" value="LOCAL-00252" />
       <option name="project" value="LOCAL" />
-      <updated>1532155138582</updated>
+      <updated>1532160798828</updated>
     </task>
-    <task id="LOCAL-00202" summary="update dhc user">
-      <created>1532155215350</created>
-      <option name="number" value="00202" />
-      <option name="presentableId" value="LOCAL-00202" />
+    <task id="LOCAL-00253" summary="update dhc user">
+      <created>1532160884805</created>
+      <option name="number" value="00253" />
+      <option name="presentableId" value="LOCAL-00253" />
       <option name="project" value="LOCAL" />
-      <updated>1532155215350</updated>
+      <updated>1532160884805</updated>
     </task>
-    <task id="LOCAL-00203" summary="update dhc user">
-      <created>1532155342456</created>
-      <option name="number" value="00203" />
-      <option name="presentableId" value="LOCAL-00203" />
+    <task id="LOCAL-00254" summary="update dhc user">
+      <created>1532160949093</created>
+      <option name="number" value="00254" />
+      <option name="presentableId" value="LOCAL-00254" />
       <option name="project" value="LOCAL" />
-      <updated>1532155342456</updated>
+      <updated>1532160949093</updated>
     </task>
-    <task id="LOCAL-00204" summary="update dhc user">
-      <created>1532155434981</created>
-      <option name="number" value="00204" />
-      <option name="presentableId" value="LOCAL-00204" />
+    <task id="LOCAL-00255" summary="update dhc user">
+      <created>1532160985019</created>
+      <option name="number" value="00255" />
+      <option name="presentableId" value="LOCAL-00255" />
       <option name="project" value="LOCAL" />
-      <updated>1532155434981</updated>
+      <updated>1532160985019</updated>
     </task>
-    <task id="LOCAL-00205" summary="update dhc user">
-      <created>1532155550240</created>
-      <option name="number" value="00205" />
-      <option name="presentableId" value="LOCAL-00205" />
+    <task id="LOCAL-00256" summary="update dhc user">
+      <created>1532161042747</created>
+      <option name="number" value="00256" />
+      <option name="presentableId" value="LOCAL-00256" />
       <option name="project" value="LOCAL" />
-      <updated>1532155550240</updated>
+      <updated>1532161042747</updated>
     </task>
-    <task id="LOCAL-00206" summary="update dhc user">
-      <created>1532155622590</created>
-      <option name="number" value="00206" />
-      <option name="presentableId" value="LOCAL-00206" />
+    <task id="LOCAL-00257" summary="update dhc user">
+      <created>1532161127602</created>
+      <option name="number" value="00257" />
+      <option name="presentableId" value="LOCAL-00257" />
       <option name="project" value="LOCAL" />
-      <updated>1532155622591</updated>
+      <updated>1532161127602</updated>
     </task>
-    <task id="LOCAL-00207" summary="update dhc user">
-      <created>1532155684174</created>
-      <option name="number" value="00207" />
-      <option name="presentableId" value="LOCAL-00207" />
+    <task id="LOCAL-00258" summary="update dhc user">
+      <created>1532161177197</created>
+      <option name="number" value="00258" />
+      <option name="presentableId" value="LOCAL-00258" />
       <option name="project" value="LOCAL" />
-      <updated>1532155684174</updated>
+      <updated>1532161177197</updated>
     </task>
-    <task id="LOCAL-00208" summary="update dhc user">
-      <created>1532155789378</created>
-      <option name="number" value="00208" />
-      <option name="presentableId" value="LOCAL-00208" />
+    <task id="LOCAL-00259" summary="update dhc user">
+      <created>1532161252635</created>
+      <option name="number" value="00259" />
+      <option name="presentableId" value="LOCAL-00259" />
       <option name="project" value="LOCAL" />
-      <updated>1532155789379</updated>
+      <updated>1532161252635</updated>
     </task>
-    <task id="LOCAL-00209" summary="update dhc user">
-      <created>1532155906230</created>
-      <option name="number" value="00209" />
-      <option name="presentableId" value="LOCAL-00209" />
+    <task id="LOCAL-00260" summary="update dhc user">
+      <created>1532161309246</created>
+      <option name="number" value="00260" />
+      <option name="presentableId" value="LOCAL-00260" />
       <option name="project" value="LOCAL" />
-      <updated>1532155906230</updated>
+      <updated>1532161309246</updated>
     </task>
-    <task id="LOCAL-00210" summary="update dhc user">
-      <created>1532155958592</created>
-      <option name="number" value="00210" />
-      <option name="presentableId" value="LOCAL-00210" />
+    <task id="LOCAL-00261" summary="update dhc user">
+      <created>1532161382986</created>
+      <option name="number" value="00261" />
+      <option name="presentableId" value="LOCAL-00261" />
       <option name="project" value="LOCAL" />
-      <updated>1532155958592</updated>
+      <updated>1532161382986</updated>
     </task>
-    <task id="LOCAL-00211" summary="update dhc user">
-      <created>1532156021942</created>
-      <option name="number" value="00211" />
-      <option name="presentableId" value="LOCAL-00211" />
+    <task id="LOCAL-00262" summary="update dhc user">
+      <created>1532161463505</created>
+      <option name="number" value="00262" />
+      <option name="presentableId" value="LOCAL-00262" />
       <option name="project" value="LOCAL" />
-      <updated>1532156021942</updated>
+      <updated>1532161463505</updated>
     </task>
-    <task id="LOCAL-00212" summary="update dhc user">
-      <created>1532156066951</created>
-      <option name="number" value="00212" />
-      <option name="presentableId" value="LOCAL-00212" />
+    <task id="LOCAL-00263" summary="update dhc user">
+      <created>1532161503703</created>
+      <option name="number" value="00263" />
+      <option name="presentableId" value="LOCAL-00263" />
       <option name="project" value="LOCAL" />
-      <updated>1532156066951</updated>
+      <updated>1532161503703</updated>
     </task>
-    <task id="LOCAL-00213" summary="update dhc user">
-      <created>1532156182160</created>
-      <option name="number" value="00213" />
-      <option name="presentableId" value="LOCAL-00213" />
+    <task id="LOCAL-00264" summary="update dhc user">
+      <created>1532161585647</created>
+      <option name="number" value="00264" />
+      <option name="presentableId" value="LOCAL-00264" />
       <option name="project" value="LOCAL" />
-      <updated>1532156182160</updated>
+      <updated>1532161585647</updated>
     </task>
-    <task id="LOCAL-00214" summary="update dhc user">
-      <created>1532156292913</created>
-      <option name="number" value="00214" />
-      <option name="presentableId" value="LOCAL-00214" />
+    <task id="LOCAL-00265" summary="update dhc user">
+      <created>1532161669056</created>
+      <option name="number" value="00265" />
+      <option name="presentableId" value="LOCAL-00265" />
       <option name="project" value="LOCAL" />
-      <updated>1532156292913</updated>
+      <updated>1532161669057</updated>
     </task>
-    <task id="LOCAL-00215" summary="update dhc user">
-      <created>1532156377567</created>
-      <option name="number" value="00215" />
-      <option name="presentableId" value="LOCAL-00215" />
+    <task id="LOCAL-00266" summary="update dhc user">
+      <created>1532161802623</created>
+      <option name="number" value="00266" />
+      <option name="presentableId" value="LOCAL-00266" />
       <option name="project" value="LOCAL" />
-      <updated>1532156377567</updated>
+      <updated>1532161802623</updated>
     </task>
-    <task id="LOCAL-00216" summary="update dhc user">
-      <created>1532156488375</created>
-      <option name="number" value="00216" />
-      <option name="presentableId" value="LOCAL-00216" />
+    <task id="LOCAL-00267" summary="update dhc user">
+      <created>1532161964400</created>
+      <option name="number" value="00267" />
+      <option name="presentableId" value="LOCAL-00267" />
       <option name="project" value="LOCAL" />
-      <updated>1532156488375</updated>
+      <updated>1532161964400</updated>
     </task>
-    <task id="LOCAL-00217" summary="update dhc user">
-      <created>1532157833292</created>
-      <option name="number" value="00217" />
-      <option name="presentableId" value="LOCAL-00217" />
+    <task id="LOCAL-00268" summary="update dhc user">
+      <created>1532162014811</created>
+      <option name="number" value="00268" />
+      <option name="presentableId" value="LOCAL-00268" />
       <option name="project" value="LOCAL" />
-      <updated>1532157833292</updated>
+      <updated>1532162014811</updated>
     </task>
-    <task id="LOCAL-00218" summary="update dhc user">
-      <created>1532157889855</created>
-      <option name="number" value="00218" />
-      <option name="presentableId" value="LOCAL-00218" />
+    <task id="LOCAL-00269" summary="update dhc user">
+      <created>1532162111613</created>
+      <option name="number" value="00269" />
+      <option name="presentableId" value="LOCAL-00269" />
       <option name="project" value="LOCAL" />
-      <updated>1532157889855</updated>
+      <updated>1532162111613</updated>
     </task>
-    <task id="LOCAL-00219" summary="update dhc user">
-      <created>1532157955406</created>
-      <option name="number" value="00219" />
-      <option name="presentableId" value="LOCAL-00219" />
+    <task id="LOCAL-00270" summary="update dhc user">
+      <created>1532162848559</created>
+      <option name="number" value="00270" />
+      <option name="presentableId" value="LOCAL-00270" />
       <option name="project" value="LOCAL" />
-      <updated>1532157955406</updated>
+      <updated>1532162848559</updated>
     </task>
-    <task id="LOCAL-00220" summary="update dhc user">
-      <created>1532158029495</created>
-      <option name="number" value="00220" />
-      <option name="presentableId" value="LOCAL-00220" />
+    <task id="LOCAL-00271" summary="update dhc user">
+      <created>1532163026235</created>
+      <option name="number" value="00271" />
+      <option name="presentableId" value="LOCAL-00271" />
       <option name="project" value="LOCAL" />
-      <updated>1532158029495</updated>
+      <updated>1532163026235</updated>
     </task>
-    <task id="LOCAL-00221" summary="update dhc user">
-      <created>1532158091135</created>
-      <option name="number" value="00221" />
-      <option name="presentableId" value="LOCAL-00221" />
+    <task id="LOCAL-00272" summary="update dhc user">
+      <created>1532163112118</created>
+      <option name="number" value="00272" />
+      <option name="presentableId" value="LOCAL-00272" />
       <option name="project" value="LOCAL" />
-      <updated>1532158091135</updated>
+      <updated>1532163112118</updated>
     </task>
-    <task id="LOCAL-00222" summary="update dhc user">
-      <created>1532158157097</created>
-      <option name="number" value="00222" />
-      <option name="presentableId" value="LOCAL-00222" />
+    <task id="LOCAL-00273" summary="update dhc user">
+      <created>1532163163839</created>
+      <option name="number" value="00273" />
+      <option name="presentableId" value="LOCAL-00273" />
       <option name="project" value="LOCAL" />
-      <updated>1532158157097</updated>
+      <updated>1532163163839</updated>
     </task>
-    <task id="LOCAL-00223" summary="update dhc user">
-      <created>1532158239150</created>
-      <option name="number" value="00223" />
-      <option name="presentableId" value="LOCAL-00223" />
+    <task id="LOCAL-00274" summary="update dhc user">
+      <created>1532163238900</created>
+      <option name="number" value="00274" />
+      <option name="presentableId" value="LOCAL-00274" />
       <option name="project" value="LOCAL" />
-      <updated>1532158239150</updated>
+      <updated>1532163238900</updated>
     </task>
-    <task id="LOCAL-00224" summary="update dhc user">
-      <created>1532158322370</created>
-      <option name="number" value="00224" />
-      <option name="presentableId" value="LOCAL-00224" />
+    <task id="LOCAL-00275" summary="update dhc user">
+      <created>1532163284185</created>
+      <option name="number" value="00275" />
+      <option name="presentableId" value="LOCAL-00275" />
       <option name="project" value="LOCAL" />
-      <updated>1532158322370</updated>
+      <updated>1532163284185</updated>
     </task>
-    <option name="localTasksCounter" value="225" />
+    <option name="localTasksCounter" value="276" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182320000" />
+    <option name="totallyTimeSpent" value="187083000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -673,7 +686,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1069079" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1098,32 +1111,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webfonts/rác.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="326" column="62" lean-forward="true" selection-start-line="326" selection-start-column="62" selection-end-line="326" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/promotion.module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/map.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="54" column="54" lean-forward="false" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
-          <folding>
-            <element signature="e#3278#3685#0" expanded="false" />
-            <element signature="e#3748#3933#0" expanded="false" />
-            <element signature="e#3990#4594#0" expanded="false" />
-            <element signature="e#4638#4937#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1143,11 +1135,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webfonts/rác.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="0" selection-start-column="1" selection-end-line="29" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="263" column="5" lean-forward="true" selection-start-line="263" selection-start-column="5" selection-end-line="263" selection-end-column="5" />
+        <state relative-caret-position="189">
+          <caret line="270" column="28" lean-forward="true" selection-start-line="270" selection-start-column="28" selection-end-line="270" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/map.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+          <folding>
+            <element signature="e#3157#3564#0" expanded="false" />
+            <element signature="e#3627#3812#0" expanded="false" />
+            <element signature="e#3869#4473#0" expanded="false" />
+            <element signature="e#4517#4816#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
