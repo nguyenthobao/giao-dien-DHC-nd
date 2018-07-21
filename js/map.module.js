@@ -1,4 +1,24 @@
 $(document).ready(function () {
+    var isMobile = {
+        Android: function () {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function () {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function () {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function () {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function () {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function () {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
     urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     var topLeftRealX = 0;
@@ -13,16 +33,20 @@ $(document).ready(function () {
             //     "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
             // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
             // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
-            x = parseFloat(getXPixcelValue(15.967649, 108.019897) / (9798 / $('#mapdhc')[0].width));
-            y = parseFloat(getYPixcelValue(15.967649, 108.019897) / (7046 / $('#mapdhc')[0].height));
-            if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
-                $('#marker').hide();
-            } else {
-                $('#marker').css("margin-top", (y - 15) + "px");
-                $('#marker').css("margin-left", x + "px");
-                $('#marker').show();
+            if (isMobile.any() !== null) {
+                x = parseFloat(getXPixcelValue(15.967649, 108.019897) / (9798 / $('#mapdhc')[0].width));
+                y = parseFloat(getYPixcelValue(15.967649, 108.019897) / (7046 / $('#mapdhc')[0].height));
+                if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
+                    $('#marker').hide();
+                } else {
+                    $('#marker').css("margin-top", (y - 15) + "px");
+                    $('#marker').css("margin-left", x + "px");
+                    $('#marker').show();
+                }
+            }else{
+                alert( $('#mapdhc')[0].width + '....' + $('#mapdhc')[0].height);
             }
-            // alert(x + '......' + y + ',' + $('#mapdhc')[0].width + '....' + $('#mapdhc')[0].height);
+
         };
 
         var tryAPIGeolocation = function () {
@@ -69,26 +93,7 @@ $(document).ready(function () {
 
     });
     $('body').on('click', '#download', function () {
-        var isMobile = {
-            Android: function () {
-                return navigator.userAgent.match(/Android/i);
-            },
-            BlackBerry: function () {
-                return navigator.userAgent.match(/BlackBerry/i);
-            },
-            iOS: function () {
-                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-            },
-            Opera: function () {
-                return navigator.userAgent.match(/Opera Mini/i);
-            },
-            Windows: function () {
-                return navigator.userAgent.match(/IEMobile/i);
-            },
-            any: function () {
-                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-            }
-        };
+
         if (isMobile.any() !== null) {
             if ((isMobile.any()[0] == 'iPhone' || isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != '') {
                 window.location.href = urlIOs;
