@@ -266,7 +266,8 @@ main input:checked + label {
         padding-top:110px;
         padding-left: 135px;
         height: 1800px;
-        transform: scaleX(10.0);
+        width: 3000px;
+        /*transform: scaleX(10.0);*/
     }
     .img-news {
         margin-left: -15px;
