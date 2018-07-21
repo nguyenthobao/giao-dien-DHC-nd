@@ -51,8 +51,8 @@ $(document).ready(function () {
                if (x >$('#mapdhc')[0].getBoundingClientRect().width || x < 0 || y > $('#mapdhc')[0].getBoundingClientRect().height || y < 0) {
                    // $('#marker').hide();
                 } else {
-                    $('#marker').css("margin-top", (7*y/12 - 15) + "px");
-                    $('#marker').css("margin-left", (x/3 +80)+ "px");
+                    $('#marker').css("margin-top", (5.3*y/12 - 15) + "px");
+                    $('#marker').css("margin-left", (x/3 +100)+ "px");
                     $('#marker').show();
                      document.getElementById('marker').scrollIntoView();
                 }
