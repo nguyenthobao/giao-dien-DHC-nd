@@ -264,7 +264,7 @@ main input:checked + label {
     }
     #parentImage{
         transform: scale(12,4);
-        margin-top:1000px;
+        margin-top:500px;
     }
     #mapdhc{
         padding-top:300px;
