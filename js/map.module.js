@@ -55,8 +55,8 @@ $(document).ready(function () {
                     x/=1.55;y/=1.6;
                     $('#marker').css("margin-top", (y-15) + "px");
                     $('#marker').css("margin-left", x+ "px");
-                    $('#marker').show();alert(1);
-                   alert(window.scroll(0,findPos(document.getElementById("marker"))));
+                    $('#marker').show();
+                   alert(document.getElementById('marker').scrollIntoView());
                     document.getElementById('marker').scrollIntoView();
                 }
             }
