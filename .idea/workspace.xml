@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a371e09c-094e-4ee6-a00c-907fd1dc9577" name="Default" comment="">
+    <list default="true" id="a371e09c-094e-4ee6-a00c-907fd1dc9577" name="Default" comment="update dhc user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,40 +17,56 @@
       <file leaf-file-name="home.module.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/home.module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding>
-                <element signature="e#73#1318#0" expanded="false" />
-                <element signature="e#1363#2160#0" expanded="false" />
-                <element signature="e#2217#4407#0" expanded="false" />
-                <element signature="e#4472#5384#0" expanded="false" />
-                <element signature="e#5443#6828#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="news.module.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/news.module.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="promotion.module.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/promotion.module.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="70">
+              <caret line="263" column="5" lean-forward="true" selection-start-line="263" selection-start-column="5" selection-end-line="263" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="104" column="30" lean-forward="false" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
+            <state relative-caret-position="323">
+              <caret line="106" column="22" lean-forward="true" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
               <folding>
+                <element signature="n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <marker date="1532134979194" expanded="true" signature="6080:6100" ph="..." />
               </folding>
             </state>
           </provider>
@@ -59,9 +75,13 @@
       <file leaf-file-name="map.module.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/map.module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="272">
+              <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+              <folding>
+                <element signature="e#2271#2875#0" expanded="false" />
+                <element signature="e#2919#3218#0" expanded="false" />
+                <element signature="e#3307#4473#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/jquery-confirm-v3.3.0/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -79,9 +99,21 @@
       <file leaf-file-name="rác.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webfonts/rác.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="356" column="83" lean-forward="false" selection-start-line="356" selection-start-column="83" selection-end-line="356" selection-end-column="83" />
+            <state relative-caret-position="1870">
+              <caret line="110" column="39" lean-forward="false" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="39" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.zoom.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/jquery.zoom.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="935">
+              <caret line="59" column="55" lean-forward="false" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,10 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>font-face</find>
-      <find>/</find>
-      <find>col-</find>
-      <find>label</find>
       <find>formHtml</find>
       <find>addPoint</find>
       <find>btn-upload</find>
@@ -116,10 +144,21 @@
       <find>.img-news</find>
       <find>sendverify</find>
       <find>book-seat</find>
-      <find>img-responsive</find>
       <find>'input'</find>
+      <find>vn.anvui.hotspringpark</find>
+      <find>img-responsive</find>
+      <find>point-marker</find>
+      <find>topLeftRealY</find>
+      <find>topLeftRealX</find>
+      <find>getOriginal1</find>
+      <find>scaleX</find>
       <find>getXPixcelValue</find>
+      <find>grab</find>
+      <find>media</find>
+      <find>430</find>
+      <find>css</find>
       <find>content2</find>
+      <find>scale</find>
     </findStrings>
     <replaceStrings>
       <replace>formBodyHtml</replace>
@@ -134,14 +173,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/js/core.js" />
-        <option value="$PROJECT_DIR$/js/promotion.module.js" />
-        <option value="$PROJECT_DIR$/js/news.module.js" />
-        <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/js/home.module.js" />
         <option value="$PROJECT_DIR$/webfonts/rác.php" />
+        <option value="$PROJECT_DIR$/jquery-confirm-v3.3.0/.gitignore" />
+        <option value="$PROJECT_DIR$/js/jquery.zoom.js" />
         <option value="$PROJECT_DIR$/webfonts/rác.java" />
         <option value="$PROJECT_DIR$/js/map.module.js" />
+        <option value="$PROJECT_DIR$/js/news.module.js" />
+        <option value="$PROJECT_DIR$/js/home.module.js" />
+        <option value="$PROJECT_DIR$/js/promotion.module.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/style.css" />
       </list>
     </option>
   </component>
@@ -175,6 +216,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,24 +227,12 @@
             <path>
               <item name="giao-dien-DHC-nd" type="b2602c69:ProjectViewProjectNode" />
               <item name="giao-dien-DHC-nd" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="giao-dien-DHC-nd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="giao-dien-DHC-nd" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="images" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="giao-dien-DHC-nd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="giao-dien-DHC-nd" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="jquery-confirm-v3.3.0" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="giao-dien-DHC-nd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="giao-dien-DHC-nd" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="jquery-confirm-v3.3.0" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name=".github" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="giao-dien-DHC-nd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="giao-dien-DHC-nd" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="jquery-confirm-v3.3.0" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="giao-dien-DHC-nd" type="b2602c69:ProjectViewProjectNode" />
@@ -228,13 +258,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../waterbus" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../anvui-admin" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -292,223 +321,361 @@
       <workItem from="1526882137258" duration="983000" />
       <workItem from="1526887685412" duration="1488000" />
       <workItem from="1526972166844" duration="1898000" />
-      <workItem from="1531982412303" duration="9903000" />
+      <workItem from="1531982412303" duration="11231000" />
+      <workItem from="1532039879615" duration="3695000" />
+      <workItem from="1532047898964" duration="478000" />
+      <workItem from="1532051903922" duration="25938000" />
+      <workItem from="1532128036612" duration="6860000" />
+      <workItem from="1532140440193" duration="2218000" />
     </task>
-    <task id="LOCAL-00001" summary="add api to test">
-      <created>1525796925740</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
+    <task id="LOCAL-00111" summary="update dhc user">
+      <created>1532131024294</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
       <option name="project" value="LOCAL" />
-      <updated>1525796925740</updated>
+      <updated>1532131024294</updated>
     </task>
-    <task id="LOCAL-00002" summary="xong menu">
-      <created>1525845989316</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
+    <task id="LOCAL-00112" summary="update dhc user">
+      <created>1532131119628</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
       <option name="project" value="LOCAL" />
-      <updated>1525845989316</updated>
+      <updated>1532131119628</updated>
     </task>
-    <task id="LOCAL-00003" summary="add api dhc">
-      <created>1525943573100</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
+    <task id="LOCAL-00113" summary="update dhc user">
+      <created>1532131199726</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
       <option name="project" value="LOCAL" />
-      <updated>1525943573100</updated>
+      <updated>1532131199726</updated>
     </task>
-    <task id="LOCAL-00004" summary="add module map api">
-      <created>1525950464775</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
+    <task id="LOCAL-00114" summary="update dhc user">
+      <created>1532131341786</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
       <option name="project" value="LOCAL" />
-      <updated>1525950464775</updated>
+      <updated>1532131341786</updated>
     </task>
-    <task id="LOCAL-00005" summary="fix color menu">
-      <created>1525951398407</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
+    <task id="LOCAL-00115" summary="update dhc user">
+      <created>1532131440225</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
       <option name="project" value="LOCAL" />
-      <updated>1525951398407</updated>
+      <updated>1532131440225</updated>
     </task>
-    <task id="LOCAL-00006" summary="add delete confirm">
-      <created>1526001274247</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
+    <task id="LOCAL-00116" summary="update dhc user">
+      <created>1532131684576</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
       <option name="project" value="LOCAL" />
-      <updated>1526001274247</updated>
+      <updated>1532131684576</updated>
     </task>
-    <task id="LOCAL-00007" summary="view detail point">
-      <created>1526030022949</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
+    <task id="LOCAL-00117" summary="update dhc user">
+      <created>1532131874565</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
       <option name="project" value="LOCAL" />
-      <updated>1526030022949</updated>
+      <updated>1532131874565</updated>
     </task>
-    <task id="LOCAL-00008" summary="make build point form">
-      <created>1526035337679</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
+    <task id="LOCAL-00118" summary="update dhc user">
+      <created>1532132054797</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
       <option name="project" value="LOCAL" />
-      <updated>1526035337679</updated>
+      <updated>1532132054797</updated>
     </task>
-    <task id="LOCAL-00009" summary="add button remove image">
-      <created>1526038559148</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
+    <task id="LOCAL-00119" summary="update dhc user">
+      <created>1532132174772</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
       <option name="project" value="LOCAL" />
-      <updated>1526038559148</updated>
+      <updated>1532132174772</updated>
     </task>
-    <task id="LOCAL-00010" summary="edit point">
-      <created>1526100779448</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
+    <task id="LOCAL-00120" summary="update dhc user">
+      <created>1532132296977</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
       <option name="project" value="LOCAL" />
-      <updated>1526100779448</updated>
+      <updated>1532132296977</updated>
     </task>
-    <task id="LOCAL-00011" summary="done news">
-      <created>1526107640450</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
+    <task id="LOCAL-00121" summary="update dhc user">
+      <created>1532132614480</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
       <option name="project" value="LOCAL" />
-      <updated>1526107640450</updated>
+      <updated>1532132614480</updated>
     </task>
-    <task id="LOCAL-00012" summary="remove style">
-      <created>1526144963610</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
+    <task id="LOCAL-00122" summary="update dhc user">
+      <created>1532132656419</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
       <option name="project" value="LOCAL" />
-      <updated>1526144963610</updated>
+      <updated>1532132656419</updated>
     </task>
-    <task id="LOCAL-00013" summary="add modal">
-      <created>1526290002249</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
+    <task id="LOCAL-00123" summary="update dhc user">
+      <created>1532132738806</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
       <option name="project" value="LOCAL" />
-      <updated>1526290002249</updated>
+      <updated>1532132738806</updated>
     </task>
-    <task id="LOCAL-00014" summary="view point detail in home">
-      <created>1526297541325</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
+    <task id="LOCAL-00124" summary="update dhc user">
+      <created>1532132926996</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
       <option name="project" value="LOCAL" />
-      <updated>1526297541325</updated>
+      <updated>1532132926996</updated>
     </task>
-    <task id="LOCAL-00015" summary="done web user">
-      <created>1526309409001</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
+    <task id="LOCAL-00125" summary="update dhc user">
+      <created>1532133075609</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
       <option name="project" value="LOCAL" />
-      <updated>1526309409001</updated>
+      <updated>1532133075609</updated>
     </task>
-    <task id="LOCAL-00016" summary="fix news css">
-      <created>1526463186759</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
+    <task id="LOCAL-00126" summary="update dhc user">
+      <created>1532133206624</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
       <option name="project" value="LOCAL" />
-      <updated>1526463186759</updated>
+      <updated>1532133206624</updated>
     </task>
-    <task id="LOCAL-00017" summary="fix css">
-      <created>1526888079937</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
+    <task id="LOCAL-00127" summary="update dhc user">
+      <created>1532133279034</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
       <option name="project" value="LOCAL" />
-      <updated>1526888079937</updated>
+      <updated>1532133279034</updated>
     </task>
-    <task id="LOCAL-00018" summary="redirect app map">
-      <created>1526888417992</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
+    <task id="LOCAL-00128" summary="update dhc user">
+      <created>1532133366075</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
       <option name="project" value="LOCAL" />
-      <updated>1526888417992</updated>
+      <updated>1532133366075</updated>
     </task>
-    <task id="LOCAL-00019" summary="redirect app map">
-      <created>1526888827747</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
+    <task id="LOCAL-00129" summary="update dhc user">
+      <created>1532133420204</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
       <option name="project" value="LOCAL" />
-      <updated>1526888827747</updated>
+      <updated>1532133420204</updated>
     </task>
-    <task id="LOCAL-00020" summary="redirect app map">
-      <created>1526888931992</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
+    <task id="LOCAL-00130" summary="update dhc user">
+      <created>1532133463938</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
       <option name="project" value="LOCAL" />
-      <updated>1526888931992</updated>
+      <updated>1532133463938</updated>
     </task>
-    <task id="LOCAL-00021" summary="redirect app map android">
-      <created>1526889128137</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
+    <task id="LOCAL-00131" summary="update dhc user">
+      <created>1532133519445</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
       <option name="project" value="LOCAL" />
-      <updated>1526889128137</updated>
+      <updated>1532133519445</updated>
     </task>
-    <task id="LOCAL-00022" summary="update dhc user">
-      <created>1526973709631</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
+    <task id="LOCAL-00132" summary="update dhc user">
+      <created>1532133578832</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
       <option name="project" value="LOCAL" />
-      <updated>1526973709631</updated>
+      <updated>1532133578832</updated>
     </task>
-    <task id="LOCAL-00023" summary="update dhc user">
-      <created>1531982935472</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
+    <task id="LOCAL-00133" summary="update dhc user">
+      <created>1532133631863</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
       <option name="project" value="LOCAL" />
-      <updated>1531982935472</updated>
+      <updated>1532133631863</updated>
     </task>
-    <task id="LOCAL-00024" summary="update dhc user">
-      <created>1531983007125</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
+    <task id="LOCAL-00134" summary="update dhc user">
+      <created>1532133704832</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
       <option name="project" value="LOCAL" />
-      <updated>1531983007125</updated>
+      <updated>1532133704832</updated>
     </task>
-    <task id="LOCAL-00025" summary="update dhc user">
-      <created>1531985236957</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
+    <task id="LOCAL-00135" summary="update dhc user">
+      <created>1532133758134</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
       <option name="project" value="LOCAL" />
-      <updated>1531985236957</updated>
+      <updated>1532133758134</updated>
     </task>
-    <task id="LOCAL-00026" summary="update dhc user">
-      <created>1531986808692</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
+    <task id="LOCAL-00136" summary="update dhc user">
+      <created>1532133827131</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
       <option name="project" value="LOCAL" />
-      <updated>1531986808692</updated>
+      <updated>1532133827131</updated>
     </task>
-    <task id="LOCAL-00027" summary="update dhc user">
-      <created>1531987092864</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
+    <task id="LOCAL-00137" summary="update dhc user">
+      <created>1532133882027</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
       <option name="project" value="LOCAL" />
-      <updated>1531987092864</updated>
+      <updated>1532133882027</updated>
     </task>
-    <task id="LOCAL-00028" summary="update dhc user">
-      <created>1531988792154</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
+    <task id="LOCAL-00138" summary="update dhc user">
+      <created>1532133961984</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
       <option name="project" value="LOCAL" />
-      <updated>1531988792154</updated>
+      <updated>1532133961984</updated>
     </task>
-    <task id="LOCAL-00029" summary="update dhc user">
-      <created>1531996743695</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
+    <task id="LOCAL-00139" summary="update dhc user">
+      <created>1532134016803</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
       <option name="project" value="LOCAL" />
-      <updated>1531996743695</updated>
+      <updated>1532134016803</updated>
     </task>
-    <task id="LOCAL-00030" summary="update dhc user">
-      <created>1531997811943</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
+    <task id="LOCAL-00140" summary="update dhc user">
+      <created>1532134058625</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
       <option name="project" value="LOCAL" />
-      <updated>1531997811943</updated>
+      <updated>1532134058625</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00141" summary="update dhc user">
+      <created>1532134119006</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1532134119006</updated>
+    </task>
+    <task id="LOCAL-00142" summary="update dhc user">
+      <created>1532134168440</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1532134168440</updated>
+    </task>
+    <task id="LOCAL-00143" summary="update dhc user">
+      <created>1532134262293</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1532134262293</updated>
+    </task>
+    <task id="LOCAL-00144" summary="update dhc user">
+      <created>1532134335889</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1532134335889</updated>
+    </task>
+    <task id="LOCAL-00145" summary="update dhc user">
+      <created>1532134625953</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1532134625953</updated>
+    </task>
+    <task id="LOCAL-00146" summary="update dhc user">
+      <created>1532134681321</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1532134681321</updated>
+    </task>
+    <task id="LOCAL-00147" summary="update dhc user">
+      <created>1532134717105</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1532134717105</updated>
+    </task>
+    <task id="LOCAL-00148" summary="update dhc user">
+      <created>1532134771494</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1532134771494</updated>
+    </task>
+    <task id="LOCAL-00149" summary="update dhc user">
+      <created>1532134796078</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1532134796078</updated>
+    </task>
+    <task id="LOCAL-00150" summary="update dhc user">
+      <created>1532140631026</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1532140631027</updated>
+    </task>
+    <task id="LOCAL-00151" summary="update dhc user">
+      <created>1532140697620</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1532140697620</updated>
+    </task>
+    <task id="LOCAL-00152" summary="update dhc user">
+      <created>1532141731354</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1532141731354</updated>
+    </task>
+    <task id="LOCAL-00153" summary="update dhc user">
+      <created>1532142045694</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1532142045694</updated>
+    </task>
+    <task id="LOCAL-00154" summary="update dhc user">
+      <created>1532142130749</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1532142130749</updated>
+    </task>
+    <task id="LOCAL-00155" summary="update dhc user">
+      <created>1532142275288</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1532142275288</updated>
+    </task>
+    <task id="LOCAL-00156" summary="update dhc user">
+      <created>1532142367689</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1532142367689</updated>
+    </task>
+    <task id="LOCAL-00157" summary="update dhc user">
+      <created>1532142442832</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1532142442832</updated>
+    </task>
+    <task id="LOCAL-00158" summary="update dhc user">
+      <created>1532142507368</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1532142507368</updated>
+    </task>
+    <task id="LOCAL-00159" summary="update dhc user">
+      <created>1532142583398</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1532142583398</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131571000" />
+    <option name="totallyTimeSpent" value="172088000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -523,24 +690,24 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24508321" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26399395" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1069079" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -580,20 +747,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2482">
-          <caret line="226" column="37" lean-forward="false" selection-start-line="226" selection-start-column="37" selection-end-line="226" selection-end-column="37" />
-          <folding>
-            <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/map.module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1751">
@@ -621,11 +774,13 @@
         <state relative-caret-position="3995">
           <caret line="235" column="0" lean-forward="false" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
           <folding>
+            <element signature="n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1532134979194" expanded="true" signature="6080:6100" ph="..." />
           </folding>
         </state>
       </provider>
@@ -651,11 +806,13 @@
         <state relative-caret-position="3995">
           <caret line="235" column="0" lean-forward="false" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
           <folding>
+            <element signature="n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1532134979194" expanded="true" signature="6080:6100" ph="..." />
           </folding>
         </state>
       </provider>
@@ -681,11 +838,13 @@
         <state relative-caret-position="255">
           <caret line="15" column="77" lean-forward="false" selection-start-line="15" selection-start-column="77" selection-end-line="15" selection-end-column="77" />
           <folding>
+            <element signature="n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1532134979194" expanded="true" signature="6080:6100" ph="..." />
           </folding>
         </state>
       </provider>
@@ -711,11 +870,13 @@
         <state relative-caret-position="255">
           <caret line="15" column="77" lean-forward="false" selection-start-line="15" selection-start-column="77" selection-end-line="15" selection-end-column="77" />
           <folding>
+            <element signature="n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1532134979194" expanded="true" signature="6080:6100" ph="..." />
           </folding>
         </state>
       </provider>
@@ -741,11 +902,13 @@
         <state relative-caret-position="2635">
           <caret line="155" column="94" lean-forward="false" selection-start-line="155" selection-start-column="48" selection-end-line="155" selection-end-column="94" />
           <folding>
+            <element signature="n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1532134979194" expanded="true" signature="6080:6100" ph="..." />
           </folding>
         </state>
       </provider>
@@ -756,11 +919,13 @@
         <state relative-caret-position="2635">
           <caret line="155" column="94" lean-forward="true" selection-start-line="155" selection-start-column="48" selection-end-line="155" selection-end-column="94" />
           <folding>
+            <element signature="n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1532134979194" expanded="true" signature="6080:6100" ph="..." />
           </folding>
         </state>
       </provider>
@@ -771,11 +936,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1532134979194" expanded="true" signature="6080:6100" ph="..." />
           </folding>
         </state>
       </provider>
@@ -785,11 +952,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1532134979194" expanded="true" signature="6080:6100" ph="..." />
           </folding>
         </state>
       </provider>
@@ -799,11 +968,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1532134979194" expanded="true" signature="6080:6100" ph="..." />
           </folding>
         </state>
       </provider>
@@ -813,11 +984,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1532134979194" expanded="true" signature="6080:6100" ph="..." />
           </folding>
         </state>
       </provider>
@@ -827,11 +1000,13 @@
         <state relative-caret-position="272">
           <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
           <folding>
+            <element signature="n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1532134979194" expanded="true" signature="6080:6100" ph="..." />
           </folding>
         </state>
       </provider>
@@ -848,11 +1023,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1532134979194" expanded="true" signature="6080:6100" ph="..." />
           </folding>
         </state>
       </provider>
@@ -890,32 +1067,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/promotion.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="107" lean-forward="false" selection-start-line="16" selection-start-column="107" selection-end-line="16" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/news.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32198">
           <caret line="1898" column="15" lean-forward="false" selection-start-line="1898" selection-start-column="11" selection-end-line="1898" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -924,69 +1079,95 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="306">
             <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webfonts/rác.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20519">
-          <caret line="1263" column="0" lean-forward="false" selection-start-line="1263" selection-start-column="0" selection-end-line="1263" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/home.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding>
-            <element signature="e#73#1318#0" expanded="false" />
-            <element signature="e#1363#2160#0" expanded="false" />
-            <element signature="e#2217#4407#0" expanded="false" />
-            <element signature="e#4472#5384#0" expanded="false" />
-            <element signature="e#5443#6828#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/webfonts/rác.php" />
     <entry file="file://$PROJECT_DIR$/webfonts/rác.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="356" column="83" lean-forward="false" selection-start-line="356" selection-start-column="83" selection-end-line="356" selection-end-column="83" />
+        <state relative-caret-position="1870">
+          <caret line="110" column="39" lean-forward="false" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.zoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="59" column="55" lean-forward="false" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jquery-confirm-v3.3.0/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/news.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/promotion.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/map.module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        <state relative-caret-position="272">
+          <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding>
+            <element signature="e#2271#2875#0" expanded="false" />
+            <element signature="e#2919#3218#0" expanded="false" />
+            <element signature="e#3307#4473#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/home.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="104" column="30" lean-forward="false" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
+        <state relative-caret-position="323">
+          <caret line="106" column="22" lean-forward="true" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
           <folding>
+            <element signature="n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#section#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#3;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1532134979194" expanded="true" signature="6080:6100" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="263" column="5" lean-forward="true" selection-start-line="263" selection-start-column="5" selection-end-line="263" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
