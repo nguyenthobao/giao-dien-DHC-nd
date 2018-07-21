@@ -265,7 +265,6 @@ main input:checked + label {
     #parentImage{
         /*transform: scale(3,3);*/
         /*margin-top:0px;*/
-        overflow: hidden;
         position: absolute;
         width: 200% !important;
     }
