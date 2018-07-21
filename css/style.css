@@ -263,7 +263,7 @@ main input:checked + label {
         display: block !important;
     }
     #parentImage{
-        transform: scale(15,8.63);
+        transform: scale(8,5.7554);
     }
     #mapdhc{
         padding-top:300px;
