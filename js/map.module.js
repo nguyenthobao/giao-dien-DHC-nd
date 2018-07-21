@@ -56,7 +56,7 @@ $(document).ready(function () {
                     $('#marker').css("margin-top", (y-15) + "px");
                     $('#marker').css("margin-left", x+ "px");
                     $('#marker').show();
-                       document.getElementById('marker').scrollIntoView();
+                       document.getElementById('marker').focus();
                 }
             }
 
