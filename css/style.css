@@ -269,7 +269,7 @@ main input:checked + label {
     #mapdhc{
         padding-top:150px;
         padding-left: 150px;
-        transform: scale(5,5);
+        transform: scale(2,2);
         /*height: 800px;*/
         /*width: 2000px;*/
     }
