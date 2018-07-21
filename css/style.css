@@ -284,8 +284,8 @@ main input:checked + label {
     #download {
         border-radius: 8px;
         color: white;
-        margin-top: 700px;
-        margin-left: 0px;
+        margin-top: 715px;
+        margin-left: -3px;
         padding-left: -5px;
         height: 100px;
         width: 100%;

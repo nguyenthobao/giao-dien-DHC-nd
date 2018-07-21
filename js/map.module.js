@@ -45,6 +45,7 @@ $(document).ready(function () {
                     document.getElementById('marker').scrollIntoView();
                 }
             }else{
+                alert($('#mapdhc')[0].getBoundingClientRect().width+'..'+$('#mapdhc')[0].getBoundingClientRect().height);
                 x = parseFloat(getXPixcelValue(15.967649, 108.019897) / (9798 / $('#mapdhc')[0].getBoundingClientRect().width));
                 y = parseFloat(getYPixcelValue(15.967649, 108.019897) / (7046 / $('#mapdhc')[0].getBoundingClientRect().height));
                if (x >$('#mapdhc')[0].getBoundingClientRect().width || x < 0 || y > $('#mapdhc')[0].getBoundingClientRect().height || y < 0) {
