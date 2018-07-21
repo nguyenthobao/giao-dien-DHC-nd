@@ -48,12 +48,11 @@ $(document).ready(function () {
             }else{
                 x = parseFloat(getXPixcelValue(15.967649, 108.019897) / (9798 / $('#mapdhc')[0].getBoundingClientRect().width));
                 y = parseFloat(getYPixcelValue(15.967649, 108.019897) / (7046 / $('#mapdhc')[0].getBoundingClientRect().height));
-                alert(x+'...'+y);
-                if (x >$('#mapdhc')[0].getBoundingClientRect().width || x < 0 || y > $('#mapdhc')[0].getBoundingClientRect().height || y < 0) {
+               if (x >$('#mapdhc')[0].getBoundingClientRect().width || x < 0 || y > $('#mapdhc')[0].getBoundingClientRect().height || y < 0) {
                    // $('#marker').hide();
                 } else {
-                    $('#marker').css("margin-top", (5*y/12 - 15) + "px");
-                    $('#marker').css("margin-left", (x/3 +50)+ "px");
+                    $('#marker').css("margin-top", (7*y/12 - 15) + "px");
+                    $('#marker').css("margin-left", (x/3 +80)+ "px");
                     $('#marker').show();
                      document.getElementById('marker').scrollIntoView();
                 }
