@@ -265,15 +265,14 @@ main input:checked + label {
     #parentImage{
         /*transform: scale(3,3);*/
         /*margin-top:0px;*/
-        position: absolute;
+        position: relative;
         width: 200% !important;
-        left: -200px;
-        right: 200px;
     }
     #mapdhc{
         /*padding-top:150px;*/
         /*padding-left: 150px;*/
         /*transform: scale(2,2);*/
+        position: relative;
         height: 800px;
         width: 2000px;
     }
