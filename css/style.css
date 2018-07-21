@@ -283,11 +283,11 @@ main input:checked + label {
     #download {
         border-radius: 8px;
         color: white;
-        margin-top: 900px;
+        margin-top: 1600px;
         margin-left: 0px;
         padding-left: -5px;
-        height: 35px;
-        width: 15%;
+        height: 100px;
+        width: 100%;
         border: none;
         background-color: hsl(0, 100%, 10%);
     }
