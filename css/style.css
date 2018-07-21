@@ -266,11 +266,11 @@ main input:checked + label {
         /*transform: scale(8,5.7554);*/
     }
     #mapdhc{
-        padding-top:200px;
+        margin-top:200px;
         padding-left:120px;
         height: 100px;
         width: 500px;
-        transform: scale(5,5);
+        transform: scale(5,3);
     }
     .img-news {
         margin-left: -15px;
