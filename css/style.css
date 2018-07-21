@@ -267,6 +267,8 @@ main input:checked + label {
         /*margin-top:0px;*/
         position: absolute;
         width: 200% !important;
+        left: -200px;
+        right: -200px;
     }
     #mapdhc{
         /*padding-top:150px;*/
