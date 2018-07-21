@@ -263,12 +263,12 @@ main input:checked + label {
         display: block !important;
     }
     #parentImage{
-        transform: scale(12,3.5);
+        transform: scale(12,4);
     }
     #mapdhc{
         padding-top:250px;
         padding-left: 135px;
-        height: 700px;
+        height: 1500px;
         width: 2000px;
     }
     .img-news {
