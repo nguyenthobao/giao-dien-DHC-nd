@@ -266,9 +266,9 @@ main input:checked + label {
         /*transform: scale(8,5.7554);*/
     }
     #mapdhc{
-        padding-top:300px;
-        padding-left:135px;
-        height: 500px;
+        padding-top:0px;
+        padding-left:120px;
+        height: 200px;
         width: 500px;
         transform: scale(5,5);
     }
