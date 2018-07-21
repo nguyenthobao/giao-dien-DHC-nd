@@ -268,8 +268,7 @@ main input:checked + label {
     #mapdhc{
         padding-top:300px;
         padding-left:135px;
-        height: 100%;
-        width: 100%;
+        transform: scale(7.9,5.75);
     }
     .img-news {
         margin-left: -15px;
