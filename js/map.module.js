@@ -52,7 +52,7 @@ $(document).ready(function () {
                 if (x >$('#mapdhc')[0].getBoundingClientRect().width || x < 0 || y > $('#mapdhc')[0].getBoundingClientRect().height || y < 0) {
                    // $('#marker').hide();
                 } else {
-                    x/=2;y/=2;
+                    x/=1.8;y/=1.8;
                     $('#marker').css("margin-top", (y - 15) + "px");
                     $('#marker').css("margin-left", (x)+ "px");
                     $('#marker').show();
