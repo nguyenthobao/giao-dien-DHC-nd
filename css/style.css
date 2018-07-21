@@ -268,7 +268,7 @@ main input:checked + label {
         position: absolute;
         width: 200% !important;
         left: -200px;
-        right: -200px;
+        right: 200px;
     }
     #mapdhc{
         /*padding-top:150px;*/
