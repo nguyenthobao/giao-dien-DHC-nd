@@ -27,6 +27,7 @@ $(document).ready(function () {
     var scaleY = 1;
     var x = -1, y = -1;
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
+    alert( $('#mapdhc')[0].width + '....' + $('#mapdhc')[0].height);
     $('#tab2').change(function () {
         var apiGeolocationSuccess = function (position) {
             // alert("API geolocation success!" +
