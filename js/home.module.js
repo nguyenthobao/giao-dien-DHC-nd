@@ -113,9 +113,21 @@ $(document).ready(function () {
     });
     
     $('body').on('click', '.fixed-top', function () {
-alert('sứag');
+        if (document.getElementsByTagName("label")[0].offsetLeft <= 0)
         $('main > label').show();
-        $('main > input').show();
+    });
+    $('body').on('click','#mapdhc,.zoomImg',function () {
+        // $('#marker').hide();
+    });
+    $('body').on('click','#tab2',function () {
+        $('main > label').hide();
+        $('.container').attr('style','min-width: 100%');
+        $('main').attr('style','min-width: 100%');
+        $('#content2').attr('style','margin-top: -100px;');
+        $('body').attr('style','height:1000px');
+    });
+    $('body').on('mouseup','#mapdhc,.zoomImg',function () {
+        $('#marker').show();
     });
     $('body').on('click', '.promotion-item', function () {
         var promotionId = $(this).data('id');
