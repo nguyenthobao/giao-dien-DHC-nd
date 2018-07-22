@@ -113,8 +113,11 @@ $(document).ready(function () {
     });
     
     $('body').on('click', '.fixed-top', function () {
-        if (document.getElementsByTagName("label")[0].offsetLeft <= 0)
-        $('main > label').show();
+        if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
+            $('main > label').show();
+            $('#content2').attr('style','margin-top: 100px;');
+            document.getElementsByClassName('img-responsive')[0].scrollIntoView();
+        }
     });
     $('body').on('click','#mapdhc,.zoomImg',function () {
         // $('#marker').hide();
