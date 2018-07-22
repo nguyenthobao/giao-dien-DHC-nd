@@ -112,6 +112,11 @@ $(document).ready(function () {
         });
     });
     
+    $('body').on('click', '.fixed-top', function () {
+alert('sứag');
+        $('main > label').show();
+        $('main > input').show();
+    });
     $('body').on('click', '.promotion-item', function () {
         var promotionId = $(this).data('id');
 
