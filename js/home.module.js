@@ -112,7 +112,6 @@ $(document).ready(function () {
         });
     });
     $('body').on('click', '.fixed-top', function () {
-        $('#mapdhc').show();
         if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
             $('main > label').show();
             $('#content2').attr('style','margin-top: -50px;border: 0px;');
@@ -130,6 +129,7 @@ $(document).ready(function () {
         $('.container').attr('style','min-width: 100%');
         $('main').attr('style','min-width: 100%');
         $('#content2').attr('style','margin-top: -100px;');
+        $('#mapdhc').show();
     });
     $('body').on('mouseup','#mapdhc,.zoomImg',function () {
         $('#marker').show();
