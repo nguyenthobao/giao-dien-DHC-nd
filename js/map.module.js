@@ -45,11 +45,12 @@ $(document).ready(function () {
                     document.getElementById('marker').scrollIntoView();
                 }
             }else{
-                console.log($('#mapdhc')[0].getBoundingClientRect().width+'..'+($('#mapdhc')[0].getBoundingClientRect().width/$('#mapdhc')[0].getBoundingClientRect().height));
-                x = parseFloat(getXPixcelValue(15.967649, 108.019897) / (9798 / $('#mapdhc')[0].getBoundingClientRect().width));
-                y = parseFloat(getYPixcelValue(15.967649, 108.019897) / (7046 / $('#mapdhc')[0].getBoundingClientRect().height));
+                $('#mapdhc').css('height',(($('#mapdhc').css('width')).substring(0,4)/1.39)+'px');
+                console.log(($('#mapdhc').css('width')).substring(0,4)+'..'+($('#mapdhc').css('width')).substring(0,4)/($('#mapdhc').css('height')).substring(0,4));
+                x = parseFloat(getXPixcelValue(15.967649, 108.019897) / (9798 / ($('#mapdhc').css('width')).substring(0,4)));
+                y = parseFloat(getYPixcelValue(15.967649, 108.019897) / (7046 / ($('#mapdhc').css('height')).substring(0,4)));
 
-                if (x >$('#mapdhc')[0].getBoundingClientRect().width || x < 0 || y > $('#mapdhc')[0].getBoundingClientRect().height || y < 0) {
+                if (x >($('#mapdhc').css('width')).substring(0,4) || x < 0 || y >($('#mapdhc').css('height')).substring(0,4) || y < 0) {
                    // $('#marker').hide();
                 } else {
 
