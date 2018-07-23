@@ -5,7 +5,6 @@ body {
     /*background: #eee;*/
 }
 #parentImage{
-    margin-top: 600px;
     padding: 0px 0px 0px 0px;
 }
 @media (min-width: 992px) {
@@ -284,6 +283,10 @@ main input:checked + label {
     .img-news img {
         width: 100% !important;
         height: auto !important;
+    }
+    #parentImage{
+        margin-top: 600px;
+        padding: 0px 0px 0px 0px;
     }
     #download {
         border-radius: 8px;
