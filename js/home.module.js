@@ -111,15 +111,13 @@ $(document).ready(function () {
             }
         });
     });
-    
-    $('body').on('click', '.tablabel', function () {
-        alert('b');
-    });
     $('body').on('click', '.fixed-top', function () {
+        $('#mapdhc').show();
         if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
             $('main > label').show();
             $('#content2').attr('style','margin-top: -50px;border: 0px;');
             document.getElementsByClassName('img-responsive')[0].scrollIntoView();
+            $('#mapdhc').hide();
         } else{
             $('main > label').hide();
         }
