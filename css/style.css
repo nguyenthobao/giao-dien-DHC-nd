@@ -265,7 +265,7 @@ main input:checked + label {
         display: block !important;
     }
     #parentImage{
-        transform: scale(6,4.317);
+        transform: scale(5);
         /*margin-top:0px;*/
     }
     #mapdhc{
@@ -285,7 +285,7 @@ main input:checked + label {
         height: auto !important;
     }
     #parentImage{
-        margin-top: 600px;
+        margin-top: 700px;
         padding: 0px 0px 0px 0px;
     }
     #download {
