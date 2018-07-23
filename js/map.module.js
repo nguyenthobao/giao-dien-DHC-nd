@@ -53,7 +53,7 @@ $(document).ready(function () {
                 if (x >($('#mapdhc').css('width')).substring(0,4) || x < 0 || y >($('#mapdhc').css('height')).substring(0,4) || y < 0) {
                    // $('#marker').hide();
                 } else {
-                    $('#marker').css("margin-top", (y-53) + "px");
+                    $('#marker').css("margin-top", (y-200) + "px");
                     $('#marker').css("margin-left", x+ "px");
                     $('#marker').show();
                     document.getElementById('marker').scrollIntoView();
