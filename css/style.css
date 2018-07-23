@@ -265,11 +265,17 @@ main input:checked + label {
     .news-item {
         display: block !important;
     }
-.content{
-    margin-top: -15px;
-}
+
+    .content {
+        margin-top: -15px;
+    }
+
     #parentImage {
         /*transform: scale(5,4.317);*/
+    }
+
+    #content2 .row {
+        width: 2000px;
     }
 
     #mapdhc {
