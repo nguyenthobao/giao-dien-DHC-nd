@@ -37,7 +37,7 @@ section {
     display: none;
     margin-left: -2px;
     padding: 70px 0 0;
-    border: 1px solid #ddd;
+    border: 0px solid #ddd;
 }
 
 input {

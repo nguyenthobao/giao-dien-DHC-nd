@@ -117,6 +117,8 @@ $(document).ready(function () {
             $('main > label').show();
             $('#content2').attr('style','margin-top: -50px;border: 0px;');
             document.getElementsByClassName('img-responsive')[0].scrollIntoView();
+        } else{
+            $('main > label').hide();
         }
     });
     $('body').on('click','#mapdhc,.zoomImg',function () {
