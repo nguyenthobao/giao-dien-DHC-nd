@@ -129,7 +129,6 @@ $(document).ready(function () {
         $('.container').attr('style','min-width: 100%');
         $('main').attr('style','min-width: 100%');
         $('#content2').attr('style','margin-top: -100px;');
-        $('body').attr('style','height:1000px');
     });
     $('body').on('mouseup','#mapdhc,.zoomImg',function () {
         $('#marker').show();
