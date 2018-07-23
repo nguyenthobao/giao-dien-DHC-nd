@@ -45,7 +45,7 @@ $(document).ready(function () {
                     document.getElementById('marker').scrollIntoView();
                 }
             }else{
-                $('#mapdhc').css('height',(($('#mapdhc').css('width')).substring(0,4)/1.39)+'px');
+                $('#mapdhc').css('height',(($('#mapdhc').css('width')).substring(0,4)/1.39036)+'px');
                 $('#download').css('margin-top', ($('#mapdhc').css('height')+5)+'px');
                 console.log(($('#mapdhc').css('width')).substring(0,4)+'..'+($('#mapdhc').css('width')).substring(0,4)/($('#mapdhc').css('height')).substring(0,4));
                 x = parseFloat(getXPixcelValue(15.970000, 108.019104) / (9798 / ($('#mapdhc').css('width')).substring(0,4)));
@@ -54,7 +54,7 @@ $(document).ready(function () {
                 if (x >($('#mapdhc').css('width')).substring(0,4) || x < 0 || y >($('#mapdhc').css('height')).substring(0,4) || y < 0) {
                    // $('#marker').hide();
                 } else {
-                    $('#marker').css("margin-top", (y-200) + "px");
+                    $('#marker').css("margin-top", (y) + "px");
                     $('#marker').css("margin-left", x+ "px");
                     $('#marker').show();
                     document.getElementById('marker').scrollIntoView();
