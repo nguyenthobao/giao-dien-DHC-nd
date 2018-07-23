@@ -243,7 +243,7 @@ main input:checked + label {
     #mapdhc{
         /*padding-top:300px;*/
         /*padding-left: 430px;*/
-        transform: scale(1.0);
+        transform: scale(1.1);
     }
     #download {
         border-radius: 8px;
@@ -267,8 +267,8 @@ main input:checked + label {
         /*margin-top:0px;*/
     }
     #mapdhc{
-        padding-top:120px;
-        padding-left: 100px;
+        padding-top:140px;
+        padding-left: 121px;
         /*height: 800px;*/
         /*width: 2000px;*/
     }
