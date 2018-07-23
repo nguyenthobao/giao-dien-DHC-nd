@@ -292,7 +292,7 @@ main input:checked + label {
     }
 
     .container {
-        width: 2000px !important;
+        width: 100%;
         padding-right: 0px;
         padding-left: 0px;
         margin-right: auto;
