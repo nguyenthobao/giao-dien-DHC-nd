@@ -46,8 +46,8 @@ $(document).ready(function () {
                 }
                 console.log($('#mapdhc')[0].width/$('#mapdhc')[0].height);
             }else{
-                 $('#mapdhc').css('height',($('#mapdhc')[0].getBoundingClientRect().width/1.39)+'px');
-                console.log($('#mapdhc')[0].getBoundingClientRect().width+'..'+($('#mapdhc')[0].getBoundingClientRect().width/$('#mapdhc')[0].getBoundingClientRect().height));
+                 $('#mapdhc').css('height',($('#mapdhc').css('width').substring(0,3)/1.39)+'px');
+                console.log($('#mapdhc').css('height')+'..'+($('#mapdhc').css('width')/$('#mapdhc').css('height')));
                 x = parseFloat(getXPixcelValue(15.967649, 108.019897) / (9798 / $('#mapdhc')[0].getBoundingClientRect().width));
                 y = parseFloat(getYPixcelValue(15.967649, 108.019897) / (7046 / $('#mapdhc')[0].getBoundingClientRect().height));
 
