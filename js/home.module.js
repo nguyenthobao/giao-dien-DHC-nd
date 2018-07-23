@@ -112,6 +112,9 @@ $(document).ready(function () {
         });
     });
     
+    $('body').on('click', '.tablabel', function () {
+        alert('b');
+    });
     $('body').on('click', '.fixed-top', function () {
         if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
             $('main > label').show();
