@@ -275,7 +275,8 @@ main input:checked + label {
     }
 
     #content2 .row {
-        width: 2000px;
+        width: 1000px;
+        padding-left: 15px;
     }
 
     #mapdhc {
