@@ -46,6 +46,7 @@ $(document).ready(function () {
                 }
             }else{
                 $('#mapdhc').css('height',(($('#mapdhc').css('width')).substring(0,4)/1.39)+'px');
+                $('#download').css('margin-top', ($('#mapdhc').css('height')+5)+'px');
                 console.log(($('#mapdhc').css('width')).substring(0,4)+'..'+($('#mapdhc').css('width')).substring(0,4)/($('#mapdhc').css('height')).substring(0,4));
                 x = parseFloat(getXPixcelValue(15.970000, 108.019104) / (9798 / ($('#mapdhc').css('width')).substring(0,4)));
                 y = parseFloat(getYPixcelValue(15.970000, 108.019104) / (7046 / ($('#mapdhc').css('height')).substring(0,4)));
