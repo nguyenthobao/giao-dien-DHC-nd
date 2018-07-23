@@ -44,8 +44,9 @@ $(document).ready(function () {
                     $('#marker').show();
                     document.getElementById('marker').scrollIntoView();
                 }
-                // console.log($('#mapdhc')[0].width+'...'+$('#mapdhc')[0].height);
+                console.log($('#mapdhc')[0].width/$('#mapdhc')[0].height);
             }else{
+
                 console.log($('#mapdhc')[0].getBoundingClientRect().width+'..'+($('#mapdhc')[0].getBoundingClientRect().width/$('#mapdhc')[0].getBoundingClientRect().height));
                 x = parseFloat(getXPixcelValue(15.967649, 108.019897) / (9798 / $('#mapdhc')[0].getBoundingClientRect().width));
                 y = parseFloat(getYPixcelValue(15.967649, 108.019897) / (7046 / $('#mapdhc')[0].getBoundingClientRect().height));
