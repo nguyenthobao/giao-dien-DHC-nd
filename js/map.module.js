@@ -34,8 +34,8 @@ $(document).ready(function () {
             // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
             // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
             if (isMobile.any() == null) {
-                x = parseFloat(getXPixcelValue(15.970000, 108.019104) / (9798 / $('#mapdhc')[0].width));
-                y = parseFloat(getYPixcelValue(15.970000, 108.019104) / (7046 / $('#mapdhc')[0].height));
+                x = parseFloat(getXPixcelValue(position.coords.latitude,position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
+                y = parseFloat(getYPixcelValue(position.coords.latitude,position.coords.longitude) / (7046 / $('#mapdhc')[0].height));
                 if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
                     $('#marker').hide();
                 } else {
@@ -48,11 +48,11 @@ $(document).ready(function () {
                 $('#mapdhc').css('height',(($('#mapdhc').css('width')).substring(0,4)/1.39036)+'px');
                 $('#download').css('margin-top', ($('#mapdhc').css('height')+5)+'px');
                 console.log(($('#mapdhc').css('width')).substring(0,4)+'..'+($('#mapdhc').css('width')).substring(0,4)/($('#mapdhc').css('height')).substring(0,4));
-                x = parseFloat(getXPixcelValue(15.970000, 108.019104) / (9798 / ($('#mapdhc').css('width')).substring(0,4)));
-                y = parseFloat(getYPixcelValue(15.970000, 108.019104) / (7046 / ($('#mapdhc').css('height')).substring(0,4)));
+                x = parseFloat(getXPixcelValue(position.coords.latitude,position.coords.longitude) / (9798 / ($('#mapdhc').css('width')).substring(0,4)));
+                y = parseFloat(getYPixcelValue(position.coords.latitude,position.coords.longitude) / (7046 / ($('#mapdhc').css('height')).substring(0,4)));
 
                 if (x >($('#mapdhc').css('width')).substring(0,4) || x < 0 || y >($('#mapdhc').css('height')).substring(0,4) || y < 0) {
-                   // $('#marker').hide();
+                    $('#marker').hide();
                 } else {
                     $('#marker').css("margin-top", y*0.75+ "px");
                     $('#marker').css("margin-left", x+ "px");
@@ -68,7 +68,7 @@ $(document).ready(function () {
                 apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
             })
                 .fail(function (err) {
-                    alert("Không tìm được vị trí của bạn! ");
+                    alert("Trình duyệt không tìm được vị trí của bạn! ");
                 });
         };
 

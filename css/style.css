@@ -100,8 +100,6 @@ main input:checked + label {
     width: 20px;
     height: 30px;
     position: absolute;
-    margin-top: 100px;
-    margin-left: 500px;
 }
 
 .bg-green {
