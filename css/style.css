@@ -267,7 +267,10 @@ main input:checked + label {
     .news-item {
         display: block !important;
     }
-
+    #content2 .content{
+        width: 2048px;
+        height: 1473px;
+    }
     .content {
         margin-top: -15px;
     }
@@ -314,7 +317,7 @@ main input:checked + label {
     #download {
         border-radius: 8px;
         color: white;
-        margin-top: 1190px;
+        margin-top: 1500px;
         margin-left: 5px;
         padding-left: -5px;
         height: 100px;
