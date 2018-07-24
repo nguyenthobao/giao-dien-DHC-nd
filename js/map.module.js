@@ -68,6 +68,7 @@ $(document).ready(function () {
                 apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
             })
                 .fail(function (err) {
+                    $('#marker').hide();
                     alert("Trình duyệt không tìm được vị trí của bạn! ");
                 });
         };
