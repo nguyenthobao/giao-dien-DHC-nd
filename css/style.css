@@ -10,6 +10,9 @@ body {
 }
 
 @media (min-width: 992px) {
+    #content2 .content{
+        width: 2000px;
+    }
     body {
         padding-top: 56px;
         font: 14px/1 'Open Sans', sans-serif;
