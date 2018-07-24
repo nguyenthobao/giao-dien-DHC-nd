@@ -117,6 +117,7 @@ $(document).ready(function () {
             $('#content2').attr('style','margin-top: -50px;border: 0px;');
             document.getElementsByClassName('img-responsive')[0].scrollIntoView();
             $('#mapdhc').hide();
+            $('#marker').hide();
         } else{
             $('main > label').hide();
         }
