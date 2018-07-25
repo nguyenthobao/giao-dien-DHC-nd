@@ -37,6 +37,13 @@ $(document).ready(function () {
                     }
                 }
             });
+
+            var html_select='';
+            $.each(pointData,function (k,v) {
+                html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'">'+v.point_name+'</option>';
+            });
+            $('#search_place').html(html_select);
+            $('#search_place').select2();
         },
         error: function (e) {
             alert('Có lỗi');
