@@ -63,13 +63,13 @@ $(document).ready(function () {
 
         };
 
-        var tryAPIGeolocation = function () {
-            jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDCa1LUe1vOczX1hO_iGYgyo8p_jYuGOPU", function (success) {
+        var tryAPIGeolocation = function() {
+            jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDCa1LUe1vOczX1hO_iGYgyo8p_jYuGOPU", function(success) {
                 apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
             })
-                .fail(function (err) {
+                .fail(function(err) {
                     $('#marker').hide();
-                    alert("API google map gặp lỗi! ");
+                    alert("API Geolocation error! "+err);
                 });
         };
 
