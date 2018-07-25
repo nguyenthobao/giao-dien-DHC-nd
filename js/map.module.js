@@ -69,7 +69,7 @@ $(document).ready(function () {
             })
                 .fail(function (err) {
                     $('#marker').hide();
-                    alert("Trình duyệt không tìm được vị trí của bạn! ");
+                    alert("API google map gặp lỗi! ");
                 });
         };
 
