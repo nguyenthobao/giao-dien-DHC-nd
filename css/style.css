@@ -279,13 +279,14 @@ main input:checked + label {
     }
 
     #content2 .row {
-        width: 2000px;
+        width: 100%;
         padding-left: 15px;
     }
 
     #mapdhc {
         padding-top: 255px;
         padding-left: 0px;
+        margin-left: 5px;
         margin-top: -250px;
         /*height: 800px;*/
         /*width: 2000px;*/
