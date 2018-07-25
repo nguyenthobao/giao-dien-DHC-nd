@@ -70,6 +70,7 @@ $(document).ready(function () {
                 .fail(function(err) {
                     $('#marker').hide();
                     alert("API Geolocation error! "+err);
+                    console.log(err);
                 });
         };
 
