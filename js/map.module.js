@@ -34,8 +34,8 @@ $(document).ready(function () {
             // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
             // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
             if (isMobile.any() == null) {
-                x = parseFloat(getXPixcelValue(position.coords.latitude,position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
-                y = parseFloat(getYPixcelValue(position.coords.latitude,position.coords.longitude) / (7046 / $('#mapdhc')[0].height));
+                x = parseFloat(getXPixcelValue(15.967649, 108.019897) / (9798 / $('#mapdhc')[0].width));
+                y = parseFloat(getYPixcelValue(15.967649, 108.019897) / (7046 / $('#mapdhc')[0].height));
                 if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
                     $('#marker').hide();
                 } else {
