@@ -35,8 +35,8 @@ $(document).ready(function () {
             // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
             // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
             if (isMobile.any() == null) {
-                x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
-                y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude) / (7046 / $('#mapdhc')[0].height));
+                x = parseFloat(getXPixcelValue(15.968955, 108.018580) / (9798 / $('#mapdhc')[0].width));
+                y = parseFloat(getYPixcelValue(15.968955, 108.018580) / (7046 / $('#mapdhc')[0].height));
                 if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
                     $('#marker').hide();
                 } else {
@@ -45,7 +45,8 @@ $(document).ready(function () {
                     $('#marker').show();
                     document.getElementById('marker').scrollIntoView();
                 }
-                if (!(( isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != '')) $('#download').hide();
+                var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+                if (width>500){ $('#download').hide();
             } else {
                 $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
                 $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
@@ -56,9 +57,10 @@ $(document).ready(function () {
                 if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
                     $('#marker').hide();
                 } else {
-                    if (( isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != ''){
-                        y -= 160;
-                        x -= 15;
+                    var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+                    if (width>400 && width <500){
+                        // y -= 160;
+                        // x -= 15;
                     }else {
                         y -= 110;
                         x -= 15;
