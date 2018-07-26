@@ -57,7 +57,7 @@ $(document).ready(function () {
                     $('#marker').hide();
                 } else {
                     y -= 160;
-                    x -= 10;
+                    x -= 15;
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();

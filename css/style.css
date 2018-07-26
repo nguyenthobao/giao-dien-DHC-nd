@@ -352,6 +352,23 @@ main input:checked + label {
      margin-left: 2.5%;
      border-radius: 5px;
  }
+
+@media (max-width: 760px) and (min-width: 430px) {
+
+    #div_search{
+        height: 90px !important;
+        position: fixed;
+        width: 20%;
+        background-color: rgba(140, 187, 148, 0.79);
+    }
+    #content2{
+        margin-top: -90px;
+    }
+    #content2 .content{
+        width: 2048px;
+        height: 1473px;
+    }
+}
 @media (max-width: 991px) and (min-width: 766px) {
     .img-news {
         padding-right: 0;
