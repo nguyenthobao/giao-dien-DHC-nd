@@ -35,10 +35,10 @@ $(document).ready(function () {
             // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
             // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
             if (isMobile.any() == null) {
-                x = parseFloat(getXPixcelValue(position.coords.latitude,position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
-                y = parseFloat(getYPixcelValue(position.coords.latitude,position.coords.longitude) / (7046 / $('#mapdhc')[0].height));
+                x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
+                y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude) / (7046 / $('#mapdhc')[0].height));
                 if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
-                    // $('#marker').hide();
+                    $('#marker').hide();
                 } else {
                     $('#marker').css("margin-top", (y - 15) + "px");
                     $('#marker').css("margin-left", x + "px");
@@ -46,31 +46,33 @@ $(document).ready(function () {
                     document.getElementById('marker').scrollIntoView();
                 }
                 $('#download').hide();
-            }else{
-                $('#mapdhc').css('height',(($('#mapdhc').css('width')).substring(0,4)/1.39036)+'px');
-                $('#download').css('margin-top', ($('#mapdhc').css('height')+5)+'px');
-                console.log(($('#mapdhc').css('width')).substring(0,4)+'..'+($('#mapdhc').css('width')).substring(0,4)/($('#mapdhc').css('height')).substring(0,4));
-                x = parseFloat(getXPixcelValue(15.968955, 108.018580) / (9798 / ($('#mapdhc').css('width')).substring(0,4)));
-                y = parseFloat(getYPixcelValue(15.968955, 108.018580) / (7046 / ($('#mapdhc').css('height')).substring(0,4)));
+            } else {
+                $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
+                $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
+                console.log(($('#mapdhc').css('width')).substring(0, 4) + '..' + ($('#mapdhc').css('width')).substring(0, 4) / ($('#mapdhc').css('height')).substring(0, 4));
+                x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / ($('#mapdhc').css('width')).substring(0, 4)));
+                y = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (7046 / ($('#mapdhc').css('height')).substring(0, 4)));
 
-                if (x >($('#mapdhc').css('width')).substring(0,4) || x < 0 || y >($('#mapdhc').css('height')).substring(0,4) || y < 0) {
-                     // $('#marker').hide();
+                if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
+                    $('#marker').hide();
                 } else {
-                    $('#marker').css("margin-top", y+ "px");
-                    $('#marker').css("margin-left", x+ "px");
+                    y -= 160;
+                    x -= 10;
+                    $('#marker').css("margin-top", y + "px");
+                    $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
                     document.getElementById('marker').scrollIntoView();
                 }
             }
         };
 
-        var tryAPIGeolocation = function() {
-            jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function(success) {
+        var tryAPIGeolocation = function () {
+            jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function (success) {
                 apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
             })
-                .fail(function(err) {
+                .fail(function (err) {
                     $('#marker').hide();
-                    alert("API Geolocation error! "+err);
+                    alert("API Geolocation error! " + err);
                     console.log(err);
                 });
         };
@@ -109,15 +111,16 @@ $(document).ready(function () {
         tryGeolocation();
 
     });
-    $('body').on('change','#search_place',function(){
+    $('body').on('change', '#search_place', function () {
 
-        console.log($('#search_place option:selected').data('left'),$('#search_place option:selected').data('top'));
-        console.log(($('#mapdhc').css('width')).substring(0,4),($('#mapdhc').css('height')).substring(0,4));
+        console.log($('#search_place option:selected').data('left'), $('#search_place option:selected').data('top'));
+        console.log(($('#mapdhc').css('width')).substring(0, 4), ($('#mapdhc').css('height')).substring(0, 4));
         x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2032));
-        y = parseFloat($('#search_place option:selected').data('top') / (7046 /1462));
-        console.log(x,y);
+        y = parseFloat($('#search_place option:selected').data('top') / (7046 / 1462));
+        console.log(x, y);
         if (isMobile.any() != null) {
-            y-=160; x+=10;
+            y -= 160;
+            x += 10;
         }
         $('#marker').show();
         $('#marker').css("margin-top", (y) + "px");
