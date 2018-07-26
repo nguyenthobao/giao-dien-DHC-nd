@@ -353,7 +353,7 @@ main input:checked + label {
      border-radius: 5px;
  }
 
-@media (max-width: 760px) and (min-width: 430px) {
+@media (max-width: 768px) {
 
     #div_search{
         height: 90px !important;
