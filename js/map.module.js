@@ -37,6 +37,7 @@ $(document).ready(function () {
             if (isMobile.any() == null) {
                 x = parseFloat(getXPixcelValue(15.968955, 108.018580) / (9798 / $('#mapdhc')[0].width));
                 y = parseFloat(getYPixcelValue(15.968955, 108.018580) / (7046 / $('#mapdhc')[0].height));
+                console.log(x,y,$('#mapdhc')[0].width,$('#mapdhc')[0].height);
                 if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
                     $('#marker').hide();
                 } else {
