@@ -125,8 +125,7 @@ $(document).ready(function () {
         console.log(x, y);
         if (isMobile.any() != null) {
             if (( isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != ''){
-                y -= 110;
-                x += 10;
+                y -= 50; console.log('ưdygvQEVUFW');
             }else {
                 y -= 160;
                 x += 10;
