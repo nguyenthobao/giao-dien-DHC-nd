@@ -50,19 +50,18 @@ $(document).ready(function () {
                 $('#mapdhc').css('height',(($('#mapdhc').css('width')).substring(0,4)/1.39036)+'px');
                 $('#download').css('margin-top', ($('#mapdhc').css('height')+5)+'px');
                 console.log(($('#mapdhc').css('width')).substring(0,4)+'..'+($('#mapdhc').css('width')).substring(0,4)/($('#mapdhc').css('height')).substring(0,4));
-                x = parseFloat(getXPixcelValue(position.coords.latitude,position.coords.longitude) / (9798 / ($('#mapdhc').css('width')).substring(0,4)));
-                y = parseFloat(getYPixcelValue(position.coords.latitude,position.coords.longitude) / (7046 / ($('#mapdhc').css('height')).substring(0,4)));
+                x = parseFloat(getXPixcelValue(15.968955, 108.018580) / (9798 / ($('#mapdhc').css('width')).substring(0,4)));
+                y = parseFloat(getYPixcelValue(15.968955, 108.018580) / (7046 / ($('#mapdhc').css('height')).substring(0,4)));
 
                 if (x >($('#mapdhc').css('width')).substring(0,4) || x < 0 || y >($('#mapdhc').css('height')).substring(0,4) || y < 0) {
-                     $('#marker').hide();
+                     // $('#marker').hide();
                 } else {
-                    $('#marker').css("margin-top", y*0.75+ "px");
+                    $('#marker').css("margin-top", y+ "px");
                     $('#marker').css("margin-left", x+ "px");
                     $('#marker').show();
                     document.getElementById('marker').scrollIntoView();
                 }
             }
-
         };
 
         var tryAPIGeolocation = function() {
