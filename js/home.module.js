@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#search_place').select2();
+    // $('#search_place').select2();
     /*Get all point in home*/
     $.ajax({
         url: baseApi + 'point/get-all-point',
@@ -44,7 +44,7 @@ $(document).ready(function () {
                 html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'">'+v.point_name+'</option>';
             });
             $('#search_place').html(html_select);
-            $('#search_place').select2();
+            // $('#search_place').select2();
         },
         error: function (e) {
             alert('Có lỗi');
