@@ -39,7 +39,7 @@ $(document).ready(function () {
                 }
             });
 
-            var html_select='<option>Tìm địa điểm</option>';
+            var html_select='<option></option>';
             $.each(pointData,function (k,v) {
                 html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'">'+v.point_name+'</option>';
             });
