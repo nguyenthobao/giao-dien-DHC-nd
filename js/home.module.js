@@ -144,9 +144,9 @@ $(document).ready(function () {
         $('.container').attr('style','min-width: 100%');
         $('main').attr('style','min-width: 100%');
         $('#content2').attr('style','margin-top: -100px;');
+        $('#mapdhc').show();
         $('#download').show();
         $('#div_search').show();
-        $('#mapdhc').show();
     });
     $('body').on('click', '.promotion-item', function () {
         var promotionId = $(this).data('id');
