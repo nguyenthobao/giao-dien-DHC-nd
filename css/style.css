@@ -358,25 +358,42 @@ main input:checked + label {
         margin-right: 50px;
     }
 
+    #content2 .content{
+        width: 2048px;
+        height: 1473px;
+    }
+    .content {
+        margin-top: -15px;
+    }
+    #parentImage {
+        /*transform: scale(5,4.317);*/
+    }
+
+    #content2 .row {
+        width: 100%;
+        padding-left: 15px;
+    }
+
     #mapdhc {
-
-        transform: scale(1.0);
+        padding-top: 255px;
+        padding-left: 0px;
+        margin-left: 5px;
+        margin-top: -250px;
+        /*height: 800px;*/
+        /*width: 2000px;*/
     }
 
-    .news-content {
-        padding-left: 25px !important;
+    .img-news {
+        margin-left: -15px;
+        margin-bottom: 15px;
     }
 
-    #download {
-        border-radius: 8px;
-        position: fixed;
-        margin-bottom: 0px;
-        color: white;
-        margin-left: 80%;
-        height: 35px;
-        width: 116px;
-        border: none;
-        background-color: hsl(0, 100%, 10%);
+    .container {
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
 
