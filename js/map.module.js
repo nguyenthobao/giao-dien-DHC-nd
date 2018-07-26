@@ -38,7 +38,7 @@ $(document).ready(function () {
                 x = parseFloat(getXPixcelValue(position.coords.latitude,position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
                 y = parseFloat(getYPixcelValue(position.coords.latitude,position.coords.longitude) / (7046 / $('#mapdhc')[0].height));
                 if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
-                    $('#marker').hide();
+                    // $('#marker').hide();
                 } else {
                     $('#marker').css("margin-top", (y - 15) + "px");
                     $('#marker').css("margin-left", x + "px");
