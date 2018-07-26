@@ -340,8 +340,9 @@ main input:checked + label {
      margin-top: 8px;
      margin-bottom: 10px;
      margin-left: 29%;
-     border: 0px;
-     font-weight: 100;
+     color: #4caf50;
+     text-transform: uppercase;
+     font-weight: bold;
  }
  #search_place{
      width: 95%;
