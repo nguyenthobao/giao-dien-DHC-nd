@@ -53,7 +53,7 @@ $(document).ready(function () {
                 y = parseFloat(getYPixcelValue(position.coords.latitude,position.coords.longitude) / (7046 / ($('#mapdhc').css('height')).substring(0,4)));
 
                 if (x >($('#mapdhc').css('width')).substring(0,4) || x < 0 || y >($('#mapdhc').css('height')).substring(0,4) || y < 0) {
-                    $('#marker').hide();
+                    // $('#marker').hide();
                 } else {
                     $('#marker').css("margin-top", y*0.75+ "px");
                     $('#marker').css("margin-left", x+ "px");
