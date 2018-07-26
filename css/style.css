@@ -10,10 +10,11 @@ body {
 }
 
 @media (min-width: 992px) {
-    #content2 .content{
+    #content2 .content {
         width: 2048px;
         height: 1473px;
     }
+
     body {
         padding-top: 56px;
         font: 14px/1 'Open Sans', sans-serif;
@@ -267,13 +268,16 @@ main input:checked + label {
     .news-item {
         display: block !important;
     }
-    #content2 .content{
+
+    #content2 .content {
         width: 2048px;
         height: 1473px;
     }
+
     .content {
         margin-top: -15px;
     }
+
     #parentImage {
         /*transform: scale(5,4.317);*/
     }
@@ -309,6 +313,7 @@ main input:checked + label {
         width: 100% !important;
         height: auto !important;
     }
+
     #parentImage {
         margin-top: 600px;
         padding: 0px 0px 0px 0px;
@@ -320,45 +325,49 @@ main input:checked + label {
         margin-top: 1250px;
         padding-left: -5px;
         height: 100px;
-        width: 95%;
+        width: 80%;
         margin-left: 5.5%;
         border: none;
         background-color: hsl(0, 100%, 10%);
     }
 
 }
-#div_search{
+
+#div_search {
     height: 90px !important;
     position: fixed;
     width: 26%;
     background-color: rgba(140, 187, 148, 0.79);
 }
-#content2 .content{
+
+#content2 .content {
     margin-top: 100px;
 }
- #searchlabel{
-     background-color: white;
-     margin-top: 8px;
-     margin-bottom: 10px;
-     margin-left: 29%;
-     border: 0px;
-     border-radius: 5px;
-     color: #4caf50;
-     text-transform: uppercase;
-     font-weight: bold;
- }
- #search_place{
-     width: 92%;
-     margin-left: 2.5%;
-     border-radius: 5px;
- }
 
+#searchlabel {
+    background-color: white;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    margin-left: 29%;
+    border: 0px;
+    border-radius: 5px;
+    color: #4caf50;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#search_place {
+    width: 80%;
+    margin-left: 2.5%;
+    border-radius: 5px;
+}
 
 @media (max-width: 991px) and (min-width: 766px) {
     .img-news {
         padding-right: 0;
         margin-right: 50px;
     }
+
     .news-content {
         padding-left: 25px !important;
     }
@@ -374,16 +383,19 @@ main input:checked + label {
         border: none;
         background-color: hsl(0, 100%, 10%);
     }
-    #div_search{
+
+    #div_search {
         height: 90px !important;
         position: fixed;
         width: 15%;
         background-color: rgba(140, 187, 148, 0.79);
     }
-    #content2{
+
+    #content2 {
         margin-top: -90px;
     }
-    #content2 .content{
+
+    #content2 .content {
         width: 2048px;
         height: 1473px;
     }
