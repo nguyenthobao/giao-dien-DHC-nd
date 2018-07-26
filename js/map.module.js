@@ -124,7 +124,8 @@ $(document).ready(function () {
         y = parseFloat($('#search_place option:selected').data('top') / (7046 / 1462));
         console.log(x, y);
         if (isMobile.any() != null) {
-            if (( isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != ''){
+            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+            if (width>400 && width <500){
                 y -= 50; console.log('ưdygvQEVUFW');
             }else {
                 y -= 160;
