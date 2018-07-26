@@ -116,7 +116,7 @@ $(document).ready(function () {
         x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2032));
         y = parseFloat($('#search_place option:selected').data('top') / (7046 /1462));
         console.log(x,y);
-        if (document.getElementsByTagName("label")[1].offsetLeft <= 0) y-=160;
+        if (isMobile.any() != null) y-=160;
         $('#marker').show();
         $('#marker').css("margin-top", (y) + "px");
         $('#marker').css("margin-left", (x) + "px");
