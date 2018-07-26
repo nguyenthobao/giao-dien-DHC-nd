@@ -115,6 +115,7 @@ $(document).ready(function () {
         console.log(($('#mapdhc').css('width')).substring(0,4),($('#mapdhc').css('height')).substring(0,4));
         x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2032));
         y = parseFloat($('#search_place option:selected').data('top') / (7046 /1462));
+        console.log(x,y);
         $('#marker').show();
         $('#marker').css("margin-top", (y) + "px");
         $('#marker').css("margin-left", (x) + "px");
