@@ -353,33 +353,12 @@ main input:checked + label {
      border-radius: 5px;
  }
 
-@media (max-width: 768px) {
 
-    #div_search{
-        height: 90px !important;
-        position: fixed;
-        width: 20%;
-        background-color: rgba(140, 187, 148, 0.79);
-    }
-    #content2{
-        margin-top: -90px;
-    }
-    #content2 .content{
-        width: 2048px;
-        height: 1473px;
-    }
-}
 @media (max-width: 991px) and (min-width: 766px) {
     .img-news {
         padding-right: 0;
         margin-right: 50px;
     }
-
-    #mapdhc {
-
-        transform: scale(1.0);
-    }
-
     .news-content {
         padding-left: 25px !important;
     }
@@ -394,6 +373,19 @@ main input:checked + label {
         width: 116px;
         border: none;
         background-color: hsl(0, 100%, 10%);
+    }
+    #div_search{
+        height: 90px !important;
+        position: fixed;
+        width: 20%;
+        background-color: rgba(140, 187, 148, 0.79);
+    }
+    #content2{
+        margin-top: -90px;
+    }
+    #content2 .content{
+        width: 2048px;
+        height: 1473px;
     }
 }
 
