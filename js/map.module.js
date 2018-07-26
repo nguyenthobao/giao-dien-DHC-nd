@@ -46,7 +46,7 @@ $(document).ready(function () {
                     document.getElementById('marker').scrollIntoView();
                 }
                 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-                if (width>500){ $('#download').hide();
+                if (width>500) $('#download').hide();
             } else {
                 $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
                 $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
