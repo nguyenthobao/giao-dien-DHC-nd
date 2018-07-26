@@ -114,6 +114,7 @@ $(document).ready(function () {
         var scale=($('#mapdhc').css('width')).substring(0,4)/($('#mapdhc').css('height')).substring(0,4);
         console.log($('#search_place option:selected').data('left'),$('#search_place option:selected').data('top'));
         console.log(($('#mapdhc').css('width')).substring(0,4),($('#mapdhc').css('height')).substring(0,4));
+        console.log(scale,$('#search_place option:selected').data('left') / scale);
         x = parseFloat($('#search_place option:selected').data('left') / scale);
         y = parseFloat($('#search_place option:selected').data('top') / scale);
         $('#marker').show();
