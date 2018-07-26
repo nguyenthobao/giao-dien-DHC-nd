@@ -129,6 +129,7 @@ $(document).ready(function () {
             $('#content2').attr('style','margin-top: -50px;border: 0px;');
             document.getElementsByClassName('img-responsive')[0].scrollIntoView();
             $('#mapdhc').hide();
+            $('#download').hide();
             $('#div_search').hide();
           $('#marker').hide();
         } else{
@@ -143,6 +144,8 @@ $(document).ready(function () {
         $('.container').attr('style','min-width: 100%');
         $('main').attr('style','min-width: 100%');
         $('#content2').attr('style','margin-top: -100px;');
+        $('#download').show();
+        $('#div_search').show();
         $('#mapdhc').show();
     });
     $('body').on('click', '.promotion-item', function () {
