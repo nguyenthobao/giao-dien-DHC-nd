@@ -126,7 +126,7 @@ $(document).ready(function () {
         if (isMobile.any() != null) {
             var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
             if (width>400 && width <500){
-                y -= 50; console.log('ưdygvQEVUFW');
+                y -= 0; console.log('ưdygvQEVUFW');
             }else {
                 y -= 160;
                 x += 10;
