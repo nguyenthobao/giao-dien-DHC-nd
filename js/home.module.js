@@ -39,7 +39,6 @@ $(document).ready(function () {
                 }
             });
             pointData.sort(function(a, b){
-                if((a.point_name).charAt(0).toString()==='Đ' || (a.point_name).charAt(0).toString()==='Â') return -1;
                 if(a.point_name < b.point_name) return -1;
                 if(a.point_name > b.point_name) return 1;
                 return 0;
