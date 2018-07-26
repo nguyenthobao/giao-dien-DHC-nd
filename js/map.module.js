@@ -111,6 +111,7 @@ $(document).ready(function () {
     });
     $('body').on('change','#search_place',function(){
         console.log($('#search_place option:selected').data('left'),$('#search_place option:selected').data('top'));
+        console.log(($('#mapdhc').css('width')).substring(0,4),($('#mapdhc').css('height')).substring(0,4));
         x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2048));
         y = parseFloat($('#search_place option:selected').data('top') / (7046 /1473));
         $('#marker').show();
