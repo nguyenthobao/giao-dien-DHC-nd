@@ -332,14 +332,16 @@ main input:checked + label {
 }
  #searchlabel{
      background-color: white;
-     margin-top: 30px;
-     margin-left: 5%;
+     margin-top: 8px;
+     margin-bottom: 10px;
+     margin-left: 29%;
      border: 0px;
      font-weight: 100;
  }
  #search_place{
-     width: 15%;
-     margin-left: 2%;
+     width: 95%;
+     margin-left: 2.5%;
+     border-radius: 5px;
  }
 @media (max-width: 991px) and (min-width: 766px) {
     .img-news {
