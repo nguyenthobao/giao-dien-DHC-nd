@@ -38,7 +38,11 @@ $(document).ready(function () {
                     }
                 }
             });
-
+            pointData.sort(function(a, b){
+                if(a.point_name < b.point_name) return -1;
+                if(a.point_name > b.point_name) return 1;
+                return 0;
+            });
             var html_select='<option></option>';
             $.each(pointData,function (k,v) {
                 html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'">'+v.point_name+'</option>';
