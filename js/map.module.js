@@ -116,8 +116,8 @@ $(document).ready(function () {
         x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2032));
         y = parseFloat($('#search_place option:selected').data('top') / (7046 /1462));
         $('#marker').show();
-        $('#marker').css("margin-top", (y) + "px");
-        $('#marker').css("margin-left", (x) + "px");
+        $('#marker').css("margin-top", (y-150) + "px");
+        $('#marker').css("margin-left", (x+100) + "px");
         document.getElementById('marker').scrollIntoView();
     });
     $('body').on('click', '#download', function () {
