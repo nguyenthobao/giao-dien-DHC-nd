@@ -26,6 +26,7 @@ $(document).ready(function () {
     var scaleX = 1;
     var scaleY = 1;
     var x = -1, y = -1;
+    $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
     $('#tab2').change(function () {
         var apiGeolocationSuccess = function (position) {
