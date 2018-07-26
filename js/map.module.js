@@ -117,7 +117,7 @@ $(document).ready(function () {
         y = parseFloat($('#search_place option:selected').data('top') / (7046 /1462));
         console.log(x,y);
         $('#marker').show();
-        $('#marker').css("margin-top", (y) + "px");
+        $('#marker').css("margin-top", (y-160) + "px");
         $('#marker').css("margin-left", (x) + "px");
         document.getElementById('marker').scrollIntoView();
     });
