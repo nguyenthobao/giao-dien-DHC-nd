@@ -34,14 +34,13 @@ $(document).ready(function () {
             //     "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
             // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
             // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
-            var scale=($('#mapdhc').css('width')).substring(0,4)/($('#mapdhc').css('height')).substring(0,4);
             if (isMobile.any() == null) {
-                x = parseFloat(getXPixcelValue(position.coords.latitude,position.coords.longitude) / (9798 / scale));
-                y = parseFloat(getYPixcelValue(position.coords.latitude,position.coords.longitude) / (7046 / scale));
+                x = parseFloat(getXPixcelValue(position.coords.latitude,position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
+                y = parseFloat(getYPixcelValue(position.coords.latitude,position.coords.longitude) / (7046 / $('#mapdhc')[0].height));
                 if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
                     $('#marker').hide();
                 } else {
-                    $('#marker').css("margin-top", (y) + "px");
+                    $('#marker').css("margin-top", (y - 15) + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
                     document.getElementById('marker').scrollIntoView();
@@ -50,13 +49,13 @@ $(document).ready(function () {
                 $('#mapdhc').css('height',(($('#mapdhc').css('width')).substring(0,4)/1.39036)+'px');
                 $('#download').css('margin-top', ($('#mapdhc').css('height')+5)+'px');
                 console.log(($('#mapdhc').css('width')).substring(0,4)+'..'+($('#mapdhc').css('width')).substring(0,4)/($('#mapdhc').css('height')).substring(0,4));
-                x = parseFloat(getXPixcelValue(position.coords.latitude,position.coords.longitude) / (9798 / scale));
-                y = parseFloat(getYPixcelValue(position.coords.latitude,position.coords.longitude) / (7046 / scale));
+                x = parseFloat(getXPixcelValue(position.coords.latitude,position.coords.longitude) / (9798 / ($('#mapdhc').css('width')).substring(0,4)));
+                y = parseFloat(getYPixcelValue(position.coords.latitude,position.coords.longitude) / (7046 / ($('#mapdhc').css('height')).substring(0,4)));
 
                 if (x >($('#mapdhc').css('width')).substring(0,4) || x < 0 || y >($('#mapdhc').css('height')).substring(0,4) || y < 0) {
                     $('#marker').hide();
                 } else {
-                    $('#marker').css("margin-top", y+ "px");
+                    $('#marker').css("margin-top", y*0.75+ "px");
                     $('#marker').css("margin-left", x+ "px");
                     $('#marker').show();
                     document.getElementById('marker').scrollIntoView();
@@ -111,14 +110,13 @@ $(document).ready(function () {
 
     });
     $('body').on('change','#search_place',function(){
-        var scale=($('#mapdhc').css('width')).substring(0,4)/($('#mapdhc').css('height')).substring(0,4);
+
         console.log($('#search_place option:selected').data('left'),$('#search_place option:selected').data('top'));
         console.log(($('#mapdhc').css('width')).substring(0,4),($('#mapdhc').css('height')).substring(0,4));
-        console.log(scale,$('#search_place option:selected').data('left') / scale);
-        x = parseFloat($('#search_place option:selected').data('left') / scale);
-        y = parseFloat($('#search_place option:selected').data('top') / scale);
+        x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2032));
+        y = parseFloat($('#search_place option:selected').data('top') / (7046 /1462));
         $('#marker').show();
-        $('#marker').css("margin-top", (y-100) + "px");
+        $('#marker').css("margin-top", (y) + "px");
         $('#marker').css("margin-left", (x) + "px");
         document.getElementById('marker').scrollIntoView();
     });
