@@ -125,7 +125,8 @@ $(document).ready(function () {
             $('#content2').attr('style','margin-top: -50px;border: 0px;');
             document.getElementsByClassName('img-responsive')[0].scrollIntoView();
             $('#mapdhc').hide();
-            $('#marker').hide();
+            $('#div_search').hide();
+          $('#marker').hide();
         } else{
             $('main > label').hide();
         }
@@ -139,9 +140,6 @@ $(document).ready(function () {
         $('main').attr('style','min-width: 100%');
         $('#content2').attr('style','margin-top: -100px;');
         $('#mapdhc').show();
-    });
-    $('body').on('mouseup','#mapdhc,.zoomImg',function () {
-        $('#marker').show();
     });
     $('body').on('click', '.promotion-item', function () {
         var promotionId = $(this).data('id');
