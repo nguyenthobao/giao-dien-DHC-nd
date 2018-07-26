@@ -45,7 +45,7 @@ $(document).ready(function () {
                     $('#marker').show();
                     document.getElementById('marker').scrollIntoView();
                 }
-                $('#download').hide();
+                if (!(( isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != '')) $('#download').hide();
             } else {
                 $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
                 $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
@@ -56,8 +56,13 @@ $(document).ready(function () {
                 if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
                     $('#marker').hide();
                 } else {
-                    y -= 160;
-                    x -= 15;
+                    if (( isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != ''){
+                        y -= 160;
+                        x -= 15;
+                    }else {
+                        y -= 110;
+                        x -= 15;
+                    }
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
@@ -119,8 +124,13 @@ $(document).ready(function () {
         y = parseFloat($('#search_place option:selected').data('top') / (7046 / 1462));
         console.log(x, y);
         if (isMobile.any() != null) {
-            y -= 160;
-            x += 10;
+            if (( isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != ''){
+                y -= 110;
+                x += 10;
+            }else {
+                y -= 160;
+                x += 10;
+            }
         }
         $('#marker').show();
         $('#marker').css("margin-top", (y) + "px");

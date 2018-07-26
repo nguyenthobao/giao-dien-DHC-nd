@@ -377,7 +377,7 @@ main input:checked + label {
     #div_search{
         height: 90px !important;
         position: fixed;
-        width: 20%;
+        width: 15%;
         background-color: rgba(140, 187, 148, 0.79);
     }
     #content2{
