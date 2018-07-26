@@ -111,8 +111,8 @@ $(document).ready(function () {
     });
     $('body').on('change','#search_place',function(){
         console.log($('#search_place option:selected'));
-        x = parseFloat(getXPixcelValue($('#search_place option:selected').data('left'),$('#search_place option:selected').data('top')) / (9798 / ($('#mapdhc').css('width')).substring(0,4)));
-        y = parseFloat(getYPixcelValue($('#search_place option:selected').data('left'),$('#search_place option:selected').data('top')) / (7046 / ($('#mapdhc').css('height')).substring(0,4)));
+        x = parseFloat(getXPixcelValue($('#search_place option:selected').data('left'),$('#search_place option:selected').data('top')) / (9798 / 2048));
+        y = parseFloat(getYPixcelValue($('#search_place option:selected').data('left'),$('#search_place option:selected').data('top')) / (7046 /1473));
         $('#marker').show();
         $('#marker').css("margin-top", (y - 15) + "px");
         $('#marker').css("margin-left", x + "px");
