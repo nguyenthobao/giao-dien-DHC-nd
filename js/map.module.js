@@ -59,7 +59,7 @@ $(document).ready(function () {
                 } else {
                     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
                     if (width>400 && width <500){
-                        // y -= 160;
+                         y -= 140;
                         // x -= 15;
                     }else {
                         y -= 110;
