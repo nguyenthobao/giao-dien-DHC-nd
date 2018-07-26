@@ -363,7 +363,30 @@ main input:checked + label {
         padding-left: 25px !important;
     }
 
-
+    #download {
+        border-radius: 8px;
+        position: fixed;
+        margin-bottom: 0px;
+        color: white;
+        margin-left: 80%;
+        height: 35px;
+        width: 116px;
+        border: none;
+        background-color: hsl(0, 100%, 10%);
+    }
+    #div_search{
+        height: 90px !important;
+        position: fixed;
+        width: 15%;
+        background-color: rgba(140, 187, 148, 0.79);
+    }
+    #content2{
+        margin-top: -90px;
+    }
+    #content2 .content{
+        width: 2048px;
+        height: 1473px;
+    }
 }
 
 .img-news img {
