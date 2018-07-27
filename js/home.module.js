@@ -83,7 +83,7 @@ $(document).ready(function () {
                         x += 10;
                     }
                     if (width>350 && width <450){
-                        y-=90; x-=50;
+                        y-=90; x-=50; console.log('dvfijwnev');
                     }
                 }
                 if (v.point_type == 3) url = '/images/play_marker.jpg';
@@ -93,7 +93,7 @@ $(document).ready(function () {
                 html_marker += '<div class="div_marker" data-lat="'+v.lat+'" data-long="'+v.long+'" style="margin-top:' + y + 'px; margin-left: ' + x + 'px;    position: absolute; ">' +
                     '<label id="label_' + x + '" class="label_instant">' + v.point_name + '</label><br>' +
                     '<img id="img_' + x + '" src="' + pointImage[0] + '" style="width: 175px; height: 100px" class="img_instant img-fluid map" alt="">' +
-                    '<img src="' + url + '" data-x="' + x + '" style=" width: 20px; height: 30px" class="point_important img-fluid map" alt=""></div>';
+                    '<img src="' + url + '" data-x="' + x + '" style="max-width: 20000px; width: 20px; height: 30px" class="point_important img-fluid map" alt=""></div>';
             });
             $('#search_place').html(html_select);
             $('#content2 .content .row').append(html_marker);
