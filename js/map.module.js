@@ -142,8 +142,8 @@ $(document).ready(function () {
         $('.div_marker').each(function () {
             if($(this).data('lat')==$('#search_place option:selected').data('left') && $(this).data('long')==$('#search_place option:selected').data('top')){
                 this.scrollIntoView();
-                $($(this).find('.img_instant')).show();
-                $($(this).find('.label_instant')).show();
+                // $($(this).find('.img_instant')).show();
+                // $($(this).find('.label_instant')).show();
             }
         });
         $('#marker').show();
