@@ -90,8 +90,8 @@ $(document).ready(function () {
                 html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'" >'+v.point_name+'</option>';
                 html_marker+='<div class="div_marker" style="margin-top:'+y+'px; margin-left: '+x+'px;    position: absolute; ">' +
                     '<label id="label_'+x+'" class="label_instant">'+v.point_name+'</label>' +
-                '<img id="img_'+x+'" src="'+pointImage[0]+'" style="width: 150px; height: 100px" class="img_instant img-fluid map" alt=""></div>'+
-                    '<img src="'+url+'" data-x="'+x+'" style="margin-top:'+y+'px; margin-left: '+x+'px;    position: absolute; width: 20px; height: 30px" class="point_important img-fluid map" alt="">';
+                '<img id="img_'+x+'" src="'+pointImage[0]+'" style="width: 150px; height: 100px" class="img_instant img-fluid map" alt="">'+
+                    '<img src="'+url+'" data-x="'+x+'" style=" width: 20px; height: 30px" class="point_important img-fluid map" alt=""></div>';
             });
             $('#search_place').html(html_select);
             $('#content2 .content .row').append(html_marker);
@@ -106,13 +106,12 @@ $(document).ready(function () {
 $('body').on('click','.point_important',function(){
     if(that) {
         $(that).show();
-        $('#label_'+$(that).data('x')).hide();
-        $('#img_'+$(that).data('x')).hide();
+        $(($(that).parent()).find('.img_instant')).hide();
+        $(($(that).parent()).find('.label_instant')).hide();
     }
     that=this;
-    console.log( $('#label_'+$(this).data('x')));
-    $('#label_'+$(this).data('x')).show();
-    $('#img_'+$(this).data('x')).show();
+    $(($(this).parent()).find('.img_instant')).show();
+    $(($(this).parent()).find('.label_instant')).show();
     $(this).hide();
 });
     /*Get promotion limit 2*/
