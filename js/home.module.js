@@ -105,14 +105,13 @@ $(document).ready(function () {
 $('body').on('click','.point_important',function(){
     if(that) {
         $(that).show();
-        $(($(that).parent()).find('.img_instant')).hide();
-        $(($(that).parent()).find('.label_instant')).hide();
+        $(that).parent().find('.img_instant').show();
+        $(that).parent().find('.label_instant').show();
     }
     that=this;
-    console.log( $(($(this).parent()).find('.img_instant')));
-    console.log( $(($(this).parents()).find('.img_instant')));
-    $(($(this).parent('div.div_marker')).find('img.img_instant')).show();
-    $(($(this).parent('div.div_marker')).find('label.label_instant')).show();
+    console.log($(this).parent().find('.img_instant'));
+    $(this).parent().find('.img_instant').show();
+    $(this).parent().find('.label_instant').show();
     $(this).hide();
 });
     /*Get promotion limit 2*/
