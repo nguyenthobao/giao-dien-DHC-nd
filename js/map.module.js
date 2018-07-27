@@ -58,7 +58,7 @@ $(document).ready(function () {
                     $('#marker').hide();
                     $('.div_marker').each(function () {
                         if ($(this).data('lat') == '5336' && $(this).data('long') == '5124')
-                            $(this).find('.point_important').scrollIntoView();
+                            $(this).find('.point_important')[0].scrollIntoView();
                     });
                 } else {
                     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
