@@ -89,8 +89,8 @@ $(document).ready(function () {
                 else url='/images/blank_marker.jpg';
                 html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'" >'+v.point_name+'</option>';
                 html_marker+='<div class="div_marker" style="margin-top:'+y+'px; margin-left: '+x+'px;    position: absolute; ">' +
-                    '<label id="label_'+x+'" class="label_instant">'+v.point_name+'</label><br><br>' +
-                '<img id="img_'+x+'" src="'+pointImage[0]+'" style="width: 150px; height: 100px" class="img_instant img-fluid map" alt="">'+
+                    '<label id="label_'+x+'" class="label_instant">'+v.point_name+'</label><br>' +
+                '<img id="img_'+x+'" src="'+pointImage[0]+'" style="width: 175px; height: 100px" class="img_instant img-fluid map" alt="">'+
                     '<img src="'+url+'" data-x="'+x+'" style=" width: 20px; height: 30px" class="point_important img-fluid map" alt=""></div>';
             });
             $('#search_place').html(html_select);
