@@ -71,6 +71,7 @@ $(document).ready(function () {
             var html_select='<option></option>', html_marker='';
             $.each(pointData,function (k,v) {
                 var pointImage = JSON.parse(v.point_images);
+                var url='';
                 x = parseFloat(v.lat/ (9798 / 2032));
                 y = parseFloat(v.long/ (7046 / 1462));
                 console.log(x, y);
@@ -83,13 +84,18 @@ $(document).ready(function () {
                         x += 10;
                     }
                 }
+                if(v.point_type==3) url='/images/play_marker.jpg';
+                else if(v.point_type==4) url='/images/food_marker.jpg';
+                else url='/images/blank_marker.jpg';
                 html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'" >'+v.point_name+'</option>';
-                html_marker+='<div style="margin-top:'+y+'px; margin-left: '+x+'px;    position: absolute; "><label>'+v.point_name+'</label>' +
-                '<img src="'+pointImage[0]+'" style="width: 100px; height: 100px" class=" img-fluid map" alt=""></div>'+
-                    '<img src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png"  style="width: 20px; height: 30px" class="point_important img-fluid map" alt="">';
+                html_marker+='<div class="div_marker" style="margin-top:'+y+'px; margin-left: '+x+'px;    position: absolute; "><label class="label_instant">'+v.point_name+'</label>' +
+                '<img src="'+pointImage[0]+'" style="width: 150px; height: 100px" class="img_instant img-fluid map" alt=""></div>'+
+                    '<img src="'+url+'"  style="width: 20px; height: 30px" class="point_important img-fluid map" alt="">';
             });
             $('#search_place').html(html_select);
             $('#content2 .content .row').append(html_marker);
+            $('.img_instant').hide();
+            $('.label_instant').hide();
             // $('#search_place').select2();
         },
         error: function (e) {
