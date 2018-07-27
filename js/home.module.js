@@ -48,7 +48,7 @@ $(document).ready(function () {
                 var pointImage = JSON.parse(v.point_images);
                 html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'">'+
                     '<img src="' + pointImage[0] + '" class="img-thumbnail" alt="' + v.point_name + '">'
-                    +v.point_name+'</option>';
+                    +v.point_name+'sdbs</option>';
             });
             $('#search_place').html(html_select);
             // $('#search_place').select2();
