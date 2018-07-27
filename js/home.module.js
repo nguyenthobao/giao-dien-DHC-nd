@@ -46,9 +46,7 @@ $(document).ready(function () {
             var html_select='<option></option>';
             $.each(pointData,function (k,v) {
                 var pointImage = JSON.parse(v.point_images);
-                html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'">'+
-                    '<img src="' + pointImage[0] + '" class="img-thumbnail" alt="' + v.point_name + '">'
-                    +v.point_name+'sdbs</option>';
+                html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'" style="background-image:url('+pointImage[0]+');">'+v.point_name+'</option>';
             });
             $('#search_place').html(html_select);
             // $('#search_place').select2();
