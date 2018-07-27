@@ -275,9 +275,6 @@ main input:checked + label {
     .news-item {
         display: block !important;
     }
-    .img-fluid {
-        max-width: abc;
-    }
     #content2 .content {
         width: 2048px;
         height: 1473px;

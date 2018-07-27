@@ -97,6 +97,7 @@ $(document).ready(function () {
             $('.img_instant').hide();
             $('.label_instant').hide();
             // $('#search_place').select2();
+             $('.point_important').removeClass(img-fluid);
         },
         error: function (e) {
             alert('Có lỗi');
