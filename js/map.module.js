@@ -51,8 +51,8 @@ $(document).ready(function () {
                 $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
                 $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
                 console.log(($('#mapdhc').css('width')).substring(0, 4) + '..' + ($('#mapdhc').css('width')).substring(0, 4) / ($('#mapdhc').css('height')).substring(0, 4));
-                x = parseFloat(getXPixcelValue(15.968955, 108.018580) / (9798 / ($('#mapdhc').css('width')).substring(0, 4)));
-                y = parseFloat(getXPixcelValue(15.968955, 108.018580) / (7046 / ($('#mapdhc').css('height')).substring(0, 4)));
+                x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / ($('#mapdhc').css('width')).substring(0, 4)));
+                y = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (7046 / ($('#mapdhc').css('height')).substring(0, 4)));
 
                 if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
                     $('#marker').hide();
@@ -137,12 +137,11 @@ $(document).ready(function () {
                 y -= 160;
                 x += 10;
             }
+
         }
         $('.div_marker').each(function () {
             if($(this).data('lat')==$('#search_place option:selected').data('left') && $(this).data('long')==$('#search_place option:selected').data('top')){
                 this.scrollIntoView();
-                console.log(this);
-                console.log($(($(this).parent()).find('.img_instant')));
                 $($(this).find('.img_instant')).show();
                 $($(this).find('.label_instant')).show();
             }

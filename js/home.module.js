@@ -82,6 +82,9 @@ $(document).ready(function () {
                         y -= 160;
                         x += 10;
                     }
+                    if (width>350 && width <450){
+                        y-=90; x-=50;
+                    }
                 }
                 if (v.point_type == 3) url = '/images/play_marker.jpg';
                 else if (v.point_type == 4) url = '/images/food_marker.jpg';
