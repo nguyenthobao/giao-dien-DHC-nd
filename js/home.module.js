@@ -61,7 +61,8 @@ $(document).ready(function () {
                 }
                 html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'" >'+v.point_name+'</option>';
                 html_marker+='<div style="margin-top:'+y+'px; margin-left: '+x+'px "><label>'+v.point_name+'</label>' +
-                    '<img src="'+pointImage[0]+'" style="width: 100px; height: 100px" class="point_important img-fluid map" alt=""></div>';
+                '<img src="'+pointImage[0]+'" style="width: 100px; height: 100px" class=" img-fluid map" alt=""></div>'+
+                    '<img src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png"  class="point_important img-fluid map" alt="">';
             });
             $('#search_place').html(html_select);
             $('#content2 .content .row').append(html_marker);
