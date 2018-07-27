@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // $('#search_place').select2();
     /*Get all point in home*/
-    var   isMobile = {
+    var   that,isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);
         },
@@ -90,7 +90,7 @@ $(document).ready(function () {
                 html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'" >'+v.point_name+'</option>';
                 html_marker+='<div class="div_marker" style="margin-top:'+y+'px; margin-left: '+x+'px;    position: absolute; "><label class="label_instant">'+v.point_name+'</label>' +
                 '<img src="'+pointImage[0]+'" style="width: 150px; height: 100px" class="img_instant img-fluid map" alt=""></div>'+
-                    '<img src="'+url+'"  style="width: 20px; height: 30px" class="point_important img-fluid map" alt="">';
+                    '<img src="'+url+'"  style="margin-top:'+y+'px; margin-left: '+x+'px;    position: absolute; width: 20px; height: 30px" class="point_important img-fluid map" alt="">';
             });
             $('#search_place').html(html_select);
             $('#content2 .content .row').append(html_marker);
@@ -102,7 +102,17 @@ $(document).ready(function () {
             alert('Có lỗi');
         }
     });
-
+$('body').on('click','.point_important',function(){
+    if(that) {
+        $(that).show();
+        $(($(that).parent()).find('.img_instant')).hide();
+        $(($(that).parent()).find('.label_instant')).hide();
+    }
+    that=this;
+    $(($(this).parent()).find('.img_instant')).show();
+    $(($(this).parent()).find('.label_instant')).show();
+    $(this).hide();
+});
     /*Get promotion limit 2*/
     $.ajax({
         url: baseApi + 'promotion/get-all-promotion',
