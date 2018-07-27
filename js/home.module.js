@@ -1,6 +1,7 @@
 $(document).ready(function () {
     // $('#search_place').select2();
     /*Get all point in home*/
+    var isMobile;
     $.ajax({
         url: baseApi + 'point/get-all-point',
         method: 'POST',
@@ -43,12 +44,27 @@ $(document).ready(function () {
                 if(a.point_name > b.point_name) return 1;
                 return 0;
             });
-            var html_select='<option></option>';
+            var html_select='<option></option>', html_marker='';
             $.each(pointData,function (k,v) {
                 var pointImage = JSON.parse(v.point_images);
-                html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'" style="background-image:url('+pointImage[0]+');">'+v.point_name+'</option>';
+                x = parseFloat(v.lat/ (9798 / 2032));
+                y = parseFloat(v.long/ (7046 / 1462));
+                console.log(x, y);
+                if (isMobile.any() != null) {
+                    var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+                    if (width>400 && width <500){
+                        x+=10;
+                    }else {
+                        y -= 160;
+                        x += 10;
+                    }
+                }
+                html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'" >'+v.point_name+'</option>';
+                html_marker+='<div style="margin-top:'+y+'px; margin-left: '+x+'px "><label>'+v.point_name+'</label>' +
+                    '<img src="'+pointImage[0]+'" style="width: 100px; height: 100px" class="point_important img-fluid map" alt=""></div>';
             });
             $('#search_place').html(html_select);
+            $('#content2 .content .row').append(html_marker);
             // $('#search_place').select2();
         },
         error: function (e) {
@@ -177,7 +193,7 @@ $(document).ready(function () {
     });
 
     $('body').on('click', '.point-marker', function () {
-        var isMobile = {
+         isMobile = {
             Android: function() {
                 return navigator.userAgent.match(/Android/i);
             },
