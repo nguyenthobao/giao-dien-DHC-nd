@@ -1,7 +1,31 @@
 $(document).ready(function () {
     // $('#search_place').select2();
     /*Get all point in home*/
-    var isMobile;
+    var   isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+
+    console.log(isMobile.any());
+
+    urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
+    urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     $.ajax({
         url: baseApi + 'point/get-all-point',
         method: 'POST',
