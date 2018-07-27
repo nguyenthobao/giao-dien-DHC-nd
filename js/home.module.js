@@ -88,9 +88,10 @@ $(document).ready(function () {
                 else if(v.point_type==4) url='/images/food_marker.jpg';
                 else url='/images/blank_marker.jpg';
                 html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'" >'+v.point_name+'</option>';
-                html_marker+='<div class="div_marker" style="margin-top:'+y+'px; margin-left: '+x+'px;    position: absolute; "><label class="label_instant">'+v.point_name+'</label>' +
-                '<img src="'+pointImage[0]+'" style="width: 150px; height: 100px" class="img_instant img-fluid map" alt=""></div>'+
-                    '<img src="'+url+'"  style="margin-top:'+y+'px; margin-left: '+x+'px;    position: absolute; width: 20px; height: 30px" class="point_important img-fluid map" alt="">';
+                html_marker+='<div class="div_marker" style="margin-top:'+y+'px; margin-left: '+x+'px;    position: absolute; ">' +
+                    '<label id="label_'+x+'">'+v.point_name+'</label>' +
+                '<img id="img_'+x+'" src="'+pointImage[0]+'" style="width: 150px; height: 100px" class=" img-fluid map" alt=""></div>'+
+                    '<img src="'+url+'" data-x="'+x+'" style="margin-top:'+y+'px; margin-left: '+x+'px;    position: absolute; width: 20px; height: 30px" class="point_important img-fluid map" alt="">';
             });
             $('#search_place').html(html_select);
             $('#content2 .content .row').append(html_marker);
@@ -105,13 +106,12 @@ $(document).ready(function () {
 $('body').on('click','.point_important',function(){
     if(that) {
         $(that).show();
-        $(that).parent().find('.img_instant').show();
-        $(that).parent().find('.label_instant').show();
+        $('#label_'+$(that).data('x')).hide();
+        $('#img_'+$(that).data('x')).hide();
     }
     that=this;
-    console.log($(this).parent().find('.img_instant'));
-    $(this).parent().find('.img_instant').show();
-    $(this).parent().find('.label_instant').show();
+    $('#label_'+$(this).data('x')).show();
+    $('#img_'+$(this).data('x')).show();
     $(this).hide();
 });
     /*Get promotion limit 2*/
