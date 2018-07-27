@@ -83,7 +83,7 @@ $(document).ready(function () {
                         x += 10;
                     }
                     if (width>350 && width <450){
-                        y-=90; x-=50; console.log('dvfijwnev');
+                        y-=10; x-=20;
                     }
                 }
                 if (v.point_type == 3) url = '/images/play_marker.jpg';
@@ -107,14 +107,14 @@ $(document).ready(function () {
     });
     $('body').on('click', '.point_important', function () {
         if (that) {
-            $(that).show();
+            // $(that).show();
             $(($(that).parent()).find('.img_instant')).hide();
             $(($(that).parent()).find('.label_instant')).hide();
         }
         that = this;
         $(($(this).parent()).find('.img_instant')).show();
         $(($(this).parent()).find('.label_instant')).show();
-        $(this).hide();
+        // $(this).hide();
     });
     /*Get promotion limit 2*/
     $.ajax({
