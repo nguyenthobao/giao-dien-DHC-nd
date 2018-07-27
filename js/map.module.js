@@ -135,7 +135,7 @@ $(document).ready(function () {
             }
         }
         $('.div_marker').each(function () {
-            if($(this).data('lat')==$('#search_place option:selected').data('lat') && $(this).data('long')==$('#search_place option:selected').data('long')){
+            if($(this).data('lat')==$('#search_place option:selected').data('left') && $(this).data('long')==$('#search_place option:selected').data('top')){
                 this.scrollIntoView();
                 console.log(this);
                 console.log($(($(this).parent()).find('.img_instant')));
