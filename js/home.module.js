@@ -109,6 +109,8 @@ $('body').on('click','.point_important',function(){
         $(($(that).parent()).find('.label_instant')).hide();
     }
     that=this;
+    console.log( $(($(this).parent()).find('.img_instant')));
+    console.log( $(($(this).parents()).find('.img_instant')));
     $(($(this).parent('div.div_marker')).find('img.img_instant')).show();
     $(($(this).parent('div.div_marker')).find('label.label_instant')).show();
     $(this).hide();
