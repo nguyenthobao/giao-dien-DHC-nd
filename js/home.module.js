@@ -76,9 +76,9 @@ $(document).ready(function () {
                 console.log(x, y);
                 if (isMobile.any() != null) {
                     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-                    if (width > 400 && width < 500) {
-                        x += 10;
-                    } else {
+                    if (width>400 && width <500){
+                        x+=10;
+                    }else {
                         y -= 160;
                         x += 10;
                     }
