@@ -89,8 +89,8 @@ $(document).ready(function () {
                 else url='/images/blank_marker.jpg';
                 html_select+='<option data-top="'+v.long+'" data-left="'+v.lat+'" >'+v.point_name+'</option>';
                 html_marker+='<div class="div_marker" style="margin-top:'+y+'px; margin-left: '+x+'px;    position: absolute; ">' +
-                    '<label id="label_'+x+'">'+v.point_name+'</label>' +
-                '<img id="img_'+x+'" src="'+pointImage[0]+'" style="width: 150px; height: 100px" class=" img-fluid map" alt=""></div>'+
+                    '<label id="label_'+x+'" class="label_instant">'+v.point_name+'</label>' +
+                '<img id="img_'+x+'" src="'+pointImage[0]+'" style="width: 150px; height: 100px" class="img_instant img-fluid map" alt=""></div>'+
                     '<img src="'+url+'" data-x="'+x+'" style="margin-top:'+y+'px; margin-left: '+x+'px;    position: absolute; width: 20px; height: 30px" class="point_important img-fluid map" alt="">';
             });
             $('#search_place').html(html_select);
@@ -110,6 +110,7 @@ $('body').on('click','.point_important',function(){
         $('#img_'+$(that).data('x')).hide();
     }
     that=this;
+    console.log( $('#label_'+$(this).data('x')));
     $('#label_'+$(this).data('x')).show();
     $('#img_'+$(this).data('x')).show();
     $(this).hide();
