@@ -56,9 +56,10 @@ $(document).ready(function () {
 
                 if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
                     $('#marker').hide();
+                    console.log('ưefwefvwevw');
                     $('.div_marker').each(function () {
                         if ($(this).data('lat') == '5336' && $(this).data('long') == '5124')
-                            $(this).find('.point_important')[0].scrollIntoView();
+                            ($(this).find('.point_important')).scrollIntoView();
                     });
                 } else {
                     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
