@@ -88,9 +88,9 @@ $(document).ready(function () {
                 }if (width>=400 && width <450){
                     y-=160; console.log('sdfsvs');
                 }
-                if (v.point_type == 3) url = '/images/play_marker.jpg';
-                else if (v.point_type == 4) url = '/images/food_marker.jpg';
-                else url = '/images/blank_marker.jpg';
+                if (v.point_type == 3) url = '/images/play_marker.png';
+                else if (v.point_type == 4) url = '/images/food_marker.png';
+                else url = '/images/blank_marker.png';
                 html_select += '<option data-top="' + v.long + '" data-left="' + v.lat + '" >' + v.point_name + '</option>';
                 html_marker += '<div class="div_marker" data-id="'+v.point_id+'" data-lat="'+v.lat+'" data-long="'+v.long+'" style="margin-top:' + y + 'px; margin-left: ' + x + 'px;    position: absolute; ">' +
                     '<img src="' + url + '" data-x="' + x + '" style="max-width: 20000px; width: 18px; height: 25px" class="point_important img-fluid map" alt="">'+
