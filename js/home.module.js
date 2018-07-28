@@ -83,7 +83,7 @@ $(document).ready(function () {
                         x += 10;
                     }
                     if (width>350 && width <450){
-                        y+=20; x-=20;
+                        y+=20; x-=20; console.log('sdfsvs');
                     }
                 }
                 if (v.point_type == 3) url = '/images/play_marker.jpg';
