@@ -181,6 +181,7 @@ $(document).ready(function () {
                 html += '</div>';
                 html += '</div>';
                 $('#form-body').html(html);
+                document.getElementById('form-body').scrollIntoView();
             },
             error: function (e) {
                 alert('Có lỗi');
