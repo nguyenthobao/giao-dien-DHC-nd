@@ -95,7 +95,7 @@ $(document).ready(function () {
                 html_marker += '<div class="div_marker" data-id="'+v.point_id+'" data-lat="'+v.lat+'" data-long="'+v.long+'" style="margin-top:' + y + 'px; margin-left: ' + x + 'px;    position: absolute; ">' +
                     '<img src="' + url + '" data-x="' + x + '" style="max-width: 20000px; width: 18px; height: 25px" class="point_important img-fluid map" alt="">'+
                     '<label id="label_' + x + '" class="label_instant">' + v.point_name + '</label><br>' +
-                    '<img data-id="'+v.point_id+'" id="img_' + x + '" src="' + pointImage[0] + '" style="width: 175px; height: 100px" class="img_instant img-fluid map" alt="">' +
+                    '<img data-id="'+v.point_id+'" id="img_' + x + '" src="' + pointImage[0] + '" style="width: 175px; height: 120px" class="img_instant img-fluid map" alt="">' +
                     '</div>';
             });
             $('#search_place').html(html_select);
