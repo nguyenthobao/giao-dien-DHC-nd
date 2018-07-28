@@ -181,7 +181,7 @@ $(document).ready(function () {
                 html += '</div>';
                 html += '</div>';
                 $('#form-body').html(html);
-                document.getElementsByClassName('title-menu')[0].scrollIntoView();
+                (document.getElementsByClassName('title-menu')[0]).scrollIntoView();
             },
             error: function (e) {
                 alert('Có lỗi');
