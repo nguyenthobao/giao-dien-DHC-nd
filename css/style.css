@@ -38,7 +38,7 @@ body {
         height: 35px;
         width: 116px;
         border: none;
-        background-color: hsl(0, 100%, 10%);
+        background-color: #4caf50;
     }
 }
 
@@ -267,7 +267,7 @@ main input:checked + label {
         height: 35px;
         width: 116px;
         border: none;
-        background-color: hsl(0, 100%, 10%);
+        background-color:#4caf50;
     }
 }
 
@@ -334,7 +334,7 @@ main input:checked + label {
         width: 80%;
         margin-left: 5.5%;
         border: none;
-        background-color: hsl(0, 100%, 10%);
+        background-color: #4caf50;
     }
     #modalForm{
         width: 25%;
@@ -390,7 +390,7 @@ main input:checked + label {
         height: 35px;
         width: 116px;
         border: none;
-        background-color: hsl(0, 100%, 10%);
+        background-color: #4caf50;
     }
 
     #div_search {
