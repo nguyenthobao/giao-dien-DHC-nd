@@ -141,7 +141,7 @@ $(document).ready(function () {
         }
     });
 
-    $('body').on('click', '.item-point,.div_marker,.img_instant', function () {
+    $('body').on('click', '.item-point,.img_instant', function () {
         var pointId = $(this).data('id');
 
         $.ajax({
