@@ -90,10 +90,10 @@ $(document).ready(function () {
                 else if (v.point_type == 4) url = '/images/food_marker.jpg';
                 else url = '/images/blank_marker.jpg';
                 html_select += '<option data-top="' + v.long + '" data-left="' + v.lat + '" >' + v.point_name + '</option>';
-                html_marker += '<div class="div_marker" data-lat="'+v.lat+'" data-long="'+v.long+'" style="margin-top:' + y + 'px; margin-left: ' + x + 'px;    position: absolute; ">' +
+                html_marker += '<div class="div_marker" data-id="'+v.point_id+'" data-lat="'+v.lat+'" data-long="'+v.long+'" style="margin-top:' + y + 'px; margin-left: ' + x + 'px;    position: absolute; ">' +
                     '<img src="' + url + '" data-x="' + x + '" style="max-width: 20000px; width: 18px; height: 25px" class="point_important img-fluid map" alt="">'+
                     '<label id="label_' + x + '" class="label_instant">' + v.point_name + '</label><br>' +
-                    '<img id="img_' + x + '" src="' + pointImage[0] + '" style="width: 175px; height: 100px" class="img_instant img-fluid map" alt="">' +
+                    '<img data-id="'+v.point_id+'" id="img_' + x + '" src="' + pointImage[0] + '" style="width: 175px; height: 100px" class="img_instant img-fluid map" alt="">' +
                     '</div>';
             });
             $('#search_place').html(html_select);
@@ -141,7 +141,7 @@ $(document).ready(function () {
         }
     });
 
-    $('body').on('click', '.item-point', function () {
+    $('body').on('click', '.item-point,.div_marker,.img_instant', function () {
         var pointId = $(this).data('id');
 
         $.ajax({
