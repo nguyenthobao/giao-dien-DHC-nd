@@ -4,7 +4,19 @@ body {
     color: #555;
     /*background: #eee;*/
 }
+.point_important::before{
+    position:absolute;
+    content: "";
 
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    transition: background 0.5s ease;
+    z-index: 1;
+    background-color: rgba(19, 80, 91, 0.7) !important;
+}
 .div_marker label{
     font-size: 10px;
     width: 175px;
