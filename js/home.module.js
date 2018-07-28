@@ -82,9 +82,11 @@ $(document).ready(function () {
                         y -= 160;
                         x += 10;
                     }
-                    if (width>350 && width <450){
-                        y+=20; x-=20; console.log('sdfsvs');
+                    if (width>350 && width <400){
+                        y+=20; x-=20;
                     }
+                }if (width>=400 && width <450){
+                    y-=160; console.log('sdfsvs');
                 }
                 if (v.point_type == 3) url = '/images/play_marker.jpg';
                 else if (v.point_type == 4) url = '/images/food_marker.jpg';
