@@ -61,7 +61,7 @@ $(document).ready(function () {
                             ($(this).find('.point_important')[0]).scrollIntoView();
                             console.log(($(this).find('.point_important')[0]));}
                     });
-                } else { alert('đã scroll');
+                } else {
                     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
                     if (width>700 && width <1000){
                          y -= 120;
@@ -71,7 +71,6 @@ $(document).ready(function () {
                     }
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
-                    document.getElementById('marker').scrollIntoView(); alert('đã scroll');
                     $('#marker').show();
                     document.getElementById('marker').scrollIntoView();
                 }
@@ -140,16 +139,10 @@ $(document).ready(function () {
             }
 
         }
-        $('.div_marker').each(function () {
-            if($(this).data('lat')==$('#search_place option:selected').data('left') && $(this).data('long')==$('#search_place option:selected').data('top')){
-                this.scrollIntoView();
-                // $($(this).find('.img_instant')).show();
-                // $($(this).find('.label_instant')).show();
-            }
-        });
+        
+        $('#marker').css("margin-top", (y) + "px").css("margin-left", (x) + "px");
+        document.getElementById('marker').scrollIntoView(); alert('đã scroll');
         $('#marker').show();
-        $('#marker').css("margin-top", (y) + "px");
-        $('#marker').css("margin-left", (x) + "px");
         document.getElementById('marker').scrollIntoView();
     });
     $('body').on('click', '#download', function () {
