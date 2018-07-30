@@ -181,7 +181,7 @@ $(document).ready(function () {
                 html += '</div>';
                 html += '</div>';
                 $('#form-body').html(html);
-                setTimeout(window.scrollTo(0,0),100);
+                window.scrollTo(0,0);
             },
             error: function (e) {
                 alert('Có lỗi');

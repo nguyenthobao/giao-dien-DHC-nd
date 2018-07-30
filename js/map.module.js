@@ -140,7 +140,7 @@ $(document).ready(function () {
         }
 
         $('#marker').css("margin-top", (y) + "px").css("margin-left", (x) + "px");
-        setTimeout((document.getElementById('mapdhc')).scrollTo(x,y),100);
+        setTimeout($('mapdhc').scrollTo(x,y),100);
         $('#marker').show();
     });
     $('body').on('click', '#download', function () {
