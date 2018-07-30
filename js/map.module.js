@@ -132,18 +132,20 @@ $(document).ready(function () {
         if (isMobile.any() != null) {
             var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
             if (width>400 && width <500){
-              // x+=10;y+=30;
+               x+=10;y+=30;
             }else {
-              //  y -= 150; x += 10;
+                y -= 150;
+                x += 10;
             }
         }else {x+=15; y+=15;}
 
         $('#marker').css("margin-top",y + "px").css("margin-left",x + "px");
         $('#marker').show();
-        setTimeout($('#content2').animate({
-            scrollTop:y,
-            scrollLeft:x
-        }),1000);
+        // setTimeout($('#content2').animate({
+        //     scrollTop:y,
+        //     scrollLeft:x
+        // }),1000);
+        window.scrollTo(1500, 500);
     });
     $('body').on('click', '#download', function () {
 
