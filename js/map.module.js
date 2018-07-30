@@ -140,8 +140,8 @@ $(document).ready(function () {
         }else {x+=15; y+=15;}
 
         $('#marker').css("margin-top",y + "px").css("margin-left",x + "px");
-        document.getElementById('marker').scrollIntoView();
-        // $('#marker').show();
+         $('#marker').show();
+        (document.getElementById('marker')).scrollIntoView();
         // setTimeout($('#mapdhc').animate({
         //     scrollTop:y,
         //     scrollLeft:x
