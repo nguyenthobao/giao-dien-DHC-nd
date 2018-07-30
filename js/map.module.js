@@ -140,7 +140,7 @@ $(document).ready(function () {
         }
 
         $('#marker').css("margin-top", (y) + "px").css("margin-left", (x) + "px");
-        setTimeout(window.scrollTo(x-400,y-600),100);
+        setTimeout(($('#marker')).scrollTo(x-400,y-600),100);
         $('#marker').show();
     });
     $('body').on('click', '#download', function () {
