@@ -142,6 +142,7 @@ $(document).ready(function () {
 
         $('#marker').css("margin-top", (y) + "px").css("margin-left", (x) + "px");
         document.getElementById('marker').scrollIntoView();
+        window.scrollTo(x,y);
         $('#marker').show();
     });
     $('body').on('click', '#download', function () {
