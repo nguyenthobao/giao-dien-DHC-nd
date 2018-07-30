@@ -72,7 +72,7 @@ $(document).ready(function () {
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
-                    (document.getElementById('marker')[0]).scrollIntoView();
+                    document.getElementById('marker').scrollIntoView();
                 }
             }
         };
@@ -141,7 +141,7 @@ $(document).ready(function () {
         }
 
         $('#marker').css("margin-top", (y) + "px").css("margin-left", (x) + "px");
-        (document.getElementById('marker')[0]).scrollIntoView(); alert('đã scroll');
+        document.getElementById('marker').scrollIntoView();
         $('#marker').show();
     });
     $('body').on('click', '#download', function () {
