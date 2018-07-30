@@ -137,13 +137,13 @@ $(document).ready(function () {
                 y -= 130;
                 x += 10;
             }
-        }
+        }else {x+=30; y+=30}
 
-        $('#marker').css("margin-top", (y) + "px").css("margin-left", (x) + "px");
+        $('#marker').css("margin-top",y + "px").css("margin-left",x + "px");
         $('#marker').show();
         $('html, body').animate({
-            scrollTop: y,
-            scrollLeft:500
+            scrollTop:y,
+            scrollLeft:x
         }, 400);
     });
     $('body').on('click', '#download', function () {
