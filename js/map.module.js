@@ -132,23 +132,19 @@ $(document).ready(function () {
         if (isMobile.any() != null) {
             var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
             if (width>400 && width <500){
-               x+=10;y+=30;
+               x+=10;y+=30
             }else {
                 y -= 130;
                 x += 10;
             }
         }else {x+=15; y+=15}
 
-        // $('#marker').css("margin-top",y + "px").css("margin-left",x + "px");
+        $('#marker').css("margin-top",y + "px").css("margin-left",x + "px");
         $('#marker').show();
-        $('#marker').animate({
-            top:y,
-            left:x
-        }, 400);
-        $('#mapdhc').animate({
-            scrollTop:y,
-            scrollLeft:x
-        }, 400);
+        setTimeout( $('#mapdhc').animate({
+            scrollTop:1000,
+            scrollLeft:1000
+        }),1000);
     });
     $('body').on('click', '#download', function () {
 
