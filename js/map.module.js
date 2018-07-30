@@ -69,9 +69,9 @@ $(document).ready(function () {
                         y -= 110;
                         x -= 15;
                     }
-                    if(width>400 && width<450) y-=230;
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
+                    document.getElementById('marker').scrollIntoView(); alert('đã scroll');
                     $('#marker').show();
                     document.getElementById('marker').scrollIntoView();
                 }
