@@ -69,7 +69,7 @@ $(document).ready(function () {
                         y -= 110;
                         x -= 15;
                     }
-                    if(width>400 && width<450) y-=80;
+                    if(width>400 && width<450) y-=230;
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
