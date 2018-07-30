@@ -141,11 +141,12 @@ $(document).ready(function () {
 
         $('#marker').css("margin-top",y + "px").css("margin-left",x + "px");
         $('#marker').show();
-        // setTimeout($('#content2').animate({
-        //     scrollTop:y,
-        //     scrollLeft:x
-        // }),1000);
-        window.scrollTo(1500, 500);
+        setTimeout($('#mapdhc').animate({
+            scrollTop:y,
+            scrollLeft:x
+        }),1000);
+        //
+        // window.scrollTo(1500, 500);
     });
     $('body').on('click', '#download', function () {
 
