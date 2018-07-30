@@ -140,11 +140,12 @@ $(document).ready(function () {
         }else {x+=15; y+=15;}
 
         $('#marker').css("margin-top",y + "px").css("margin-left",x + "px");
-        $('#marker').show();
-        setTimeout($('#mapdhc').animate({
-            scrollTop:y,
-            scrollLeft:x
-        }),1000);
+        document.getElementById('marker').scrollIntoView();
+        // $('#marker').show();
+        // setTimeout($('#mapdhc').animate({
+        //     scrollTop:y,
+        //     scrollLeft:x
+        // }),1000);
         //
         // window.scrollTo(1500, 500);
     });
