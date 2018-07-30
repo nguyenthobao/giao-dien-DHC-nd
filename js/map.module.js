@@ -137,11 +137,11 @@ $(document).ready(function () {
                 y -= 130;
                 x += 10;
             }
-        }else {x+=30; y+=30}
+        }else {x+=15; y+=15}
 
-        $('#marker').css("margin-top",y + "px").css("margin-left",x + "px");
+        // $('#marker').css("margin-top",y + "px").css("margin-left",x + "px");
         $('#marker').show();
-        $('html, body').animate({
+        $('#marker').animate({
             scrollTop:y,
             scrollLeft:x
         }, 400);
