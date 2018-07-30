@@ -117,6 +117,7 @@ $(document).ready(function () {
         that = this;
         $(($(this).parent()).find('.img_instant')).show();
         $(($(this).parent()).find('.label_instant')).show();
+        setTimeout( document.getElementById('search_place').scrollIntoView(),1000);
         // $(this).hide();
     });
     /*Get promotion limit 2*/
