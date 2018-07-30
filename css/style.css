@@ -6,6 +6,7 @@ body {
 }
 .label_instant{
     font-size: 9px;
+    padding: 12px 20px 5px;
 }
 .point_important::before{
     position:absolute;
