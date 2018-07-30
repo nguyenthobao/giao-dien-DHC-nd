@@ -130,7 +130,7 @@ $(document).ready(function () {
         y = parseFloat($('#search_place option:selected').data('top') / (7046 / 1462));
         console.log(x, y);
         if (isMobile.any() != null) {
-            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width; alert(width);
             if (width>400 && width <500){
                x+=10;y+=30
             }else {
