@@ -4,12 +4,14 @@ body {
     color: #555;
     /*background: #eee;*/
 }
-.label_instant{
+
+.label_instant {
     font-size: 9px;
     padding: 12px 20px 5px;
 }
-.point_important::before{
-    position:absolute;
+
+.point_important::before {
+    position: absolute;
     content: "";
 
     top: 0;
@@ -21,7 +23,8 @@ body {
     z-index: 1;
     background-color: rgba(19, 80, 91, 0.7) !important;
 }
-.div_marker label{
+
+.div_marker label {
     font-size: 10px;
     width: 180px;
     display: inline-block;
@@ -32,6 +35,7 @@ body {
     padding-top: 4px;
     border-radius: 4px;
 }
+
 @media (min-width: 992px) {
     #content2 .content {
         width: 2048px;
@@ -283,7 +287,7 @@ main input:checked + label {
         height: 35px;
         width: 116px;
         border: none;
-        background-color:#4caf50;
+        background-color: #4caf50;
     }
 }
 
@@ -291,6 +295,7 @@ main input:checked + label {
     .news-item {
         display: block !important;
     }
+
     #content2 .content {
         width: 2048px;
         height: 1473px;
@@ -307,6 +312,10 @@ main input:checked + label {
     #content2 .row {
         width: 100%;
         padding-left: 15px;
+    }
+
+    html {
+        width: 2048px;
     }
 
     #mapdhc {
@@ -352,7 +361,8 @@ main input:checked + label {
         border: none;
         background-color: #4caf50;
     }
-    #modalForm{
+
+    #modalForm {
         width: 25%;
     }
 
