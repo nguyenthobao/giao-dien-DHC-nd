@@ -145,6 +145,7 @@ $(document).ready(function () {
             top:y,
             left:x
         }, 400);
+        document.getElementById('marker').scrollIntoView();
     });
     $('body').on('click', '#download', function () {
 
