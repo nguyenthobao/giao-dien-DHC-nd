@@ -61,7 +61,7 @@ $(document).ready(function () {
                             ($(this).find('.point_important')[0]).scrollIntoView();
                             console.log(($(this).find('.point_important')[0]));}
                     });
-                } else {
+                } else { alert('đã scroll');
                     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
                     if (width>700 && width <1000){
                          y -= 120;
