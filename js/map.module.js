@@ -132,7 +132,7 @@ $(document).ready(function () {
         if (isMobile.any() != null) {
             var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
             if (width>400 && width <500){
-               x+=10;
+               x+=10;y+=30
             }else {
                 y -= 160;
                 x += 10;
@@ -142,7 +142,7 @@ $(document).ready(function () {
 
         $('#marker').css("margin-top", (y) + "px").css("margin-left", (x) + "px");
         document.getElementById('marker').scrollIntoView();
-        setTimeout(window.scrollTo(x,y),100);
+        setTimeout(window.scrollTo(x,y+500),100);
         $('#marker').show();
     });
     $('body').on('click', '#download', function () {
