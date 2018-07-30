@@ -140,8 +140,8 @@ $(document).ready(function () {
         }
 
         $('#marker').css("margin-top", (y) + "px").css("margin-left", (x) + "px");
-        setTimeout( document.getElementById('marker').scrollIntoView(),100);
         $('#marker').show();
+        setTimeout( document.getElementById('marker').scrollIntoView(),1000);
     });
     $('body').on('click', '#download', function () {
 
