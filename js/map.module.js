@@ -141,6 +141,7 @@ $(document).ready(function () {
 
         $('#marker').css("margin-top",y + "px").css("margin-left",x + "px");
         $('#marker').show();
+        document.getElementById('marker').scrollIntoView();
         setTimeout($('body,html').animate({
             scrollTop:y,
             scrollLeft:x
