@@ -141,9 +141,9 @@ $(document).ready(function () {
 
         $('#marker').css("margin-top", (y) + "px").css("margin-left", (x) + "px");
         $('#marker').show();
-        $('#mapdhc').animate({
+        $('html, body').animate({
             scrollTop: y,
-            scrollLeft:x
+            scrollLeft:500
         }, 400);
     });
     $('body').on('click', '#download', function () {
