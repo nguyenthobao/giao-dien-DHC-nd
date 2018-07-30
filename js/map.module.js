@@ -145,7 +145,10 @@ $(document).ready(function () {
             top:y,
             left:x
         }, 400);
-        document.getElementById('marker').scrollIntoView();
+        $('#mapdhc').animate({
+            scrollTop:y,
+            scrollLeft:x
+        }, 400);
     });
     $('body').on('click', '#download', function () {
 
