@@ -314,10 +314,6 @@ main input:checked + label {
         padding-left: 15px;
     }
 
-    html {
-        width: 2048px;
-    }
-
     #mapdhc {
         padding-top: 255px;
         padding-left: 0px;
