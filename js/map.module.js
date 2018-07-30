@@ -132,18 +132,18 @@ $(document).ready(function () {
         if (isMobile.any() != null) {
             var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
             if (width>400 && width <500){
-               x+=10;y+=30
+               x+=10;y+=30;
             }else {
-                y -= 130;
+                y -= 150;
                 x += 10;
             }
-        }else {x+=15; y+=15}
+        }else {x+=15; y+=15;}
 
         $('#marker').css("margin-top",y + "px").css("margin-left",x + "px");
         $('#marker').show();
-        setTimeout( $('body, html').animate({
-            scrollTop:2400,
-            scrollLeft:4000
+        setTimeout($('body,html').animate({
+            scrollTop:100000,
+            scrollLeft:100000
         }),1000);
     });
     $('body').on('click', '#download', function () {
