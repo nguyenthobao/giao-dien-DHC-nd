@@ -5,7 +5,7 @@ body {
     /*background: #eee;*/
 }
 .label_instant{
-    font-size: 10px;
+    font-size: 9px;
 }
 .point_important::before{
     position:absolute;

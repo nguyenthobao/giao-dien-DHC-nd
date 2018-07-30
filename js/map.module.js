@@ -140,7 +140,6 @@ $(document).ready(function () {
         }
 
         $('#marker').css("margin-top", (y) + "px").css("margin-left", (x) + "px");
-        document.getElementById('marker').scrollIntoView();
         setTimeout(window.scrollTo(x,y+1500),100);
         $('#marker').show();
     });
