@@ -65,11 +65,11 @@ $(document).ready(function () {
                     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
                     if (width>700 && width <1000){
                          y -= 120;
-                        // x -= 15;
                     }else {
                         y -= 110;
                         x -= 15;
                     }
+                    if(width>400 && width<450) y-=80;
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
