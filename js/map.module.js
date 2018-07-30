@@ -141,7 +141,7 @@ $(document).ready(function () {
 
         $('#marker').css("margin-top",y + "px").css("margin-left",x + "px");
         $('#marker').show();
-        setTimeout($('body,html').animate({
+        setTimeout($('#content2').animate({
             scrollTop:y,
             scrollLeft:x
         }),1000);
