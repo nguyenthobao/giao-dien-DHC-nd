@@ -130,19 +130,18 @@ $(document).ready(function () {
         y = parseFloat($('#search_place option:selected').data('top') / (7046 / 1462));
         console.log(x, y);
         if (isMobile.any() != null) {
-            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width; alert(width);
+            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
             if (width>400 && width <500){
                x+=10;y+=30
             }else {
-                y -= 160;
+                y -= 130;
                 x += 10;
             }
-
         }
 
         $('#marker').css("margin-top", (y) + "px").css("margin-left", (x) + "px");
         document.getElementById('marker').scrollIntoView();
-        setTimeout(window.scrollTo(x,y+500),100);
+        setTimeout(window.scrollTo(x,y+1500),100);
         $('#marker').show();
     });
     $('body').on('click', '#download', function () {
