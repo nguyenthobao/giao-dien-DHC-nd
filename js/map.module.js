@@ -142,8 +142,8 @@ $(document).ready(function () {
         $('#marker').css("margin-top", (y) + "px").css("margin-left", (x) + "px");
         $('#marker').show();
         $('html, body').animate({
-            scrollTop: 1000,
-            scrollLeft:1000
+            scrollTop: y,
+            scrollLeft:x
         }, 400);
     });
     $('body').on('click', '#download', function () {
