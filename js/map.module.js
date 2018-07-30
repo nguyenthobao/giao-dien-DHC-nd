@@ -72,7 +72,7 @@ $(document).ready(function () {
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
-                    document.getElementById('marker').scrollIntoView();
+                    (document.getElementById('marker')[0]).scrollIntoView();
                 }
             }
         };
@@ -139,11 +139,10 @@ $(document).ready(function () {
             }
 
         }
-        
+
         $('#marker').css("margin-top", (y) + "px").css("margin-left", (x) + "px");
-        document.getElementById('marker').scrollIntoView(); alert('đã scroll');
+        (document.getElementById('marker')[0]).scrollIntoView(); alert('đã scroll');
         $('#marker').show();
-        document.getElementById('marker').scrollIntoView();
     });
     $('body').on('click', '#download', function () {
 
