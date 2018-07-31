@@ -213,10 +213,24 @@ $(document).ready(function () {
                 html += '</div>';
                 html += '</div>';
                 $('#form-body').html(html);
-                setTimeout($('#modalForm').animate({
-                    top:y-100,
-                    left:x-600
-                }),100);
+                var body = $(window);
+                // Get modal size
+                var w = modal.width();
+                var h = modal.height();
+                // Get window size
+                var bw = body.width();
+                var bh = body.height();
+
+                // Update the css and center the modal on screen
+                $('#modalForm').css({
+                    "position": "absolute",
+                    "top": ((bh - h) / 2) + "px",
+                    "left": ((bw - w) / 2) + "px"
+                });
+                // setTimeout($('#modalForm').animate({
+                //     top:y-100,
+                //     left:x-600
+                // }),100);
             },
             error: function (e) {
                 alert('Có lỗi');
