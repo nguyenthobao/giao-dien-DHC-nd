@@ -157,7 +157,6 @@ $(document).ready(function () {
         // window.scrollTo(1500, 500);
     });
     $('body').on('mousedown','#mapdhc',function(event){
-        alert(event.pageX);
         if(event.pageX >1700 || event.pageY>1200)
             $('html').attr('style','');
     });
@@ -215,8 +214,8 @@ $(document).ready(function () {
                 html += '</div>';
                 $('#form-body').html(html);
                 setTimeout($('#modalForm').animate({
-                    top:y-200,
-                    left:x-600
+                    top:y-150,
+                    left:x-1000
                 }),100);
             },
             error: function (e) {
