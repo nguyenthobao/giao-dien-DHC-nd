@@ -73,10 +73,7 @@ $(document).ready(function () {
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
-                    setTimeout($('html').animate({
-                        scrollTop:y-150,
-                        scrollLeft:5000
-                    }),100);
+                    document.getElementById('marker').scrollIntoView();
                 }
             }
         };
