@@ -189,8 +189,7 @@ $(document).ready(function () {
             }
         });
     });
-    $('body').on('mousemove','#content2', function () {
-        alert('nwev');
+    $('body').on('mousedown','#content2', function () {
         $('html').attr('style','');
     });
     $('body').on('click', '.fixed-top', function () {
