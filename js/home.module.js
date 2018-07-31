@@ -198,8 +198,10 @@ $(document).ready(function () {
             $('#download').hide();
             $('#div_search').hide();
             $('#marker').hide();
+            $('html').attr('style','');
         } else {
             $('main > label').hide();
+            $('html').attr('style','width:2048px; height:1470px');
         }
     });
     $('body').on('click', '#mapdhc', function () {
@@ -208,6 +210,7 @@ $(document).ready(function () {
     });
     $('body').on('click', '#tab2', function () {
         $('main > label').hide();
+        $('html').attr('style','width:2048px; height:1470px');
         $('.container').attr('style', 'min-width: 100%');
         $('main').attr('style', 'min-width: 100%');
         $('#content2').attr('style', 'margin-top: -100px;');
