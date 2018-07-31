@@ -214,7 +214,10 @@ $(document).ready(function () {
                 html += '</div>';
                 html += '</div>';
                 $('#form-body').html(html);
-                (document.getElementById('modalForm')).scrollIntoView();
+                setTimeout($('#modalForm').animate({
+                    top:y-150,
+                    left:x-200
+                }),100);
             },
             error: function (e) {
                 alert('Có lỗi');
