@@ -204,16 +204,18 @@ $(document).ready(function () {
             $('html').attr('style','height:3000px');
         }
     });
-    $('body').onscroll(function () {
-        var body = document.body,
-            html = document.documentElement;
+   function scrollFunction() {
+       if((document.getElementById("mapdhc")).offsetLeft >0) {
+           var body = document.body,
+               html = document.documentElement;
 
-        var height = Math.max( body.scrollHeight, body.offsetHeight,
-            html.clientHeight, html.scrollHeight, html.offsetHeight );
-        alert(height);
-        if(height>1600) $('html').attr('style','height:1600px');
-        if(height<1500) $('html').attr('style','height:3000px');
-    });
+           var height = Math.max(body.scrollHeight, body.offsetHeight,
+               html.clientHeight, html.scrollHeight, html.offsetHeight);
+           alert(height);
+           if (height > 1600) $('html').attr('style', 'height:1600px');
+           if (height < 1500) $('html').attr('style', 'height:3000px');
+       }
+    }
     $('body').on('click', '#mapdhc', function () {
         $('.img_instant').hide();
         $('.label_instant').hide();
