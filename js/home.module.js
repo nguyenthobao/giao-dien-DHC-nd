@@ -189,7 +189,7 @@ $(document).ready(function () {
             }
         });
     });
-    $(document).mousemove( function () {
+    $('body').on('mousemove','#content2', function () {
         alert('nwev');
         $('html').attr('style','');
     });
