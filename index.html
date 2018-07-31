@@ -183,29 +183,14 @@
 </html>
 <script>
     window.addEventListener('scroll', function(){
-        alert('ddsg');
         if((document.getElementById("mapdhc")).offsetLeft >0) {
             var body = document.body,
                 html = document.documentElement;
-
             var height = Math.max(body.scrollHeight, body.offsetHeight,
                 html.clientHeight, html.scrollHeight, html.offsetHeight);
-            alert(height);
+            console.log(height);
             if (height > 1600) $('html').attr('style', 'height:1600px');
             if (height < 1500) $('html').attr('style', 'height:3000px');
         }
     }, true);
-    function scrollFunction() {
-        alert('ddsg');
-        if((document.getElementById("mapdhc")).offsetLeft >0) {
-            var body = document.body,
-                html = document.documentElement;
-
-            var height = Math.max(body.scrollHeight, body.offsetHeight,
-                html.clientHeight, html.scrollHeight, html.offsetHeight);
-            alert(height);
-            if (height > 1600) $('html').attr('style', 'height:1600px');
-            if (height < 1500) $('html').attr('style', 'height:3000px');
-        }
-    }
 </script>
