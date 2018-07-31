@@ -156,8 +156,8 @@ $(document).ready(function () {
         //
         // window.scrollTo(1500, 500);
     });
-    $('body').on('mousemove','#mapdhc',function(event){
-        console.log(event.pageX,event.pageY,x,y);
+    $('body').on('mousedown','#mapdhc',function(event){
+        alert(event.pageX);
         if(event.pageX >1700 || event.pageY>1200)
             $('html').attr('style','');
     });
