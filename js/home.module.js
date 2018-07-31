@@ -195,7 +195,10 @@ $(document).ready(function () {
     $('body').on('mouseup','#content2', function () {
         $('html').attr('style','');
     });
-    $('body').on('click', '.fixed-top', function () {
+    $('body').on('mouseenter','#content2', function () {
+        $('html').attr('style','');
+    });
+    $('body').mouseeon('click', '.fixed-top', function () {
         if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
             $('main > label').show();
             $('#content2').attr('style', 'margin-top: -50px;border: 0px;');
