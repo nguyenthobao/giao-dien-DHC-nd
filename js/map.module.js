@@ -183,6 +183,7 @@ $(document).ready(function () {
                 point_id: pointId,
             }),
             success: function (result) {
+                $('html').attr('style','');
                 if ((document.getElementById("content2")).offsetLeft > 0 && x>0 && y>0)
                 $('#modalForm').attr('style','margin-top:'+(y-50)+'px;margin-left:'+(x-300)+'px');
                 else
@@ -227,7 +228,6 @@ $(document).ready(function () {
                     "top": ((bh - h) / 2) + "px",
                     "left": ((bw - w) / 2) + "px"
                 });
-                $('html').attr('style','');
                 $('#modalForm').animate({ scrollTop: 0 }, 'slow');
                 // setTimeout($('#modalForm').animate({
                 //     top:y-100,
