@@ -73,7 +73,7 @@ $(document).ready(function () {
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
-                    document.getElementById('marker').scrollIntoView();
+                    $('#search_place option:eq(1)').prop('selected',true);
                 }
             }
         };
