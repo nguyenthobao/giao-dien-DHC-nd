@@ -189,7 +189,7 @@ $(document).ready(function () {
             }
         });
     });
-    $('body').on('mousedown','#content2', function () {
+    $('body').on('mousedown,mouseup','#content2', function () {
         $('html').attr('style','');
     });
     $('body').on('click', '.fixed-top', function () {
