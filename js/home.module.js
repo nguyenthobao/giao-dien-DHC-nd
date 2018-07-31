@@ -189,7 +189,7 @@ $(document).ready(function () {
             }
         });
     });
-    $('#mapdhc').mousemove( function () {
+    $(document).mousemove( function () {
         alert('nwev');
         $('html').attr('style','');
     });
