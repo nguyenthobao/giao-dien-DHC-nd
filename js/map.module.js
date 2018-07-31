@@ -172,7 +172,7 @@ $(document).ready(function () {
             window.location.href = urlAndroid;
         }
     });
-    $('body').on('click', '.item-point,.img_instant,.label_instant', function () {
+    $('body').on('click', '.item-point,.img_instant', function () {
         var pointId = $(this).data('id');
 
         $.ajax({
@@ -226,8 +226,9 @@ $(document).ready(function () {
                     "position": "absolute",
                     "top": ((bh - h) / 2) + "px",
                     "left": ((bw - w) / 2) + "px"
-                }).animate({ scrollTop: 0 }, 'slow');
+                });
                 $('html').attr('style','');
+                $('#modalForm').animate({ scrollTop: 0 }, 'slow');
                 // setTimeout($('#modalForm').animate({
                 //     top:y-100,
                 //     left:x-600
