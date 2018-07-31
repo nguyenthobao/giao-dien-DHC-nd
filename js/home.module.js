@@ -192,6 +192,11 @@ $(document).ready(function () {
     $('body').on('mouseup','#content2', function () {
         $('html').attr('style','');
     });
+    $(window).scroll(function () {
+        alert('fgh');
+        $('html').attr('style','');
+    });
+
     $('body').on('click', '.fixed-top', function () {
         if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
             $('main > label').show();
@@ -211,7 +216,6 @@ $(document).ready(function () {
         alert($('html').scrollTop());
         $('.img_instant').hide();
         $('.label_instant').hide();
-        $('html').attr('style','');
     });
     $('body').on('click', '#tab2', function () {
         $('main > label').hide();
