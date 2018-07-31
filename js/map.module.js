@@ -152,7 +152,7 @@ $(document).ready(function () {
         // window.scrollTo(1500, 500);
     });
     $('body').on('mousemove','#mapdhc',function(event){
-        console.log(event.pageX,event.pageY);
+        console.log(event.pageX,event.pageY,x,y);
         if((event.pageX-200) > x || (event.pageX+200<x )||(event.pageY-200)>y ||(event.pageY+200)<y)
             $('html').attr('style','');
     });

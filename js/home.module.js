@@ -21,7 +21,7 @@ $(document).ready(function () {
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
-
+var x_before=0; y_before=0;
     console.log(isMobile.any());
 
     urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
@@ -209,9 +209,9 @@ $(document).ready(function () {
         }
     });
     $('body').on('click', '#mapdhc', function () {
-        alert($('html').scrollTop());
         $('.img_instant').hide();
         $('.label_instant').hide();
+
     });
     $('body').on('click', '#tab2', function () {
         $('main > label').hide();
