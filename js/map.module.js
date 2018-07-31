@@ -214,8 +214,8 @@ $(document).ready(function () {
                 html += '</div>';
                 $('#form-body').html(html);
                 setTimeout($('#modalForm').animate({
-                    top:y-200,
-                    left:x-800
+                    top:y,
+                    left:x
                 }),100);
             },
             error: function (e) {
