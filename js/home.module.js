@@ -189,7 +189,7 @@ $(document).ready(function () {
             }
         });
     });
-    $('body').on('mousemove','#mapdhc', function () {
+    $('#mapdhc').mousemove( function () {
         alert('nwev');
         $('html').attr('style','');
     });
