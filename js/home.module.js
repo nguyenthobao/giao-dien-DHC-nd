@@ -189,6 +189,10 @@ $(document).ready(function () {
             }
         });
     });
+    $('body').on('mousemove','#mapdhc', function () {
+        alert('nwev');
+        $('html').attr('style','');
+    });
     $('body').on('click', '.fixed-top', function () {
         if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
             $('main > label').show();
