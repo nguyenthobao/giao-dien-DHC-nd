@@ -106,7 +106,7 @@
                     <select id="search_place" ></select>
                 </div>
             </div>
-            <div class="content"  onscroll="scrollFunction()">
+            <div class="content">
                 <div class="container" style="margin-bottom: 10px;">
                     <div class="row">
                         <img src="images/map_DHC.jpg" id="mapdhc" class="img-fluid map" alt="">
@@ -182,7 +182,19 @@
 <!--<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/select2/3.2/select2.min.js"></script>-->
 </html>
 <script>
+    window.addEventListener('scroll', function(){
+        alert('ddsg');
+        if((document.getElementById("mapdhc")).offsetLeft >0) {
+            var body = document.body,
+                html = document.documentElement;
 
+            var height = Math.max(body.scrollHeight, body.offsetHeight,
+                html.clientHeight, html.scrollHeight, html.offsetHeight);
+            alert(height);
+            if (height > 1600) $('html').attr('style', 'height:1600px');
+            if (height < 1500) $('html').attr('style', 'height:3000px');
+        }
+    }, true);
     function scrollFunction() {
         alert('ddsg');
         if((document.getElementById("mapdhc")).offsetLeft >0) {
