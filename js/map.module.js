@@ -122,7 +122,7 @@ $(document).ready(function () {
         tryGeolocation();
 
     });
-    $('body').on('mousemove', '#mapdhc,html, body', function () {
+    $('html').on('mouseleave','#mapdhc', function () {
         alert('nwev');
         $('html').attr('style','');
     });
