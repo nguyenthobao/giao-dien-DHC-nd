@@ -190,9 +190,11 @@ $(document).ready(function () {
         });
     });
     $('body').on('mousedown','#content2', function () {
+        if($('html').attr('style') && $('html').attr('style')!='')
         $('html').attr('style','');
     });
     $('body').on('mouseup','#content2', function () {
+        if($('html').attr('style') && $('html').attr('style')!='')
         $('html').attr('style','');
     });
     // $('body').on('mouseenter','#content2', function () {
