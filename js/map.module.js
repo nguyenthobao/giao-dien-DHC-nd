@@ -206,7 +206,7 @@ $(document).ready(function () {
                 html += '</div>';
                 html += '</div>';
                 $('#form-body').html(html);
-                window.scrollTo(0,0);
+                (document.getElementById('modalForm')).scrollIntoView();
             },
             error: function (e) {
                 alert('Có lỗi');
