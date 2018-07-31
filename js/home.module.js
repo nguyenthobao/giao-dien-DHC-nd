@@ -201,28 +201,16 @@ $(document).ready(function () {
             $('html').attr('style','');
         } else {
             $('main > label').hide();
-            $('html').attr('style','height:3000px');
+            $('html').attr('style','height:1500px');
         }
     });
-   function scrollFunction() {
-       if((document.getElementById("mapdhc")).offsetLeft >0) {
-           var body = document.body,
-               html = document.documentElement;
-
-           var height = Math.max(body.scrollHeight, body.offsetHeight,
-               html.clientHeight, html.scrollHeight, html.offsetHeight);
-           alert(height);
-           if (height > 1600) $('html').attr('style', 'height:1600px');
-           if (height < 1500) $('html').attr('style', 'height:3000px');
-       }
-    }
     $('body').on('click', '#mapdhc', function () {
         $('.img_instant').hide();
         $('.label_instant').hide();
     });
     $('body').on('click', '#tab2', function () {
         $('main > label').hide();
-        $('html').attr('style','height:3000px');
+        $('html').attr('style','height:1500px');
         $('.container').attr('style', 'min-width: 100%');
         $('main').attr('style', 'min-width: 100%');
         $('#content2').attr('style', 'margin-top: -100px;');

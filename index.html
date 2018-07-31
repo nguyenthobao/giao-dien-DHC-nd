@@ -181,3 +181,18 @@
 <script src="js/select2-4.0.3/dist/js/i18n/vi.js"></script>
 <!--<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/select2/3.2/select2.min.js"></script>-->
 </html>
+<script>
+
+    function scrollFunction() {
+        if((document.getElementById("mapdhc")).offsetLeft >0) {
+            var body = document.body,
+                html = document.documentElement;
+
+            var height = Math.max(body.scrollHeight, body.offsetHeight,
+                html.clientHeight, html.scrollHeight, html.offsetHeight);
+            alert(height);
+            if (height > 1600) $('html').attr('style', 'height:1600px');
+            if (height < 1500) $('html').attr('style', 'height:3000px');
+        }
+    }
+</script>
