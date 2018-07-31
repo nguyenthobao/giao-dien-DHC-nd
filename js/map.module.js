@@ -158,7 +158,7 @@ $(document).ready(function () {
     });
     $('body').on('mousemove','#mapdhc',function(event){
         console.log(event.pageX,event.pageY,x,y);
-        if(x<0||y<0||(event.pageX-200) > x || (event.pageX+200<x )||(event.pageY-200)>y ||(event.pageY+200)<y)
+        if(event.pageX >1700 || event.pageY>1200)
             $('html').attr('style','');
     });
     $('body').on('click', '#download', function () {
