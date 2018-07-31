@@ -142,10 +142,10 @@ $(document).ready(function () {
         $('#marker').css("margin-top",y + "px").css("margin-left",x + "px");
          $('#marker').show();
         // (document.getElementById('marker')).scrollIntoView();
-        setTimeout($('#content2 .row').animate({
+        setTimeout($('#content2 .container').animate({
             scrollTop:y,
             scrollLeft:x
-        }),1000);
+        }),100);
         //
         // window.scrollTo(1500, 500);
     });
