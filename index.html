@@ -182,15 +182,20 @@
 <!--<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/select2/3.2/select2.min.js"></script>-->
 </html>
 <script>
-    window.addEventListener('scroll', function(){
-        if((document.getElementById("mapdhc")).offsetLeft >0) {
-            var body = document.body,
-                html = document.documentElement;
-            var height =  html.scrollHeight;
-            console.log(height)
-            if(height>1800)  window.scrollTo(0,1000);
-            // if (height > 1600) $('html').attr('style', 'height:1600px');
-            // if (height < 1750) $('html').attr('style', 'height:3000px');
-        }
-    }, true);
+    $(window).scroll(function () {
+console.log($(window).scrollTop());
+        if($(window).scrollTop()>1750)  window.scrollTo(0,1000);
+
+    });
+    // window.addEventListener('scroll', function(){
+        // if((document.getElementById("mapdhc")).offsetLeft >0) {
+        //     var body = document.body,
+        //         html = document.documentElement;
+        //     var height =  html.scrollHeight;
+        //     console.log(height)
+        //     if(height>1800)  window.scrollTo(0,1000);
+        //     // if (height > 1600) $('html').attr('style', 'height:1600px');
+        //     // if (height < 1750) $('html').attr('style', 'height:3000px');
+        // }
+    // }, true);
 </script>
