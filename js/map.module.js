@@ -147,7 +147,7 @@ $(document).ready(function () {
             scrollTop:y-150,
             scrollLeft:x+100
         }),100);
-        setTimeout($('html').attr('style',''),1000);
+        // setTimeout($('html').attr('style',''),1000);
         //
         // window.scrollTo(1500, 500);
     });
