@@ -168,6 +168,51 @@ $(document).ready(function () {
             window.location.href = urlAndroid;
         }
     });
+    $('body').on('click', '.item-point,.img_instant', function () {
+        var pointId = $(this).data('id');
+
+        $.ajax({
+            url: baseApi + 'point/get-point',
+            method: 'POST',
+            dataType: 'json',
+            data: JSON.stringify({
+                point_id: pointId,
+            }),
+            success: function (result) {
+                $('#modalForm').attr('style','margin-top:'+y+'px;margin-left:'+x+'px');
+                $('#modalForm').modal('show');
+                $('#modalFormLabel').text(result.data.result.point_name);
+                var pointImage = JSON.parse(result.data.result.point_images);
+                html = '<div class="row img-point">';
+                html += '<div class="col-12"><img src="' + pointImage[0] + '" alt=""></div>';
+                html += '</div>';
+                html += '<div class="row margin30">';
+                html += '<div class="col-12">';
+                html += '<div class="row">';
+                html += '<h5 class="point-name col-12">' + result.data.result.point_name + '</h5>';
+                html += '<span class="point-note col-12">' + result.data.result.point_note + '</span>';
+                html += '</div>';
+                html += '<div class="container">';
+                html += '<div class="row margin30">';
+                html += '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">';
+                html += '<button type="button" class="btn col-12 book-seat">Đặt chỗ</button>';
+                html += '</div>';
+                html += '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">';
+                html += '<button type="button" class="btn col-12 point-marker">Chỉ đường</button>';
+                html += '</div>';
+                html += '</div>';
+                html += '</div><hr>';
+                html += '<div class="row margin30 point-description">' + result.data.result.point_detail + '</div>';
+                html += '</div>';
+                html += '</div>';
+                $('#form-body').html(html);
+                window.scrollTo(0,0);
+            },
+            error: function (e) {
+                alert('Có lỗi');
+            }
+        });
+    });
 });
 
 function getOriginal1(lat1, lng1, lat2, lng2, x1, y1, x2, y2) {

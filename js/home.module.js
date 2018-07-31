@@ -21,7 +21,7 @@ $(document).ready(function () {
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
-var x_before=0; y_before=0;
+    var x_before=0; y_before=0;
     console.log(isMobile.any());
 
     urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
@@ -144,56 +144,10 @@ var x_before=0; y_before=0;
         }
     });
 
-    $('body').on('click', '.item-point,.img_instant', function () {
-        var pointId = $(this).data('id');
 
-        $.ajax({
-            url: baseApi + 'point/get-point',
-            method: 'POST',
-            dataType: 'json',
-            data: JSON.stringify({
-                point_id: pointId,
-            }),
-            success: function (result) {
-                $('#modalForm').modal('show');
-
-                $('#modalFormLabel').text(result.data.result.point_name);
-                var pointImage = JSON.parse(result.data.result.point_images);
-                html = '<div class="row img-point">';
-                html += '<div class="col-12"><img src="' + pointImage[0] + '" alt=""></div>';
-                html += '</div>';
-                html += '<div class="row margin30">';
-                html += '<div class="col-12">';
-                html += '<div class="row">';
-                html += '<h5 class="point-name col-12">' + result.data.result.point_name + '</h5>';
-                html += '<span class="point-note col-12">' + result.data.result.point_note + '</span>';
-                html += '</div>';
-                html += '<div class="container">';
-                html += '<div class="row margin30">';
-                html += '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">';
-                html += '<button type="button" class="btn col-12 book-seat">Đặt chỗ</button>';
-                html += '</div>';
-                html += '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">';
-                html += '<button type="button" class="btn col-12 point-marker">Chỉ đường</button>';
-                html += '</div>';
-                html += '</div>';
-                html += '</div><hr>';
-                html += '<div class="row margin30 point-description">' + result.data.result.point_detail + '</div>';
-                html += '</div>';
-                html += '</div>';
-                $('#form-body').html(html);
-                window.scrollTo(0,0);
-            },
-            error: function (e) {
-                alert('Có lỗi');
-            }
-        });
-    });
     $('body').on('mouseup','#content2', function () {
         $('html').attr('style','');
     });
-
-
     $('body').on('click', '.fixed-top', function () {
         if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
             $('main > label').show();
