@@ -226,7 +226,7 @@ $(document).ready(function () {
                     "position": "absolute",
                     "top": ((bh - h) / 2) + "px",
                     "left": ((bw - w) / 2) + "px"
-                });
+                }).animate({ scrollTop: 0 }, 'slow');
                 // setTimeout($('#modalForm').animate({
                 //     top:y-100,
                 //     left:x-600
