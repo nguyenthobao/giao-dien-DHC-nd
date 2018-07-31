@@ -43,11 +43,11 @@ $(document).ready(function () {
                     $('#marker').css("margin-top", (y - 15) + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
+                    document.getElementById('marker').scrollIntoView();
                 }
                 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
                 if (width>1000) $('#download').hide();
             } else {
-                $('html').attr('style','width:10000px;height:3000px');
                 $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
                 $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
                 console.log(($('#mapdhc').css('width')).substring(0, 4) + '..' + ($('#mapdhc').css('width')).substring(0, 4) / ($('#mapdhc').css('height')).substring(0, 4));
@@ -72,6 +72,7 @@ $(document).ready(function () {
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
+                    document.getElementById('marker').scrollIntoView();
                 }
             }
         };
