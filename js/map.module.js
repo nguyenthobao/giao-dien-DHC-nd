@@ -26,7 +26,6 @@ $(document).ready(function () {
     var scaleX = 1;
     var scaleY = 1;
     var x = -1, y = -1;
-    var check_scroll=false;
     $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
     $('#tab2').change(function () {
@@ -124,7 +123,7 @@ $(document).ready(function () {
 
     });
     $('body').on('change', '#search_place', function () {
-        check_scroll=false
+
         // console.log($('#search_place option:selected').data('left'), $('#search_place option:selected').data('top'));
         // console.log(($('#mapdhc').css('width')).substring(0, 4), ($('#mapdhc').css('height')).substring(0, 4));
         $('html').attr('style','width:10000px;height:3000px');
@@ -151,11 +150,10 @@ $(document).ready(function () {
 
         //
         // window.scrollTo(1500, 500);
-        check_scroll=true;
     });
-    $(window).scroll(function () {
-        if(check_scroll)
-            setTimeout($('html').attr('style',''),2000);
+    $(document).mousemove(function(event){
+        if((event.pageX-200) > x || (event.pageX+200<x )||(event.pageY-200)>y ||(event.pageY+200)<y)
+            $('html').attr('style','');
     });
     $('body').on('click', '#download', function () {
 
