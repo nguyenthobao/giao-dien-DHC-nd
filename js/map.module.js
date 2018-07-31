@@ -179,7 +179,7 @@ $(document).ready(function () {
                 point_id: pointId,
             }),
             success: function (result) {
-                $('#modalForm').attr('style','margin-top:'+y+'px;margin-left:'+x+'px');
+                $('#modalForm').attr('style','margin-top:'+(y-50)+'px;margin-left:'+(x-150)+'px');
                 $('#modalForm').modal('show');
                 $('#modalFormLabel').text(result.data.result.point_name);
                 var pointImage = JSON.parse(result.data.result.point_images);
