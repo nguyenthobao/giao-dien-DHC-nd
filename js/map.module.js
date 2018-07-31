@@ -155,7 +155,7 @@ $(document).ready(function () {
     });
     $(window).scroll(function () {
         if(check_scroll)
-            $('html').attr('style','');
+            setTimeout($('html').attr('style',''),2000);
     });
     $('body').on('click', '#download', function () {
 
