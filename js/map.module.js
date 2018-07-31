@@ -145,7 +145,7 @@ $(document).ready(function () {
          // (document.getElementById('marker')).scrollIntoView();
         setTimeout($('html').animate({
             scrollTop:y-150,
-            scrollLeft:x+100
+            scrollLeft:x-100
         }),100);
         // setTimeout($('html').attr('style',''),1000);
         //
