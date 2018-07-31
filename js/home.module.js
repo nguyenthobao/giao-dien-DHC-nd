@@ -208,7 +208,7 @@ $(document).ready(function () {
         }
     });
     $('body').on('click', '#mapdhc', function () {
-        alert($(document).scrollTop());
+        alert($('html').scrollTop());
         $('.img_instant').hide();
         $('.label_instant').hide();
         $('html').attr('style','');
