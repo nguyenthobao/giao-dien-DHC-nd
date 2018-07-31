@@ -126,6 +126,7 @@ $(document).ready(function () {
 
         // console.log($('#search_place option:selected').data('left'), $('#search_place option:selected').data('top'));
         // console.log(($('#mapdhc').css('width')).substring(0, 4), ($('#mapdhc').css('height')).substring(0, 4));
+        $('html').attr('style','width:4000px;height:3000px');
         x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2048));
         y = parseFloat($('#search_place option:selected').data('top') / (7046 / 1473));
         console.log(x, y);
@@ -144,8 +145,9 @@ $(document).ready(function () {
          // (document.getElementById('marker')).scrollIntoView();
         setTimeout($('html').animate({
             scrollTop:y-150,
-            scrollLeft:x
+            scrollLeft:x+100
         }),100);
+        $('html').attr('style','');
         //
         // window.scrollTo(1500, 500);
     });
