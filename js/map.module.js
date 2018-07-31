@@ -122,6 +122,9 @@ $(document).ready(function () {
         tryGeolocation();
 
     });
+    $('body').on('mousemove', '#mapdhc', function () {
+        $('html').attr('style','');
+    });
     $('body').on('change', '#search_place', function () {
 
         // console.log($('#search_place option:selected').data('left'), $('#search_place option:selected').data('top'));
@@ -147,7 +150,7 @@ $(document).ready(function () {
             scrollTop:y-150,
             scrollLeft:x-100
         }),100);
-        // setTimeout($('html').attr('style',''),1000);
+
         //
         // window.scrollTo(1500, 500);
     });
