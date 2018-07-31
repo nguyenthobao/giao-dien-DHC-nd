@@ -147,7 +147,6 @@ $(document).ready(function () {
             scrollTop:y-150,
             scrollLeft:x-200
         }),100);
-        setTimeout($('html').attr('style',''),2000);
 
         //
         // window.scrollTo(1500, 500);

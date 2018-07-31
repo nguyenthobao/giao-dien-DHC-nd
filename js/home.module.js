@@ -210,6 +210,7 @@ $(document).ready(function () {
     $('body').on('click', '#mapdhc', function () {
         $('.img_instant').hide();
         $('.label_instant').hide();
+        $('html').attr('style','');
     });
     $('body').on('click', '#tab2', function () {
         $('main > label').hide();
