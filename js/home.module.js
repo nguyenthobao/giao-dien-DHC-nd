@@ -201,7 +201,7 @@ $(document).ready(function () {
             $('html').attr('style','');
         } else {
             $('main > label').hide();
-            $('html').attr('style','height:2000px');
+            $('html').attr('style','height:2500px');
         }
     });
     $('body').on('click', '#mapdhc', function () {
@@ -210,7 +210,7 @@ $(document).ready(function () {
     });
     $('body').on('click', '#tab2', function () {
         $('main > label').hide();
-        $('html').attr('style','height:2000px');
+        $('html').attr('style','height:2500px');
         $('.container').attr('style', 'min-width: 100%');
         $('main').attr('style', 'min-width: 100%');
         $('#content2').attr('style', 'margin-top: -100px;');
