@@ -147,7 +147,12 @@ $(document).ready(function () {
             scrollTop:y-150,
             scrollLeft:x-200
         }),100);
-
+        $('.img_instant').each(function(){
+            $('.img_instant').hide();
+        });
+        $('.label_instant').each(function(){
+            $('.label_instant').hide();
+        });
         //
         // window.scrollTo(1500, 500);
     });
