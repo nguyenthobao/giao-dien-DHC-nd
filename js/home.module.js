@@ -86,7 +86,7 @@ $(document).ready(function () {
                         y+=20; x-=20;
                     }
                 }if (width>=400 && width <450){
-                    y-=160; console.log('sdfsvs');
+                    y-=140;x+=10;
                 }
                 if (v.point_type == 3) url = '/images/play_marker.png';
                 else if (v.point_type == 4) url = '/images/food_marker.png';
