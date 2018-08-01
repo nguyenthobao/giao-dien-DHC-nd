@@ -157,7 +157,10 @@ $(document).ready(function () {
         // window.scrollTo(1500, 500);
     });
     $('body').on('touchmove','#mapdhc',function(event){
-        $('html').attr('style','');alert('success');
+        if(event.originalEvent.touches[0].pageX>1500) {
+            $('html').attr('style', '');
+            alert(event.originalEvent.touches[0].pageX);
+        }
     });
     $('body').on('mousedown','#mapdhc',function(event){
         if(event.pageX >1700 || event.pageY>1200)
