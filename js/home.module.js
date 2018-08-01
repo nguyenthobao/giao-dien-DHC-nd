@@ -73,17 +73,16 @@ $(document).ready(function () {
                 var url = '';
                 x = parseFloat(v.lat / (9798 / 2032));
                 y = parseFloat(v.long / (7046 / 1462));
-                console.log(x, y);
                 if (isMobile.any() != null) {
                     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
                     if (width>400 && width <450){
-                        y-=160;x+=10;
+                        y-=160;x+=10; alert(1);
                     }else {
                         y -= 160;
-                        x += 10;
+                        x += 10;alert(2);
                     }
                     if (width>350 && width <400){
-                        y+=20; x-=20;
+                        y+=20; x-=20;alert(3);
                     }
                 }
                 if (v.point_type == 3) url = '/images/play_marker.png';
