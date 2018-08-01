@@ -223,14 +223,14 @@ $(document).ready(function () {
                 var w = modal.width();
                 var h = modal.height();
                 // Get window size
-                var bw = body.width();
+                var bw = $(this).left();
                 var bh = body.height();
 
                 // Update the css and center the modal on screen
                 $('#modalForm').css({
                     "position": "absolute",
                     "top": ((bh - h) / 2) + "px",
-                    "left": ((bw - w) / 2) + "px"
+                    "left": (bw) + "px"
                 });
                 $('#modalForm').animate({ scrollTop: 0 }, 'fast');
                 // setTimeout($('#modalForm').animate({
