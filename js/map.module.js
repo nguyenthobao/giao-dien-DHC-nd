@@ -157,14 +157,9 @@ $(document).ready(function () {
         // window.scrollTo(1500, 500);
     });
     $('body').on('touchmove','#mapdhc',function(event){
-        if(event.originalEvent.touches[0].pageX>1500) {
+        if(event.originalEvent.touches[0].pageX>1500 ||event.originalEvent.touches[0].pageY>1500) {
             $('html').attr('style', '');
-            alert(event.originalEvent.touches[0].pageX);
         }
-    });
-    $('body').on('mousedown','#mapdhc',function(event){
-        if(event.pageX >1700 || event.pageY>1200)
-            $('html').attr('style','');
     });
     $('body').on('click', '#download', function () {
 
