@@ -218,7 +218,7 @@ $(document).ready(function () {
                 html += '</div>';
                 html += '</div>';
                 $('#form-body').html(html);
-                var body = $(window);
+                var body = $('html');
                 // Get modal size
                 var w = modal.width();
                 var h = modal.height();
@@ -228,7 +228,7 @@ $(document).ready(function () {
 
                 // Update the css and center the modal on screen
                 $('#modalForm').css({
-                    "position": "fixed",
+                    "position": "absolute",
                     "top": ((bh - h) / 2) + "px",
                     "left": ((bw - w) / 2) + "px"
                 });
