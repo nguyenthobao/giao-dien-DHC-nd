@@ -72,7 +72,7 @@ $(document).ready(function () {
                     }
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
-                    $('#marker').show();
+                    $('#marker').show(); alert(x);
                     setTimeout($('html').animate({
                         scrollTop:y-150,
                         scrollLeft:2000
