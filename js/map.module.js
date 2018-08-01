@@ -249,13 +249,14 @@ $(document).ready(function () {
 
     });
     $(window).resize(function() {
+        aler(screen.width);
         if(screen.width != window.innerWidth){
             $('#modalForm').css({
                 "position": "absolute",
                 "top": "0px",
                 "bottom":"0px",
                 "left": "0px",
-                 "width":$( window ).width()+"px"
+                 "width":screen.width+"px"
             });
         }
     });
