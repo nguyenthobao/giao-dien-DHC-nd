@@ -156,6 +156,9 @@ $(document).ready(function () {
         //
         // window.scrollTo(1500, 500);
     });
+    $('body').on('touchmove','#mapdhc',function(event){
+        $('html').attr('style','');alert('success');
+    });
     $('body').on('mousedown','#mapdhc',function(event){
         if(event.pageX >1700 || event.pageY>1200)
             $('html').attr('style','');
