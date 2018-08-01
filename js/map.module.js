@@ -248,6 +248,17 @@ $(document).ready(function () {
         }),100);
 
     });
+    $(window).resize(function() {
+        if(screen.width != window.innerWidth){
+            $('#modalForm').css({
+                "position": "absolute",
+                "top": "0px",
+                "bottom":"0px",
+                "left": "0px",
+                 "width":$( window ).width()+"px"
+            });
+        }
+    });
 });
 
 function getOriginal1(lat1, lng1, lat2, lng2, x1, y1, x2, y2) {
