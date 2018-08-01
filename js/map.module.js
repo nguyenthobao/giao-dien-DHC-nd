@@ -231,6 +231,7 @@ $(document).ready(function () {
                 $('#modalForm').css({
                     "position": "absolute",
                     "top": ((bh - h) / 2) + "px",
+                    "bottom":"0px",
                     "left": ((bw - w) / 2) + "px"
                 });
                 $('#modalForm').animate({ scrollTop: 0 }, 'fast');
