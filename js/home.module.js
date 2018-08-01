@@ -73,18 +73,18 @@ $(document).ready(function () {
                 var pointImage = JSON.parse(v.point_images);
                 var url = '';
                 x = parseFloat(v.lat / parseFloat(9798 / 2048));
-                y = parseFloat(v.long / parseFloat(7046 / 1473));
+                y = parseFloat(v.long / parseFloat(7046 / 1200));
                 if (isMobile.any() != null) {
-                    var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-                    if (width > 400 && width < 450) {
-                        y -= 140;
-                        x += 10;
-                    } else if (width > 350 && width < 400) {
-                        // x -= 10;y-=160;
-                    } else {
-                        y -= 160;
-                        x += 10;
-                    }
+                    // var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+                    // if (width > 400 && width < 450) {
+                    //     y -= 140;
+                    //     x += 10;
+                    // } else if (width > 350 && width < 400) {
+                    //     x -= 10;y-=160;
+                    // } else {
+                    //     y -= 160;
+                    //     x += 10;
+                    // }
   console.log(x,y);
                 }
                 if (v.point_type == 3) url = '/images/play_marker.png';
