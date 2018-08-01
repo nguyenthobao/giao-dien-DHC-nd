@@ -35,7 +35,7 @@ $(document).ready(function () {
             // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
             // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
             $('html').attr('style','width:30000px;height:3000px');
-            if (isMobile.any() == null) {
+            if (isMobile.any() == null) {alert('debug');
                 x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
                 y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitud) / (7046 / $('#mapdhc')[0].height));
                 if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
@@ -62,7 +62,7 @@ $(document).ready(function () {
                             ($(this).find('.point_important')[0]).scrollIntoView();
                             console.log(($(this).find('.point_important')[0]));}
                     });
-                } else { alert('debug');
+                } else {
                     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
                     if (width>700 && width <1000){
                          y -= 120;
