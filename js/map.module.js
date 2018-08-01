@@ -220,6 +220,7 @@ $(document).ready(function () {
                 $('#form-body').html(html);
                 var body = $('html');
                 // Get modal size
+                var modal=$('#modalForm');
                 var w = modal.width();
                 var h = modal.height();
                 // Get window size
