@@ -218,21 +218,20 @@ $(document).ready(function () {
                 html += '</div>';
                 html += '</div>';
                 $('#form-body').html(html);
-                var body = $('html');
+                var body = $(window);
                 // Get modal size
                 var modal=$('#modalForm');
                 var w = modal.width();
                 var h = modal.height();
                 // Get window size
-                alert( $('html').left());
-                var bw = $('html').left();
+                var bw = body.width();
                 var bh = body.height();
-
+                console.log(bw,bh,w,h);
                 // Update the css and center the modal on screen
                 $('#modalForm').css({
                     "position": "absolute",
                     "top": ((bh - h) / 2) + "px",
-                    "left": (bw) + "px"
+                    "left": ((bw - w) / 2) + "px"
                 });
                 $('#modalForm').animate({ scrollTop: 0 }, 'fast');
                 // setTimeout($('#modalForm').animate({
