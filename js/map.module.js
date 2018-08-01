@@ -165,8 +165,8 @@ $(document).ready(function () {
         //
         // window.scrollTo(1500, 500);
     });
-    $('body').on('touchmove','#mapdhc',function(event){
-        if(event.originalEvent.touches[0].pageX>1500 ||event.originalEvent.touches[0].pageY>1500) {
+    $('body').on('touch','#mapdhc',function(event){
+        if(event.originalEvent.touches[0].pageX>1200 ||event.originalEvent.touches[0].pageY>1200) {
             $('html').attr('style', '');
         }
     });
