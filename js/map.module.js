@@ -44,7 +44,7 @@ $(document).ready(function () {
                     $('#marker').css("margin-top", (y - 15) + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
-                    document.getElementById('marker').scrollIntoView();  alert(x);
+                    document.getElementById('marker').scrollIntoView();
                 }
                 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
                 if (width>1000) $('#download').hide();
@@ -69,7 +69,7 @@ $(document).ready(function () {
                     }else {
                         y -= 110;
                         x -= 15;
-                    }
+                    } alert(x);
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
