@@ -224,8 +224,8 @@ $(document).ready(function () {
                 var w = modal.width();
                 var h = modal.height();
                 // Get window size
-                alert( $(this).left());
-                var bw = $(this).left();
+                alert( $('html').left());
+                var bw = $('html').left();
                 var bh = body.height();
 
                 // Update the css and center the modal on screen
