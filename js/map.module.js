@@ -234,7 +234,7 @@ $(document).ready(function () {
                     "bottom":"0px",
                     "left": ((bw - w) / 2) + "px"
                 });
-                $('#modalForm').animate({ scrollTop: 0 }, 'fast');
+                // $('#modalForm').animate({ scrollTop: 0 }, 'fast');
                 // setTimeout($('#modalForm').animate({
                 //     top:y-100,
                 //     left:x-600
