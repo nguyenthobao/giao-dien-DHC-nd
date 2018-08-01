@@ -54,7 +54,7 @@ $(document).ready(function () {
                 console.log(($('#mapdhc').css('width')).substring(0, 4) + '..' + ($('#mapdhc').css('width')).substring(0, 4) / ($('#mapdhc').css('height')).substring(0, 4));
                 x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / ($('#mapdhc').css('width')).substring(0, 4)));
                 y = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (7046 / ($('#mapdhc').css('height')).substring(0, 4)));
-                alert(x);
+
                 if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
                     $('#marker').hide();
                     $('.div_marker').each(function () {
@@ -74,8 +74,8 @@ $(document).ready(function () {
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
                     setTimeout($('html').animate({
-                        scrollTop:y-150,
-                        scrollLeft:2000
+                        scrollTop: 910.197,
+                        scrollLeft:1140.34
                     }),100);
                 }
             }
