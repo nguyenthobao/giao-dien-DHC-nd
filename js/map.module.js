@@ -75,7 +75,7 @@ $(document).ready(function () {
                     $('#marker').show();
                     setTimeout($('html').animate({
                         scrollTop:y-150,
-                        scrollLeft:x-200
+                        scrollLeft:2000
                     }),100);
                 }
             }
