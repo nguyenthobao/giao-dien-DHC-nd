@@ -226,7 +226,7 @@ $(document).ready(function () {
                 // Get window size
                 var bw = body.width();
                 var bh = body.height();
-                console.log(bw,bh,w,h);
+                console.log(this,$(this).left());
                 // Update the css and center the modal on screen
                 $('#modalForm').css({
                     "position": "absolute",
@@ -234,7 +234,7 @@ $(document).ready(function () {
                     "bottom":"0px",
                     "left": ((bw - w) / 2) + "px"
                 });
-                // $('#modalForm').animate({ scrollTop: 0 }, 'fast');
+                $('#modalForm').animate({ scrollTop: 0 }, 'fast');
                 // setTimeout($('#modalForm').animate({
                 //     top:y-100,
                 //     left:x-600
