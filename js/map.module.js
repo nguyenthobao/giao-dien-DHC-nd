@@ -232,19 +232,21 @@ $(document).ready(function () {
                     "position": "absolute",
                     "top": ((bh - h) / 2) + "px",
                     "bottom":"0px",
-                    "left": (parseInt($(that).parent().css("marginLeft").replace('px', ''))-100) + "px"
+                    "left": ((bw - w) / 2) + "px"
                 });
-                (document.getElementById('modalForm')).scrollIntoView();
                 $('#modalForm').animate({ scrollTop: 0 }, 'fast');
-                // setTimeout($('#modalForm').animate({
-                //     top:y-100,
-                //     left:x-600
-                // }),100);
             },
             error: function (e) {
                 alert('Có lỗi');
             }
         });
+    });
+    $('body').on('click','#form-footer>button',function(){
+        setTimeout($('html').animate({
+            scrollTop:y-150,
+            scrollLeft:x-200
+        }),100);
+
     });
 });
 
