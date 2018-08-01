@@ -321,6 +321,7 @@ main input:checked + label {
         padding-left: 0px;
         margin-left: 5px;
         margin-top: -250px;
+        height: 1473px !important;
         /*height: 800px;*/
         /*width: 2000px;*/
     }
