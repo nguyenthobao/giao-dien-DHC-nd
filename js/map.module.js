@@ -57,11 +57,15 @@ $(document).ready(function () {
 
                 if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
                     $('#marker').hide();
-                    $('.div_marker').each(function () {
-                        if ($(this).data('lat') == '5336' && $(this).data('long') == '5124'){
-                            ($(this).find('.point_important')[0]).scrollIntoView();
-                            console.log(($(this).find('.point_important')[0]));}
-                    });
+                    setTimeout($('html').animate({
+                        scrollTop: 910.197,
+                        scrollLeft:1140.34
+                    }),100);
+                    // $('.div_marker').each(function () {
+                    //     if ($(this).data('lat') == '5336' && $(this).data('long') == '5124'){
+                    //         ($(this).find('.point_important')[0]).scrollIntoView();
+                    //         console.log(($(this).find('.point_important')[0]));}
+                    // });
                 } else {
                     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
                     if (width>700 && width <1000){
@@ -73,11 +77,8 @@ $(document).ready(function () {
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
-                    setTimeout($('html').animate({
-                        scrollTop: 910.197,
-                        scrollLeft:1140.34
-                    }),100);
                 }
+
             }
         };
 
@@ -248,18 +249,7 @@ $(document).ready(function () {
         }),100);
 
     });
-    $(window).resize(function() {
-        aler(screen.width);
-        if(screen.width != window.innerWidth){
-            $('#modalForm').css({
-                "position": "absolute",
-                "top": "0px",
-                "bottom":"0px",
-                "left": "0px",
-                 "width":screen.width+"px"
-            });
-        }
-    });
+
 });
 
 function getOriginal1(lat1, lng1, lat2, lng2, x1, y1, x2, y2) {
