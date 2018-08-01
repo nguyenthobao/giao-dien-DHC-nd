@@ -165,7 +165,11 @@ $(document).ready(function () {
         //
         // window.scrollTo(1500, 500);
     });
-    $('body').on('touchmove,touchcancel','#mapdhc',function(event){
+    $('body').on('touchmove','#mapdhc',function(event){
+        if(event.originalEvent.touches[0].pageX>1200 ||event.originalEvent.touches[0].pageY>1200) {
+            $('html').attr('style', '');
+        }
+    });$('body').on('touchcancel','#mapdhc',function(event){
         if(event.originalEvent.touches[0].pageX>1200 ||event.originalEvent.touches[0].pageY>1200) {
             $('html').attr('style', '');
         }
