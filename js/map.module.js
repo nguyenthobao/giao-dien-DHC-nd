@@ -34,7 +34,7 @@ $(document).ready(function () {
             //     "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
             // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
             // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
-            $('html').attr('style','width:30000px;height:3000px');
+            $('html').attr('style','width:30000px;height:3000px');alert('debug');
             if (isMobile.any() == null) {
                 x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
                 y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitud) / (7046 / $('#mapdhc')[0].height));
@@ -69,7 +69,7 @@ $(document).ready(function () {
                     }else {
                         y -= 110;
                         x -= 15;
-                    } alert(x);
+                    }
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
