@@ -34,6 +34,7 @@ $(document).ready(function () {
             //     "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
             // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
             // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
+            $('html').attr('style','width:10000px;height:3000px');
             if (isMobile.any() == null) {
                 x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
                 y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitud) / (7046 / $('#mapdhc')[0].height));
@@ -72,7 +73,10 @@ $(document).ready(function () {
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
-                    document.getElementById('marker').scrollIntoView();
+                    setTimeout($('html').animate({
+                        scrollTop:y-150,
+                        scrollLeft:x-200
+                    }),100);
                 }
             }
         };
@@ -224,7 +228,7 @@ $(document).ready(function () {
 
                 // Update the css and center the modal on screen
                 $('#modalForm').css({
-                    "position": "absolute",
+                    "position": "fixed",
                     "top": ((bh - h) / 2) + "px",
                     "left": ((bw - w) / 2) + "px"
                 });
