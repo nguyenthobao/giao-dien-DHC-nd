@@ -179,7 +179,7 @@ $(document).ready(function () {
     });
     $('body').on('click', '.item-point,.img_instant', function () {
         var pointId = $(this).data('id');
-
+        var that=this;
         $.ajax({
             url: baseApi + 'point/get-point',
             method: 'POST',
@@ -226,7 +226,7 @@ $(document).ready(function () {
                 // Get window size
                 var bw = body.width();
                 var bh = body.height();
-                console.log(this,$(this).css("marginLeft"));
+                console.log(that,$(that).css("marginLeft"));
                 // Update the css and center the modal on screen
                 $('#modalForm').css({
                     "position": "absolute",
