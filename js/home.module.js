@@ -80,12 +80,12 @@ $(document).ready(function () {
                         y -= 140;
                         x += 10;
                     } else if (width > 350 && width < 400) {
-                        x -= 10;y-=160;
+                        // x -= 10;y-=160;
                     } else {
                         y -= 160;
                         x += 10;
                     }
-
+  console.log(x,y);
                 }
                 if (v.point_type == 3) url = '/images/play_marker.png';
                 else if (v.point_type == 4) url = '/images/food_marker.png';
