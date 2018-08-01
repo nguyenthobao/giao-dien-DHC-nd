@@ -228,7 +228,7 @@ $(document).ready(function () {
                     "top": ((bh - h) / 2) + "px",
                     "left": ((bw - w) / 2) + "px"
                 });
-                $('#modalForm').animate({ scrollTop: 0 }, 'slow');
+                $('#modalForm').animate({ scrollTop: 0 }, 'fast');
                 // setTimeout($('#modalForm').animate({
                 //     top:y-100,
                 //     left:x-600
