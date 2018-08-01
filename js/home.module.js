@@ -72,8 +72,8 @@ $(document).ready(function () {
             $.each(pointData, function (k, v) {
                 var pointImage = JSON.parse(v.point_images);
                 var url = '';
-                x = parseFloat(v.lat / parseFloat(9798 / 2032));
-                y = parseFloat(v.long / parseFloat(7046 / 1462));
+                x = parseFloat(v.lat / parseFloat(9798 / 2048));
+                y = parseFloat(v.long / parseFloat(7046 / 1473));
                 if (isMobile.any() != null) {
                     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
                     if (width > 400 && width < 450) {
