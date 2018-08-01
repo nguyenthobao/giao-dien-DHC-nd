@@ -226,7 +226,7 @@ $(document).ready(function () {
                 // Get window size
                 var bw = body.width();
                 var bh = body.height();
-                console.log(this,$(this).left());
+                console.log(this,$(this).css("marginLeft"));
                 // Update the css and center the modal on screen
                 $('#modalForm').css({
                     "position": "absolute",
