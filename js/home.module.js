@@ -21,7 +21,8 @@ $(document).ready(function () {
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
-    var x_before=0; y_before=0;
+    var x_before = 0;
+    y_before = 0;
     console.log(isMobile.any());
 
     urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
@@ -75,24 +76,25 @@ $(document).ready(function () {
                 y = parseFloat(v.long / (7046 / 1462));
                 if (isMobile.any() != null) {
                     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-                    if (width>400 && width <450){
-                        y-=160;x+=10; alert(1);
-                    }else {
+                    if (width > 400 && width < 450) {
+                        y -= 140;
+                        x += 10;
+                    } else if (width > 350 && width < 400) {
+                        x -= 10;
+                    } else {
                         y -= 160;
-                        x += 10;alert(2);
+                        x += 10;
                     }
-                    if (width>350 && width <400){
-                        y+=20; x-=20;alert(3);
-                    }
+
                 }
                 if (v.point_type == 3) url = '/images/play_marker.png';
                 else if (v.point_type == 4) url = '/images/food_marker.png';
                 else url = '/images/blank_marker.png';
                 html_select += '<option data-top="' + v.long + '" data-left="' + v.lat + '" >' + v.point_name + '</option>';
-                html_marker += '<div class="div_marker" data-id="'+v.point_id+'" data-lat="'+v.lat+'" data-long="'+v.long+'" style="margin-top:' + y + 'px; margin-left: ' + x + 'px;    position: absolute; ">' +
-                    '<img src="' + url + '" data-x="' + x + '" style="max-width: 20000px; width: 18px; height: 25px" class="point_important img-fluid map" alt="">'+
-                    '<label data-id="'+v.point_id+'" id="label_' + x + '" class="label_instant">' + v.point_name + '</label><br>' +
-                    '<img data-id="'+v.point_id+'" id="img_' + x + '" src="' + pointImage[0] + '" style="width: 180px; margin-top: 1px;height: 120px" class="img_instant img-fluid map" alt="">' +
+                html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="margin-top:' + y + 'px; margin-left: ' + x + 'px;    position: absolute; ">' +
+                    '<img src="' + url + '" data-x="' + x + '" style="max-width: 20000px; width: 18px; height: 25px" class="point_important img-fluid map" alt="">' +
+                    '<label data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant">' + v.point_name + '</label><br>' +
+                    '<img data-id="' + v.point_id + '" id="img_' + x + '" src="' + pointImage[0] + '" style="width: 180px; margin-top: 1px;height: 120px" class="img_instant img-fluid map" alt="">' +
                     '</div>';
             });
             $('#search_place').html(html_select);
@@ -114,7 +116,7 @@ $(document).ready(function () {
         that = this;
         $(($(this).parent()).find('.img_instant')).show();
         $(($(this).parent()).find('.label_instant')).show();
-        setTimeout( document.getElementById('search_place').scrollIntoView(),1000);
+        setTimeout(document.getElementById('search_place').scrollIntoView(), 1000);
         // $(this).hide();
     });
     /*Get promotion limit 2*/
@@ -154,7 +156,7 @@ $(document).ready(function () {
             $('#download').hide();
             $('#div_search').hide();
             $('#marker').hide();
-            $('html').attr('style','');
+            $('html').attr('style', '');
         } else {
             $('main > label').hide();
         }
