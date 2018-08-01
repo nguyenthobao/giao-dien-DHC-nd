@@ -80,7 +80,7 @@ $(document).ready(function () {
                         y -= 140;
                         x += 10;
                     } else if (width > 350 && width < 400) {
-                        x -= 10;
+                        x -= 10;y-=160;
                     } else {
                         y -= 160;
                         x += 10;
