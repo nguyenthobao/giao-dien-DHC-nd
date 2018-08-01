@@ -76,8 +76,8 @@ $(document).ready(function () {
                 console.log(x, y);
                 if (isMobile.any() != null) {
                     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-                    if (width>400 && width <500){
-                        x+=10;
+                    if (width>400 && width <450){
+                        y-=140;x+=10;
                     }else {
                         y -= 160;
                         x += 10;
@@ -85,8 +85,6 @@ $(document).ready(function () {
                     if (width>350 && width <400){
                         y+=20; x-=20;
                     }
-                }if (width>=400 && width <450){
-                    y-=140;x+=10;
                 }
                 if (v.point_type == 3) url = '/images/play_marker.png';
                 else if (v.point_type == 4) url = '/images/food_marker.png';
