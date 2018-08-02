@@ -134,26 +134,12 @@ $(document).ready(function () {
 
     });
     $('body').on('change', '#search_place', function () {
-
-        // console.log($('#search_place option:selected').data('left'), $('#search_place option:selected').data('top'));
-        // console.log(($('#mapdhc').css('width')).substring(0, 4), ($('#mapdhc').css('height')).substring(0, 4));
         $('html').attr('style','width:10000px;height:3000px');
         x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2048));
         y = parseFloat($('#search_place option:selected').data('top') / (7046 / heightmap));
         console.log(x, y);
-        // if (isMobile.any() != null) {
-        //     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-        //     if (width>400 && width <500){
-        //        x+=10;y+=30;
-        //     }else {
-        //         y -= 150;
-        //         x += 10;
-        //     }
-        // }else {x+=15; y+=15;}
-
         $('#marker').css("margin-top",y + "px").css("margin-left",(x+30) + "px");
          $('#marker').show();
-         // (document.getElementById('marker')).scrollIntoView();
         setTimeout($('html').animate({
             scrollTop:y-150,
             scrollLeft:x-200
@@ -171,6 +157,11 @@ $(document).ready(function () {
         if(event.originalEvent.touches[0].pageX>1200 ||event.originalEvent.touches[0].pageY>1200) {
             $('html').attr('style', '');
         }
+    });
+    $('body').on('click','#mapdhc',function(e) {
+        var offset = $(this).offset();
+        alert(e.pageX - offset.left);
+        alert(e.pageY - offset.top);
     });
     $('body').on('click', '#download', function () {
 
