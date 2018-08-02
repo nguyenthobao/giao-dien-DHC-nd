@@ -138,7 +138,7 @@ $(document).ready(function () {
         // console.log($('#search_place option:selected').data('left'), $('#search_place option:selected').data('top'));
         // console.log(($('#mapdhc').css('width')).substring(0, 4), ($('#mapdhc').css('height')).substring(0, 4));
         $('html').attr('style','width:10000px;height:3000px');
-        x = parseFloat($('#search_place option:selected').data('left') / (9798 / heightmap));
+        x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2048));
         y = parseFloat($('#search_place option:selected').data('top') / (7046 / heightmap));
         console.log(x, y);
         // if (isMobile.any() != null) {
