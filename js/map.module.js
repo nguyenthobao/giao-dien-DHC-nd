@@ -43,7 +43,7 @@ $(document).ready(function () {
             // if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
             //     $('#marker').hide();
             // } else {
-            $('#marker').css("margin-top", 1080 + "px");
+            $('#marker').css("margin-top", 1050 + "px");
             $('#marker').css("margin-left", 1140 + "px");
             $('#marker').show();
             var ua = navigator.userAgent.toLowerCase();
@@ -272,7 +272,7 @@ $(document).ready(function () {
                         "position": "absolute",
                         "top": ((bh - h) / 2) + "px",
                         "bottom": "0px",
-                        "left": ((bw - w) / 2-15) + "px"
+                        "left": ((bw - w) / 2) + "px"
                     });
                     $('#modalForm').animate({scrollTop: 0}, 'fast');
                 }
