@@ -139,8 +139,8 @@ $(document).ready(function () {
             $('#marker').show();
             // (document.getElementById('marker')).scrollIntoView();
             setTimeout($('body').animate({
-                scrollTop: y,
-                scrollLeft: x
+                scrollTop: y+150,
+                scrollLeft: x+150
             }), 100);
         } else {
             $('html').attr('style', 'width:10000px;height:3000px');
