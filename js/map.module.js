@@ -31,50 +31,53 @@ $(document).ready(function () {
     $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
     $('#tab2').change(function () {
-       // var apiGeolocationSuccess = function (position) {
-            // alert("API geolocation success!" +
-            //     "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
-            // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
-            // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
-            if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
-            if (isMobile.any() == null) {
-                // x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
-                // y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitud) / (7046 / $('#mapdhc')[0].height));
-                // if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
-                //     $('#marker').hide();
-                // } else {
-                    $('#marker').css("margin-top", (y - 15) + "px");
-                    $('#marker').css("margin-left", x + "px");
-                    $('#marker').show();
-                    document.getElementById('marker').scrollIntoView();
-                // }
-                var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-                if (width > 1000) $('#download').hide();
-            }
-            else {
-                $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
-                $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
-                console.log(($('#mapdhc').css('width')).substring(0, 4) + '..' + ($('#mapdhc').css('width')).substring(0, 4) / ($('#mapdhc').css('height')).substring(0, 4));
-                x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / ($('#mapdhc').css('width')).substring(0, 4)));
-                y = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (7046 / heightmap));
+        // var apiGeolocationSuccess = function (position) {
+        // alert("API geolocation success!" +
+        //     "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
+        // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
+        // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
+        if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
+        if (isMobile.any() == null) {
+            // x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
+            // y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitud) / (7046 / $('#mapdhc')[0].height));
+            // if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
+            //     $('#marker').hide();
+            // } else {
+            $('#marker').css("margin-top", (y - 15) + "px");
+            $('#marker').css("margin-left", x + "px");
+            $('#marker').show();
+            setTimeout($('body').animate({
+                scrollTop: 910,
+                scrollLeft: 950
+            }), 100);
+            // }
+            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+            if (width > 1000) $('#download').hide();
+        }
+        else {
+            $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
+            $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
+            console.log(($('#mapdhc').css('width')).substring(0, 4) + '..' + ($('#mapdhc').css('width')).substring(0, 4) / ($('#mapdhc').css('height')).substring(0, 4));
+            x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / ($('#mapdhc').css('width')).substring(0, 4)));
+            y = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (7046 / heightmap));
 
-                // if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
-                //     $('#marker').hide();
-                    setTimeout($('html').animate({
-                        scrollTop: 910,
-                        scrollLeft: 950
-                    }), 100);
-                // } else {
-                //     $('#marker').css("margin-top", y + "px");
-                //     $('#marker').css("margin-left", x + "px");
-                //     $('#marker').show();
-                //     setTimeout($('html').animate({
-                //         scrollTop: y,
-                //         scrollLeft: x + 20
-                //     }), 100);
-                // }
+            // if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
+            //     $('#marker').hide();
+            setTimeout($('html').animate({
+                scrollTop: 910,
+                scrollLeft: 950
+            }), 100);
+            // } else {
+            //     $('#marker').css("margin-top", y + "px");
+            //     $('#marker').css("margin-left", x + "px");
+            //     $('#marker').show();
+            //     setTimeout($('html').animate({
+            //         scrollTop: y,
+            //         scrollLeft: x + 20
+            //     }), 100);
+            // }
 
-            }
+        }
         // };
 
         // var tryAPIGeolocation = function () {
@@ -151,11 +154,11 @@ $(document).ready(function () {
 
                 return (temp);
             }
-        }else{
+        } else {
             setTimeout($('html').animate({
-                scrollTop:y-150,
-                scrollLeft:x-200
-            }),100);
+                scrollTop: y - 150,
+                scrollLeft: x - 200
+            }), 100);
         }
 
         $('.img_instant').each(function () {
@@ -230,7 +233,7 @@ $(document).ready(function () {
                 html += '</div>';
                 html += '</div>';
                 $('#form-body').html(html);
-                if(isMobile.any() != null) {
+                if (isMobile.any() != null) {
                     var body = $(window);
                     // Get modal size
                     var modal = $('#modalForm');
