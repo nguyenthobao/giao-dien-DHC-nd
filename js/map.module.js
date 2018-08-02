@@ -211,7 +211,7 @@ $(document).ready(function () {
                 point_id: pointId,
             }),
             success: function (result) {
-                if ((document.getElementById("content2")).offsetLeft > 0 && x > 0 && y > 0)
+                if ((document.getElementById("content2")).offsetLeft > 0 && x > 0 && y > 0 && isMobile.any() != null)
                     $('#modalForm').attr('style', 'margin-top:' + (y - 50) + 'px;margin-left:' + (x - 300) + 'px');
                 else
                     $('#modalForm').attr('style', '');
