@@ -87,7 +87,7 @@ $(document).ready(function () {
                 html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="margin-top:' + y + 'px; margin-left: ' + (x-75) + 'px;    position: absolute; ">' +
                     '<img src="' + url + '" data-x="' + x + '" data-y="'+y+'" style="max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +
                     '<label data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant">' + v.point_name + '</label><br>' +
-                    '<img data-id="' + v.point_id + '" id="img_' + x + '" src="' + pointImage[0] + '" style="width: 180px; margin-top: 1px;height: 120px" class="img_instant img-fluid map" alt="">' +
+                    '<img data-id="' + v.point_id + '" id="img_' + x + '" src="' + pointImage[0] + '" class="img_instant img-fluid map" alt="">' +
                     '</div>';
             });
             $('#search_place').html(html_select);
@@ -105,6 +105,10 @@ $(document).ready(function () {
         //     scrollTop:scrollTop,
         //     scrollLeft:scrollLeft
         // }),100);
+        if (isMobile.any() == null) {
+            $(this).hide();
+            if(that) $(that).show();
+        }
         if (that) {
             $(($(that).parent()).find('.img_instant')).hide();
             $(($(that).parent()).find('.label_instant')).hide();

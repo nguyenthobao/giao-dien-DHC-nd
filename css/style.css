@@ -42,6 +42,12 @@ body {
         height: 1473px;
     }
 
+    .img_instant {
+        width: 180px;
+        margin-top: -3px;
+        height: 120px;
+    }
+
     body {
         padding-top: 56px;
         font: 14px/1 'Open Sans', sans-serif;
@@ -296,6 +302,12 @@ main input:checked + label {
 @media (max-width: 425px) {
     .news-item {
         display: block !important;
+    }
+
+    .img_instant {
+        width: 180px;
+        margin-top: 1px;
+        height: 120px
     }
 
     #label_tab1, #label_tab3 {
