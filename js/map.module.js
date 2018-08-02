@@ -249,7 +249,7 @@ $(document).ready(function () {
         });
     });
     $('body').on('click','#form-footer>button',function(){
-        if(x<0 || y<0) x=800;y=800;
+        if(x<0 || y<0) x=800;y=700;
         setTimeout($('html').animate({
             scrollTop:y-100,
             scrollLeft:x-100
