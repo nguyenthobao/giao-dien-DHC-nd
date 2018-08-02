@@ -241,23 +241,25 @@ $(document).ready(function () {
                 html += '</div>';
                 html += '</div>';
                 $('#form-body').html(html);
-                // var body = $(window);
-                // // Get modal size
-                // var modal = $('#modalForm');
-                // var w = modal.width();
-                // var h = modal.height();
-                // // Get window size
-                // var bw = body.width();
-                // var bh = body.height();
-                // console.log($(that).parent().css("marginLeft").replace('px', ''));
-                // // Update the css and center the modal on screen
-                // $('#modalForm').css({
-                //     "position": "absolute",
-                //     "top": ((bh - h) / 2) + "px",
-                //     "bottom": "0px",
-                //     "left": ((bw - w) / 2) + "px"
-                // });
-                $('#modalForm').animate({scrollTop: 0}, 'fast');
+                if(isMobile.any() != null) {
+                    var body = $(window);
+                    // Get modal size
+                    var modal = $('#modalForm');
+                    var w = modal.width();
+                    var h = modal.height();
+                    // Get window size
+                    var bw = body.width();
+                    var bh = body.height();
+                    console.log($(that).parent().css("marginLeft").replace('px', ''));
+                    // Update the css and center the modal on screen
+                    $('#modalForm').css({
+                        "position": "absolute",
+                        "top": ((bh - h) / 2) + "px",
+                        "bottom": "0px",
+                        "left": ((bw - w) / 2) + "px"
+                    });
+                    $('#modalForm').animate({scrollTop: 0}, 'fast');
+                }
             },
             error: function (e) {
                 alert('Có lỗi');
