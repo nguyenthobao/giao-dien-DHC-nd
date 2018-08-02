@@ -109,7 +109,7 @@ $(document).ready(function () {
         }
     });
     $('body').on('click', '.point_important', function () {
-        var scrollTop=$(this).data('y'),scrollLeft=$(this).data('x');
+        var scrollTop=$(this).data('y'),scrollLeft=$(this).data('x')+150;
         setTimeout($('html').animate({
             scrollTop:scrollTop,
             scrollLeft:scrollLeft
