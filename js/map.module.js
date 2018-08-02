@@ -201,8 +201,6 @@ $(document).ready(function () {
         }
     });
     $('body').on('click', '.item-point,.img_instant', function () {
-
-        $('html').attr('style', '');
         var pointId = $(this).data('id');
         var that = this;
         $.ajax({
