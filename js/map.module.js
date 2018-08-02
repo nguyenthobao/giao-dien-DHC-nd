@@ -248,8 +248,8 @@ $(document).ready(function () {
     });
     $('body').on('click','#form-footer>button',function(){
         setTimeout($('html').animate({
-            scrollTop:y-150,
-            scrollLeft:x-200
+            scrollTop:y,
+            scrollLeft:x
         }),100);
 
     });
