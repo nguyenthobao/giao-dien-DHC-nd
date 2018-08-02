@@ -109,11 +109,11 @@ $(document).ready(function () {
         }
     });
     $('body').on('click', '.point_important', function () {
-        var scrollTop=$(this).data('y'),scrollLeft=$(this).data('x')+150;
-        setTimeout($('html').animate({
-            scrollTop:scrollTop,
-            scrollLeft:scrollLeft
-        }),100);
+        // var scrollTop=$(this).data('y'),scrollLeft=$(this).data('x')+150;
+        // setTimeout($('html').animate({
+        //     scrollTop:scrollTop,
+        //     scrollLeft:scrollLeft
+        // }),100);
         if (that) {
             $(($(that).parent()).find('.img_instant')).hide();
             $(($(that).parent()).find('.label_instant')).hide();
