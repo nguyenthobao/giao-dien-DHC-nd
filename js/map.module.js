@@ -43,8 +43,8 @@ $(document).ready(function () {
             // if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
             //     $('#marker').hide();
             // } else {
-            $('#marker').css("margin-top", (y - 15) + "px");
-            $('#marker').css("margin-left", x + "px");
+            $('#marker').css("margin-top", 1080 + "px");
+            $('#marker').css("margin-left", 1140 + "px");
             $('#marker').show();
             var ua = navigator.userAgent.toLowerCase();
             if (ua.indexOf('safari') > -1) {
@@ -78,8 +78,7 @@ $(document).ready(function () {
             // }
             var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
             if (width > 1000) $('#download').hide();
-        }
-        else {
+        }else {
             $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
             $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
             console.log(($('#mapdhc').css('width')).substring(0, 4) + '..' + ($('#mapdhc').css('width')).substring(0, 4) / ($('#mapdhc').css('height')).substring(0, 4));
