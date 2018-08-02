@@ -249,9 +249,10 @@ $(document).ready(function () {
         });
     });
     $('body').on('click','#form-footer>button',function(){
+        if(x<0 || y<0) x=800;y=800;
         setTimeout($('html').animate({
-            scrollTop:y-200,
-            scrollLeft:x-200
+            scrollTop:y-100,
+            scrollLeft:x-100
         }),400);
     });
 
