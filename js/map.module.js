@@ -137,11 +137,11 @@ $(document).ready(function () {
 
             $('#marker').css("margin-top", y + "px").css("margin-left", (x+30) + "px");
             $('#marker').show();
-            (document.getElementById('marker')).scrollIntoView();
-            // setTimeout($('html').animate({
-            //     scrollTop: y,
-            //     scrollLeft: x
-            // }), 100);
+            // (document.getElementById('marker')).scrollIntoView();
+            setTimeout($('#mapdhc').animate({
+                scrollTop: y,
+                scrollLeft: x
+            }), 100);
         } else {
             $('html').attr('style', 'width:10000px;height:3000px');
             x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2048));
