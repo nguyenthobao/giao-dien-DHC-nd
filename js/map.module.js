@@ -141,7 +141,7 @@ $(document).ready(function () {
         $('#marker').css("margin-top",y + "px").css("margin-left",(x+30) + "px");
         $('#marker').show();
 
-        $("#dz").css("left","-"+(y-150)+ "px").css("top","-"+(x-150)+ "px");
+        $("#dz").css("left","-"+(y-200)+ "px").css("top","-"+(x-200)+ "px");
         // setTimeout($('html').animate({
         //     scrollTop:y-150,
         //     scrollLeft:x-200
