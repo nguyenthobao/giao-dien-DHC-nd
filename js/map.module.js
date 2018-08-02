@@ -141,17 +141,17 @@ $(document).ready(function () {
         x = parseFloat($('#search_place option:selected').data('left') / (9798 / heightmap));
         y = parseFloat($('#search_place option:selected').data('top') / (7046 / heightmap));
         console.log(x, y);
-        if (isMobile.any() != null) {
-            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-            if (width>400 && width <500){
-               x+=10;y+=30;
-            }else {
-                y -= 150;
-                x += 10;
-            }
-        }else {x+=15; y+=15;}
+        // if (isMobile.any() != null) {
+        //     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        //     if (width>400 && width <500){
+        //        x+=10;y+=30;
+        //     }else {
+        //         y -= 150;
+        //         x += 10;
+        //     }
+        // }else {x+=15; y+=15;}
 
-        $('#marker').css("margin-top",y + "px").css("margin-left",x + "px");
+        $('#marker').css("margin-top",y + "px").css("margin-left",(x+30) + "px");
          $('#marker').show();
          // (document.getElementById('marker')).scrollIntoView();
         setTimeout($('html').animate({
@@ -250,10 +250,9 @@ $(document).ready(function () {
     });
     $('body').on('click','#form-footer>button',function(){
         setTimeout($('html').animate({
-            scrollTop:y,
-            scrollLeft:x
+            scrollTop:y-200,
+            scrollLeft:x-200
         }),400);
-         alert(x);
     });
 
 });
