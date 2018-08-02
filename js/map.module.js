@@ -201,6 +201,8 @@ $(document).ready(function () {
         }
     });
     $('body').on('click', '.item-point,.img_instant', function () {
+
+        $('html').attr('style', '');
         var pointId = $(this).data('id');
         var that = this;
         $.ajax({
@@ -265,6 +267,8 @@ $(document).ready(function () {
         });
     });
     $('body').on('click', '#form-footer>button', function () {
+
+        $('html').attr('style', 'width:10000px;height:3000px');
         if (x < 0 || y < 0) x = 800;
         y = 700;
         setTimeout($('html').animate({
