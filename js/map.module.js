@@ -250,8 +250,8 @@ $(document).ready(function () {
         setTimeout($('html').animate({
             scrollTop:y,
             scrollLeft:x
-        }),100);
-
+        }),400);
+         alert('move return');
     });
 
 });
