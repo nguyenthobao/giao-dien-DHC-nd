@@ -160,8 +160,8 @@ $(document).ready(function () {
     });
     $('body').on('click','#mapdhc',function(e) {
         var offset = $(this).offset();
-        alert(e.pageX - offset.left);
-        alert(e.pageY - offset.top);
+        if(e.pageX - offset.left >1300 || e.pageY - offset.top >1400)
+            $('html').attr('style', '');
     });
     $('body').on('click', '#download', function () {
 
