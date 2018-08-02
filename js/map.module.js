@@ -46,10 +46,35 @@ $(document).ready(function () {
             $('#marker').css("margin-top", (y - 15) + "px");
             $('#marker').css("margin-left", x + "px");
             $('#marker').show();
-            setTimeout($('body').animate({
-                scrollTop: 910,
-                scrollLeft: 950
-            }), 100);
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.indexOf('safari') > -1) {
+                sTimeout = setTimeout(function () {
+                    $('body').animate({
+                        scrollTop: 910,
+                        scrollLeft: 950
+                    })
+                }.bind(this), 1000);
+                Function.prototype.bind = function (parent) {
+                    var f = this;
+                    var args = [];
+
+                    for (var a = 1; a < arguments.length; a++) {
+                        args[args.length] = arguments[a];
+                    }
+
+                    var temp = function () {
+                        return f.apply(parent, args);
+                    }
+
+                    return (temp);
+                }
+            } else {
+                setTimeout($('body').animate({
+                    scrollTop: 910,
+                    scrollLeft: 950
+                }), 100);
+            }
+
             // }
             var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
             if (width > 1000) $('#download').hide();
@@ -155,7 +180,7 @@ $(document).ready(function () {
                 return (temp);
             }
         } else {
-            setTimeout($('html').animate({
+            setTimeout($('body').animate({
                 scrollTop: y - 150,
                 scrollLeft: x - 200
             }), 100);
