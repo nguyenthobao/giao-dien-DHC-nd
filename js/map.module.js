@@ -142,10 +142,10 @@ $(document).ready(function () {
         $('#marker').show();
 
         $("#dz").css("left","-"+(y+100)+ "px").css("top","-"+(x-200)+ "px");
-        // setTimeout($('html').animate({
-        //     scrollTop:y-150,
-        //     scrollLeft:x-200
-        // }),100);
+        setTimeout($('html').animate({
+            scrollTop:y-150,
+            scrollLeft:x-200
+        }),100);
         $('.img_instant').each(function(){
             $('.img_instant').hide();
         });
