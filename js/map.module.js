@@ -138,7 +138,7 @@ $(document).ready(function () {
             $('#marker').css("margin-top", y + "px").css("margin-left", (x+30) + "px");
             $('#marker').show();
             // (document.getElementById('marker')).scrollIntoView();
-            setTimeout($('#mapdhc').animate({
+            setTimeout($('body').animate({
                 scrollTop: y,
                 scrollLeft: x
             }), 100);
