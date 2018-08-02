@@ -37,6 +37,10 @@ $(document).ready(function () {
                 y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitud) / (7046 / $('#mapdhc')[0].height));
                 if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
                     $('#marker').hide();
+                    setTimeout($('body').animate({
+                        scrollTop: 1200,
+                        scrollLeft: 800
+                    }), 100);
                 } else {
                     $('#marker').css("margin-top", (y - 25) + "px");
                     $('#marker').css("margin-left", x + "px");
@@ -137,10 +141,9 @@ $(document).ready(function () {
 
             $('#marker').css("margin-top", y + "px").css("margin-left", (x+30) + "px");
             $('#marker').show();
-            // (document.getElementById('marker')).scrollIntoView();
             setTimeout($('body').animate({
                 scrollTop: y+150,
-                scrollLeft: x+150
+                scrollLeft: x-150
             }), 100);
         } else {
             $('html').attr('style', 'width:10000px;height:3000px');
