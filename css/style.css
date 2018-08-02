@@ -298,6 +298,10 @@ main input:checked + label {
         display: block !important;
     }
 
+    #label_tab1, #label_tab3 {
+        margin-left: 40px;
+    }
+
     #content2 .content {
         width: 2048px;
         height: 1473px;
