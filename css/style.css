@@ -5,6 +5,12 @@ body {
     /*background: #eee;*/
 }
 
+.img_instant {
+    width: 180px;
+    margin-top: 1px;
+    height: 120px;
+}
+
 .label_instant {
     font-size: 9px;
     padding: 12px 20px 5px;
@@ -40,12 +46,6 @@ body {
     #content2 .content {
         width: 2048px;
         height: 1473px;
-    }
-
-    .img_instant {
-        width: 180px;
-        margin-top: -3px;
-        height: 120px;
     }
 
     body {
@@ -302,12 +302,6 @@ main input:checked + label {
 @media (max-width: 425px) {
     .news-item {
         display: block !important;
-    }
-
-    .img_instant {
-        width: 180px;
-        margin-top: 1px;
-        height: 120px
     }
 
     #label_tab1, #label_tab3 {
