@@ -140,26 +140,35 @@ $(document).ready(function () {
         console.log(x, y);
         $('#marker').css("margin-top", y + "px").css("margin-left", (x + 30) + "px");
         $('#marker').show();
-        sTimeout = setTimeout(function () {
-            $('body').animate({
-                scrollTop: y - 150,
-                scrollLeft: x - 200
-            })
-        }.bind(this), 1000);
-        Function.prototype.bind = function (parent) {
-            var f = this;
-            var args = [];
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf('safari') > -1) {
+            sTimeout = setTimeout(function () {
+                $('body').animate({
+                    scrollTop: y - 150,
+                    scrollLeft: x - 200
+                })
+            }.bind(this), 1000);
+            Function.prototype.bind = function (parent) {
+                var f = this;
+                var args = [];
 
-            for (var a = 1; a < arguments.length; a++) {
-                args[args.length] = arguments[a];
+                for (var a = 1; a < arguments.length; a++) {
+                    args[args.length] = arguments[a];
+                }
+
+                var temp = function () {
+                    return f.apply(parent, args);
+                }
+
+                return (temp);
             }
-
-            var temp = function () {
-                return f.apply(parent, args);
-            }
-
-            return (temp);
+        }else{
+            setTimeout($('html').animate({
+                scrollTop:y-150,
+                scrollLeft:x-200
+            }),100);
         }
+
         $('.img_instant').each(function () {
             $('.img_instant').hide();
         });
