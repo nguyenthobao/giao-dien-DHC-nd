@@ -70,7 +70,7 @@ $(document).ready(function () {
                 }
             } else {
                 setTimeout($('body').animate({
-                    scrollTop: 910,
+                    scrollTop: 890,
                     scrollLeft: 950
                 }), 100);
             }
@@ -272,7 +272,7 @@ $(document).ready(function () {
                         "position": "absolute",
                         "top": ((bh - h) / 2) + "px",
                         "bottom": "0px",
-                        "left": ((bw - w) / 2) + "px"
+                        "left": ((bw - w) / 2-15) + "px"
                     });
                     $('#modalForm').animate({scrollTop: 0}, 'fast');
                 }
