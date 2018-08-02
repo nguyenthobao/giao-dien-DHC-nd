@@ -20,7 +20,7 @@ $(document).ready(function () {
         }
     };
     var heightmap;
-    if (isMobile.any() != null) heightmap = 1200; else heightmap = 1473;
+    if (isMobile.any() != null) heightmap=1200; else heightmap=1473;
     urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     var topLeftRealX = 0;
@@ -32,25 +32,25 @@ $(document).ready(function () {
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
     $('#tab2').change(function () {
         var apiGeolocationSuccess = function (position) {
+            // alert("API geolocation success!" +
+            //     "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
+            // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
+            // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
+            $('html').attr('style','width:10000px;height:3000px');
             if (isMobile.any() == null) {
                 x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
                 y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitud) / (7046 / $('#mapdhc')[0].height));
                 if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
                     $('#marker').hide();
-                    setTimeout($('body').animate({
-                        scrollTop: 1200,
-                        scrollLeft: 800
-                    }), 100);
                 } else {
-                    $('#marker').css("margin-top", (y - 25) + "px");
+                    $('#marker').css("margin-top", (y - 15) + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
                     document.getElementById('marker').scrollIntoView();
                 }
                 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-                if (width > 1000) $('#download').hide();
+                if (width>1000) $('#download').hide();
             } else {
-                $('html').attr('style', 'width:10000px;height:3000px');
                 $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
                 $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
                 console.log(($('#mapdhc').css('width')).substring(0, 4) + '..' + ($('#mapdhc').css('width')).substring(0, 4) / ($('#mapdhc').css('height')).substring(0, 4));
@@ -61,14 +61,14 @@ $(document).ready(function () {
                     $('#marker').hide();
                     setTimeout($('html').animate({
                         scrollTop: 910,
-                        scrollLeft: 950
-                    }), 100);
+                        scrollLeft:950
+                    }),100);
                     // $('.div_marker').each(function () {
                     //     if ($(this).data('lat') == '5336' && $(this).data('long') == '5124'){
                     //         ($(this).find('.point_important')[0]).scrollIntoView();
                     //         console.log(($(this).find('.point_important')[0]));}
                     // });
-                } else {
+                } else{
                     // var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
                     // if (width>700 && width <1000){
                     //      y -= 120;
@@ -81,8 +81,8 @@ $(document).ready(function () {
                     $('#marker').show();
                     setTimeout($('html').animate({
                         scrollTop: y,
-                        scrollLeft: x + 20
-                    }), 100);
+                        scrollLeft:x+20
+                    }),100);
                 }
 
             }
@@ -134,45 +134,35 @@ $(document).ready(function () {
 
     });
     $('body').on('change', '#search_place', function () {
-        if (isMobile.any() == null) {
-            x = parseFloat($('#search_place option:selected').data('left') / (9798 / $('#mapdhc')[0].width));
-            y = parseFloat($('#search_place option:selected').data('top') / (7046 / $('#mapdhc')[0].height));
-            console.log(x, y);
+        $('html').attr('style','width:10000px;height:3000px');
+        x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2048));
+        y = parseFloat($('#search_place option:selected').data('top') / (7046 / heightmap));
+        console.log(x, y);
+        $('#marker').css("margin-top",y + "px").css("margin-left",(x+30) + "px");
+        $('#marker').show();
 
-            $('#marker').css("margin-top", y + "px").css("margin-left", (x+30) + "px");
-            $('#marker').show();
-            setTimeout($('body').animate({
-                scrollTop: y+150,
-                scrollLeft: x-150
-            }), 100);
-        } else {
-            $('html').attr('style', 'width:10000px;height:3000px');
-            x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2048));
-            y = parseFloat($('#search_place option:selected').data('top') / (7046 / heightmap));
-            $('#marker').css("margin-top", y + "px").css("margin-left", (x + 30) + "px");
-            $('#marker').show();
-            setTimeout($('html').animate({
-                scrollTop: y - 150,
-                scrollLeft: x - 200
-            }), 100);
-        }
-        $('.img_instant').each(function () {
+        $("#dz").css("left","-"+(y-150)+ "px").css("top","-"+(x-150)+ "px");
+        // setTimeout($('html').animate({
+        //     scrollTop:y-150,
+        //     scrollLeft:x-200
+        // }),100);
+        $('.img_instant').each(function(){
             $('.img_instant').hide();
         });
-        $('.label_instant').each(function () {
+        $('.label_instant').each(function(){
             $('.label_instant').hide();
         });
         //
         // window.scrollTo(1500, 500);
     });
-    $('body').on('touchmove', '#mapdhc', function (event) {
-        if (event.originalEvent.touches[0].pageX > 1200 || event.originalEvent.touches[0].pageY > 1200) {
+    $('body').on('touchmove','#mapdhc',function(event){
+        if(event.originalEvent.touches[0].pageX>1200 ||event.originalEvent.touches[0].pageY>1200) {
             $('html').attr('style', '');
         }
     });
-    $('body').on('click', '#mapdhc', function (e) {
+    $('body').on('click','#mapdhc',function(e) {
         var offset = $(this).offset();
-        if (e.pageX - offset.left > 1300 || e.pageY - offset.top > 1400)
+        if(e.pageX - offset.left >1300 || e.pageY - offset.top >1400)
             $('html').attr('style', '');
     });
     $('body').on('click', '#download', function () {
@@ -189,7 +179,7 @@ $(document).ready(function () {
     });
     $('body').on('click', '.item-point,.img_instant', function () {
         var pointId = $(this).data('id');
-        var that = this;
+        var that=this;
         $.ajax({
             url: baseApi + 'point/get-point',
             method: 'POST',
@@ -198,10 +188,10 @@ $(document).ready(function () {
                 point_id: pointId,
             }),
             success: function (result) {
-                if ((document.getElementById("content2")).offsetLeft > 0 && x > 0 && y > 0)
-                    $('#modalForm').attr('style', 'margin-top:' + (y - 50) + 'px;margin-left:' + (x - 300) + 'px');
+                if ((document.getElementById("content2")).offsetLeft > 0 && x>0 && y>0)
+                    $('#modalForm').attr('style','margin-top:'+(y-50)+'px;margin-left:'+(x-300)+'px');
                 else
-                    $('#modalForm').attr('style', '');
+                    $('#modalForm').attr('style','');
                 $('#modalForm').modal('show');
                 $('#modalFormLabel').text(result.data.result.point_name);
                 var pointImage = JSON.parse(result.data.result.point_images);
@@ -230,7 +220,7 @@ $(document).ready(function () {
                 $('#form-body').html(html);
                 var body = $(window);
                 // Get modal size
-                var modal = $('#modalForm');
+                var modal=$('#modalForm');
                 var w = modal.width();
                 var h = modal.height();
                 // Get window size
@@ -241,23 +231,22 @@ $(document).ready(function () {
                 $('#modalForm').css({
                     "position": "absolute",
                     "top": ((bh - h) / 2) + "px",
-                    "bottom": "0px",
+                    "bottom":"0px",
                     "left": ((bw - w) / 2) + "px"
                 });
-                $('#modalForm').animate({scrollTop: 0}, 'fast');
+                $('#modalForm').animate({ scrollTop: 0 }, 'fast');
             },
             error: function (e) {
                 alert('Có lỗi');
             }
         });
     });
-    $('body').on('click', '#form-footer>button', function () {
-        if (x < 0 || y < 0) x = 800;
-        y = 700;
+    $('body').on('click','#form-footer>button',function(){
+        if(x<0 || y<0) x=800;y=700;
         setTimeout($('html').animate({
-            scrollTop: y - 100,
-            scrollLeft: x - 100
-        }), 400);
+            scrollTop:y-100,
+            scrollLeft:x-100
+        }),400);
     });
 
 });
