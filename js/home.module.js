@@ -103,7 +103,6 @@ $(document).ready(function () {
             $('#content2 .content .row').append(html_marker);
             $('.img_instant').hide();
             $('.label_instant').hide();
-            // $('#search_place').select2();
         },
         error: function (e) {
             alert('Có lỗi');
@@ -112,11 +111,10 @@ $(document).ready(function () {
     $('body').on('click', '.point_important', function () {
         var scrollTop=$(this).data('y'),scrollLeft=$(this).data('x');
         setTimeout($('html').animate({
-            scrollTop:scrollTop-100,
-            scrollLeft:scrollLeft-100
+            scrollTop:scrollTop,
+            scrollLeft:scrollLeft
         }),100);
         if (that) {
-            // $(that).show();
             $(($(that).parent()).find('.img_instant')).hide();
             $(($(that).parent()).find('.label_instant')).hide();
         }
@@ -124,7 +122,6 @@ $(document).ready(function () {
         $(($(this).parent()).find('.img_instant')).show();
         $(($(this).parent()).find('.label_instant')).show();
         setTimeout(document.getElementById('search_place').scrollIntoView(), 1000);
-        // $(this).hide();
     });
     /*Get promotion limit 2*/
     $.ajax({
