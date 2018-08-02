@@ -19,6 +19,8 @@ $(document).ready(function () {
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
+    var heightmap;
+    if (isMobile.any() != null) heightmap=1200; else heightmap=1473;
     urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     var topLeftRealX = 0;
@@ -53,7 +55,7 @@ $(document).ready(function () {
                 $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
                 console.log(($('#mapdhc').css('width')).substring(0, 4) + '..' + ($('#mapdhc').css('width')).substring(0, 4) / ($('#mapdhc').css('height')).substring(0, 4));
                 x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / ($('#mapdhc').css('width')).substring(0, 4)));
-                y = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (7046 / ($('#mapdhc').css('height')).substring(0, 4)));
+                y = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (7046 / heightmap));
 
                 if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
                     $('#marker').hide();
@@ -67,19 +69,19 @@ $(document).ready(function () {
                     //         console.log(($(this).find('.point_important')[0]));}
                     // });
                 } else{
-                    var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-                    if (width>700 && width <1000){
-                         y -= 120;
-                    }else {
-                        y -= 110;
-                        x -= 15;
-                    }
+                    // var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+                    // if (width>700 && width <1000){
+                    //      y -= 120;
+                    // }else {
+                    //     y -= 110;
+                    //     x -= 15;
+                    // }
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
                     setTimeout($('html').animate({
-                        scrollTop: y-150,
-                        scrollLeft:x-200
+                        scrollTop: y,
+                        scrollLeft:x+20
                     }),100);
                 }
 
@@ -136,8 +138,8 @@ $(document).ready(function () {
         // console.log($('#search_place option:selected').data('left'), $('#search_place option:selected').data('top'));
         // console.log(($('#mapdhc').css('width')).substring(0, 4), ($('#mapdhc').css('height')).substring(0, 4));
         $('html').attr('style','width:10000px;height:3000px');
-        x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2048));
-        y = parseFloat($('#search_place option:selected').data('top') / (7046 / 1473));
+        x = parseFloat($('#search_place option:selected').data('left') / (9798 / heightmap));
+        y = parseFloat($('#search_place option:selected').data('top') / (7046 / heightmap));
         console.log(x, y);
         if (isMobile.any() != null) {
             var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
@@ -251,7 +253,7 @@ $(document).ready(function () {
             scrollTop:y,
             scrollLeft:x
         }),400);
-         alert('move return');
+         alert(x);
     });
 
 });
