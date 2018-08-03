@@ -39,6 +39,7 @@ $(document).ready(function () {
     $('.label_instant').each(function () {
         if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
             $(this).attr('style','display:block;');
+            console.log(this);
         }
     });
     $('.img_instant').each(function () {
@@ -51,7 +52,6 @@ $(document).ready(function () {
         scrollLeft: 950
     }), 100);
     $('#download').show();
-    $('#div_search').show();
     $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
     $('#tab2').change(function () {
@@ -220,6 +220,12 @@ $(document).ready(function () {
         $('#marker').css("margin-top", y + "px").css("margin-left", (x + 15) + "px");
         // $('#marker').show();
 
+        $('.img_instant').each(function () {
+            $('.img_instant').hide();
+        });
+        $('.label_instant').each(function () {
+            $('.label_instant').hide();
+        });
         $('.label_instant').each(function () {
             if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
                $(this).attr('style','display: block');
@@ -262,12 +268,6 @@ $(document).ready(function () {
 
         }
 
-        $('.img_instant').each(function () {
-            $('.img_instant').hide();
-        });
-        $('.label_instant').each(function () {
-            $('.label_instant').hide();
-        });
         //
         // window.scrollTo(1500, 500);
     });
