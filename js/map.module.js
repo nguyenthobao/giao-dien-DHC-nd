@@ -87,6 +87,7 @@ $(document).ready(function () {
 
             // if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
             //     $('#marker').hide();
+            var ua = navigator.userAgent.toLowerCase();
             if (ua.indexOf('safari') > -1) {
                 sTimeout = setTimeout(function () {
                     $('body').animate({

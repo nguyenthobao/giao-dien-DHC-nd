@@ -359,10 +359,9 @@ main input:checked + label {
     }
 
     #download {
-        position: fixed;
         border-radius: 8px;
         color: white;
-        margin-top: 400px;
+        margin-top: 1250px;
         padding-left: -5px;
         height: 100px;
         width: 20%;
