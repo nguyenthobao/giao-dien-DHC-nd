@@ -194,6 +194,21 @@ $(document).ready(function () {
         //
         // window.scrollTo(1500, 500);
     });
+    var mrefreshinterval = 500;
+    var lastmousex=-1;
+    var lastmousey=-1;
+    var lastmousetime;
+    $('html').mousemove(function(e) {
+
+        var mousetravel = 0;
+        var mousex = e.pageX;
+        var mousey = e.pageY;
+        if (lastmousex > -1)
+            mousetravel += Math.max( Math.abs(mousex-lastmousex), Math.abs(mousey-lastmousey) );
+        alert(mousetravel);
+        lastmousex = mousex;
+        lastmousey = mousey;
+    });
     $('body').on('touchmove', '#mapdhc', function (event) {
         if (event.originalEvent.touches[0].pageX > 1200 || event.originalEvent.touches[0].pageY > 1200) {
             $('html').attr('style', '');
