@@ -37,13 +37,13 @@ $(document).ready(function () {
     $('#marker').hide();
     $('#mapdhc').show();
     $('.label_instant').each(function () {
-        if (5336 == parseInt($('#search_place option:selected').data('left')) && 5124 == parseInt($('#search_place option:selected').data('top'))) {
-           $(this).show();
+        if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
+            $(this).attr('style','display:block;');
         }
     });
     $('.img_instant').each(function () {
-        if (5336 == parseInt($('#search_place option:selected').data('left')) && 5124 == parseInt($('#search_place option:selected').data('top'))) {
-            $(this).show();
+        if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
+            $(this).attr('style','display:block;');
         }
     });
     setTimeout($('html').animate({
@@ -71,13 +71,13 @@ $(document).ready(function () {
             $('#marker').css("margin-left", 1140 + "px");
             // $('#marker').show();
             $('.label_instant').each(function () {
-                if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
-                    $(this).show();
+                if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
+                    $(this).attr('style','display:block;');
                 }
             });
             $('.img_instant').each(function () {
-                if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
-                    $(this).show();
+                if ($(this).data('lat') == 5336 && $(this).data('long') == 5124) {
+                    $(this).attr('style','display:block;');
                 }
             });
             setTimeout($('html').animate({
@@ -222,13 +222,12 @@ $(document).ready(function () {
 
         $('.label_instant').each(function () {
             if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
-               $(this).show();
-               console.log(this);
+               $(this).attr('style','display:block;');
             }
         });
         $('.img_instant').each(function () {
             if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
-                $(this).show();
+                $(this).attr('style','display:block;');
             }
         });
         setTimeout($('html').animate({
