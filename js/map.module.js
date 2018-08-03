@@ -29,6 +29,13 @@ $(document).ready(function () {
     var scaleY = 1;
     var x = -1, y = -1;
     $('#tab2').prop('checked',true);
+    $('main > label').hide();
+    $('.container').attr('style', 'min-width: 100%');
+    $('main').attr('style', 'min-width: 100%');
+    $('#content2').attr('style', 'margin-top: -100px;');
+    $('#mapdhc').show();
+    $('#download').show();
+    $('#div_search').show();
     $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
     $('#tab2').change(function () {
