@@ -34,6 +34,7 @@ $(document).ready(function () {
     $('main').attr('style', 'min-width: 100%');
     $('#content2').attr('style', 'margin-top: -100px;');
     if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
+    $('#marker').hide();
     $('#mapdhc').show();
     setTimeout($('html').animate({
         scrollTop: 890,
