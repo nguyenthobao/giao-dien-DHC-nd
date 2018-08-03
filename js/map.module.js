@@ -41,25 +41,22 @@ $(document).ready(function () {
         scrollTop: 890,
         scrollLeft: 950
     }), 100);
-    if (ua.indexOf('safari') > -1) {
+    if(ua.indexOf('safari') > -1) {
         sTimeout = setTimeout(function () {
-            $('body').animate({
-                scrollTop: y - 150,
-                scrollLeft: x - 200
+            $('html').animate({
+                scrollTop: 890,
+                scrollLeft: 950
             })
-        }.bind(this), 1000);
+        }.bind(this), 100);
         Function.prototype.bind = function (parent) {
             var f = this;
             var args = [];
-
             for (var a = 1; a < arguments.length; a++) {
                 args[args.length] = arguments[a];
             }
-
             var temp = function () {
                 return f.apply(parent, args);
             };
-
             return (temp);
         }
     }
@@ -258,33 +255,25 @@ $(document).ready(function () {
             scrollTop: y - 150,
             scrollLeft: x - 200
         }), 100);
-        if (ua.indexOf('safari') > -1) {
+        if(ua.indexOf('safari') > -1) {
             sTimeout = setTimeout(function () {
-                $('body').animate({
+                $('html').animate({
                     scrollTop: y - 150,
                     scrollLeft: x - 200
                 })
-            }.bind(this), 1000);
+            }.bind(this), 100);
             Function.prototype.bind = function (parent) {
                 var f = this;
                 var args = [];
-
                 for (var a = 1; a < arguments.length; a++) {
                     args[args.length] = arguments[a];
                 }
-
                 var temp = function () {
                     return f.apply(parent, args);
-                }
-
+                };
                 return (temp);
             }
-        } else {
-
         }
-
-        //
-        // window.scrollTo(1500, 500);
     });
     $('body').on('touchmove', '#mapdhc', function (event) {
         if (event.originalEvent.touches[0].pageX > 1200 || event.originalEvent.touches[0].pageY > 1200) {
