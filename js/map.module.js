@@ -180,7 +180,7 @@ $(document).ready(function () {
         y = parseFloat($('#search_place option:selected').data('top') / (7046 / heightmap));
         console.log(x, y);
         $('#marker').css("margin-top", y + "px").css("margin-left", (x + 15) + "px");
-        $('#marker').show();
+        // $('#marker').show();
         setTimeout($('html').animate({
             scrollTop: y - 150,
             scrollLeft: x - 200
