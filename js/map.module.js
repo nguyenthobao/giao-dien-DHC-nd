@@ -28,6 +28,7 @@ $(document).ready(function () {
     var scaleX = 1;
     var scaleY = 1;
     var x = -1, y = -1;
+    var ua = navigator.userAgent.toLowerCase();
     $('#tab2').prop('checked', true);
     $('main > label').hide();
     $('.container').attr('style', 'min-width: 100%');
@@ -40,6 +41,28 @@ $(document).ready(function () {
         scrollTop: 890,
         scrollLeft: 950
     }), 100);
+    if (ua.indexOf('safari') > -1) {
+        sTimeout = setTimeout(function () {
+            $('body').animate({
+                scrollTop: y - 150,
+                scrollLeft: x - 200
+            })
+        }.bind(this), 1000);
+        Function.prototype.bind = function (parent) {
+            var f = this;
+            var args = [];
+
+            for (var a = 1; a < arguments.length; a++) {
+                args[args.length] = arguments[a];
+            }
+
+            var temp = function () {
+                return f.apply(parent, args);
+            };
+
+            return (temp);
+        }
+    }
     $('#download').show();
     $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
@@ -118,7 +141,6 @@ $(document).ready(function () {
                 scrollTop: 910,
                 scrollLeft: 950
             }), 100);
-            var ua = navigator.userAgent.toLowerCase();
             if (ua.indexOf('safari') > -1) {
                 sTimeout = setTimeout(function () {
                     $('body').animate({
@@ -231,7 +253,6 @@ $(document).ready(function () {
             scrollTop: y - 150,
             scrollLeft: x - 200
         }), 100);
-        var ua = navigator.userAgent.toLowerCase();
         if (ua.indexOf('safari') > -1) {
             sTimeout = setTimeout(function () {
                 $('body').animate({

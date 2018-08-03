@@ -94,7 +94,6 @@ $(document).ready(function () {
             $('.img_instant').hide();
             $('.label_instant').hide();
             $('.label_instant').each(function () {
-                console.log($(this).data('lat'), $(this).data('long'));
                 if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
                     $(this).attr('style','display:block;');
                 }
