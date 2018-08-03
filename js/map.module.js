@@ -40,6 +40,8 @@ $(document).ready(function () {
         if (5336 == parseInt($('#search_place option:selected').data('left')) && 5124 == parseInt($('#search_place option:selected').data('top'))) {
             $(this).find('.label_instant').show();
             $(this).find('.img_instant').show();
+            console.log($(this).find('.label_instant'));
+            console.log(this.find('.label_instant'));
         }
     });
     setTimeout($('html').animate({
