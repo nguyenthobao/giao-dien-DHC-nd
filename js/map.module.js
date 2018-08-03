@@ -28,157 +28,152 @@ $(document).ready(function () {
     var scaleX = 1;
     var scaleY = 1;
     var x = -1, y = -1;
+    $('#tab2').prop('checked',true);
     $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
-    hide_label();
-    init_map();
     $('#tab2').change(function () {
-        // // var apiGeolocationSuccess = function (position) {
-        // // alert("API geolocation success!" +
-        // //     "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
-        // // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
-        // // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
-        // if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
-        // if (isMobile.any() == null) {
-        //     // x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
-        //     // y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitud) / (7046 / $('#mapdhc')[0].height));
-        //     // if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
-        //     //     $('#marker').hide();
-        //     // } else {
-        //     $('#marker').css("margin-top", 1080 + "px");
-        //     $('#marker').css("margin-left", 1140 + "px");
-        //     $('#marker').show();
-        //     var ua = navigator.userAgent.toLowerCase();
-        //     if (ua.indexOf('safari') > -1) {
-        //         sTimeout = setTimeout(function () {
-        //             $('body').animate({
-        //                 scrollTop: 910,
-        //                 scrollLeft: 950
-        //             })
-        //         }.bind(this), 1000);
-        //         Function.prototype.bind = function (parent) {
-        //             var f = this;
-        //             var args = [];
-        //
-        //             for (var a = 1; a < arguments.length; a++) {
-        //                 args[args.length] = arguments[a];
-        //             }
-        //
-        //             var temp = function () {
-        //                 return f.apply(parent, args);
-        //             }
-        //
-        //             return (temp);
-        //         }
-        //     } else {
-        //         setTimeout($('body').animate({
-        //             scrollTop: 890,
-        //             scrollLeft: 950
-        //         }), 100);
-        //     }
-        //
-        //     // }
-        //     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-        //     if (width > 1000) $('#download').hide();
-        // }else {
-        //     $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
-        //     $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
-        //     // console.log(($('#mapdhc').css('width')).substring(0, 4) + '..' + ($('#mapdhc').css('width')).substring(0, 4) / ($('#mapdhc').css('height')).substring(0, 4));
-        //     // x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / ($('#mapdhc').css('width')).substring(0, 4)));
-        //     // y = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (7046 / heightmap));
-        //
-        //     // if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
-        //     //     $('#marker').hide();
-        //     setTimeout($('html').animate({
-        //         scrollTop: 910,
-        //         scrollLeft: 950
-        //     }), 100);
-        //     var ua = navigator.userAgent.toLowerCase();
-        //     if (ua.indexOf('safari') > -1) {
-        //         sTimeout = setTimeout(function () {
-        //             $('body').animate({
-        //                 scrollTop: 910,
-        //                 scrollLeft: 950
-        //             })
-        //         }.bind(this), 1000);
-        //         Function.prototype.bind = function (parent) {
-        //             var f = this;
-        //             var args = [];
-        //
-        //             for (var a = 1; a < arguments.length; a++) {
-        //                 args[args.length] = arguments[a];
-        //             }
-        //
-        //             var temp = function () {
-        //                 return f.apply(parent, args);
-        //             };
-        //
-        //             return (temp);
-        //         }
-        //     } else {
-        //
-        //     }
-        //     // } else {
-        //     //     $('#marker').css("margin-top", y + "px");
-        //     //     $('#marker').css("margin-left", x + "px");
-        //     //     $('#marker').show();
-        //     //     setTimeout($('html').animate({
-        //     //         scrollTop: y,
-        //     //         scrollLeft: x + 20
-        //     //     }), 100);
-        //     // }
-        //
-        // }
-        // // };
-        //
-        // // var tryAPIGeolocation = function () {
-        // //     jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function (success) {
-        // //         apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
-        // //     })
-        // //         .fail(function (err) {
-        // //             $('#marker').hide();
-        // //             alert("API Geolocation error! " + err);
-        // //             console.log(err);
-        // //         });
-        // // };
-        // //
-        // // var browserGeolocationSuccess = function (position) {
-        // //     // alert("Browser geolocation success!" +
-        // //     //     "lat = " + position.coords.latitude + "" +
-        // //     //     "lng = " + position.coords.longitude);
-        // // };
-        // //
-        // // var browserGeolocationFail = function (error) {
-        // //     switch (error.code) {
-        // //         case error.TIMEOUT:
-        // //             alert("Tìm kiếm vị trí của bạn quá thời gian cho phép");
-        // //             break;
-        // //         case error.PERMISSION_DENIED:
-        // //             if (error.message.indexOf("Only secure origins are allowed") == 0) {
-        // //                 tryAPIGeolocation();
-        // //             }
-        // //             break;
-        // //         case error.POSITION_UNAVAILABLE:
-        // //             alert("Trình duyệt bạn dùng không hỗ trợ tìm vị trí hoặc chức năng đã bị tắt");
-        // //             break;
-        // //     }
-        // // };
-        // //
-        // // var tryGeolocation = function () {
-        // //     if (navigator.geolocation) {
-        // //         navigator.geolocation.getCurrentPosition(
-        // //             browserGeolocationSuccess,
-        // //             browserGeolocationFail,
-        // //             {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
-        // //     }
-        // // };
-        // //
-        // // tryGeolocation();
-        init_map();
+        // var apiGeolocationSuccess = function (position) {
+        // alert("API geolocation success!" +
+        //     "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
+        // var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
+        // var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
+        if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
+        if (isMobile.any() == null) {
+            // x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
+            // y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitud) / (7046 / $('#mapdhc')[0].height));
+            // if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
+            //     $('#marker').hide();
+            // } else {
+            $('#marker').css("margin-top", 1080 + "px");
+            $('#marker').css("margin-left", 1140 + "px");
+            $('#marker').show();
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.indexOf('safari') > -1) {
+                sTimeout = setTimeout(function () {
+                    $('body').animate({
+                        scrollTop: 910,
+                        scrollLeft: 950
+                    })
+                }.bind(this), 1000);
+                Function.prototype.bind = function (parent) {
+                    var f = this;
+                    var args = [];
 
-    });
-    $('body').on('click', '.fixed-top', function () {
-       hide_label();
+                    for (var a = 1; a < arguments.length; a++) {
+                        args[args.length] = arguments[a];
+                    }
+
+                    var temp = function () {
+                        return f.apply(parent, args);
+                    }
+
+                    return (temp);
+                }
+            } else {
+                setTimeout($('body').animate({
+                    scrollTop: 890,
+                    scrollLeft: 950
+                }), 100);
+            }
+
+            // }
+            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+            if (width > 1000) $('#download').hide();
+        }else {
+            $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
+            $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
+            // console.log(($('#mapdhc').css('width')).substring(0, 4) + '..' + ($('#mapdhc').css('width')).substring(0, 4) / ($('#mapdhc').css('height')).substring(0, 4));
+            // x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / ($('#mapdhc').css('width')).substring(0, 4)));
+            // y = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (7046 / heightmap));
+
+            // if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
+            //     $('#marker').hide();
+            setTimeout($('html').animate({
+                scrollTop: 910,
+                scrollLeft: 950
+            }), 100);
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.indexOf('safari') > -1) {
+                sTimeout = setTimeout(function () {
+                    $('body').animate({
+                        scrollTop: 910,
+                        scrollLeft: 950
+                    })
+                }.bind(this), 1000);
+                Function.prototype.bind = function (parent) {
+                    var f = this;
+                    var args = [];
+
+                    for (var a = 1; a < arguments.length; a++) {
+                        args[args.length] = arguments[a];
+                    }
+
+                    var temp = function () {
+                        return f.apply(parent, args);
+                    };
+
+                    return (temp);
+                }
+            } else {
+
+            }
+            // } else {
+            //     $('#marker').css("margin-top", y + "px");
+            //     $('#marker').css("margin-left", x + "px");
+            //     $('#marker').show();
+            //     setTimeout($('html').animate({
+            //         scrollTop: y,
+            //         scrollLeft: x + 20
+            //     }), 100);
+            // }
+
+        }
+        // };
+
+        // var tryAPIGeolocation = function () {
+        //     jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function (success) {
+        //         apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
+        //     })
+        //         .fail(function (err) {
+        //             $('#marker').hide();
+        //             alert("API Geolocation error! " + err);
+        //             console.log(err);
+        //         });
+        // };
+        //
+        // var browserGeolocationSuccess = function (position) {
+        //     // alert("Browser geolocation success!" +
+        //     //     "lat = " + position.coords.latitude + "" +
+        //     //     "lng = " + position.coords.longitude);
+        // };
+        //
+        // var browserGeolocationFail = function (error) {
+        //     switch (error.code) {
+        //         case error.TIMEOUT:
+        //             alert("Tìm kiếm vị trí của bạn quá thời gian cho phép");
+        //             break;
+        //         case error.PERMISSION_DENIED:
+        //             if (error.message.indexOf("Only secure origins are allowed") == 0) {
+        //                 tryAPIGeolocation();
+        //             }
+        //             break;
+        //         case error.POSITION_UNAVAILABLE:
+        //             alert("Trình duyệt bạn dùng không hỗ trợ tìm vị trí hoặc chức năng đã bị tắt");
+        //             break;
+        //     }
+        // };
+        //
+        // var tryGeolocation = function () {
+        //     if (navigator.geolocation) {
+        //         navigator.geolocation.getCurrentPosition(
+        //             browserGeolocationSuccess,
+        //             browserGeolocationFail,
+        //             {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
+        //     }
+        // };
+        //
+        // tryGeolocation();
+
     });
     $('body').on('change', '#search_place', function () {
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
@@ -326,93 +321,7 @@ $(document).ready(function () {
     });
 
 });
-function hide_label(){
-    if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
-        $('main > label').show();
-        $('#content2').attr('style', 'margin-top: -50px;border: 0px;');
-        document.getElementsByClassName('img-responsive')[0].scrollIntoView();
-        $('#mapdhc').hide();
-        $('#download').hide();
-        $('#div_search').hide();
-        $('#marker').hide();
-        $('html').attr('style', '');
-    } else {
-        $('main > label').hide();
-    }
-}
-function init_map(){
-    if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
-    if (isMobile.any() == null) {
-        $('#marker').css("margin-top", 1080 + "px");
-        $('#marker').css("margin-left", 1140 + "px");
-        $('#marker').show();
-        var ua = navigator.userAgent.toLowerCase();
-        if (ua.indexOf('safari') > -1) {
-            sTimeout = setTimeout(function () {
-                $('body').animate({
-                    scrollTop: 910,
-                    scrollLeft: 950
-                })
-            }.bind(this), 1000);
-            Function.prototype.bind = function (parent) {
-                var f = this;
-                var args = [];
 
-                for (var a = 1; a < arguments.length; a++) {
-                    args[args.length] = arguments[a];
-                }
-
-                var temp = function () {
-                    return f.apply(parent, args);
-                }
-
-                return (temp);
-            }
-        } else {
-            setTimeout($('body').animate({
-                scrollTop: 890,
-                scrollLeft: 950
-            }), 100);
-        }
-
-        // }
-        var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-        if (width > 1000) $('#download').hide();
-    }else {
-        $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
-        $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
-        setTimeout($('html').animate({
-            scrollTop: 910,
-            scrollLeft: 950
-        }), 100);
-        var ua = navigator.userAgent.toLowerCase();
-        if (ua.indexOf('safari') > -1) {
-            sTimeout = setTimeout(function () {
-                $('body').animate({
-                    scrollTop: 910,
-                    scrollLeft: 950
-                })
-            }.bind(this), 1000);
-            Function.prototype.bind = function (parent) {
-                var f = this;
-                var args = [];
-
-                for (var a = 1; a < arguments.length; a++) {
-                    args[args.length] = arguments[a];
-                }
-
-                var temp = function () {
-                    return f.apply(parent, args);
-                };
-
-                return (temp);
-            }
-        } else {
-
-        }
-
-    }
-}
 function getOriginal1(lat1, lng1, lat2, lng2, x1, y1, x2, y2) {
     var realX1 = getX1Value(lat1, lng1);
     var realX2 = getX1Value(lat2, lng2);
