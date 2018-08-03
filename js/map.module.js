@@ -34,7 +34,7 @@ $(document).ready(function () {
     $('main').attr('style', 'min-width: 100%');
     $('#content2').attr('style', 'margin-top: -100px;');
     $('#mapdhc').show();
-    setTimeout($('body').animate({
+    setTimeout($('html').animate({
         scrollTop: 890,
         scrollLeft: 950
     }), 100);
@@ -58,7 +58,7 @@ $(document).ready(function () {
             $('#marker').css("margin-top", 1080 + "px");
             $('#marker').css("margin-left", 1140 + "px");
             // $('#marker').show();
-            setTimeout($('body').animate({
+            setTimeout($('html').animate({
                 scrollTop: 890,
                 scrollLeft: 950
             }), 100);
