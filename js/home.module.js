@@ -145,20 +145,7 @@ $(document).ready(function () {
     // $('body').on('mouseup','#content2', function () {
     //     $('html').attr('style','');
     // });
-    $('body').on('click', '.fixed-top', function () {
-        if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
-            $('main > label').show();
-            $('#content2').attr('style', 'margin-top: -50px;border: 0px;');
-            document.getElementsByClassName('img-responsive')[0].scrollIntoView();
-            $('#mapdhc').hide();
-            $('#download').hide();
-            $('#div_search').hide();
-            $('#marker').hide();
-            $('html').attr('style', '');
-        } else {
-            $('main > label').hide();
-        }
-    });
+
     $('body').on('click', '#mapdhc', function () {
         $('.img_instant').hide();
         $('.label_instant').hide();

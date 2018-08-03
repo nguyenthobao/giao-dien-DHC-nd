@@ -30,6 +30,7 @@ $(document).ready(function () {
     var x = -1, y = -1;
     $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
+    hide_label();
     init_map();
     $('#tab2').change(function () {
         // // var apiGeolocationSuccess = function (position) {
@@ -175,6 +176,9 @@ $(document).ready(function () {
         // // tryGeolocation();
         init_map();
 
+    });
+    $('body').on('click', '.fixed-top', function () {
+       hide_label();
     });
     $('body').on('change', '#search_place', function () {
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
@@ -322,6 +326,20 @@ $(document).ready(function () {
     });
 
 });
+function hide_label(){
+    if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
+        $('main > label').show();
+        $('#content2').attr('style', 'margin-top: -50px;border: 0px;');
+        document.getElementsByClassName('img-responsive')[0].scrollIntoView();
+        $('#mapdhc').hide();
+        $('#download').hide();
+        $('#div_search').hide();
+        $('#marker').hide();
+        $('html').attr('style', '');
+    } else {
+        $('main > label').hide();
+    }
+}
 function init_map(){
     if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
     if (isMobile.any() == null) {
