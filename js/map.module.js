@@ -94,6 +94,12 @@ $(document).ready(function () {
                         scrollLeft: 950
                     })
                 }.bind(this), 1000);
+                sTimeout = setTimeout(function () {
+                    $('html').animate({
+                        scrollTop: 910,
+                        scrollLeft: 950
+                    })
+                }.bind(this), 1000);
                 Function.prototype.bind = function (parent) {
                     var f = this;
                     var args = [];
@@ -104,7 +110,7 @@ $(document).ready(function () {
 
                     var temp = function () {
                         return f.apply(parent, args);
-                    }
+                    };
 
                     return (temp);
                 }
@@ -217,21 +223,6 @@ $(document).ready(function () {
         //
         // window.scrollTo(1500, 500);
     });
-    var mrefreshinterval = 500;
-    var lastmousex=-1;
-    var lastmousey=-1;
-    var lastmousetime;
-    $('#mapdhc').mousemove(function(e) {
-
-        var mousetravel = 0;
-        var mousex = e.pageX;
-        var mousey = e.pageY;
-        if (lastmousex > -1)
-            mousetravel += Math.max( Math.abs(mousex-lastmousex), Math.abs(mousey-lastmousey) );
-        alert(mousetravel);
-        lastmousex = mousex;
-        lastmousey = mousey;
-    });
     $('body').on('touchmove', '#mapdhc', function (event) {
         if (event.originalEvent.touches[0].pageX > 1200 || event.originalEvent.touches[0].pageY > 1200) {
             $('html').attr('style', '');
@@ -239,7 +230,7 @@ $(document).ready(function () {
     });
     $('body').on('click', '#mapdhc', function (e) {
         var offset = $(this).offset();
-        if (e.pageX - offset.left > 1300 || e.pageY - offset.top > 1400)
+        if (e.pageX - offset.left > 1000 || e.pageY - offset.top > 1000)
             $('html').attr('style', '');
     });
     $('body').on('click', '#download', function () {

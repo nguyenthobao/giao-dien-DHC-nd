@@ -402,7 +402,7 @@ main input:checked + label {
 
 #search_place {
     width: 90%;
-    margin-left: 2.5%;
+    margin-left: 3%;
     border-radius: 5px;
 }
 
@@ -421,7 +421,7 @@ main input:checked + label {
         position: fixed;
         margin-bottom: 0px;
         color: white;
-        margin-left: 80%;
+        margin-left: 60%;
         height: 35px;
         width: 116px;
         border: none;
