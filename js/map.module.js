@@ -34,6 +34,10 @@ $(document).ready(function () {
     $('main').attr('style', 'min-width: 100%');
     $('#content2').attr('style', 'margin-top: -100px;');
     $('#mapdhc').show();
+    setTimeout($('body').animate({
+        scrollTop: 890,
+        scrollLeft: 950
+    }), 100);
     $('#download').show();
     $('#div_search').show();
     $('#div_search').show();
@@ -53,7 +57,11 @@ $(document).ready(function () {
             // } else {
             $('#marker').css("margin-top", 1080 + "px");
             $('#marker').css("margin-left", 1140 + "px");
-            $('#marker').show();
+            // $('#marker').show();
+            setTimeout($('body').animate({
+                scrollTop: 890,
+                scrollLeft: 950
+            }), 100);
             var ua = navigator.userAgent.toLowerCase();
             if (ua.indexOf('safari') > -1) {
                 sTimeout = setTimeout(function () {
