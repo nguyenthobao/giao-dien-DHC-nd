@@ -110,7 +110,7 @@ $(document).ready(function () {
                     return (temp);
                 }
             } else {
-                setTimeout($('html').animate({
+                setTimeout($('body').animate({
                     scrollTop: 910,
                     scrollLeft: 950
                 }), 100);

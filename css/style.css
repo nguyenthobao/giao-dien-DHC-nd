@@ -379,7 +379,7 @@ main input:checked + label {
 #div_search {
     height: 90px !important;
     position: fixed;
-    width: 26%;
+    width: 100%;
     min-width: 380px;
     background-color: rgba(140, 187, 148, 0.79);
 }
@@ -392,7 +392,7 @@ main input:checked + label {
     background-color: white;
     margin-top: 8px;
     margin-bottom: 10px;
-    margin-left: 29%;
+    margin-left: 7%;
     border: 0px;
     border-radius: 5px;
     color: #4caf50;
@@ -401,8 +401,8 @@ main input:checked + label {
 }
 
 #search_place {
-    width: 90%;
-    margin-left: 3%;
+    width: 19%;
+    margin-left: 2%;
     border-radius: 5px;
 }
 
