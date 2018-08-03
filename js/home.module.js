@@ -147,6 +147,7 @@ $(document).ready(function () {
     //     $('html').attr('style','');
     // });
     $('body').on('click', '.fixed-top', function () {
+        $('html').removeClass('height-screen');
         if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
             $('main > label').show();
             $('#content2').attr('style', 'margin-top: -50px;border: 0px;');
