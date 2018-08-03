@@ -28,7 +28,7 @@ $(document).ready(function () {
     var scaleX = 1;
     var scaleY = 1;
     var x = -1, y = -1;
-    $('#tab2').prop('checked',true);
+    $('#tab2').prop('checked', true);
     $('main > label').hide();
     $('.container').attr('style', 'min-width: 100%');
     $('main').attr('style', 'min-width: 100%');
@@ -36,10 +36,11 @@ $(document).ready(function () {
     if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
     $('#marker').hide();
     $('#mapdhc').show();
-    $('.div_marker').each(function(){
-        if(5336==parseInt($('#search_place option:selected').data('left')) && 5124==parseInt($('#search_place option:selected').data('top')))
-            $($(this).find('.label_instant')).show();
-        $($(this).find('.img_instant')).show();
+    $('.div_marker').each(function () {
+        if (5336 == parseInt($('#search_place option:selected').data('left')) && 5124 == parseInt($('#search_place option:selected').data('top'))) {
+            $(this.find('.label_instant')).show();
+            $(this.find('.img_instant')).show();
+        }
     });
     setTimeout($('html').animate({
         scrollTop: 890,
@@ -65,7 +66,12 @@ $(document).ready(function () {
             $('#marker').css("margin-top", 1080 + "px");
             $('#marker').css("margin-left", 1140 + "px");
             // $('#marker').show();
-
+            $('.div_marker').each(function () {
+                if (5336 == parseInt($('#search_place option:selected').data('left')) && 5124 == parseInt($('#search_place option:selected').data('top'))) {
+                    $(this.find('.label_instant')).show();
+                    $(this.find('.img_instant')).show();
+                }
+            });
             setTimeout($('html').animate({
                 scrollTop: 890,
                 scrollLeft: 950
@@ -102,7 +108,7 @@ $(document).ready(function () {
             // }
             var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
             if (width > 1000) $('#download').hide();
-        }else {
+        } else {
             $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
             $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
             // console.log(($('#mapdhc').css('width')).substring(0, 4) + '..' + ($('#mapdhc').css('width')).substring(0, 4) / ($('#mapdhc').css('height')).substring(0, 4));
@@ -206,13 +212,13 @@ $(document).ready(function () {
         $('#marker').css("margin-top", y + "px").css("margin-left", (x + 15) + "px");
         // $('#marker').show();
 
-        $('.div_marker').each(function(){
-            if($(this).data('lat')==$('#search_place option:selected').data('left') && $(this).data('long')==$('#search_place option:selected').data('top')) {
-                $($(this).find('.label_instant')).show();
-                $($(this).find('.img_instant')).show();
+        $('.div_marker').each(function () {
+            if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
+                $(this.find('.label_instant')).show();
+                $(this.find('.img_instant')).show();
                 console.log(this);
             }
-                });
+        });
         setTimeout($('html').animate({
             scrollTop: y - 150,
             scrollLeft: x - 200
