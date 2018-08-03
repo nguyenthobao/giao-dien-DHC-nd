@@ -198,7 +198,7 @@ $(document).ready(function () {
     var lastmousex=-1;
     var lastmousey=-1;
     var lastmousetime;
-    $('html').mousemove(function(e) {
+    $('#mapdhc').mousemove(function(e) {
 
         var mousetravel = 0;
         var mousex = e.pageX;
