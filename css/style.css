@@ -364,8 +364,8 @@ main input:checked + label {
         margin-top: 1250px;
         padding-left: -5px;
         height: 100px;
-        width: 80%;
-        margin-left: 5.5%;
+        width: 20%;
+        margin-left: 0.3%;
         border: none;
         background-color: #4caf50;
     }
@@ -421,7 +421,7 @@ main input:checked + label {
         position: fixed;
         margin-bottom: 0px;
         color: white;
-        margin-left: 60%;
+        margin-left: 80%;
         height: 35px;
         width: 116px;
         border: none;

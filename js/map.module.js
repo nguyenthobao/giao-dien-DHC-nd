@@ -94,12 +94,6 @@ $(document).ready(function () {
                         scrollLeft: 950
                     })
                 }.bind(this), 1000);
-                sTimeout = setTimeout(function () {
-                    $('html').animate({
-                        scrollTop: 910,
-                        scrollLeft: 950
-                    })
-                }.bind(this), 1000);
                 Function.prototype.bind = function (parent) {
                     var f = this;
                     var args = [];
