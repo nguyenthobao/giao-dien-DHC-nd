@@ -222,8 +222,8 @@ $(document).ready(function () {
 
         $('.label_instant').each(function () {
             if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
-               $(this).attr('style','display:block;');
-               console.log(this);
+               $(this).attr('style','display: block');
+               console.log(this); return false;
             }
         });
         $('.img_instant').each(function () {
