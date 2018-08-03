@@ -87,6 +87,10 @@ $(document).ready(function () {
 
             // if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
             //     $('#marker').hide();
+            setTimeout($('html').animate({
+                scrollTop: 910,
+                scrollLeft: 950
+            }), 100);
             var ua = navigator.userAgent.toLowerCase();
             if (ua.indexOf('safari') > -1) {
                 sTimeout = setTimeout(function () {
@@ -110,10 +114,7 @@ $(document).ready(function () {
                     return (temp);
                 }
             } else {
-                setTimeout($('body').animate({
-                    scrollTop: 910,
-                    scrollLeft: 950
-                }), 100);
+
             }
             // } else {
             //     $('#marker').css("margin-top", y + "px");
