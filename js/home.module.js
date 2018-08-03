@@ -86,7 +86,7 @@ $(document).ready(function () {
                 html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100/(k+1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute; ">' +
                     '<img src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +
                     '<br><label data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '">' + v.point_name + '</label><br>' +
-                    '<img style="margin-top: '+(v.long==5124 && v.lat==5336? '-13':'1')+'px" data-id="' + v.point_id + '" id="img_' + x + '" src="' + pointImage[0] + '" class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">' +
+                    '<img  data-id="' + v.point_id + '" id="img_' + x + '" src="' + pointImage[0] + '" class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">' +
                     '</div>';
             });
             $('#search_place').html(html_select);
@@ -101,6 +101,7 @@ $(document).ready(function () {
             $('.img_instant').each(function () {
                 if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
                     $(this).attr('style','display:block;');
+                    $(this).addClass('comeIn');
                 }
             });
         },
