@@ -207,10 +207,11 @@ $(document).ready(function () {
         // $('#marker').show();
 
         $('.div_marker').each(function(){
-            if($(this).data('lat')==$('#search_place option:selected').data('left') && $(this).data('long')==$('#search_place option:selected').data('top'))
-               $($(this).find('.label_instant')).show();
-               $($(this).find('.img_instant')).show();
-               console.log(this);
+            if($(this).data('lat')==$('#search_place option:selected').data('left') && $(this).data('long')==$('#search_place option:selected').data('top')) {
+                $($(this).find('.label_instant')).show();
+                $($(this).find('.img_instant')).show();
+                console.log(this);
+            }
                 });
         setTimeout($('html').animate({
             scrollTop: y - 150,
