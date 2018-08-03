@@ -36,18 +36,6 @@ $(document).ready(function () {
     if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
     $('#marker').hide();
     $('#mapdhc').show();
-    $('.label_instant').each(function () {
-        console.log($(this).data('lat'), $(this).data('long'));
-        if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
-            $(this).attr('style','display:block;');
-            console.log(this,'sdfsdv');
-        }
-    });
-    $('.img_instant').each(function () {
-        if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
-            $(this).attr('style','display:block;');
-        }
-    });
     setTimeout($('html').animate({
         scrollTop: 890,
         scrollLeft: 950

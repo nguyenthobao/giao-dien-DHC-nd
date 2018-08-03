@@ -93,6 +93,17 @@ $(document).ready(function () {
             $('#content2 .content .row').append(html_marker);
             $('.img_instant').hide();
             $('.label_instant').hide();
+            $('.label_instant').each(function () {
+                console.log($(this).data('lat'), $(this).data('long'));
+                if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
+                    $(this).attr('style','display:block;');
+                }
+            });
+            $('.img_instant').each(function () {
+                if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
+                    $(this).attr('style','display:block;');
+                }
+            });
         },
         error: function (e) {
             alert('Có lỗi');
