@@ -380,7 +380,7 @@ main input:checked + label {
     height: 90px !important;
     position: fixed;
     width: 26%;
-    min-width: 370px;
+    min-width: 380px;
     background-color: rgba(140, 187, 148, 0.79);
 }
 

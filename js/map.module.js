@@ -87,10 +87,33 @@ $(document).ready(function () {
 
             // if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
             //     $('#marker').hide();
-            setTimeout($('html').animate({
-                scrollTop: 910,
-                scrollLeft: 950
-            }), 100);
+            if (ua.indexOf('safari') > -1) {
+                sTimeout = setTimeout(function () {
+                    $('body').animate({
+                        scrollTop: 910,
+                        scrollLeft: 950
+                    })
+                }.bind(this), 1000);
+                Function.prototype.bind = function (parent) {
+                    var f = this;
+                    var args = [];
+
+                    for (var a = 1; a < arguments.length; a++) {
+                        args[args.length] = arguments[a];
+                    }
+
+                    var temp = function () {
+                        return f.apply(parent, args);
+                    }
+
+                    return (temp);
+                }
+            } else {
+                setTimeout($('html').animate({
+                    scrollTop: 910,
+                    scrollLeft: 950
+                }), 100);
+            }
             // } else {
             //     $('#marker').css("margin-top", y + "px");
             //     $('#marker').css("margin-left", x + "px");
@@ -154,7 +177,7 @@ $(document).ready(function () {
         x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2048));
         y = parseFloat($('#search_place option:selected').data('top') / (7046 / heightmap));
         console.log(x, y);
-        $('#marker').css("margin-top", y + "px").css("margin-left", (x + 30) + "px");
+        $('#marker').css("margin-top", y + "px").css("margin-left", (x + 15) + "px");
         $('#marker').show();
         var ua = navigator.userAgent.toLowerCase();
         if (ua.indexOf('safari') > -1) {
