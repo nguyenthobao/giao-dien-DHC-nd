@@ -292,7 +292,7 @@ $(document).ready(function () {
     });
     $('body').on('click', '#mapdhc', function (e) {
         var offset = $(this).offset();
-        if (e.pageX - offset.left > 1000 || e.pageY - offset.top > 1200)
+        if (e.pageX - offset.left > 1200 || e.pageY - offset.top > 1500)
             $('html').attr('style', '');
     });
     $('body').on('click', '#download', function () {

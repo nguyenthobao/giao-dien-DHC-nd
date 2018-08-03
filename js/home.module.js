@@ -141,11 +141,6 @@ $(document).ready(function () {
             alert('Có lỗi');
         }
     });
-
-
-    // $('body').on('mouseup','#content2', function () {
-    //     $('html').attr('style','');
-    // });
     $('body').on('click', '.fixed-top', function () {
         $('html').removeClass('height-screen');
         if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
