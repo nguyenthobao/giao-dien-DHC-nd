@@ -73,7 +73,7 @@ $(document).ready(function () {
                 var pointImage = JSON.parse(v.point_images);
                 var url = '';
                 var heightmap;
-                if (isMobile.any() != null) heightmap = 1200; else heightmap = 1473;
+                if (isMobile.any() != null) heightmap = 1200; else heightmap = 1450;
                 x = parseFloat(v.lat / parseFloat(9798 / 2048));
                 y = parseFloat(v.long / parseFloat(7046 / heightmap));
                 if (isMobile.any() != null) {
