@@ -99,20 +99,10 @@ $(document).ready(function () {
         }
     });
     $('body').on('click', '.point_important', function () {
-        // var scrollTop=$(this).data('y'),scrollLeft=$(this).data('x')+150;
-        // setTimeout($('html').animate({
-        //     scrollTop:scrollTop,
-        //     scrollLeft:scrollLeft
-        // }),100);
-        if (isMobile.any() == null) {
-            $(this).hide();
-            if (that) $(that).show();
-        }
-        if (that) {
-            $(($(that).parent()).find('.img_instant')).hide();
-            $(($(that).parent()).find('.label_instant')).hide();
-        }
-        that = this;
+        $('.point_important').each(function(){
+            $(($(this).parent()).find('.img_instant')).hide();
+            $(($(this).parent()).find('.label_instant')).hide();
+        });
         $(($(this).parent()).find('.img_instant')).show();
         $(($(this).parent()).find('.label_instant')).show();
         setTimeout(document.getElementById('search_place').scrollIntoView(), 1000);

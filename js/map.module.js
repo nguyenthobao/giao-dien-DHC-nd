@@ -39,7 +39,7 @@ $(document).ready(function () {
     $('.label_instant').each(function () {
         if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
             $(this).attr('style','display:block;');
-            console.log(this);
+            console.log(this,'sdfsdv');
         }
     });
     $('.img_instant').each(function () {
