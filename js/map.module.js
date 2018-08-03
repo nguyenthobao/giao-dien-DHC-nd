@@ -223,6 +223,7 @@ $(document).ready(function () {
         $('.label_instant').each(function () {
             if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
                $(this).attr('style','display: block');
+               $(this).show();
                console.log(this); return false;
             }
         });
