@@ -76,6 +76,7 @@ $(document).ready(function () {
         if (isMobile.any() != null) {
             $('html').attr('style', 'width:10000px;height:3000px');
             $('html').addClass('height-screen');
+            $('#content2').addClass('color_content2');
         }
         if (isMobile.any() == null) {
             // x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / $('#mapdhc')[0].width));

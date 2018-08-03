@@ -314,7 +314,7 @@ main input:checked + label {
         margin-left: 40px;
     }
 
-    #content2 {
+    .color_content2 {
         background-color: #8FB88F;
     }
 
