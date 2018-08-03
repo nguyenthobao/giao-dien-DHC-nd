@@ -181,6 +181,10 @@ $(document).ready(function () {
         console.log(x, y);
         $('#marker').css("margin-top", y + "px").css("margin-left", (x + 15) + "px");
         $('#marker').show();
+        setTimeout($('html').animate({
+            scrollTop: y - 150,
+            scrollLeft: x - 200
+        }), 100);
         var ua = navigator.userAgent.toLowerCase();
         if (ua.indexOf('safari') > -1) {
             sTimeout = setTimeout(function () {
@@ -204,10 +208,7 @@ $(document).ready(function () {
                 return (temp);
             }
         } else {
-            setTimeout($('body').animate({
-                scrollTop: y - 150,
-                scrollLeft: x - 200
-            }), 100);
+
         }
 
         $('.img_instant').each(function () {
