@@ -309,7 +309,9 @@ main input:checked + label {
     #label_tab1, #label_tab3 {
         margin-left: 40px;
     }
-
+#content2{
+    background-color: #8FB88F;
+}
     #content2 .content {
         width: 2048px;
         height: 1000px;
@@ -331,7 +333,7 @@ main input:checked + label {
     #mapdhc {
         padding-top: 255px;
         padding-left: 0px;
-        margin-left: 5px;
+        /*margin-left: 5px;*/
         margin-top: -250px;
         height: 1473px !important;
         width: 2048px !important;
@@ -390,7 +392,7 @@ main input:checked + label {
     margin-top: 100px;
 }
 .height-screen{
-    max-height: 1000px !important;
+    background-color: #8FB88F;
 }
 #searchlabel {
     background-color: white;
