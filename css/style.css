@@ -389,7 +389,9 @@ main input:checked + label {
 #content2 .content {
     margin-top: 100px;
 }
-
+.height-screen{
+    max-height: 1000px !important;
+}
 #searchlabel {
     background-color: white;
     margin-top: 8px;
