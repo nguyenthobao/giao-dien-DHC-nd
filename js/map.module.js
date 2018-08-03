@@ -73,7 +73,6 @@ $(document).ready(function () {
             $('.label_instant').each(function () {
                 if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
                     $(this).show();
-                    console.log(this);
                 }
             });
             $('.img_instant').each(function () {
@@ -224,6 +223,7 @@ $(document).ready(function () {
         $('.label_instant').each(function () {
             if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
                $(this).show();
+               console.log(this);
             }
         });
         $('.img_instant').each(function () {
