@@ -42,15 +42,12 @@ $(document).ready(function () {
     }), 100);
     var ua = navigator.userAgent.toLowerCase();
     if(ua.indexOf('safari') > -1) {
-        alert(JSON.stringify(ua));
         sTimeout = setTimeout(function() {
             $('body').animate({
-                scrollTop:y-150,
-                scrollLeft:x-200
+                scrollTop: 890,
+                scrollLeft: 950
             })
         }.bind(this),2000);
-
-
         Function.prototype.bind = function(parent) {
             var f = this;
             var args = [];
