@@ -72,6 +72,36 @@ $(document).ready(function () {
             $('html').addClass('height-screen');
             $('#content2').addClass('color_content2');
         }
+        if (x < 0 || y < 0){x = 800; y = 700;}
+        setTimeout($('html').animate({
+            scrollTop: y+100,
+            scrollLeft: x+100
+        }), 400);
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.indexOf('safari') > -1) {
+            sTimeout = setTimeout(function() {
+                $('body').animate({
+                    scrollTop:y+150,
+                    scrollLeft:x+150
+                })
+            }.bind(this),1000);
+
+
+            Function.prototype.bind = function(parent) {
+                var f = this;
+                var args = [];
+
+                for (var a = 1; a < arguments.length; a++) {
+                    args[args.length] = arguments[a];
+                }
+
+                var temp = function() {
+                    return f.apply(parent, args);
+                }
+
+                return(temp);
+            }
+        }
     });
     $('#tab2').change(function () {
 
