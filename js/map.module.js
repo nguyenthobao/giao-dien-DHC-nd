@@ -66,6 +66,13 @@ $(document).ready(function () {
     $('#download').show();
     $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
+    $('#tab2').click(function(){
+        if (isMobile.any() != null) {
+            $('html').attr('style', 'width:10000px;height:3000px');
+            $('html').addClass('height-screen');
+            $('#content2').addClass('color_content2');
+        }
+    });
     $('#tab2').change(function () {
 
         // var apiGeolocationSuccess = function (position) {
@@ -383,8 +390,8 @@ $(document).ready(function () {
         if(ua.indexOf('safari') > -1) {
             sTimeout = setTimeout(function() {
                 $('body').animate({
-                    scrollTop:y-150,
-                    scrollLeft:x-200
+                    scrollTop:y+150,
+                    scrollLeft:x+150
                 })
             }.bind(this),1000);
 
