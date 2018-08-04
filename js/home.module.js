@@ -28,6 +28,7 @@ $(document).ready(function () {
     urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     $('*').bind('touchmove', false);
+    $('#mapdhc').bind('touchmove',true);
     $.ajax({
         url: baseApi + 'point/get-all-point',
         method: 'POST',
@@ -105,6 +106,7 @@ $(document).ready(function () {
                     $(this).addClass('comeIn');
                 }
             });
+            $('.div_marker').bind('touchmove',true);
         },
         error: function (e) {
             alert('Có lỗi');
