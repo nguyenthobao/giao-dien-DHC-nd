@@ -37,10 +37,10 @@ $(document).ready(function () {
     if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
     $('#marker').hide();
     $('#mapdhc').show();
-    setTimeout($('html').animate({
-        scrollTop: 890,
-        scrollLeft: 950
-    }), 100);
+    // setTimeout($('html').animate({
+    //     scrollTop: 890,
+    //     scrollLeft: 950
+    // }), 100);
     // if(ua.indexOf('safari') > -1) {
     //     sTimeout = setTimeout(function () {
     //         $('html').animate({
