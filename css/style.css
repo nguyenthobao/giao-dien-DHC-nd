@@ -379,6 +379,10 @@ main input:checked + label {
         border: none;
         background-color: #4caf50;
     }
+    #content2 {
+        margin-top: -90px;
+        background-color: #8FB88F;
+    }
 
     #modalForm {
         width: 98%;
@@ -419,7 +423,7 @@ main input:checked + label {
     border-radius: 5px;
 }
 
-@media (max-width: 991px) and (min-width: 766px) {
+@media (max-width: 991px) and (min-width: 766px){
     .img-news {
         padding-right: 0;
         margin-right: 50px;
@@ -450,7 +454,6 @@ main input:checked + label {
 
     #content2 {
         margin-top: -90px;
-        background-color: #8FB88F;
     }
 
     #content2 .content {
