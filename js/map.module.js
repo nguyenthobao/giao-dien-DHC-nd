@@ -42,6 +42,7 @@ $(document).ready(function () {
     }), 100);
     var ua = navigator.userAgent.toLowerCase();
     if(ua.indexOf('safari') > -1) {
+        alert(JSON.stringify(ua));
         sTimeout = setTimeout(function() {
             $('body').animate({
                 scrollTop:y-150,
