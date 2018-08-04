@@ -4,7 +4,10 @@ body {
     color: #555;
     /*background: #eee;*/
 }
-
+html{
+    -webkit-text-size-adjust: none;
+    touch-action: manipulation;
+}
 .comeIn {
     margin-top: -13px !important;
 }
