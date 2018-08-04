@@ -44,7 +44,7 @@ $(document).ready(function () {
     if(ua.indexOf('safari') > -1) {
         sTimeout = setTimeout(function() {
             $('body').animate({
-                scrollTop: 800,
+                scrollTop: 700,
                 scrollLeft: 950
             })
         }.bind(this),2000);
@@ -150,7 +150,7 @@ $(document).ready(function () {
             if(ua.indexOf('safari') > -1) {
                 sTimeout = setTimeout(function() {
                     $('body').animate({
-                        scrollTop: 800,
+                        scrollTop: 700,
                         scrollLeft: 950
                     })
                 }.bind(this),2000);
