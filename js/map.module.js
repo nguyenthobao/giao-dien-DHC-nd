@@ -421,19 +421,18 @@ $(document).ready(function () {
         setTimeout(document.getElementById('search_place').scrollIntoView(), 1000);
     });
     $('body').on('click', '#form-footer>button', function () {
-       alert(x+'...'+y);
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
         if (x < 0 || y < 0){x = 800; y = 700;}
         setTimeout($('html').animate({
             scrollTop: y,
-            scrollLeft: x
+            scrollLeft: x-150
         }), 400);
         var ua = navigator.userAgent.toLowerCase();
         if(ua.indexOf('safari') > -1) {
             sTimeout = setTimeout(function() {
                 $('body').animate({
                     scrollTop:y,
-                    scrollLeft:x
+                    scrollLeft:x-150
                 })
             }.bind(this),1000);
 
