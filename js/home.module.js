@@ -154,6 +154,7 @@ $(document).ready(function () {
             $('html').attr('style', '');
         } else {
             $('main > label').hide();
+            $('#content2').show();
         }
     });
     $('body').on('click', '#mapdhc', function () {
