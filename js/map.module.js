@@ -408,20 +408,32 @@ $(document).ready(function () {
             }
         });
     });
+
+    $('body').on('click', '.point_important', function () {
+        x = $(this).data('x');
+        y = $(this).data('y');
+        $('.point_important').each(function(){
+            $(($(this).parent()).find('.img_instant')).hide();
+            $(($(this).parent()).find('.label_instant')).hide();
+        });
+        $(($(this).parent()).find('.img_instant')).show();
+        $(($(this).parent()).find('.label_instant')).show();
+        setTimeout(document.getElementById('search_place').scrollIntoView(), 1000);
+    });
     $('body').on('click', '#form-footer>button', function () {
        alert(x+'...'+y);
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
         if (x < 0 || y < 0){x = 800; y = 700;}
         setTimeout($('html').animate({
-            scrollTop: y+100,
-            scrollLeft: x+100
+            scrollTop: y,
+            scrollLeft: x
         }), 400);
         var ua = navigator.userAgent.toLowerCase();
         if(ua.indexOf('safari') > -1) {
             sTimeout = setTimeout(function() {
                 $('body').animate({
-                    scrollTop:y+150,
-                    scrollLeft:x+150
+                    scrollTop:y,
+                    scrollLeft:x
                 })
             }.bind(this),1000);
 

@@ -122,15 +122,6 @@ $(document).ready(function () {
             alert('Có lỗi');
         }
     });
-    $('body').on('click', '.point_important', function () {
-        $('.point_important').each(function(){
-            $(($(this).parent()).find('.img_instant')).hide();
-            $(($(this).parent()).find('.label_instant')).hide();
-        });
-        $(($(this).parent()).find('.img_instant')).show();
-        $(($(this).parent()).find('.label_instant')).show();
-        setTimeout(document.getElementById('search_place').scrollIntoView(), 1000);
-    });
     /*Get promotion limit 2*/
     $.ajax({
         url: baseApi + 'promotion/get-all-promotion',
