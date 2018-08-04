@@ -428,6 +428,7 @@ main input:checked + label {
     margin-top: 10px;
     margin-left: 5.5vw;
     border-radius: 5px;
+    max-width: 500px;
 }
 
 @media (max-width: 991px) and (min-width: 766px){
