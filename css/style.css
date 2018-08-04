@@ -450,6 +450,7 @@ main input:checked + label {
 
     #content2 {
         margin-top: -90px;
+        background-color: #8FB88F;
     }
 
     #content2 .content {
