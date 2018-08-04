@@ -422,7 +422,8 @@ main input:checked + label {
 #search_place {
     width: 90vw;
     height: 30px;
-    margin-left: 5vw;
+    margin-top: 10px;
+    margin-left: 5.5vw;
     border-radius: 5px;
 }
 
