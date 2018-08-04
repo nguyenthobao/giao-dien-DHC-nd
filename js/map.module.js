@@ -409,7 +409,7 @@ $(document).ready(function () {
         });
     });
     $('body').on('click', '#form-footer>button', function () {
-
+       alert(x+'...'+y);
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
         if (x < 0 || y < 0){x = 800; y = 700;}
         setTimeout($('html').animate({
