@@ -150,10 +150,7 @@ $(document).ready(function () {
             $('main > label').show();
             $('#content2').attr('style', 'margin-top: -50px;border: 0px;');
             document.getElementsByClassName('img-responsive')[0].scrollIntoView();
-            $('#mapdhc').hide();
-            $('#download').hide();
-            $('#div_search').hide();
-            $('#marker').hide();
+            $('#content2').hide();
             $('html').attr('style', '');
         } else {
             $('main > label').hide();
