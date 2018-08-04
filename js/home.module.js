@@ -27,7 +27,7 @@ $(document).ready(function () {
 
     urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
-    $('html').bind('touchmove', false);
+    $('*').bind('touchmove', false);
     $.ajax({
         url: baseApi + 'point/get-all-point',
         method: 'POST',
