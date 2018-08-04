@@ -44,7 +44,7 @@ $(document).ready(function () {
     if(ua.indexOf('safari') > -1) {
         sTimeout = setTimeout(function() {
             $('body').animate({
-                scrollTop: 890,
+                scrollTop: 800,
                 scrollLeft: 950
             })
         }.bind(this),2000);
@@ -147,14 +147,14 @@ $(document).ready(function () {
                 scrollLeft: 950
             }), 100);
             var ua = navigator.userAgent.toLowerCase();
-            if (ua.indexOf('safari') > -1) {
-                sTimeout = setTimeout(function () {
+            if(ua.indexOf('safari') > -1) {
+                sTimeout = setTimeout(function() {
                     $('body').animate({
-                        scrollTop: 910,
+                        scrollTop: 800,
                         scrollLeft: 950
                     })
-                }.bind(this), 1000);
-                Function.prototype.bind = function (parent) {
+                }.bind(this),2000);
+                Function.prototype.bind = function(parent) {
                     var f = this;
                     var args = [];
 
@@ -162,14 +162,12 @@ $(document).ready(function () {
                         args[args.length] = arguments[a];
                     }
 
-                    var temp = function () {
+                    var temp = function() {
                         return f.apply(parent, args);
-                    };
+                    }
 
-                    return (temp);
+                    return(temp);
                 }
-            } else {
-
             }
             // } else {
             //     $('#marker').css("margin-top", y + "px");
