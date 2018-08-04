@@ -104,6 +104,8 @@ $(document).ready(function () {
                 if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
                     $(this).attr('style','display:block;');
                     // $(this).addClass('comeIn');
+                }else{
+                    $(this).css('margin-top','1px');
                 }
             });
         },
