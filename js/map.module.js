@@ -374,12 +374,36 @@ $(document).ready(function () {
     $('body').on('click', '#form-footer>button', function () {
 
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
-        if (x < 0 || y < 0) x = 800;
-        y = 700;
+        if (x < 0 || y < 0){x = 800; y = 700;}
         setTimeout($('html').animate({
             scrollTop: y+100,
             scrollLeft: x+100
         }), 400);
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.indexOf('safari') > -1) {
+            sTimeout = setTimeout(function() {
+                $('body').animate({
+                    scrollTop:y-150,
+                    scrollLeft:x-200
+                })
+            }.bind(this),1000);
+
+
+            Function.prototype.bind = function(parent) {
+                var f = this;
+                var args = [];
+
+                for (var a = 1; a < arguments.length; a++) {
+                    args[args.length] = arguments[a];
+                }
+
+                var temp = function() {
+                    return f.apply(parent, args);
+                }
+
+                return(temp);
+            }
+        }
     });
 
 });
