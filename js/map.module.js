@@ -143,6 +143,7 @@ $(document).ready(function () {
                 scrollTop: 910,
                 scrollLeft: 950
             }), 100);
+            var ua = navigator.userAgent.toLowerCase();
             if (ua.indexOf('safari') > -1) {
                 sTimeout = setTimeout(function () {
                     $('body').animate({
