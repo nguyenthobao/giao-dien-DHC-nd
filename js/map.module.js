@@ -139,12 +139,13 @@ $(document).ready(function () {
 
             // if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
             //     $('#marker').hide();
-            // setTimeout($('html').animate({
-            //     scrollTop: 910,
-            //     scrollLeft: 950
-            // }), 100);
+            setTimeout($('html').animate({
+                scrollTop: 910,
+                scrollLeft: 950
+            }), 100);
             var ua = navigator.userAgent.toLowerCase();
             if (ua.indexOf('safari') > -1) {
+                alert('chay vao day');
                 sTimeout = setTimeout(function () {
                     $('body').animate({
                         scrollTop: 910,
