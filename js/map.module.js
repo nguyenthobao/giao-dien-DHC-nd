@@ -48,7 +48,7 @@ $(document).ready(function () {
                 scrollTop:y-150,
                 scrollLeft:x-200
             })
-        }.bind(this),1000);
+        }.bind(this),2000);
 
 
         Function.prototype.bind = function(parent) {
@@ -151,7 +151,6 @@ $(document).ready(function () {
             }), 100);
             var ua = navigator.userAgent.toLowerCase();
             if (ua.indexOf('safari') > -1) {
-                alert(JSON.stringify(ua));
                 sTimeout = setTimeout(function () {
                     $('body').animate({
                         scrollTop: 910,
