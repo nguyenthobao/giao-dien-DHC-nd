@@ -76,7 +76,7 @@ $(document).ready(function () {
                 if (a.point_name > b.point_name) return 1;
                 return 0;
             });
-            var html_select = '<option></option>', html_marker = '';
+            var html_select = '<option>Chọn địa điểm</option>', html_marker = '';
             $.each(pointData, function (k, v) {
                 var pointImage = JSON.parse(v.point_images);
                 var url = '';
