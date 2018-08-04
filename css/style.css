@@ -409,7 +409,7 @@ main input:checked + label {
     background-color: white;
     margin-top: 8px;
     margin-bottom: 10px;
-    margin-left: 5%;
+    margin-left: 30vw;
     border: 0px;
     border-radius: 5px;
     color: #4caf50;
@@ -418,8 +418,8 @@ main input:checked + label {
 }
 
 #search_place {
-    width: 16%;
-    margin-left: 0.5%;
+    width: 90vw;
+    margin-left: 5vw;
     border-radius: 5px;
 }
 
