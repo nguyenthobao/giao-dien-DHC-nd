@@ -120,9 +120,9 @@ $(document).ready(function () {
                 html_select += '<option data-top="' + v.long + '" data-left="' + v.lat + '" >' + v.point_name + '</option>';
 
                 html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute; ">' +
-                    '<img src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +
+                    '<img src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="z-index:9;max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +
                     '<br><label data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '">' + v.point_name + '</label><br>';
-                if (v.point_images != '[]') html_marker += '<img  style="z-index:99999" data-id="' + v.point_id + '" id="img_' + x + '" src="' + pointImage[0] + '" class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
+                if (v.point_images != '[]') html_marker += '<img data-id="' + v.point_id + '" id="img_' + x + '" src="' + pointImage[0] + '" class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
                 html_marker += '</div>';
             });
             $('#search_place').html(html_select);
