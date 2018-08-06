@@ -119,6 +119,7 @@ $(document).ready(function () {
                 if (v.point_type == 3) url = '/images/play_marker.png';
                 else if (v.point_type == 4) url = '/images/food_marker.png';
                 else url = '/images/blank_marker.png';
+                if(v.point_id==28) console.log(v);
                 html_select += '<option data-top="' + v.long + '" data-left="' + v.lat + '" >' + v.point_name + '</option>';
                 html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100/(k+1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute; ">' +
                     '<img src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +
