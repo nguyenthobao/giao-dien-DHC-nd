@@ -44,6 +44,9 @@ $(document).ready(function () {
             event.preventDefault();
         }
     }, false);
+    document.documentElement.addEventListener('touchmove', function (event) {
+        event.preventDefault();
+    }, false);
     // $('#mapdhc').addEventListener("gesturechange", gestureChange, false);
     // $('#mapdhc').addEventListener("gestureend", gestureEnd, false);
     // function gestureChange(e){
