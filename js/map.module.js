@@ -408,13 +408,22 @@ $(document).ready(function () {
             }
         });
     });
-
+    var list_drop_index;
     $('body').on('click', '.point_important', function () {
         x = $(this).data('x');
         y = $(this).data('y');
+        var that=this;
+        list_drop_index={};
         $('.point_important').each(function(){
             $(($(this).parent()).find('.img_instant')).hide();
             $(($(this).parent()).find('.label_instant')).hide();
+            if(Math.abs($(that).data('lat')-$(this).data('lat'))>500 || Math.abs($(that).data('long')-$(this).data('long'))>500) {
+                list_drop_index[$(this).css('z-index')]=this;
+                $(this).css('z-index', '0');
+            }
+        });
+        $.each(list_drop_index, function (k,v) {
+            $(v).css('z-index',k);
         });
         $(($(this).parent()).find('.img_instant')).show();
         $(($(this).parent()).find('.label_instant')).show();
