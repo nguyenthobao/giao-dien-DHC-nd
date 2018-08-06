@@ -38,9 +38,9 @@ $(document).ready(function () {
     document.addEventListener('gesturestart', function (e) {
         e.preventDefault();
     });
-    document.addEventListener('touchmove', function(event){
+    document.addEventListener('touchmove', function (event) {
         event = event.originalEvent || event;
-        if(event.scale !== undefined && event.scale !== 1) {
+        if (event.scale !== undefined && event.scale !== 1) {
             event.preventDefault();
         }
     }, false);
@@ -119,33 +119,30 @@ $(document).ready(function () {
                 if (v.point_type == 3) url = '/images/play_marker.png';
                 else if (v.point_type == 4) url = '/images/food_marker.png';
                 else url = '/images/blank_marker.png';
-                if(v.point_id==28) console.log(v);
+                if (v.point_id == 28) console.log(v);
                 html_select += '<option data-top="' + v.long + '" data-left="' + v.lat + '" >' + v.point_name + '</option>';
-                if(v.point_images!='[]')
-                html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100/(k+1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute; ">' +
+
+                html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute; ">' +
                     '<img src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +
-                    '<br><label data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '">' + v.point_name + '</label><br>' +
-                    '<img  data-id="' + v.point_id + '" id="img_' + x + '" src="' + pointImage[0] + '" class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">' +
-                    '</div>';
-                else html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100/(k+1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x) + 'px;    position: absolute; ">' +
-                    '<img src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="max-width: 20000px; width: 18px;height: 25px" class="point_important img-fluid map" alt="">' +
-                    '</div>';
+                    '<br><label data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '">' + v.point_name + '</label><br>';
+                if (v.point_images != '[]') html_marker += '<img  data-id="' + v.point_id + '" id="img_' + x + '" src="' + pointImage[0] + '" class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
+                html_marker += '</div>';
             });
             $('#search_place').html(html_select);
             $('#content2 .content .row').append(html_marker);
             $('.img_instant').hide();
             $('.label_instant').hide();
             $('.label_instant').each(function () {
-                if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
-                    $(this).attr('style','display:block;');
+                if ($(this).data('lat') == 5336 && $(this).data('long') == 5124) {
+                    $(this).attr('style', 'display:block;');
                 }
             });
             $('.img_instant').each(function () {
-                if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
-                    $(this).attr('style','display:block;');
+                if ($(this).data('lat') == 5336 && $(this).data('long') == 5124) {
+                    $(this).attr('style', 'display:block;');
                     // $(this).addClass('comeIn');
-                }else{
-                    $(this).css('margin-top','1px');
+                } else {
+                    $(this).css('margin-top', '1px');
                 }
             });
         },
