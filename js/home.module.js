@@ -29,15 +29,41 @@ $(document).ready(function () {
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     // $('*').bind('touchmove', false);
     // $('#mapdhc').bind('touchmove',true);
+    var
+        _width = parseInt($('#mapdhc').css('width')),
+        vel = 5.0,
+        min = _width,
+        max = 300,
+        scale;
     document.addEventListener('gesturestart', function (e) {
         e.preventDefault();
     });
-    document.addEventListener('touchmove', function(event) {
+    document.addEventListener('touchmove', function(event){
         event = event.originalEvent || event;
         if(event.scale !== undefined && event.scale !== 1) {
             event.preventDefault();
         }
     }, false);
+    $('#mapdhc').addEventListener("gesturechange", gestureChange, false);
+    $('#mapdhc').addEventListener("gestureend", gestureEnd, false);
+    function gestureChange(e){
+        e.preventDefault();
+
+        scale = e.scale;
+        var tempWidth = _width * scale;
+
+        if (tempWidth > max) tempWidth = max;
+        if (tempWidth < min) tempWidth = min;
+
+        $('#square').css({
+            'width': tempWidth + 'px',
+            'height': tempWidth + 'px'
+        });
+    }
+    function gestureEnd(e) {
+        e.preventDefault();
+        _width = parseInt($('#mapdhc').css('width'));
+    }
     $.ajax({
         url: baseApi + 'point/get-all-point',
         method: 'POST',
