@@ -44,26 +44,26 @@ $(document).ready(function () {
             event.preventDefault();
         }
     }, false);
-    $('#mapdhc').addEventListener("gesturechange", gestureChange, false);
-    $('#mapdhc').addEventListener("gestureend", gestureEnd, false);
-    function gestureChange(e){
-        e.preventDefault();
-
-        scale = e.scale;
-        var tempWidth = _width * scale;
-
-        if (tempWidth > max) tempWidth = max;
-        if (tempWidth < min) tempWidth = min;
-
-        $('#square').css({
-            'width': tempWidth + 'px',
-            'height': tempWidth + 'px'
-        });
-    }
-    function gestureEnd(e) {
-        e.preventDefault();
-        _width = parseInt($('#mapdhc').css('width'));
-    }
+    // $('#mapdhc').addEventListener("gesturechange", gestureChange, false);
+    // $('#mapdhc').addEventListener("gestureend", gestureEnd, false);
+    // function gestureChange(e){
+    //     e.preventDefault();
+    //
+    //     scale = e.scale;
+    //     var tempWidth = _width * scale;
+    //
+    //     if (tempWidth > max) tempWidth = max;
+    //     if (tempWidth < min) tempWidth = min;
+    //
+    //     $('#square').css({
+    //         'width': tempWidth + 'px',
+    //         'height': tempWidth + 'px'
+    //     });
+    // }
+    // function gestureEnd(e) {
+    //     e.preventDefault();
+    //     _width = parseInt($('#mapdhc').css('width'));
+    // }
     $.ajax({
         url: baseApi + 'point/get-all-point',
         method: 'POST',
