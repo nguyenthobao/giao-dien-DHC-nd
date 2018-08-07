@@ -28,7 +28,6 @@ $(document).ready(function () {
     urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     // $('*').bind('touchmove', false);
-    // $('#mapdhc').bind('touchmove',true);
     document.addEventListener('gesturestart', function (e) {
         e.preventDefault();
     });
@@ -41,6 +40,7 @@ $(document).ready(function () {
     document.documentElement.addEventListener('touchmove', function (event) {
         event.preventDefault();
     }, false);
+    $('#mapdhc').bind('touchmove',true);
     // $('#mapdhc').addEventListener("gesturechange", gestureChange, false);
     // $('#mapdhc').addEventListener("gestureend", gestureEnd, false);
     // function gestureChange(e){
