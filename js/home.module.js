@@ -278,7 +278,7 @@ $(document).ready(function () {
        [5105,4364],[5096,4342],[5062, 4314],[4916,4278],[4746,4231],[4623, 4281],[4577,4262],[4481,3948],[4449,3778],[4353,3616]];
         $.each(list_node1,function(k,v){
             left= parseFloat(v[0]/ parseFloat(9798 / 2048));
-            top=parseFloat(v.long / parseFloat(7046 / heightmap));
+            top=parseFloat(v[1] / parseFloat(7046 / heightmap));
             html+='<div class="node_way" style="margin-top:'+top+'px; margin-left:'+left+'px"></div>';
         });
         $('#dz').append(html);
