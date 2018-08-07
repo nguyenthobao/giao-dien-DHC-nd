@@ -265,7 +265,7 @@ $(document).ready(function () {
 
     });
     $('#mapdhc').dblclick(function(){
-        if($('#mapdhc').css('transform')!='scale(0.7,0.7)')
+        if($('#mapdhc').css('transform')!='scale(0.7,0.7);')
         $('#dz .row *').css('transform','scale(0.7,0.7)');
         else $('#dz .row *').css('transform','scale(1,1)');
     });
