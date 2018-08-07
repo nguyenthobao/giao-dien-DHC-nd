@@ -264,6 +264,11 @@ $(document).ready(function () {
         // tryGeolocation();
 
     });
+    $('#mapdhc').dblclick(function(){
+        if($('#mapdhc').css('transform')!='scale(1,1)')
+        $('#dz .row *').css('transform','scale(0.5,0.5)');
+        else $('#dz .row *').css('transform','scale(1,1)');
+    });
     $('body').on('change', '#search_place', function () {
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
         x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2048));
