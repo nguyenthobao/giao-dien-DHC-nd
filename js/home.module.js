@@ -277,8 +277,8 @@ $(document).ready(function () {
        [5915,4766],[5916,4826],[5877,4929],[5822, 5046],[5369,5040],[5315,5012],[5273,4976],[5254,4955],[5179, 4754],[5169,4662],
        [5105,4364],[5096,4342],[5062, 4314],[4916,4278],[4746,4231],[4623, 4281],[4577,4262],[4481,3948],[4449,3778],[4353,3616]];
         $.each(list_node1,function(k,v){
-            left= parseFloat(v[0]/ parseFloat(9798 / 2048))-5;
-            top=parseFloat(v[1] / parseFloat(7046 / heightmap))-1040;
+            left= parseFloat(v[0]/ parseFloat(9798 / 2048))-8;
+            top=parseFloat(v[1] / parseFloat(7046 / heightmap))-1038;
             html+='<div class="node_way" style="margin-top:'+top+'px; margin-left:'+left+'px"></div>';
         });
         $('#content2').append(html);
