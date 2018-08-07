@@ -8,6 +8,12 @@ html{
     -webkit-text-size-adjust: none;
     touch-action: manipulation;
 }
+.node_way{
+    position: absolute;
+    width:5px;
+    height: 2px;
+    background-color:#7B0D09;
+}
 .comeIn {
     margin-top: -13px !important;
 }
