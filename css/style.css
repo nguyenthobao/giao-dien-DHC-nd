@@ -12,6 +12,7 @@ html{
     position: absolute;
     width:5px;
     height: 2px;
+    z-index: 9;
     background-color:#7B0D09;
 }
 .comeIn {

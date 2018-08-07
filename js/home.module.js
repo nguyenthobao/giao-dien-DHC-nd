@@ -281,6 +281,6 @@ $(document).ready(function () {
             top=parseFloat(v[1] / parseFloat(7046 / heightmap));
             html+='<div class="node_way" style="margin-top:'+top+'px; margin-left:'+left+'px"></div>';
         });
-        $('#dz').append(html);
+        $('#content2').append(html);
     }
 });
