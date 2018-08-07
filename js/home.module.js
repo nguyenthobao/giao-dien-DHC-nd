@@ -40,7 +40,7 @@ $(document).ready(function () {
     document.documentElement.addEventListener('touchmove', function (event) {
         event.preventDefault();
     }, false);
-    $('#mapdhc').bind('touchmove',true);
+    //$('#mapdhc').bind('touchmove',true);
     // $('#mapdhc').addEventListener("gesturechange", gestureChange, false);
     // $('#mapdhc').addEventListener("gestureend", gestureEnd, false);
     // function gestureChange(e){
