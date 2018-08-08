@@ -1,1 +1,1 @@
-var baseApi = 'http://dhc.blo.com.vn/';
+var baseApi = 'https://dhc.blo.com.vn/';

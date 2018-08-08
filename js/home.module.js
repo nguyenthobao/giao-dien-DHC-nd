@@ -40,27 +40,6 @@ $(document).ready(function () {
     document.documentElement.addEventListener('touchmove', function (event) {
         event.preventDefault();
     }, false);
-    //$('#mapdhc').bind('touchmove',true);
-    // $('#mapdhc').addEventListener("gesturechange", gestureChange, false);
-    // $('#mapdhc').addEventListener("gestureend", gestureEnd, false);
-    // function gestureChange(e){
-    //     e.preventDefault();
-    //
-    //     scale = e.scale;
-    //     var tempWidth = _width * scale;
-    //
-    //     if (tempWidth > max) tempWidth = max;
-    //     if (tempWidth < min) tempWidth = min;
-    //
-    //     $('#square').css({
-    //         'width': tempWidth + 'px',
-    //         'height': tempWidth + 'px'
-    //     });
-    // }
-    // function gestureEnd(e) {
-    //     e.preventDefault();
-    //     _width = parseInt($('#mapdhc').css('width'));
-    // }
     $.ajax({
         url: baseApi + 'point/get-all-point',
         method: 'POST',
@@ -268,39 +247,174 @@ $(document).ready(function () {
         window.location.href = "call://+84898181777";
     });
 
+    var list_node1 = [[4353, 3616], [4383, 3574], [4421, 3520], [4643, 3480], [4776, 3446], [5088, 3336], [5166, 3387], [5253, 3416],
+        [5290, 3457], [5310, 3512], [5329, 3565], [5361, 3600], [5398, 3613], [5458, 3607], [5605, 3516], [5637, 3493], [5659, 3477],
+        [5669, 3435], [5642, 3323], [5653, 3295], [5670, 3282], [5814, 3329], [5828, 3368], [5852, 3398], [5892, 3422], [6028, 3474],
+        [6094, 3517], [6149, 3586], [6107, 3728], [6069, 3817], [6062, 3854], [5989, 3991], [5936, 4031], [5893, 4037], [5854, 4061],
+        [5776, 4085], [5721, 4124], [5704, 4152], [5694, 4199], [5693, 4255], [5680, 4387], [5666, 4535], [5701, 4585], [5837, 4650], [5878, 4686],
+        [5915, 4766], [5916, 4826], [5877, 4929], [5822, 5046], [5369, 5040], [5315, 5012], [5273, 4976], [5254, 4955], [5179, 4754], [5169, 4662],
+        [5105, 4364], [5096, 4342], [5062, 4314], [4916, 4278], [4746, 4231], [4623, 4281], [4577, 4262], [4481, 3948], [4449, 3778], [4353, 3616]];
+    var list_node2 = [[4353, 3616], [4270, 3599], [4241, 3596], [4221, 3532], [4186, 3515], [4148, 3525], [4138, 3571], [4144, 3649],
+        [4128, 3708], [4062, 3756], [3987, 3762], [3920, 3727], [3823, 3554], [3804, 3489], [3808, 3433], [3842, 3371], [3872, 3305], [3806, 3294],
+        [3650, 3332], [3496, 3417], [3397, 3537], [3374, 3586], [3347, 3678], [3245, 3857], [3223, 3904], [3255, 3933], [3298, 3981], [3330, 4031],
+        [3382, 4155], [3407, 4197], [3447, 4255], [3466, 4309]];
+    var list_path1 = [[3872, 3305], [3899, 3225], [3925, 3131], [3942, 3086], [3973, 3035], [4002, 2988], [4041, 2892], [4056, 2850],
+        [4038, 2819], [3821, 2729], [3772, 2731], [3668, 2802], [3630, 2816], [3523, 2815], [3472, 2740], [3464, 2715], [3471, 2694],
+        [3577, 2588], [3539, 2336], [3679, 2333], [3805, 2333], [3819, 2361], [3871, 2387], [3917, 2428]];
+    var list_path2 = [[3523, 2815], [3353, 3007], [3271, 3063], [3234, 3069], [3187, 3055], [2998, 2839]];
+    var list_path3 = [[4273, 4017], [4295, 3987], [4325, 3946], [4342, 3930], [4356, 3901], [4367, 3856], [4372, 3838], [4379, 3768], [4381, 3680], [4353, 3616]];
+    var list_path4 = [[5396, 3221], [5390, 3233], [5354, 3266], [5319, 3283], [5304, 3291], [5285, 3304], [5268, 3324], [5255, 3334], [5225, 3353], [5166, 3387]];
+    var list_path5 = [[4574, 3932], [4517, 3934], [4486, 3943], [4463, 3950], [4436, 3958], [4401, 3971], [4378, 3977], [4355, 3986], [4341, 3995], [4327, 4013], [4306, 4019], [4284, 4020]];
+    var list_path6 = [[3144, 3330], [3090, 3349], [3048, 3377], [3090, 3486], [3102, 3491], [3168, 3481], [3239, 3481], [3257, 3490], [3272, 3517], [3315, 3617], [3347, 3678]];
+    var list_path7 = [[6304, 2821], [6288, 2823], [6258, 2829], [6223, 2850], [6187, 2872], [6149, 2882], [6011, 2863], [5948, 2861], [5865, 2874], [5850, 2879],
+        [5834, 2891], [5821, 2917], [5814, 2941], [5774, 3023], [5767, 3050], [5776, 3081], [5802, 3126], [5811, 3177], [5797, 3289]];
+    var list_path8 = [[5146, 3423], [5109, 3465], [5054, 3499], [5007, 3519], [4953, 3538], [4866, 3567], [4827, 3587], [4806, 3607], [4780, 3637], [4745, 3678],
+        [4734, 3705], [4724, 3738], [4722, 3775], [4730, 3854], [4750, 3941], [4759, 3997], [4774, 4054], [4789, 4123], [4815, 4127], [4848, 4128], [4860, 4144], [4868, 4154], [4827, 4206]];
+    var list_path9 = [[3870, 3724], [3834, 3694], [3758, 3679], [3690, 3662], [3632, 3647], [3570, 3628], [3497, 3625], [3472, 3663], [3469, 3718], [3476, 3753],
+        [3487, 3784], [3480, 3835], [3476, 3870], [3473, 3928], [3478, 3982], [3500, 4025], [3524, 4036], [3560, 4054], [3590, 4087], [3624, 4125], [3648, 4158],
+        [3663, 4190], [3667, 4248], [3666, 4282], [3625, 4320], [3596, 4347], [3545, 4351], [3511, 4336], [3494, 4309], [3471, 4306], [3443, 4271], [3423, 4235], [3397, 4198]];
+    var list_path10 = [[4791, 3620], [4749, 3630], [4502, 3608], [4454, 3621], [4423, 3539]];
+    var list_path11 = [[4515, 3486], [4499, 3453], [4491, 3438], [4455, 3391], [4422, 3368]];
+    var list_path12 = [[4422, 3368], [4339, 3400], [4220, 3445], [4176, 3467], [4158, 3486], [4148, 3517]];
+    var list_path13 = [[4422, 3368], [4423, 3331], [4424, 3302], [4433, 3265], [4465, 3192], [4520, 3111], [4553, 3051], [4569, 2965], [4583, 2884], [4581, 2787],
+        [4562, 2735], [4512, 2704], [4395, 2735], [4319, 2775], [4216, 2811], [4126, 2835], [4060, 2837]];
+    var sPin=[],sPinMarker=[],listPoint=[];
+    var isFirst=true,isFirst1 = true,isFirst2 = true,isFirst3 = true;
+    function checkSpecialPath1(beginPoint,endPoint) {
+        if (!isFirst1) return ['POINTTYPE',2];
+        var currentBeginPoint = findNearestPoint(beginPoint, list_path8);
+        var currentEndPoint = findNearestPoint(endPoint, list_path8);
+        var distance1 = distance(currentBeginPoint, beginPoint);
+        var distance2 = distance(currentEndPoint, endPoint);
+        var circle = 17000;
+        var path1=[];
+        if (distance1 < circle && distance2 < circle) {
+            isFirst1 = false;
+            var arrpoint = findPath(currentBeginPoint, currentEndPoint, list_path8);
+           path1=[];
+            path1.push(['POINTTYPE', 1]);
+            path1.push(['LIST_POINT', arrpoint]);
+            return path1;
+        }
+        if ((distance2 < circle && beginPoint[0] > 4906) || (distance1 < circle && endPoint[0] > 4906)) {
+            var tmpCurrentBeginPoint = (distance1 < circle) ? currentBeginPoint : currentEndPoint;
+            var tmpCurrentEndPoint = (distance1 < circle) ? endPoint : beginPoint;
+            var arrPoint =[];
+            isFirst1 = false;
+            var endTmpPoint = (tmpCurrentEndPoint[1] < 4150) ? list_path8[0] : list_path8[list_path8.length-1];
+            var list_findPath=findPath(tmpCurrentBeginPoint, endTmpPoint, list_path8);
+            $.each(list_findPath,function(k,v){
+                arrPoint.push(v);
+            });
+            var list_findPath=findPath(endTmpPoint, tmpCurrentEndPoint);
+            $.each(list_findPath,function(k,v){
+                arrPoint.push(v);
+            });
+            if (currentEndPoint[0] != endPoint[0] || currentEndPoint[1] != endPoint[1]) {
+                var rtArrPoint = [];
+                for (var i = arrPoint.length - 1; i > -1; i--) {
+                    rtArrPoint.push(arrPoint[i]);
+                }
+                path1=[];
+                path1.push(['POINTTYPE', 1]);
+                path1.push(['LIST_POINT', rtArrPoint]);
+                return path1;
+
+            }
+            path1=[];
+            path1.push(['POINTTYPE', 1]);
+            path1.push(['LIST_POINT', arrPoint]);
+            return path1;
+        }
+        if ((distance2 < circle && beginPoint[0] < 4906) ||
+            (distance1 < circle && endPoint[0] < 4906)) {
+            var tmpCurrentBeginPoint = (distance1 < circle) ? currentBeginPoint : currentEndPoint;
+            var tmpCurrentEndPoint = (distance1 < circle) ? endPoint : beginPoint;
+            var arrPoint = [];
+
+
+            var endTmpPoint = list_path8[8];
+            $.each(findPath(tmpCurrentBeginPoint, endTmpPoint, listPath8),function(k,v){
+                arrPoint.push(v);
+            });
+            $.each(listPath10,function(k,v){
+                arrPoint.push(v);
+            });
+            $.each(findPath(listPath10[listPath10.length - 1], tmpCurrentEndPoint),function(k,v){
+                arrPoint.push(v);
+            });
+            if (pointEqual(currentEndPoint, endPoint)) {
+                var rtArrPoint = [];
+                for (var i = arrPoint.length - 1; i > -1; i--) {
+                    rtArrPoint.push(arrPoint[i]);
+                }
+                path1=[];
+                path1.push(['POINTTYPE',1]);
+                path1.push(['LIST_POINT',rtArrPoint]);
+                return path1;
+
+            }
+            path1=[];
+            path1.push(['POINTTYPE',1]);
+            path1.push(['LIST_POINT',arrPoint]);
+            isFirst1 = false;
+            return path1;
+        }
+        path1=[];
+        path1.push(['POINTTYPE',2]);
+        isFirst1 = false;
+        return path1;
+    }
+    // function checkSpecialPath2( beginPoint,  endPoint) {
+    //     if (!isFirst2) return ['POINTTYPE', 2];
+    //     var path2;
+    //     var currentBeginPoint = findNearestPoint(beginPoint, list_path9);
+    //     var currentEndPoint = findNearestPoint(endPoint, list_path9);
+    //     var distance1 = distance(currentBeginPoint, beginPoint);
+    //     var distance2 = distance(currentEndPoint, endPoint);
+    //     if (distance1 < 15000 && distance2 < 15000) {
+    //         var arrpoint = findPath(currentBeginPoint, currentEndPoint, list_path9);
+    //         path2=[];
+    //         path2.push(['POINTTYPE', 1]);
+    //         path2.push(['LIST_POINT', arrpoint]);
+    //         isFirst2 = false;
+    //         return path2;
+    //     }
+    //     if ((distance2 < 15000 && beginPoint[0] > 4045) || (distance1 < 15000 && endPoint[0] > 4045)) {
+    //         var tmpCurrentBeginPoint = (distance1 < 15000) ? currentBeginPoint : currentEndPoint;
+    //         var tmpCurrentEndPoint = (distance2 < 15000) ? beginPoint : endPoint;
+    //         var arrPoint = [];
+    //         isFirst2 = false;
+    //         $.each(findPath(tmpCurrentBeginPoint, list_path9[0], list_path9),function(k,v){
+    //             arrPoint.push(v);
+    //         });
+    //         $.each(findPath(list_path9[0], tmpCurrentEndPoint),function(k,v){
+    //             arrPoint.push(v);
+    //         });
+    //         if (currentBeginPoint==tmpCurrentBeginPoint)) {
+    //             ArrayList<PointF> rtArrPoint = new ArrayList<>();
+    //             for (int i = arrPoint.size() - 1; i > -1; i--) {
+    //                 rtArrPoint.add(arrPoint.get(i));
+    //             }
+    //             HashMap<String, Object> hashMap = new HashMap<>();
+    //             hashMap.put(Constant.POINTTYPE, 1);
+    //             hashMap.put(Constant.LIST_POINT, rtArrPoint);
+    //             isFirst2 = false;
+    //             return hashMap;
+    //         }
+    //         HashMap<String, Object> hashMap = new HashMap<>();
+    //         hashMap.put(Constant.POINTTYPE, 1);
+    //         hashMap.put(Constant.LIST_POINT, arrPoint);
+    //         isFirst2 = false;
+    //         return hashMap;
+    //     }
+    //     HashMap<String, Object> hashMap = new HashMap<>();
+    //     hashMap.put(Constant.POINTTYPE, 2);
+    //     isFirst2 = false;
+    //     return hashMap;
+    // }
     function generate_way() {
         var html = '', top, left;
-        var list_node1 = [[4353, 3616], [4383, 3574], [4421, 3520], [4643, 3480], [4776, 3446], [5088, 3336], [5166, 3387], [5253, 3416],
-            [5290, 3457], [5310, 3512], [5329, 3565], [5361, 3600], [5398, 3613], [5458, 3607], [5605, 3516], [5637, 3493], [5659, 3477],
-            [5669, 3435], [5642, 3323], [5653, 3295], [5670, 3282], [5814, 3329], [5828, 3368], [5852, 3398], [5892, 3422], [6028, 3474],
-            [6094, 3517], [6149, 3586], [6107, 3728], [6069, 3817], [6062, 3854], [5989, 3991], [5936, 4031], [5893, 4037], [5854, 4061],
-            [5776, 4085], [5721, 4124], [5704, 4152], [5694, 4199], [5693, 4255], [5680, 4387], [5666, 4535], [5701, 4585], [5837, 4650], [5878, 4686],
-            [5915, 4766], [5916, 4826], [5877, 4929], [5822, 5046], [5369, 5040], [5315, 5012], [5273, 4976], [5254, 4955], [5179, 4754], [5169, 4662],
-            [5105, 4364], [5096, 4342], [5062, 4314], [4916, 4278], [4746, 4231], [4623, 4281], [4577, 4262], [4481, 3948], [4449, 3778], [4353, 3616]];
-        var list_node2 = [[4353, 3616], [4270, 3599], [4241, 3596], [4221, 3532], [4186, 3515], [4148, 3525], [4138, 3571], [4144, 3649],
-            [4128, 3708], [4062, 3756], [3987, 3762], [3920, 3727], [3823, 3554], [3804, 3489], [3808, 3433], [3842, 3371], [3872, 3305], [3806, 3294],
-            [3650, 3332], [3496, 3417], [3397, 3537], [3374, 3586], [3347, 3678], [3245, 3857], [3223, 3904], [3255, 3933], [3298, 3981], [3330, 4031],
-            [3382, 4155], [3407, 4197], [3447, 4255], [3466, 4309]];
-        var list_path1 = [[3872, 3305], [3899, 3225], [3925, 3131], [3942, 3086], [3973, 3035], [4002, 2988], [4041, 2892], [4056, 2850],
-            [4038, 2819], [3821, 2729], [3772, 2731], [3668, 2802], [3630, 2816], [3523, 2815], [3472, 2740], [3464, 2715], [3471, 2694],
-            [3577, 2588], [3539, 2336], [3679, 2333], [3805, 2333], [3819, 2361], [3871, 2387], [3917, 2428]];
-        var list_path2 = [[3523, 2815], [3353, 3007], [3271, 3063], [3234, 3069], [3187, 3055], [2998, 2839]];
-        var list_path3 = [[4273, 4017], [4295, 3987], [4325, 3946], [4342, 3930], [4356, 3901], [4367, 3856], [4372, 3838], [4379, 3768], [4381, 3680], [4353, 3616]];
-        var list_path4 = [[5396, 3221], [5390, 3233], [5354, 3266], [5319, 3283], [5304, 3291], [5285, 3304], [5268, 3324], [5255, 3334], [5225, 3353], [5166, 3387]];
-        var list_path5 = [[4574, 3932], [4517, 3934], [4486, 3943], [4463, 3950], [4436, 3958], [4401, 3971], [4378, 3977], [4355, 3986], [4341, 3995], [4327, 4013], [4306, 4019], [4284, 4020]];
-        var list_path6 = [[3144, 3330], [3090, 3349], [3048, 3377], [3090, 3486], [3102, 3491], [3168, 3481], [3239, 3481], [3257, 3490], [3272, 3517], [3315, 3617], [3347, 3678]];
-        var list_path7 = [[6304, 2821], [6288, 2823], [6258, 2829], [6223, 2850], [6187, 2872], [6149, 2882], [6011, 2863], [5948, 2861], [5865, 2874], [5850, 2879],
-            [5834, 2891], [5821, 2917], [5814, 2941], [5774, 3023], [5767, 3050], [5776, 3081], [5802, 3126], [5811, 3177], [5797, 3289]];
-        var list_path8 = [[5146, 3423], [5109, 3465], [5054, 3499], [5007, 3519], [4953, 3538], [4866, 3567], [4827, 3587], [4806, 3607], [4780, 3637], [4745, 3678],
-            [4734, 3705], [4724, 3738], [4722, 3775], [4730, 3854], [4750, 3941], [4759, 3997], [4774, 4054], [4789, 4123], [4815, 4127], [4848, 4128], [4860, 4144], [4868, 4154], [4827, 4206]];
-        var list_path9 = [[3870, 3724], [3834, 3694], [3758, 3679], [3690, 3662], [3632, 3647], [3570, 3628], [3497, 3625], [3472, 3663], [3469, 3718], [3476, 3753],
-            [3487, 3784], [3480, 3835], [3476, 3870], [3473, 3928], [3478, 3982], [3500, 4025], [3524, 4036], [3560, 4054], [3590, 4087], [3624, 4125], [3648, 4158],
-            [3663, 4190], [3667, 4248], [3666, 4282], [3625, 4320], [3596, 4347], [3545, 4351], [3511, 4336], [3494, 4309], [3471, 4306], [3443, 4271], [3423, 4235], [3397, 4198]];
-        var list_path10 = [[4791, 3620], [4749, 3630], [4502, 3608], [4454, 3621], [4423, 3539]];
-        var list_path11 = [[4515, 3486], [4499, 3453], [4491, 3438], [4455, 3391], [4422, 3368]];
-        var list_path12 = [[4422, 3368], [4339, 3400], [4220, 3445], [4176, 3467], [4158, 3486], [4148, 3517]];
-        var list_path13 = [[4422, 3368], [4423, 3331], [4424, 3302], [4433, 3265], [4465, 3192], [4520, 3111], [4553, 3051], [4569, 2965], [4583, 2884], [4581, 2787],
-            [4562, 2735], [4512, 2704], [4395, 2735], [4319, 2775], [4216, 2811], [4126, 2835], [4060, 2837]];
        var all_way=list_node1.concat(list_node2).concat(list_path1).concat(list_path2).concat(list_path3).concat(list_path4).concat(list_path5)
             .concat(list_path6).concat(list_path7).concat(list_path8).concat(list_path9).concat(list_path10).concat(list_path11)
             .concat(list_path12).concat(list_path13);

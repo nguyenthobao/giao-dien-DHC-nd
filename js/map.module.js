@@ -409,7 +409,7 @@ $(document).ready(function () {
         });
     });
     var list_drop_index;
-    $('body').on('click', '.point_important', function () {
+    $('body').on('click','.point_important', function () {
         x = $(this).data('x');
         y = $(this).data('y');
         var that=this;
