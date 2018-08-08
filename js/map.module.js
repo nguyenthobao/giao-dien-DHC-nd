@@ -52,7 +52,6 @@ $(document).ready(function () {
             y = parseFloat(getYPixcelValue(15.970023, 108.019119));
             x = x / (9798 / $('#mapdhc')[0].width);
             y = y / (7046 / heightmap);
-            alert(x+'...'+y);
             if (isMobile.any() == null) {
                 if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
                     $('#marker').css("margin-top", 850 + "px");
@@ -85,6 +84,8 @@ $(document).ready(function () {
                 }else{
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
+                    $('.label_instant').hide();
+                    $('.img_instant').hide();
                     scroll(x,y,x,y);
                 }
             }
