@@ -41,50 +41,53 @@ $(document).ready(function () {
         scrollLeft: 750
     }), 100);
     var ua = navigator.userAgent.toLowerCase();
-    if(ua.indexOf('safari') > -1) {
-        sTimeout = setTimeout(function() {
+    if (ua.indexOf('safari') > -1) {
+        sTimeout = setTimeout(function () {
             $('body').animate({
                 scrollTop: 500,
                 scrollLeft: 750
             });
-        }.bind(this),2000);
-        Function.prototype.bind = function(parent) {
+        }.bind(this), 2000);
+        Function.prototype.bind = function (parent) {
             var f = this;
             var args = [];
             for (var a = 1; a < arguments.length; a++) {
                 args[args.length] = arguments[a];
             }
-            var temp = function() {
+            var temp = function () {
                 return f.apply(parent, args);
             }
-            return(temp);
+            return (temp);
         }
     }
     $('#download').show();
     $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
-    $('#tab2').click(function(){
+    $('#tab2').click(function () {
         if (isMobile.any() != null) {
             $('html').attr('style', 'width:10000px;height:3000px');
             $('html').addClass('height-screen');
             $('#content2').addClass('color_content2');
         }
-        if (x < 0 || y < 0){x = 600; y = 500;}
+        if (x < 0 || y < 0) {
+            x = 600;
+            y = 500;
+        }
         setTimeout($('html').animate({
-            scrollTop: y+100,
-            scrollLeft: x+100
+            scrollTop: y + 100,
+            scrollLeft: x + 100
         }), 400);
         var ua = navigator.userAgent.toLowerCase();
-        if(ua.indexOf('safari') > -1) {
-            sTimeout = setTimeout(function() {
+        if (ua.indexOf('safari') > -1) {
+            sTimeout = setTimeout(function () {
                 $('body').animate({
-                    scrollTop:y+150,
-                    scrollLeft:x+150
+                    scrollTop: y + 150,
+                    scrollLeft: x + 150
                 })
-            }.bind(this),1000);
+            }.bind(this), 1000);
 
 
-            Function.prototype.bind = function(parent) {
+            Function.prototype.bind = function (parent) {
                 var f = this;
                 var args = [];
 
@@ -92,363 +95,356 @@ $(document).ready(function () {
                     args[args.length] = arguments[a];
                 }
 
-                var temp = function() {
+                var temp = function () {
                     return f.apply(parent, args);
                 }
 
-                return(temp);
+                return (temp);
             }
         }
     });
     $('#tab2').change(function () {
 
         var apiGeolocationSuccess = function (position) {
-         x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
-         y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
-        if (isMobile.any() != null) {
-            $('html').attr('style', 'width:10000px;height:3000px');
-            $('html').addClass('height-screen');
-            $('#content2').addClass('color_content2');
-        }
-        if (isMobile.any() == null) {
-            // x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / $('#mapdhc')[0].width));
-            // y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitud) / (7046 / $('#mapdhc')[0].height));
-            // if (x > $('#mapdhc')[0].width || x < 0 || y > $('#mapdhc')[0].height || y < 0) {
-            //     $('#marker').hide();
-            // } else {
-            $('#marker').css("margin-top", 1080 + "px");
-            $('#marker').css("margin-left", 1140 + "px");
-            // $('#marker').show();
-            $('.label_instant').each(function () {
-                if ($(this).data('lat') == 5336 && $(this).data('long') ==5124) {
-                    $(this).attr('style','display:block;');
-                }
-            });
-            $('.img_instant').each(function () {
-                if ($(this).data('lat') == 5336 && $(this).data('long') == 5124) {
-                    $(this).attr('style','display:block;');
-                }
-            });
-            setTimeout($('html').animate({
-                scrollTop: 890,
-                scrollLeft: 950
-            }), 100);
-            var ua = navigator.userAgent.toLowerCase();
-            if (ua.indexOf('safari') > -1) {
-                sTimeout = setTimeout(function () {
-                    $('body').animate({
-                        scrollTop: 910,
-                        scrollLeft: 950
-                    })
-                }.bind(this), 1000);
-                Function.prototype.bind = function (parent) {
-                    var f = this;
-                    var args = [];
-
-                    for (var a = 1; a < arguments.length; a++) {
-                        args[args.length] = arguments[a];
-                    }
-
-                    var temp = function () {
-                        return f.apply(parent, args);
-                    }
-
-                    return (temp);
-                }
-            } else {
-                setTimeout($('body').animate({
-                    scrollTop: 890,
-                    scrollLeft: 950
-                }), 100);
-            }
-
-            // }
-            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-            if (width > 1000) $('#download').hide();
-        } else {
-            $('#mapdhc').css('height', (($('#mapdhc').css('width')).substring(0, 4) / 1.39036) + 'px');
-            $('#download').css('margin-top', ($('#mapdhc').css('height') + 5) + 'px');
-            // console.log(($('#mapdhc').css('width')).substring(0, 4) + '..' + ($('#mapdhc').css('width')).substring(0, 4) / ($('#mapdhc').css('height')).substring(0, 4));
-            // x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (9798 / ($('#mapdhc').css('width')).substring(0, 4)));
-            // y = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude) / (7046 / heightmap));
-
-            // if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
-            //     $('#marker').hide();
-            setTimeout($('html').animate({
-                scrollTop: 710,
-                scrollLeft: 750
-            }), 100);
-            var ua = navigator.userAgent.toLowerCase();
-            if(ua.indexOf('safari') > -1) {
-                sTimeout = setTimeout(function() {
-                    $('body').animate({
-                        scrollTop: 500,
+            x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude));
+            y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude));
+            x = x / (9798 / $('#mapdhc')[0].width);
+            y = y / (7046 / heightmap);
+            if (isMobile.any() == null) {
+                if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
+                    $('#marker').css("margin-top", 850 + "px");
+                    $('#marker').css("margin-left", 920 + "px");
+                    $('#marker').show();
+                    $('.label_instant').each(function () {
+                        if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
+                            $(this).attr('style', 'display:block;');
+                        }
+                    });
+                    $('.img_instant').each(function () {
+                        if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
+                            $(this).attr('style', 'display:block;');
+                        }
+                    });
+                    setTimeout($('html').animate({
+                        scrollTop: 690,
                         scrollLeft: 750
-                    })
-                }.bind(this),2000);
-                Function.prototype.bind = function(parent) {
-                    var f = this;
-                    var args = [];
+                    }), 100);
+                    var ua = navigator.userAgent.toLowerCase();
+                    if (ua.indexOf('safari') > -1) {
+                        sTimeout = setTimeout(function () {
+                            $('body').animate({
+                                scrollTop: 710,
+                                scrollLeft: 750
+                            })
+                        }.bind(this), 1000);
+                        Function.prototype.bind = function (parent) {
+                            var f = this;
+                            var args = [];
 
-                    for (var a = 1; a < arguments.length; a++) {
-                        args[args.length] = arguments[a];
+                            for (var a = 1; a < arguments.length; a++) {
+                                args[args.length] = arguments[a];
+                            }
+
+                            var temp = function () {
+                                return f.apply(parent, args);
+                            }
+
+                            return (temp);
+                        }
+                    } else {
+                        setTimeout($('body').animate({
+                            scrollTop: 890,
+                            scrollLeft: 950
+                        }), 100);
                     }
-
-                    var temp = function() {
-                        return f.apply(parent, args);
-                    }
-
-                    return(temp);
-                }
-            }
-        }
-        };
-
-        var tryAPIGeolocation = function () {
-            jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function (success) {
-                apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
-            })
-                .fail(function (err) {
-                    $('#marker').hide();
-                    alert("API Geolocation error! " + err);
-                    console.log(err);
-                });
-        };
-
-        var browserGeolocationSuccess = function (position) {
-            // alert("Browser geolocation success!" +
-            //     "lat = " + position.coords.latitude + "" +
-            //     "lng = " + position.coords.longitude);
-        };
-
-        var browserGeolocationFail = function (error) {
-            switch (error.code) {
-                case error.TIMEOUT:
-                    alert("Tìm kiếm vị trí của bạn quá thời gian cho phép");
-                    break;
-                case error.PERMISSION_DENIED:
-                    if (error.message.indexOf("Only secure origins are allowed") == 0) {
-                        tryAPIGeolocation();
-                    }
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    alert("Trình duyệt bạn dùng không hỗ trợ tìm vị trí hoặc chức năng đã bị tắt");
-                    break;
-            }
-        };
-
-        var tryGeolocation = function () {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    browserGeolocationSuccess,
-                    browserGeolocationFail,
-                    {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
-            }
-        };
-
-        tryGeolocation();
-
-    });
-    $('body').on('change', '#search_place', function () {
-        if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
-        x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2048));
-        y = parseFloat($('#search_place option:selected').data('top') / (7046 / heightmap));
-        console.log(x, y);
-        $('#marker').css("margin-top", y + "px").css("margin-left", (x + 15) + "px");
-        // $('#marker').show();
-
-        $('.img_instant').each(function () {
-            $('.img_instant').hide();
-        });
-        $('.label_instant').each(function () {
-            $('.label_instant').hide();
-        });
-        $('.label_instant').each(function () {
-            if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
-               $(this).attr('style','display: block');
-               $(this).show();
-               console.log(this); return false;
-            }
-        });
-        $('.img_instant').each(function () {
-            if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
-                $(this).attr('style','display:block;');
-            }
-        });
-        setTimeout($('html').animate({
-            scrollTop: y - 150,
-            scrollLeft: x - 200
-        }), 100);
-        var ua = navigator.userAgent.toLowerCase();
-        if(ua.indexOf('safari') > -1) {
-            sTimeout = setTimeout(function() {
-                $('body').animate({
-                    scrollTop:y-150,
-                    scrollLeft:x-200
-                })
-            }.bind(this),1000);
-
-
-            Function.prototype.bind = function(parent) {
-                var f = this;
-                var args = [];
-
-                for (var a = 1; a < arguments.length; a++) {
-                    args[args.length] = arguments[a];
-                }
-
-                var temp = function() {
-                    return f.apply(parent, args);
-                }
-
-                return(temp);
-            }
-        }
-    });
-    $('body').on('touchmove', '#mapdhc', function (event) {
-        if (event.originalEvent.touches[0].pageX > 1200 || event.originalEvent.touches[0].pageY > 1200) {
-            $('html').attr('style', '');
-        }
-    });
-    $('body').on('click', '#mapdhc', function (e) {
-        var offset = $(this).offset();
-        if (e.pageX - offset.left > 1200 || e.pageY - offset.top > 1500)
-            $('html').attr('style', '');
-    });
-    $('body').on('click', '#download', function () {
-
-        if (isMobile.any() !== null) {
-            if ((isMobile.any()[0] == 'iPhone' || isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != '') {
-                window.location.href = urlIOs;
+                } else $('#marker').hide();
+                var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+                if (width > 1000) $('#download').hide();
             } else {
-                window.location.href = urlAndroid;
+                $('html').attr('style', 'width:10000px;height:3000px');
+                $('html').addClass('height-screen');
+                $('#content2').addClass('color_content2');
+                setTimeout($('html').animate({
+                    scrollTop: 710,
+                    scrollLeft: 750
+                }), 100);
+                var ua = navigator.userAgent.toLowerCase();
+                if (ua.indexOf('safari') > -1) {
+                    sTimeout = setTimeout(function () {
+                        $('body').animate({
+                            scrollTop: 500,
+                            scrollLeft: 750
+                        })
+                    }.bind(this), 2000);
+                    Function.prototype.bind = function (parent) {
+                        var f = this;
+                        var args = [];
+
+                        for (var a = 1; a < arguments.length; a++) {
+                            args[args.length] = arguments[a];
+                        }
+
+                        var temp = function () {
+                            return f.apply(parent, args);
+                        }
+
+                        return (temp);
+                    }
+                }
             }
+        }
+    };
+
+    var tryAPIGeolocation = function () {
+        jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function (success) {
+            apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
+        })
+            .fail(function (err) {
+                $('#marker').hide();
+                alert("API Geolocation error! " + err);
+                console.log(err);
+            });
+    };
+
+    var browserGeolocationSuccess = function (position) {
+        // alert("Browser geolocation success!" +
+        //     "lat = " + position.coords.latitude + "" +
+        //     "lng = " + position.coords.longitude);
+    };
+
+    var browserGeolocationFail = function (error) {
+        switch (error.code) {
+            case error.TIMEOUT:
+                alert("Tìm kiếm vị trí của bạn quá thời gian cho phép");
+                break;
+            case error.PERMISSION_DENIED:
+                if (error.message.indexOf("Only secure origins are allowed") == 0) {
+                    tryAPIGeolocation();
+                }
+                break;
+            case error.POSITION_UNAVAILABLE:
+                alert("Trình duyệt bạn dùng không hỗ trợ tìm vị trí hoặc chức năng đã bị tắt");
+                break;
+        }
+    };
+
+    var tryGeolocation = function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                browserGeolocationSuccess,
+                browserGeolocationFail,
+                {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
+        }
+    };
+
+    tryGeolocation();
+
+});
+$('body').on('change', '#search_place', function () {
+    if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
+    x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2048));
+    y = parseFloat($('#search_place option:selected').data('top') / (7046 / heightmap));
+    console.log(x, y);
+    $('#marker').css("margin-top", y + "px").css("margin-left", (x + 15) + "px");
+    // $('#marker').show();
+
+    $('.img_instant').each(function () {
+        $('.img_instant').hide();
+    });
+    $('.label_instant').each(function () {
+        $('.label_instant').hide();
+    });
+    $('.label_instant').each(function () {
+        if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
+            $(this).attr('style', 'display: block');
+            $(this).show();
+            console.log(this);
+            return false;
+        }
+    });
+    $('.img_instant').each(function () {
+        if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
+            $(this).attr('style', 'display:block;');
+        }
+    });
+    setTimeout($('html').animate({
+        scrollTop: y - 150,
+        scrollLeft: x - 200
+    }), 100);
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.indexOf('safari') > -1) {
+        sTimeout = setTimeout(function () {
+            $('body').animate({
+                scrollTop: y - 150,
+                scrollLeft: x - 200
+            })
+        }.bind(this), 1000);
+
+
+        Function.prototype.bind = function (parent) {
+            var f = this;
+            var args = [];
+
+            for (var a = 1; a < arguments.length; a++) {
+                args[args.length] = arguments[a];
+            }
+
+            var temp = function () {
+                return f.apply(parent, args);
+            }
+
+            return (temp);
+        }
+    }
+});
+$('body').on('touchmove', '#mapdhc', function (event) {
+    if (event.originalEvent.touches[0].pageX > 1200 || event.originalEvent.touches[0].pageY > 1200) {
+        $('html').attr('style', '');
+    }
+});
+$('body').on('click', '#mapdhc', function (e) {
+    var offset = $(this).offset();
+    if (e.pageX - offset.left > 1200 || e.pageY - offset.top > 1500)
+        $('html').attr('style', '');
+});
+$('body').on('click', '#download', function () {
+
+    if (isMobile.any() !== null) {
+        if ((isMobile.any()[0] == 'iPhone' || isMobile.any()[0] == 'iPad' || isMobile.any()[0] == 'iPod') && urlIOs != '') {
+            window.location.href = urlIOs;
         } else {
             window.location.href = urlAndroid;
         }
-    });
-    $('body').on('click', '.item-point,.img_instant', function () {
-        var pointId = $(this).data('id');
-        var that = this;
-        $.ajax({
-            url: baseApi + 'point/get-point',
-            method: 'POST',
-            dataType: 'json',
-            data: JSON.stringify({
-                point_id: pointId,
-            }),
-            success: function (result) {
-                if ((document.getElementById("content2")).offsetLeft > 0 && x > 0 && y > 0 && isMobile.any() != null)
-                    $('#modalForm').attr('style', 'margin-top:' + (y - 50) + 'px;margin-left:' + (x - 300) + 'px');
-                else
-                    $('#modalForm').attr('style', '');
-                $('#modalForm').modal('show');
-                $('#modalFormLabel').text(result.data.result.point_name);
-                var pointImage = JSON.parse(result.data.result.point_images);
-                html = '<div class="row img-point">';
-                html += '<div class="col-12"><img src="' + pointImage[0] + '" alt=""></div>';
-                html += '</div>';
-                html += '<div class="row margin30">';
-                html += '<div class="col-12">';
-                html += '<div class="row">';
-                html += '<h5 class="point-name col-12">' + result.data.result.point_name + '</h5>';
-                html += '<span class="point-note col-12">' + result.data.result.point_note + '</span>';
-                html += '</div>';
-                html += '<div class="container">';
-                html += '<div class="row margin30">';
-                html += '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">';
-                html += '<button type="button" class="btn col-12 book-seat">Đặt chỗ</button>';
-                html += '</div>';
-                html += '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">';
-                html += '<button type="button" class="btn col-12 point-marker">Chỉ đường</button>';
-                html += '</div>';
-                html += '</div>';
-                html += '</div><hr>';
-                html += '<div class="row margin30 point-description">' + result.data.result.point_detail + '</div>';
-                html += '</div>';
-                html += '</div>';
-                $('#form-body').html(html);
-                if (isMobile.any() != null) {
-                    var body = $(window);
-                    // Get modal size
-                    var modal = $('#modalForm');
-                    var w = modal.width();
-                    var h = modal.height();
-                    // Get window size
-                    var bw = body.width();
-                    var bh = body.height();
-                    console.log($(that).parent().css("marginLeft").replace('px', ''));
-                    // Update the css and center the modal on screen
-                    $('#modalForm').css({
-                        "position": "absolute",
-                        "top": ((bh - h) / 2) + "px",
-                        "bottom": "0px",
-                        "left": ((bw - w) / 2) + "px"
-                    });
-                    $('#modalForm').animate({scrollTop: 0}, 'fast');
-                }
-            },
-            error: function (e) {
-                alert('Có lỗi');
+    } else {
+        window.location.href = urlAndroid;
+    }
+});
+$('body').on('click', '.item-point,.img_instant', function () {
+    var pointId = $(this).data('id');
+    var that = this;
+    $.ajax({
+        url: baseApi + 'point/get-point',
+        method: 'POST',
+        dataType: 'json',
+        data: JSON.stringify({
+            point_id: pointId,
+        }),
+        success: function (result) {
+            if ((document.getElementById("content2")).offsetLeft > 0 && x > 0 && y > 0 && isMobile.any() != null)
+                $('#modalForm').attr('style', 'margin-top:' + (y - 50) + 'px;margin-left:' + (x - 300) + 'px');
+            else
+                $('#modalForm').attr('style', '');
+            $('#modalForm').modal('show');
+            $('#modalFormLabel').text(result.data.result.point_name);
+            var pointImage = JSON.parse(result.data.result.point_images);
+            html = '<div class="row img-point">';
+            html += '<div class="col-12"><img src="' + pointImage[0] + '" alt=""></div>';
+            html += '</div>';
+            html += '<div class="row margin30">';
+            html += '<div class="col-12">';
+            html += '<div class="row">';
+            html += '<h5 class="point-name col-12">' + result.data.result.point_name + '</h5>';
+            html += '<span class="point-note col-12">' + result.data.result.point_note + '</span>';
+            html += '</div>';
+            html += '<div class="container">';
+            html += '<div class="row margin30">';
+            html += '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">';
+            html += '<button type="button" class="btn col-12 book-seat">Đặt chỗ</button>';
+            html += '</div>';
+            html += '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">';
+            html += '<button type="button" class="btn col-12 point-marker">Chỉ đường</button>';
+            html += '</div>';
+            html += '</div>';
+            html += '</div><hr>';
+            html += '<div class="row margin30 point-description">' + result.data.result.point_detail + '</div>';
+            html += '</div>';
+            html += '</div>';
+            $('#form-body').html(html);
+            if (isMobile.any() != null) {
+                var body = $(window);
+                // Get modal size
+                var modal = $('#modalForm');
+                var w = modal.width();
+                var h = modal.height();
+                // Get window size
+                var bw = body.width();
+                var bh = body.height();
+                console.log($(that).parent().css("marginLeft").replace('px', ''));
+                // Update the css and center the modal on screen
+                $('#modalForm').css({
+                    "position": "absolute",
+                    "top": ((bh - h) / 2) + "px",
+                    "bottom": "0px",
+                    "left": ((bw - w) / 2) + "px"
+                });
+                $('#modalForm').animate({scrollTop: 0}, 'fast');
             }
-        });
-    });
-    var list_drop_index;
-    $('body').on('click','.point_important', function () {
-        x = $(this).data('x');
-        y = $(this).data('y');
-        var that=this;
-        list_drop_index={};
-        $('.point_important').each(function(){
-            $(($(this).parent()).find('.img_instant')).hide();
-            $(($(this).parent()).find('.label_instant')).hide();
-            if(Math.abs($(that).data('lat')-$(this).data('lat'))>500 || Math.abs($(that).data('long')-$(this).data('long'))>500) {
-                list_drop_index[$(this).css('z-index')]=this;
-                $(this).css('z-index', '0');
-            }
-        });
-        $.each(list_drop_index, function (k,v) {
-            $(v).css('z-index',k);
-        });
-        $(($(this).parent()).find('.img_instant')).show();
-        $(($(this).parent()).find('.label_instant')).show();
-        setTimeout(document.getElementById('search_place').scrollIntoView(), 1000);
-    });
-    $('body').on('click', '#form-footer>button', function () {
-        if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
-        if (x < 0 || y < 0){x = 800; y = 700;}
-        setTimeout($('html').animate({
-            scrollTop: y,
-            scrollLeft: x-150
-        }), 400);
-        var ua = navigator.userAgent.toLowerCase();
-        if(ua.indexOf('safari') > -1) {
-            sTimeout = setTimeout(function() {
-                $('body').animate({
-                    scrollTop:y,
-                    scrollLeft:x-150
-                })
-            }.bind(this),1000);
-
-
-            Function.prototype.bind = function(parent) {
-                var f = this;
-                var args = [];
-
-                for (var a = 1; a < arguments.length; a++) {
-                    args[args.length] = arguments[a];
-                }
-
-                var temp = function() {
-                    return f.apply(parent, args);
-                }
-
-                return(temp);
-            }
+        },
+        error: function (e) {
+            alert('Có lỗi');
         }
     });
-
 });
+var list_drop_index;
+$('body').on('click', '.point_important', function () {
+    x = $(this).data('x');
+    y = $(this).data('y');
+    var that = this;
+    list_drop_index = {};
+    $('.point_important').each(function () {
+        $(($(this).parent()).find('.img_instant')).hide();
+        $(($(this).parent()).find('.label_instant')).hide();
+        if (Math.abs($(that).data('lat') - $(this).data('lat')) > 500 || Math.abs($(that).data('long') - $(this).data('long')) > 500) {
+            list_drop_index[$(this).css('z-index')] = this;
+            $(this).css('z-index', '0');
+        }
+    });
+    $.each(list_drop_index, function (k, v) {
+        $(v).css('z-index', k);
+    });
+    $(($(this).parent()).find('.img_instant')).show();
+    $(($(this).parent()).find('.label_instant')).show();
+    setTimeout(document.getElementById('search_place').scrollIntoView(), 1000);
+});
+$('body').on('click', '#form-footer>button', function () {
+    if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
+    if (x < 0 || y < 0) {
+        x = 800;
+        y = 700;
+    }
+    setTimeout($('html').animate({
+        scrollTop: y,
+        scrollLeft: x - 150
+    }), 400);
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.indexOf('safari') > -1) {
+        sTimeout = setTimeout(function () {
+            $('body').animate({
+                scrollTop: y,
+                scrollLeft: x - 150
+            })
+        }.bind(this), 1000);
+
+
+        Function.prototype.bind = function (parent) {
+            var f = this;
+            var args = [];
+
+            for (var a = 1; a < arguments.length; a++) {
+                args[args.length] = arguments[a];
+            }
+
+            var temp = function () {
+                return f.apply(parent, args);
+            }
+
+            return (temp);
+        }
+    }
+});
+
+})
+;
 
 function getOriginal1(lat1, lng1, lat2, lng2, x1, y1, x2, y2) {
     var realX1 = getX1Value(lat1, lng1);
