@@ -34,7 +34,7 @@ $(document).ready(function () {
     $('main').attr('style', 'min-width: 100%');
     $('#content2').attr('style', 'margin-top: -100px;');
     if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
-    // $('#marker').hide();
+    $('#marker').show();
     $('#mapdhc').show();
     setTimeout($('html').animate({
         scrollTop: 690,
@@ -160,20 +160,20 @@ $(document).ready(function () {
                 } else $('#marker').hide();
                 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
                 if (width > 1000) $('#download').hide();
-            } else {
+            } else{
                 $('html').attr('style', 'width:10000px;height:3000px');
                 $('html').addClass('height-screen');
                 $('#content2').addClass('color_content2');
                 setTimeout($('html').animate({
                     scrollTop: 710,
-                    scrollLeft: 750
+                    scrollLeft: 550
                 }), 100);
                 var ua = navigator.userAgent.toLowerCase();
                 if (ua.indexOf('safari') > -1) {
                     sTimeout = setTimeout(function () {
                         $('body').animate({
                             scrollTop: 500,
-                            scrollLeft: 750
+                            scrollLeft: 550
                         })
                     }.bind(this), 2000);
                     Function.prototype.bind = function (parent) {
