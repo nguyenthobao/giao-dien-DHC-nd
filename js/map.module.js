@@ -163,7 +163,6 @@ $(document).ready(function () {
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
         x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2048));
         y = parseFloat($('#search_place option:selected').data('top') / (7046 / heightmap));
-        console.log(x, y);
         $('#marker').css("margin-top", y + "px").css("margin-left", (x + 15) + "px");
         // $('#marker').show();
 
@@ -177,7 +176,6 @@ $(document).ready(function () {
             if ($(this).data('lat') == $('#search_place option:selected').data('left') && $(this).data('long') == $('#search_place option:selected').data('top')) {
                 $(this).attr('style', 'display: block');
                 $(this).show();
-                console.log(this);
                 return false;
             }
         });
@@ -186,35 +184,7 @@ $(document).ready(function () {
                 $(this).attr('style', 'display:block;');
             }
         });
-        setTimeout($('html').animate({
-            scrollTop: y - 150,
-            scrollLeft: x - 200
-        }), 100);
-        var ua = navigator.userAgent.toLowerCase();
-        if (ua.indexOf('safari') > -1) {
-            sTimeout = setTimeout(function () {
-                $('body').animate({
-                    scrollTop: y - 150,
-                    scrollLeft: x - 200
-                })
-            }.bind(this), 1000);
-
-
-            Function.prototype.bind = function (parent) {
-                var f = this;
-                var args = [];
-
-                for (var a = 1; a < arguments.length; a++) {
-                    args[args.length] = arguments[a];
-                }
-
-                var temp = function () {
-                    return f.apply(parent, args);
-                }
-
-                return (temp);
-            }
-        }
+        scroll(x-200,y-150,x-200,y-150);
     });
     $('body').on('touchmove', '#mapdhc', function (event) {
         if (event.originalEvent.touches[0].pageX > 1200 || event.originalEvent.touches[0].pageY > 1200) {
@@ -331,35 +301,7 @@ $(document).ready(function () {
             x = 800;
             y = 700;
         }
-        setTimeout($('html').animate({
-            scrollTop: y,
-            scrollLeft: x - 150
-        }), 400);
-        var ua = navigator.userAgent.toLowerCase();
-        if (ua.indexOf('safari') > -1) {
-            sTimeout = setTimeout(function () {
-                $('body').animate({
-                    scrollTop: y,
-                    scrollLeft: x - 150
-                })
-            }.bind(this), 1000);
-
-
-            Function.prototype.bind = function (parent) {
-                var f = this;
-                var args = [];
-
-                for (var a = 1; a < arguments.length; a++) {
-                    args[args.length] = arguments[a];
-                }
-
-                var temp = function () {
-                    return f.apply(parent, args);
-                }
-
-                return (temp);
-            }
-        }
+        scroll(x-150,y,x-150,y);
     });
 
 })
