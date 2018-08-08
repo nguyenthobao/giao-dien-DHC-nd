@@ -34,32 +34,29 @@ $(document).ready(function () {
     $('main').attr('style', 'min-width: 100%');
     $('#content2').attr('style', 'margin-top: -100px;');
     if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
-    $('#marker').hide();
+    // $('#marker').hide();
     $('#mapdhc').show();
     setTimeout($('html').animate({
-        scrollTop: 890,
-        scrollLeft: 950
+        scrollTop: 690,
+        scrollLeft: 750
     }), 100);
     var ua = navigator.userAgent.toLowerCase();
     if(ua.indexOf('safari') > -1) {
         sTimeout = setTimeout(function() {
             $('body').animate({
-                scrollTop: 700,
-                scrollLeft: 950
-            })
+                scrollTop: 500,
+                scrollLeft: 750
+            });
         }.bind(this),2000);
         Function.prototype.bind = function(parent) {
             var f = this;
             var args = [];
-
             for (var a = 1; a < arguments.length; a++) {
                 args[args.length] = arguments[a];
             }
-
             var temp = function() {
                 return f.apply(parent, args);
             }
-
             return(temp);
         }
     }
@@ -72,7 +69,7 @@ $(document).ready(function () {
             $('html').addClass('height-screen');
             $('#content2').addClass('color_content2');
         }
-        if (x < 0 || y < 0){x = 800; y = 700;}
+        if (x < 0 || y < 0){x = 600; y = 500;}
         setTimeout($('html').animate({
             scrollTop: y+100,
             scrollLeft: x+100
@@ -106,10 +103,8 @@ $(document).ready(function () {
     $('#tab2').change(function () {
 
         var apiGeolocationSuccess = function (position) {
-        alert("API geolocation success!" +
-            "lat = " + position.coords.latitude + "lng = " + position.coords.longitude);
-        var x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
-        var y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
+         x= parseFloat( getXPixcelValue(position.coords.latitude,position.coords.longitude));
+         y= parseFloat( getYPixcelValue(position.coords.latitude,position.coords.longitude));
         if (isMobile.any() != null) {
             $('html').attr('style', 'width:10000px;height:3000px');
             $('html').addClass('height-screen');
@@ -180,15 +175,15 @@ $(document).ready(function () {
             // if (x > ($('#mapdhc').css('width')).substring(0, 4) || x < 0 || y > ($('#mapdhc').css('height')).substring(0, 4) || y < 0) {
             //     $('#marker').hide();
             setTimeout($('html').animate({
-                scrollTop: 910,
-                scrollLeft: 950
+                scrollTop: 710,
+                scrollLeft: 750
             }), 100);
             var ua = navigator.userAgent.toLowerCase();
             if(ua.indexOf('safari') > -1) {
                 sTimeout = setTimeout(function() {
                     $('body').animate({
-                        scrollTop: 700,
-                        scrollLeft: 950
+                        scrollTop: 500,
+                        scrollLeft: 750
                     })
                 }.bind(this),2000);
                 Function.prototype.bind = function(parent) {
@@ -206,16 +201,6 @@ $(document).ready(function () {
                     return(temp);
                 }
             }
-            // } else {
-            //     $('#marker').css("margin-top", y + "px");
-            //     $('#marker').css("margin-left", x + "px");
-            //     $('#marker').show();
-            //     setTimeout($('html').animate({
-            //         scrollTop: y,
-            //         scrollLeft: x + 20
-            //     }), 100);
-            // }
-
         }
         };
 
@@ -231,9 +216,9 @@ $(document).ready(function () {
         };
 
         var browserGeolocationSuccess = function (position) {
-            alert("Browser geolocation success!" +
-                "lat = " + position.coords.latitude + "" +
-                "lng = " + position.coords.longitude);
+            // alert("Browser geolocation success!" +
+            //     "lat = " + position.coords.latitude + "" +
+            //     "lng = " + position.coords.longitude);
         };
 
         var browserGeolocationFail = function (error) {
