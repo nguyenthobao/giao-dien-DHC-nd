@@ -36,7 +36,6 @@ $(document).ready(function () {
     if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
     $('#marker').show();
     $('#mapdhc').show();
-    scroll(750,690,750,500);
     $('#download').show();
     $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
@@ -53,6 +52,7 @@ $(document).ready(function () {
             y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude));
             x = x / (9798 / $('#mapdhc')[0].width);
             y = y / (7046 / heightmap);
+            alert(x+'...'+y);
             if (isMobile.any() == null) {
                 if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
                     $('#marker').css("margin-top", 850 + "px");
@@ -80,11 +80,11 @@ $(document).ready(function () {
                 $('html').attr('style', 'width:10000px;height:3000px');
                 $('html').addClass('height-screen');
                 $('#content2').addClass('color_content2');
+                alert(x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0);
                 if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
-                    $('#marker').show();
-                    scroll(x, y,x,y);
+                    scroll(x,y,x,y);
                 }else{
-                    scroll(550, 710, 550, 500);
+                    scroll(750,690,750,500);
                 }
             }
         };
@@ -94,9 +94,8 @@ $(document).ready(function () {
                 apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
             })
                 .fail(function (err) {
-                    $('#marker').hide();
                     alert("API Geolocation error! " + err);
-                    console.log(err);
+                    scroll(750,690,750,500);
                 });
         };
 
