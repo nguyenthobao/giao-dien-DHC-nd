@@ -83,6 +83,8 @@ $(document).ready(function () {
                 if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
                     scroll(750,690,750,500);
                 }else{
+                    $('#marker').css("margin-top", y + "px");
+                    $('#marker').css("margin-left", x + "px");
                     scroll(x,y,x,y);
                 }
             }
