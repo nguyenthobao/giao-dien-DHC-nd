@@ -48,8 +48,8 @@ $(document).ready(function () {
     });
     function into_map(){
         var apiGeolocationSuccess = function (position) {
-            x = parseFloat(getXPixcelValue(15.970023, 108.019119));
-            y = parseFloat(getYPixcelValue(15.970023, 108.019119));
+            x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude));
+            y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude));
             x = x / (9798 / $('#mapdhc')[0].width);
             y = y / (7046 / heightmap);
             if (isMobile.any() == null) {
