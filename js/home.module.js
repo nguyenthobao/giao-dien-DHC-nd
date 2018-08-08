@@ -115,7 +115,6 @@ $(document).ready(function () {
                 if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
                     $(this).attr('style', 'display:block;');
                 } else {
-                    if ($(this).data('lat') == 5336 && $(this).data('long') == 5124)
                         $(this).css('margin-top', '1px');
                 }
             });
