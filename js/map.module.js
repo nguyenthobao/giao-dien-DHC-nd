@@ -52,7 +52,6 @@ $(document).ready(function () {
             y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude));
             x = x / (9798 / $('#mapdhc')[0].width);
             y = y / (7046 / heightmap);
-            alert(x+'...'+y);
             if (isMobile.any() == null) {
                 if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
                     $('#marker').css("margin-top", 850 + "px");
@@ -80,11 +79,10 @@ $(document).ready(function () {
                 $('html').attr('style', 'width:10000px;height:3000px');
                 $('html').addClass('height-screen');
                 $('#content2').addClass('color_content2');
-                alert(x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0);
                 if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
-                    scroll(x,y,x,y);
-                }else{
                     scroll(750,690,750,500);
+                }else{
+                    scroll(x,y,x,y);
                 }
             }
         };
