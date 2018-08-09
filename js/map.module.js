@@ -853,6 +853,7 @@ function generate_way(){
     });
     $('#content2').append(html);
     $('.node_way').each(function(k,v){
+        var ctx = this.getContext('2d');
         ctx.beginPath();
         ctx.setLineDash([5,3]);
         ctx.moveTo(([1,2].indexOf($(this).data('xien'))?0:$(v).css('height')), 0);
