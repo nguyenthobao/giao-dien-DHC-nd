@@ -11,7 +11,7 @@ html{
 .node_way{
     position: absolute;
     z-index: 9;
-    background-color:#7B0D09;
+    /*background-color:#7B0D09;*/
 }
 .comeIn {
     margin-top: -13px !important;
