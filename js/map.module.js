@@ -535,6 +535,10 @@ function checkSpecialPath3(beginPoint, endPoint) {
     return path3;
 }
 
+function distance(beginPoint, endPoint) {
+    return (endPoint[0] - beginPoint[0]) * (endPoint[0] - beginPoint[0]) + (endPoint[1] - beginPoint[1]) * (endPoint[1] - beginPoint[1]);
+}
+
 function checkSpecialPoint(point) {
     var arrCenterSpecialPoint = [[5049, 4876], [5127, 3693], [3188, 3423], [5333, 5119], [4972, 3736], [5121, 3696], [4411, 4214], [5064, 4151],
         [5530, 4447], [4073, 4034], [5707, 4710], [3618, 4219], [3379, 4327]];
@@ -765,10 +769,6 @@ function findPath(beginPoint, endPoint) {
         return rtArrPoint;
     }
     return arrPoint;
-}
-
-function distance(beginPoint, endPoint) {
-    return (endPoint[0] - beginPoint[0]) * (endPoint[0] - beginPoint[0]) + (endPoint[1] - beginPoint[1]) * (endPoint[1] - beginPoint[1]);
 }
 
 function checkSmallPath(beginPoint, endPoint) {
