@@ -143,6 +143,7 @@ $(document).ready(function () {
             $('#list-promotion-home').html('');
             $.each(promotionData, function (k,v) {
                 var promotion_image = JSON.parse(v.promotion_image);
+                console.log(v.promotion_image,promotion_image,promotion_image[0]);
                 if(promotion_image[0]!=undefined)
                     promotion_image[0]=(promotion_image[0]).slice(0,4)+'s'+ (promotion_image[0]).slice(4);
                 var html = '<div class="col-12 col-md-6 promotion-item" data-id="' + v.promotion_id + '">';
