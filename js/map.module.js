@@ -49,7 +49,6 @@ $(document).ready(function () {
     function into_map(){
         alert(1);
         var tryAPIGeolocation = function () {
-            alert(1.5);
             jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function (success) {
                 apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
             }).fail(function (err) {
@@ -58,6 +57,10 @@ $(document).ready(function () {
                 });
         };
         var apiGeolocationSuccess = function (position) {
+
+        };
+
+        var browserGeolocationSuccess = function (position) {
             alert(2);
             x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude));
             y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude));
@@ -107,12 +110,6 @@ $(document).ready(function () {
             }
         };
 
-        var browserGeolocationSuccess = function (position) {
-            alert("Browser geolocation success!" +
-                "lat = " + position.coords.latitude + "" +
-                "lng = " + position.coords.longitude);
-        };
-
         var browserGeolocationFail = function (error) {
             switch (error.code) {
                 case error.TIMEOUT:
@@ -130,14 +127,12 @@ $(document).ready(function () {
         };
 
         var tryGeolocation = function () {
-            alert(1.6);
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     browserGeolocationSuccess,
                     browserGeolocationFail,
                     {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
             }
-            alert(1.7);
         };
 
         tryGeolocation();
