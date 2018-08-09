@@ -141,12 +141,12 @@ $(document).ready(function () {
         success: function (result) {
             var promotionData = result.data.results;
             $('#list-promotion-home').html('');
-            $.each(promotionData, function (k, v) {
-                var pointImage = JSON.parse(v.point_images);
-                if(pointImage[0]!=undefined)
-                    pointImage[0]=(pointImage[0]).slice(0,4)+'s'+ (pointImage[0]).slice(4);
+            $.each(promotionData, function (k,v) {
+                var promotion_image = JSON.parse(v.promotion_image);
+                if(promotion_image[0]!=undefined)
+                    promotion_image[0]=(promotion_image[0]).slice(0,4)+'s'+ (promotion_image[0]).slice(4);
                 var html = '<div class="col-12 col-md-6 promotion-item" data-id="' + v.promotion_id + '">';
-                html += '<img src="' + pointImage[0] + '" title="' + v.promotion_name + '" alt="' + v.promotion_name + '">';
+                html += '<img src="' + promotion_image[0] + '" title="' + v.promotion_name + '" alt="' + v.promotion_name + '">';
                 html += '</div>';
 
                 $('#list-promotion-home').append(html);
