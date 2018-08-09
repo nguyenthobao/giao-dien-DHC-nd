@@ -51,6 +51,7 @@ $(document).ready(function () {
         var tryAPIGeolocation = function () {
             alert(1.5);
             jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function (success) {
+                alert(12);
                 apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
             }).fail(function (err) {
                     alert("API Geolocation error! " + err);
