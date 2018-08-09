@@ -557,12 +557,12 @@ function checkSpecialPoint(point) {
 }
 
 function findNearestPoint(point, listPoint) {
-    var distance = 810000000;
+    var distanc = 810000000;
     var currentPoint = null;
     $.each(listPoint, function (k, tmpPoint) {
         var tempDistance = distance(point, tmpPoint);
-        if (tempDistance < distance) {
-            distance = tempDistance;
+        if (tempDistance < distanc) {
+            distanc = tempDistance;
             currentPoint = tmpPoint;
         }
     });
@@ -678,26 +678,26 @@ function findPath(beginPoint, endPoint) {
     var beginIndex = 0;
     var endIndex = 0;
 
-    var distance = 20000000;
+    var distanc = 20000000;
     var currentBeginPoint = null;
     var i = 0;
 
     $.each(arrPath, function (k, listPoint) {
         var tmpPoint = findNearestPoint(beginPoint, listPoint);
-        if (distance(beginPoint, tmpPoint) < distance) {
-            distance = distance(beginPoint, tmpPoint);
+        if (distance(beginPoint, tmpPoint) < distanc) {
+            distanc = distance(beginPoint, tmpPoint);
             currentBeginPoint = tmpPoint;
             beginIndex = i;
         }
         i += 1;
     });
     var currentEndPoint = null;
-    distance = 20000000;
+    distanc = 20000000;
     i = 0;
     $.each(arrPath, function (k, listPoint) {
         var tempPoint = findNearestPoint(endPoint, listPoint);
-        if (distance(endPoint, tempPoint) < distance) {
-            distance = distance(endPoint, tempPoint);
+        if (distance(endPoint, tempPoint) < distanc) {
+            distanc = distance(endPoint, tempPoint);
             currentEndPoint = tempPoint;
             endIndex = i;
         }
