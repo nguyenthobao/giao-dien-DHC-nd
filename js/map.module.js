@@ -292,7 +292,7 @@ $(document).ready(function () {
         if (lat > $('#mapdhc')[0].width || lat < 0 || long > heightmap || long < 0)
             beginPoint = [$(that).data('lat'), $(that).data('long')];
         else beginPoint = [lat, long];
-        alert(JSON.stringify(beginPoint)+',[' +  $($(this).parent()).data('lat') + ',' +  $($(this).parent()).data('long') + ']');
+        // alert(JSON.stringify(beginPoint)+',[' +  $($(this).parent()).data('lat') + ',' +  $($(this).parent()).data('long') + ']');
         findPath(beginPoint, [ $($(this).parent()).data('lat'), $($(this).parent()).data('long')]);
         that = this;
         // var that = this;
@@ -355,6 +355,11 @@ var list_path12 = [[4422, 3368], [4339, 3400], [4220, 3445], [4176, 3467], [4158
 var list_path13 = [[4422, 3368], [4423, 3331], [4424, 3302], [4433, 3265], [4465, 3192], [4520, 3111], [4553, 3051], [4569, 2965], [4583, 2884], [4581, 2787],
     [4562, 2735], [4512, 2704], [4395, 2735], [4319, 2775], [4216, 2811], [4126, 2835], [4060, 2837]];
 var isFirst = true, isFirst1 = true, isFirst2 = true, isFirst3 = true;
+
+
+function distance(beginPoint, endPoint) {
+    return (endPoint[0] - beginPoint[0]) * (endPoint[0] - beginPoint[0]) + (endPoint[1] - beginPoint[1]) * (endPoint[1] - beginPoint[1]);
+}
 
 function checkSpecialPath1(beginPoint, endPoint) {
     if (!isFirst1) return ['POINTTYPE', 2];
@@ -535,10 +540,6 @@ function checkSpecialPath3(beginPoint, endPoint) {
     return path3;
 }
 
-function distance(beginPoint, endPoint) {
-    return (endPoint[0] - beginPoint[0]) * (endPoint[0] - beginPoint[0]) + (endPoint[1] - beginPoint[1]) * (endPoint[1] - beginPoint[1]);
-}
-
 function checkSpecialPoint(point) {
     var arrCenterSpecialPoint = [[5049, 4876], [5127, 3693], [3188, 3423], [5333, 5119], [4972, 3736], [5121, 3696], [4411, 4214], [5064, 4151],
         [5530, 4447], [4073, 4034], [5707, 4710], [3618, 4219], [3379, 4327]];
@@ -550,7 +551,7 @@ function checkSpecialPoint(point) {
 
     for (var i = 0; i < arrCenterSpecialPoint.length; i++) {
         alert(JSON.stringify(arrCenterSpecialPoint[i]));
-        var distance = distance(point, arrCenterSpecialPoint[i]);
+        var distance = distance(point,arrCenterSpecialPoint[i]);
         if (distance < 16000) return arrGateSpecialPoint[i];
     }
     return point;
