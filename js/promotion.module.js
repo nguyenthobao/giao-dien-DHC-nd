@@ -14,11 +14,11 @@ function getListPromotion() {
             var promotionData = result.data.results;
             $('#list-promotion').html('');
             $.each(promotionData, function (k, v) {
-                var promotion_image = JSON.parse(v.promotion_image);
-                if(promotion_image[0]!=undefined)
-                    promotion_image[0]=(promotion_image[0]).slice(0,4)+'s'+ (promotion_image[0]).slice(4);
+                var promotion_image = v.promotion_image;
+                if(promotion_image!=undefined && promotion_image!='')
+                    promotion_image=(promotion_image).slice(0,4)+'s'+ (promotion_image).slice(4);
                 var html = '<div class="col-12 col-md-6 promotion-item" data-id="' + v.promotion_id + '">';
-                html += '<img src="' + promotion_image[0] + '" title="' + v.promotion_name + '" alt="' + v.promotion_name + '">';
+                html += '<img src="' + promotion_image + '" title="' + v.promotion_name + '" alt="' + v.promotion_name + '">';
                 html += '</div>';
 
                 $('#list-promotion').append(html);
