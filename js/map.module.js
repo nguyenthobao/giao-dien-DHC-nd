@@ -847,7 +847,7 @@ function generate_way(){
             if((left-left_before)>0 &&(top-top_before>0)) xien=1;
             if((left-left_before)<0 &&(top-top_before>0)) xien=4;
             if((left-left_before)<0 &&(top-top_before<0)) xien=3;
-            html += '<canvas class="node_way" data-xien="'+xien+'" style="margin-top:' + top + 'px; margin-left:' + left + 'px;width:'+width+'px;height: '+height+'px"></canvas>';
+            html += '<canvas data-width="'+width+'" data-height="'+height+'" class="node_way" data-xien="'+xien+'" style="margin-top:' + top + 'px; margin-left:' + left + 'px;width:'+width+'px;height: '+height+'px"></canvas>';
         }
         top_before =top;left_before=left;
     });
@@ -856,8 +856,8 @@ function generate_way(){
         var ctx = this.getContext('2d');
         ctx.beginPath();
         ctx.setLineDash([5,3]);
-        ctx.moveTo(([1,2].indexOf($(this).data('xien'))?0:$(v).css('height')), 0);
-        ctx.lineTo($(v).css('width'), ([3,4].indexOf($(v).data('xien'))?0:$(v).css('height')));
+        ctx.moveTo(([1,2].indexOf($(this).data('xien'))?0:$(v).data('height')), 0);
+        ctx.lineTo($(v).data('width'), ([3,4].indexOf($(v).data('xien'))?0:$(v).data('height')));
         ctx.stroke();
     });
 
