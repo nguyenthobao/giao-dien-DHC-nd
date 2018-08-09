@@ -39,7 +39,6 @@ $(document).ready(function () {
     $('#download').show();
     $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
-    alert(0);
     into_map();
     $('#tab2').click(function () {
         into_map();
@@ -48,7 +47,15 @@ $(document).ready(function () {
       into_map();
     });
     function into_map(){
-        alert(1);
+        var tryAPIGeolocation = function () {
+            alert(7);
+            jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function (success) {
+                apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
+            }).fail(function (err) {
+                    alert("API Geolocation error! " + err);
+                    scroll(750,690,750,500);
+                });
+        };
         var apiGeolocationSuccess = function (position) {
             alert(2);
             x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude));
@@ -97,16 +104,6 @@ $(document).ready(function () {
                     scroll(x,y,x,y);
                 }
             }
-        };
-
-        var tryAPIGeolocation = function () {
-            jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function (success) {
-                apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
-            })
-                .fail(function (err) {
-                    alert("API Geolocation error! " + err);
-                    scroll(750,690,750,500);
-                });
         };
 
         var browserGeolocationSuccess = function (position) {
