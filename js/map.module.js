@@ -632,6 +632,7 @@ function findPath(beginPoint, endPoint, listPoint) {
 }
 
 function findPath(beginPoint, endPoint) {
+    console.log('1 lần');
     var arrPoint = [];
     if ((endPoint[0] == 4531 && endPoint[1] == 3941) && beginPoint[0] > 4713) {
         return findPath(beginPoint, [4723, 3924]);
