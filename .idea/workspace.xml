@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a371e09c-094e-4ee6-a00c-907fd1dc9577" name="Default" comment="update dhc user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change beforePath="$PROJECT_DIR$/js/map.module.js" afterPath="$PROJECT_DIR$/js/map.module.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,14 +27,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="171" column="22" lean-forward="true" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="203">
+              <caret line="166" column="36" lean-forward="false" selection-start-line="166" selection-start-column="36" selection-end-line="166" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -41,13 +40,29 @@
       <file leaf-file-name="map.module.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/map.module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="75" column="38" lean-forward="true" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
+            <state relative-caret-position="449">
+              <caret line="111" column="26" lean-forward="true" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
               <folding>
-                <element signature="e#4205#6498#0" expanded="false" />
-                <element signature="e#13285#13668#0" expanded="false" />
-                <element signature="e#13737#16966#0" expanded="false" />
+                <element signature="e#51#734#0" expanded="false" />
+                <element signature="e#2734#3876#0" expanded="false" />
+                <element signature="e#3073#3282#0" expanded="false" />
+                <element signature="e#3340#3549#0" expanded="false" />
+                <element signature="e#4952#5556#0" expanded="false" />
+                <element signature="e#8162#8326#0" expanded="false" />
+                <element signature="e#8593#8976#0" expanded="false" />
+                <element signature="e#9045#12274#0" expanded="false" />
+                <element signature="e#12360#13238#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/core.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,28 +70,50 @@
       <file leaf-file-name="home.module.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/home.module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="34" column="42" lean-forward="false" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+            <state relative-caret-position="378">
+              <caret line="106" column="40" lean-forward="false" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="40" />
               <folding>
                 <element signature="e#124#807#0" expanded="false" />
-                <element signature="e#1786#1833#0" expanded="false" />
-                <element signature="e#8049#8969#0" expanded="false" />
-                <element signature="e#9028#10415#0" expanded="false" />
-                <marker date="1533377175737" expanded="true" signature="3982:4100" ph="..." />
-                <marker date="1533377175737" expanded="true" signature="4196:4259" ph="..." />
+                <element signature="e#2610#3033#0" expanded="false" />
+                <element signature="e#7182#7737#0" expanded="false" />
+                <element signature="e#7789#7867#0" expanded="false" />
+                <element signature="e#7917#8222#0" expanded="false" />
+                <element signature="e#8282#9202#0" expanded="false" />
+                <element signature="e#9261#10648#0" expanded="false" />
+                <element signature="e#15267#18847#0" expanded="false" />
+                <element signature="e#18902#20949#0" expanded="false" />
+                <element signature="e#19664#20837#0" expanded="false" />
+                <element signature="e#21004#22686#0" expanded="false" />
+                <element signature="e#22726#23503#0" expanded="false" />
+                <element signature="e#23553#23916#0" expanded="false" />
+                <element signature="e#23973#26795#0" expanded="false" />
+                <element signature="e#26841#32018#0" expanded="false" />
+                <element signature="e#32064#32213#0" expanded="false" />
+                <element signature="e#32265#35926#0" expanded="false" />
+                <element signature="e#35956#36702#0" expanded="false" />
+                <marker date="1533788729209" expanded="true" signature="4363:4485" ph="..." />
+                <marker date="1533788729209" expanded="true" signature="4581:4654" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
+      <file leaf-file-name="chi duong android" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chi duong android">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="428" column="23" lean-forward="true" selection-start-line="428" selection-start-column="23" selection-end-line="428" selection-end-column="23" />
-              <folding>
-                <element signature="e#7790#7970#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="1734">
+              <caret line="102" column="22" lean-forward="false" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chi duong" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chi duong">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8925">
+              <caret line="525" column="4" lean-forward="false" selection-start-line="525" selection-start-column="4" selection-end-line="525" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,8 +121,8 @@
       <file leaf-file-name="news.module.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/news.module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="14" />
+            <state relative-caret-position="969">
+              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -94,8 +131,8 @@
       <file leaf-file-name="promotion.module.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/promotion.module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="52" lean-forward="false" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+            <state relative-caret-position="323">
+              <caret line="19" column="65" lean-forward="false" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -112,36 +149,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dz</find>
-      <find>ajax</find>
-      <find>modal</find>
-      <find>html'</find>
-      <find>modalForm</find>
-      <find>is</find>
-      <find>isMobile</find>
-      <find>shrink-to-fit</find>
-      <find>div_search</find>
-      <find>conten</find>
-      <find>.label</find>
-      <find>download</find>
-      <find>tab2</find>
+      <find>d initialise</find>
+      <find>d initialise(</find>
+      <find>sPinMarker</find>
+      <find>listPoint</find>
+      <find>createBitmapFromView</find>
+      <find>getDataOffLine</find>
+      <find>checkSpecialPath1</find>
+      <find>Con</find>
+      <find>findPath</find>
+      <find>http</find>
+      <find>checkSpecialPath2</find>
+      <find>checkSpecialPath3</find>
+      <find>nc findPath</find>
+      <find>initialiseListDirection</find>
+      <find>invalidate</find>
+      <find>setListPinDirection</find>
+      <find>initialiseList</find>
+      <find>checkSpecialPoint</find>
+      <find>findNearestPoint</find>
+      <find>heightmap</find>
+      <find>870.197</find>
+      <find>checkSmallPath</find>
+      <find>.hide</find>
+      <find>n scroll</find>
+      <find>core</find>
       <find>marker</find>
-      <find>label_</find>
-      <find>label</find>
-      <find>height-scree</find>
-      <find>height-screen</find>
-      <find>div_se</find>
-      <find>hide</find>
-      <find>click</find>
-      <find>content2</find>
-      <find>div</find>
-      <find>1px</find>
-      <find>425</find>
-      <find>search_</find>
-      <find>html</find>
-      <find>var ua</find>
-      <find>search_place</find>
-      <find>search</find>
+      <find>n into_map</find>
+      <find>img</find>
+      <find>apiGeolocationSuccess</find>
+      <find>browserGeolocationSuccess</find>
     </findStrings>
     <replaceStrings>
       <replace>formBodyHtml</replace>
@@ -155,19 +192,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/core.js" />
         <option value="$PROJECT_DIR$/webfonts/rác.php" />
         <option value="$PROJECT_DIR$/jquery-confirm-v3.3.0/.gitignore" />
         <option value="$PROJECT_DIR$/js/jquery.zoom.js" />
-        <option value="$PROJECT_DIR$/js/news.module.js" />
-        <option value="$PROJECT_DIR$/js/promotion.module.js" />
         <option value="$PROJECT_DIR$/webfonts/rác.java" />
         <option value="$PROJECT_DIR$/js/jquery-3.3.1.min.js" />
         <option value="$PROJECT_DIR$/js/popper.min.js" />
+        <option value="$PROJECT_DIR$/init" />
+        <option value="$PROJECT_DIR$/../../27 thang4/sell.blade.php" />
+        <option value="$PROJECT_DIR$/js/core.js" />
+        <option value="$PROJECT_DIR$/chi duong" />
+        <option value="$PROJECT_DIR$/chi duong android" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/js/promotion.module.js" />
+        <option value="$PROJECT_DIR$/js/news.module.js" />
         <option value="$PROJECT_DIR$/js/home.module.js" />
         <option value="$PROJECT_DIR$/js/map.module.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/css/style.css" />
       </list>
     </option>
   </component>
@@ -178,10 +219,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-3" />
-    <option name="width" value="1347" />
-    <option name="height" value="735" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="371" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -199,6 +240,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -209,23 +251,12 @@
             <path>
               <item name="giao-dien-DHC-nd" type="b2602c69:ProjectViewProjectNode" />
               <item name="giao-dien-DHC-nd" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="giao-dien-DHC-nd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="giao-dien-DHC-nd" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="images" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="giao-dien-DHC-nd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="giao-dien-DHC-nd" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -323,356 +354,360 @@
       <workItem from="1533177352845" duration="1839000" />
       <workItem from="1533179351429" duration="21933000" />
       <workItem from="1533262509071" duration="20724000" />
-      <workItem from="1533348263933" duration="17025000" />
+      <workItem from="1533348263933" duration="19050000" />
+      <workItem from="1533521633572" duration="10784000" />
+      <workItem from="1533608199709" duration="22577000" />
+      <workItem from="1533694915286" duration="26407000" />
+      <workItem from="1533781109247" duration="8100000" />
     </task>
-    <task id="LOCAL-00804" summary="update dhc user">
-      <created>1533282963270</created>
-      <option name="number" value="00804" />
-      <option name="presentableId" value="LOCAL-00804" />
+    <task id="LOCAL-00884" summary="update dhc user">
+      <created>1533700572760</created>
+      <option name="number" value="00884" />
+      <option name="presentableId" value="LOCAL-00884" />
       <option name="project" value="LOCAL" />
-      <updated>1533282963270</updated>
+      <updated>1533700572760</updated>
     </task>
-    <task id="LOCAL-00805" summary="update dhc user">
-      <created>1533283264129</created>
-      <option name="number" value="00805" />
-      <option name="presentableId" value="LOCAL-00805" />
+    <task id="LOCAL-00885" summary="update dhc user">
+      <created>1533718035782</created>
+      <option name="number" value="00885" />
+      <option name="presentableId" value="LOCAL-00885" />
       <option name="project" value="LOCAL" />
-      <updated>1533283264129</updated>
+      <updated>1533718035782</updated>
     </task>
-    <task id="LOCAL-00806" summary="update dhc user">
-      <created>1533283550098</created>
-      <option name="number" value="00806" />
-      <option name="presentableId" value="LOCAL-00806" />
+    <task id="LOCAL-00886" summary="update dhc user">
+      <created>1533719135773</created>
+      <option name="number" value="00886" />
+      <option name="presentableId" value="LOCAL-00886" />
       <option name="project" value="LOCAL" />
-      <updated>1533283550098</updated>
+      <updated>1533719135773</updated>
     </task>
-    <task id="LOCAL-00807" summary="update dhc user">
-      <created>1533285437152</created>
-      <option name="number" value="00807" />
-      <option name="presentableId" value="LOCAL-00807" />
+    <task id="LOCAL-00887" summary="update dhc user">
+      <created>1533719356333</created>
+      <option name="number" value="00887" />
+      <option name="presentableId" value="LOCAL-00887" />
       <option name="project" value="LOCAL" />
-      <updated>1533285437152</updated>
+      <updated>1533719356333</updated>
     </task>
-    <task id="LOCAL-00808" summary="update dhc user">
-      <created>1533285608838</created>
-      <option name="number" value="00808" />
-      <option name="presentableId" value="LOCAL-00808" />
+    <task id="LOCAL-00888" summary="update dhc user">
+      <created>1533721376696</created>
+      <option name="number" value="00888" />
+      <option name="presentableId" value="LOCAL-00888" />
       <option name="project" value="LOCAL" />
-      <updated>1533285608839</updated>
+      <updated>1533721376696</updated>
     </task>
-    <task id="LOCAL-00809" summary="update dhc user">
-      <created>1533286812419</created>
-      <option name="number" value="00809" />
-      <option name="presentableId" value="LOCAL-00809" />
+    <task id="LOCAL-00889" summary="update dhc user">
+      <created>1533722048143</created>
+      <option name="number" value="00889" />
+      <option name="presentableId" value="LOCAL-00889" />
       <option name="project" value="LOCAL" />
-      <updated>1533286812419</updated>
+      <updated>1533722048143</updated>
     </task>
-    <task id="LOCAL-00810" summary="update dhc user">
-      <created>1533287136542</created>
-      <option name="number" value="00810" />
-      <option name="presentableId" value="LOCAL-00810" />
+    <task id="LOCAL-00890" summary="update dhc user">
+      <created>1533722759231</created>
+      <option name="number" value="00890" />
+      <option name="presentableId" value="LOCAL-00890" />
       <option name="project" value="LOCAL" />
-      <updated>1533287136542</updated>
+      <updated>1533722759231</updated>
     </task>
-    <task id="LOCAL-00811" summary="update dhc user">
-      <created>1533287479985</created>
-      <option name="number" value="00811" />
-      <option name="presentableId" value="LOCAL-00811" />
+    <task id="LOCAL-00891" summary="update dhc user">
+      <created>1533722933901</created>
+      <option name="number" value="00891" />
+      <option name="presentableId" value="LOCAL-00891" />
       <option name="project" value="LOCAL" />
-      <updated>1533287480016</updated>
+      <updated>1533722933901</updated>
     </task>
-    <task id="LOCAL-00812" summary="update dhc user">
-      <created>1533287982613</created>
-      <option name="number" value="00812" />
-      <option name="presentableId" value="LOCAL-00812" />
+    <task id="LOCAL-00892" summary="update dhc user">
+      <created>1533723015939</created>
+      <option name="number" value="00892" />
+      <option name="presentableId" value="LOCAL-00892" />
       <option name="project" value="LOCAL" />
-      <updated>1533287982613</updated>
+      <updated>1533723015939</updated>
     </task>
-    <task id="LOCAL-00813" summary="update dhc user">
-      <created>1533288220569</created>
-      <option name="number" value="00813" />
-      <option name="presentableId" value="LOCAL-00813" />
+    <task id="LOCAL-00893" summary="update dhc user">
+      <created>1533723196260</created>
+      <option name="number" value="00893" />
+      <option name="presentableId" value="LOCAL-00893" />
       <option name="project" value="LOCAL" />
-      <updated>1533288220569</updated>
+      <updated>1533723196260</updated>
     </task>
-    <task id="LOCAL-00814" summary="update dhc user">
-      <created>1533294347164</created>
-      <option name="number" value="00814" />
-      <option name="presentableId" value="LOCAL-00814" />
+    <task id="LOCAL-00894" summary="update dhc user">
+      <created>1533723587445</created>
+      <option name="number" value="00894" />
+      <option name="presentableId" value="LOCAL-00894" />
       <option name="project" value="LOCAL" />
-      <updated>1533294347164</updated>
+      <updated>1533723587445</updated>
     </task>
-    <task id="LOCAL-00815" summary="update dhc user">
-      <created>1533294790065</created>
-      <option name="number" value="00815" />
-      <option name="presentableId" value="LOCAL-00815" />
+    <task id="LOCAL-00895" summary="update dhc user">
+      <created>1533724012614</created>
+      <option name="number" value="00895" />
+      <option name="presentableId" value="LOCAL-00895" />
       <option name="project" value="LOCAL" />
-      <updated>1533294790065</updated>
+      <updated>1533724012614</updated>
     </task>
-    <task id="LOCAL-00816" summary="update dhc user">
-      <created>1533350384738</created>
-      <option name="number" value="00816" />
-      <option name="presentableId" value="LOCAL-00816" />
+    <task id="LOCAL-00896" summary="update dhc user">
+      <created>1533724735389</created>
+      <option name="number" value="00896" />
+      <option name="presentableId" value="LOCAL-00896" />
       <option name="project" value="LOCAL" />
-      <updated>1533350384746</updated>
+      <updated>1533724735389</updated>
     </task>
-    <task id="LOCAL-00817" summary="update dhc user">
-      <created>1533350520361</created>
-      <option name="number" value="00817" />
-      <option name="presentableId" value="LOCAL-00817" />
+    <task id="LOCAL-00897" summary="update dhc user">
+      <created>1533725111852</created>
+      <option name="number" value="00897" />
+      <option name="presentableId" value="LOCAL-00897" />
       <option name="project" value="LOCAL" />
-      <updated>1533350520361</updated>
+      <updated>1533725111852</updated>
     </task>
-    <task id="LOCAL-00818" summary="update dhc user">
-      <created>1533351674394</created>
-      <option name="number" value="00818" />
-      <option name="presentableId" value="LOCAL-00818" />
+    <task id="LOCAL-00898" summary="update dhc user">
+      <created>1533725327206</created>
+      <option name="number" value="00898" />
+      <option name="presentableId" value="LOCAL-00898" />
       <option name="project" value="LOCAL" />
-      <updated>1533351674394</updated>
+      <updated>1533725327206</updated>
     </task>
-    <task id="LOCAL-00819" summary="update dhc user">
-      <created>1533351823266</created>
-      <option name="number" value="00819" />
-      <option name="presentableId" value="LOCAL-00819" />
+    <task id="LOCAL-00899" summary="update dhc user">
+      <created>1533725357811</created>
+      <option name="number" value="00899" />
+      <option name="presentableId" value="LOCAL-00899" />
       <option name="project" value="LOCAL" />
-      <updated>1533351823266</updated>
+      <updated>1533725357811</updated>
     </task>
-    <task id="LOCAL-00820" summary="update dhc user">
-      <created>1533352509627</created>
-      <option name="number" value="00820" />
-      <option name="presentableId" value="LOCAL-00820" />
+    <task id="LOCAL-00900" summary="update dhc user">
+      <created>1533725591539</created>
+      <option name="number" value="00900" />
+      <option name="presentableId" value="LOCAL-00900" />
       <option name="project" value="LOCAL" />
-      <updated>1533352509628</updated>
+      <updated>1533725591539</updated>
     </task>
-    <task id="LOCAL-00821" summary="update dhc user">
-      <created>1533352621378</created>
-      <option name="number" value="00821" />
-      <option name="presentableId" value="LOCAL-00821" />
+    <task id="LOCAL-00901" summary="update dhc user">
+      <created>1533726355470</created>
+      <option name="number" value="00901" />
+      <option name="presentableId" value="LOCAL-00901" />
       <option name="project" value="LOCAL" />
-      <updated>1533352621378</updated>
+      <updated>1533726355470</updated>
     </task>
-    <task id="LOCAL-00822" summary="update dhc user">
-      <created>1533352786558</created>
-      <option name="number" value="00822" />
-      <option name="presentableId" value="LOCAL-00822" />
+    <task id="LOCAL-00902" summary="update dhc user">
+      <created>1533726672947</created>
+      <option name="number" value="00902" />
+      <option name="presentableId" value="LOCAL-00902" />
       <option name="project" value="LOCAL" />
-      <updated>1533352786559</updated>
+      <updated>1533726672947</updated>
     </task>
-    <task id="LOCAL-00823" summary="update dhc user">
-      <created>1533352858664</created>
-      <option name="number" value="00823" />
-      <option name="presentableId" value="LOCAL-00823" />
+    <task id="LOCAL-00903" summary="update dhc user">
+      <created>1533726694843</created>
+      <option name="number" value="00903" />
+      <option name="presentableId" value="LOCAL-00903" />
       <option name="project" value="LOCAL" />
-      <updated>1533352858664</updated>
+      <updated>1533726694843</updated>
     </task>
-    <task id="LOCAL-00824" summary="update dhc user">
-      <created>1533352917508</created>
-      <option name="number" value="00824" />
-      <option name="presentableId" value="LOCAL-00824" />
+    <task id="LOCAL-00904" summary="update dhc user">
+      <created>1533726988926</created>
+      <option name="number" value="00904" />
+      <option name="presentableId" value="LOCAL-00904" />
       <option name="project" value="LOCAL" />
-      <updated>1533352917508</updated>
+      <updated>1533726988926</updated>
     </task>
-    <task id="LOCAL-00825" summary="update dhc user">
-      <created>1533353258784</created>
-      <option name="number" value="00825" />
-      <option name="presentableId" value="LOCAL-00825" />
+    <task id="LOCAL-00905" summary="update dhc user">
+      <created>1533727135573</created>
+      <option name="number" value="00905" />
+      <option name="presentableId" value="LOCAL-00905" />
       <option name="project" value="LOCAL" />
-      <updated>1533353258784</updated>
+      <updated>1533727135573</updated>
     </task>
-    <task id="LOCAL-00826" summary="update dhc user">
-      <created>1533356969567</created>
-      <option name="number" value="00826" />
-      <option name="presentableId" value="LOCAL-00826" />
+    <task id="LOCAL-00906" summary="update dhc user">
+      <created>1533783143717</created>
+      <option name="number" value="00906" />
+      <option name="presentableId" value="LOCAL-00906" />
       <option name="project" value="LOCAL" />
-      <updated>1533356969567</updated>
+      <updated>1533783143717</updated>
     </task>
-    <task id="LOCAL-00827" summary="update dhc user">
-      <created>1533365164788</created>
-      <option name="number" value="00827" />
-      <option name="presentableId" value="LOCAL-00827" />
+    <task id="LOCAL-00907" summary="update dhc user">
+      <created>1533783630821</created>
+      <option name="number" value="00907" />
+      <option name="presentableId" value="LOCAL-00907" />
       <option name="project" value="LOCAL" />
-      <updated>1533365164788</updated>
+      <updated>1533783630821</updated>
     </task>
-    <task id="LOCAL-00828" summary="update dhc user">
-      <created>1533365495316</created>
-      <option name="number" value="00828" />
-      <option name="presentableId" value="LOCAL-00828" />
+    <task id="LOCAL-00908" summary="update dhc user">
+      <created>1533783804107</created>
+      <option name="number" value="00908" />
+      <option name="presentableId" value="LOCAL-00908" />
       <option name="project" value="LOCAL" />
-      <updated>1533365495316</updated>
+      <updated>1533783804107</updated>
     </task>
-    <task id="LOCAL-00829" summary="update dhc user">
-      <created>1533365864808</created>
-      <option name="number" value="00829" />
-      <option name="presentableId" value="LOCAL-00829" />
+    <task id="LOCAL-00909" summary="update dhc user">
+      <created>1533783904729</created>
+      <option name="number" value="00909" />
+      <option name="presentableId" value="LOCAL-00909" />
       <option name="project" value="LOCAL" />
-      <updated>1533365864808</updated>
+      <updated>1533783904729</updated>
     </task>
-    <task id="LOCAL-00830" summary="update dhc user">
-      <created>1533365962509</created>
-      <option name="number" value="00830" />
-      <option name="presentableId" value="LOCAL-00830" />
+    <task id="LOCAL-00910" summary="update dhc user">
+      <created>1533784016053</created>
+      <option name="number" value="00910" />
+      <option name="presentableId" value="LOCAL-00910" />
       <option name="project" value="LOCAL" />
-      <updated>1533365962509</updated>
+      <updated>1533784016053</updated>
     </task>
-    <task id="LOCAL-00831" summary="update dhc user">
-      <created>1533366162657</created>
-      <option name="number" value="00831" />
-      <option name="presentableId" value="LOCAL-00831" />
+    <task id="LOCAL-00911" summary="update dhc user">
+      <created>1533784204825</created>
+      <option name="number" value="00911" />
+      <option name="presentableId" value="LOCAL-00911" />
       <option name="project" value="LOCAL" />
-      <updated>1533366162657</updated>
+      <updated>1533784204825</updated>
     </task>
-    <task id="LOCAL-00832" summary="update dhc user">
-      <created>1533366488438</created>
-      <option name="number" value="00832" />
-      <option name="presentableId" value="LOCAL-00832" />
+    <task id="LOCAL-00912" summary="update dhc user">
+      <created>1533784361358</created>
+      <option name="number" value="00912" />
+      <option name="presentableId" value="LOCAL-00912" />
       <option name="project" value="LOCAL" />
-      <updated>1533366488438</updated>
+      <updated>1533784361358</updated>
     </task>
-    <task id="LOCAL-00833" summary="update dhc user">
-      <created>1533366707862</created>
-      <option name="number" value="00833" />
-      <option name="presentableId" value="LOCAL-00833" />
+    <task id="LOCAL-00913" summary="update dhc user">
+      <created>1533784531272</created>
+      <option name="number" value="00913" />
+      <option name="presentableId" value="LOCAL-00913" />
       <option name="project" value="LOCAL" />
-      <updated>1533366707862</updated>
+      <updated>1533784531272</updated>
     </task>
-    <task id="LOCAL-00834" summary="update dhc user">
-      <created>1533366964642</created>
-      <option name="number" value="00834" />
-      <option name="presentableId" value="LOCAL-00834" />
+    <task id="LOCAL-00914" summary="update dhc user">
+      <created>1533784679820</created>
+      <option name="number" value="00914" />
+      <option name="presentableId" value="LOCAL-00914" />
       <option name="project" value="LOCAL" />
-      <updated>1533366964642</updated>
+      <updated>1533784679820</updated>
     </task>
-    <task id="LOCAL-00835" summary="update dhc user">
-      <created>1533367022454</created>
-      <option name="number" value="00835" />
-      <option name="presentableId" value="LOCAL-00835" />
+    <task id="LOCAL-00915" summary="update dhc user">
+      <created>1533784699598</created>
+      <option name="number" value="00915" />
+      <option name="presentableId" value="LOCAL-00915" />
       <option name="project" value="LOCAL" />
-      <updated>1533367022454</updated>
+      <updated>1533784699598</updated>
     </task>
-    <task id="LOCAL-00836" summary="update dhc user">
-      <created>1533367135146</created>
-      <option name="number" value="00836" />
-      <option name="presentableId" value="LOCAL-00836" />
+    <task id="LOCAL-00916" summary="update dhc user">
+      <created>1533784809952</created>
+      <option name="number" value="00916" />
+      <option name="presentableId" value="LOCAL-00916" />
       <option name="project" value="LOCAL" />
-      <updated>1533367135146</updated>
+      <updated>1533784809952</updated>
     </task>
-    <task id="LOCAL-00837" summary="update dhc user">
-      <created>1533367227041</created>
-      <option name="number" value="00837" />
-      <option name="presentableId" value="LOCAL-00837" />
+    <task id="LOCAL-00917" summary="update dhc user">
+      <created>1533784992071</created>
+      <option name="number" value="00917" />
+      <option name="presentableId" value="LOCAL-00917" />
       <option name="project" value="LOCAL" />
-      <updated>1533367227041</updated>
+      <updated>1533784992071</updated>
     </task>
-    <task id="LOCAL-00838" summary="update dhc user">
-      <created>1533367472219</created>
-      <option name="number" value="00838" />
-      <option name="presentableId" value="LOCAL-00838" />
+    <task id="LOCAL-00918" summary="update dhc user">
+      <created>1533785424340</created>
+      <option name="number" value="00918" />
+      <option name="presentableId" value="LOCAL-00918" />
       <option name="project" value="LOCAL" />
-      <updated>1533367472220</updated>
+      <updated>1533785424340</updated>
     </task>
-    <task id="LOCAL-00839" summary="update dhc user">
-      <created>1533368388543</created>
-      <option name="number" value="00839" />
-      <option name="presentableId" value="LOCAL-00839" />
+    <task id="LOCAL-00919" summary="update dhc user">
+      <created>1533785642037</created>
+      <option name="number" value="00919" />
+      <option name="presentableId" value="LOCAL-00919" />
       <option name="project" value="LOCAL" />
-      <updated>1533368388543</updated>
+      <updated>1533785642037</updated>
     </task>
-    <task id="LOCAL-00840" summary="update dhc user">
-      <created>1533374208910</created>
-      <option name="number" value="00840" />
-      <option name="presentableId" value="LOCAL-00840" />
+    <task id="LOCAL-00920" summary="update dhc user">
+      <created>1533786140334</created>
+      <option name="number" value="00920" />
+      <option name="presentableId" value="LOCAL-00920" />
       <option name="project" value="LOCAL" />
-      <updated>1533374208910</updated>
+      <updated>1533786140334</updated>
     </task>
-    <task id="LOCAL-00841" summary="update dhc user">
-      <created>1533374358266</created>
-      <option name="number" value="00841" />
-      <option name="presentableId" value="LOCAL-00841" />
+    <task id="LOCAL-00921" summary="update dhc user">
+      <created>1533786810680</created>
+      <option name="number" value="00921" />
+      <option name="presentableId" value="LOCAL-00921" />
       <option name="project" value="LOCAL" />
-      <updated>1533374358266</updated>
+      <updated>1533786810680</updated>
     </task>
-    <task id="LOCAL-00842" summary="update dhc user">
-      <created>1533374518442</created>
-      <option name="number" value="00842" />
-      <option name="presentableId" value="LOCAL-00842" />
+    <task id="LOCAL-00922" summary="update dhc user">
+      <created>1533786955663</created>
+      <option name="number" value="00922" />
+      <option name="presentableId" value="LOCAL-00922" />
       <option name="project" value="LOCAL" />
-      <updated>1533374518442</updated>
+      <updated>1533786955663</updated>
     </task>
-    <task id="LOCAL-00843" summary="update dhc user">
-      <created>1533374932364</created>
-      <option name="number" value="00843" />
-      <option name="presentableId" value="LOCAL-00843" />
+    <task id="LOCAL-00923" summary="update dhc user">
+      <created>1533787221522</created>
+      <option name="number" value="00923" />
+      <option name="presentableId" value="LOCAL-00923" />
       <option name="project" value="LOCAL" />
-      <updated>1533374932364</updated>
+      <updated>1533787221522</updated>
     </task>
-    <task id="LOCAL-00844" summary="update dhc user">
-      <created>1533375205798</created>
-      <option name="number" value="00844" />
-      <option name="presentableId" value="LOCAL-00844" />
+    <task id="LOCAL-00924" summary="update dhc user">
+      <created>1533787404036</created>
+      <option name="number" value="00924" />
+      <option name="presentableId" value="LOCAL-00924" />
       <option name="project" value="LOCAL" />
-      <updated>1533375205798</updated>
+      <updated>1533787404036</updated>
     </task>
-    <task id="LOCAL-00845" summary="update dhc user">
-      <created>1533375441234</created>
-      <option name="number" value="00845" />
-      <option name="presentableId" value="LOCAL-00845" />
+    <task id="LOCAL-00925" summary="update dhc user">
+      <created>1533787534135</created>
+      <option name="number" value="00925" />
+      <option name="presentableId" value="LOCAL-00925" />
       <option name="project" value="LOCAL" />
-      <updated>1533375441234</updated>
+      <updated>1533787534135</updated>
     </task>
-    <task id="LOCAL-00846" summary="update dhc user">
-      <created>1533375933605</created>
-      <option name="number" value="00846" />
-      <option name="presentableId" value="LOCAL-00846" />
+    <task id="LOCAL-00926" summary="update dhc user">
+      <created>1533787691115</created>
+      <option name="number" value="00926" />
+      <option name="presentableId" value="LOCAL-00926" />
       <option name="project" value="LOCAL" />
-      <updated>1533375933605</updated>
+      <updated>1533787691115</updated>
     </task>
-    <task id="LOCAL-00847" summary="update dhc user">
-      <created>1533376594472</created>
-      <option name="number" value="00847" />
-      <option name="presentableId" value="LOCAL-00847" />
+    <task id="LOCAL-00927" summary="update dhc user">
+      <created>1533787794496</created>
+      <option name="number" value="00927" />
+      <option name="presentableId" value="LOCAL-00927" />
       <option name="project" value="LOCAL" />
-      <updated>1533376594472</updated>
+      <updated>1533787794496</updated>
     </task>
-    <task id="LOCAL-00848" summary="update dhc user">
-      <created>1533376729608</created>
-      <option name="number" value="00848" />
-      <option name="presentableId" value="LOCAL-00848" />
+    <task id="LOCAL-00928" summary="update dhc user">
+      <created>1533788082692</created>
+      <option name="number" value="00928" />
+      <option name="presentableId" value="LOCAL-00928" />
       <option name="project" value="LOCAL" />
-      <updated>1533376729608</updated>
+      <updated>1533788082692</updated>
     </task>
-    <task id="LOCAL-00849" summary="update dhc user">
-      <created>1533377183361</created>
-      <option name="number" value="00849" />
-      <option name="presentableId" value="LOCAL-00849" />
+    <task id="LOCAL-00929" summary="update dhc user">
+      <created>1533788179566</created>
+      <option name="number" value="00929" />
+      <option name="presentableId" value="LOCAL-00929" />
       <option name="project" value="LOCAL" />
-      <updated>1533377183361</updated>
+      <updated>1533788179566</updated>
     </task>
-    <task id="LOCAL-00850" summary="update dhc user">
-      <created>1533377729937</created>
-      <option name="number" value="00850" />
-      <option name="presentableId" value="LOCAL-00850" />
+    <task id="LOCAL-00930" summary="update dhc user">
+      <created>1533788743582</created>
+      <option name="number" value="00930" />
+      <option name="presentableId" value="LOCAL-00930" />
       <option name="project" value="LOCAL" />
-      <updated>1533377729937</updated>
+      <updated>1533788743582</updated>
     </task>
-    <task id="LOCAL-00851" summary="update dhc user">
-      <created>1533378166261</created>
-      <option name="number" value="00851" />
-      <option name="presentableId" value="LOCAL-00851" />
+    <task id="LOCAL-00931" summary="update dhc user">
+      <created>1533789051111</created>
+      <option name="number" value="00931" />
+      <option name="presentableId" value="LOCAL-00931" />
       <option name="project" value="LOCAL" />
-      <updated>1533378166261</updated>
+      <updated>1533789051111</updated>
     </task>
-    <task id="LOCAL-00852" summary="update dhc user">
-      <created>1533378972895</created>
-      <option name="number" value="00852" />
-      <option name="presentableId" value="LOCAL-00852" />
+    <task id="LOCAL-00932" summary="update dhc user">
+      <created>1533789604870</created>
+      <option name="number" value="00932" />
+      <option name="presentableId" value="LOCAL-00932" />
       <option name="project" value="LOCAL" />
-      <updated>1533378972895</updated>
+      <updated>1533789604870</updated>
     </task>
-    <option name="localTasksCounter" value="853" />
+    <option name="localTasksCounter" value="933" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="395359000" />
+    <option name="totallyTimeSpent" value="465252000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -684,14 +719,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1347" height="735" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21522921" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14372164" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11649016" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1069079" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -741,91 +776,36 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6358">
-          <caret line="374" column="22" lean-forward="false" selection-start-line="374" selection-start-column="22" selection-end-line="374" selection-end-column="22" />
-          <folding>
-            <element signature="e#7790#7970#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/map.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2584">
-          <caret line="184" column="40" lean-forward="false" selection-start-line="184" selection-start-column="40" selection-end-line="184" selection-end-column="40" />
-          <folding>
-            <element signature="e#4205#6498#0" expanded="false" />
-            <element signature="e#13285#13668#0" expanded="false" />
-            <element signature="e#13737#16966#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/home.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="81" column="33" lean-forward="true" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
-          <folding>
-            <element signature="e#124#807#0" expanded="false" />
-            <element signature="e#1786#1833#0" expanded="false" />
-            <element signature="e#8049#8969#0" expanded="false" />
-            <element signature="e#9028#10415#0" expanded="false" />
-            <marker date="1533377175737" expanded="true" signature="3982:4100" ph="..." />
-            <marker date="1533377175737" expanded="true" signature="4196:4259" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="99" column="29" lean-forward="false" selection-start-line="99" selection-start-column="29" selection-end-line="99" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5474">
-          <caret line="322" column="26" lean-forward="true" selection-start-line="322" selection-start-column="26" selection-end-line="322" selection-end-column="26" />
-          <folding>
-            <element signature="e#7790#7970#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/map.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="144" column="22" lean-forward="true" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
-          <folding>
-            <element signature="e#4205#6498#0" expanded="false" />
-            <element signature="e#13285#13668#0" expanded="false" />
-            <element signature="e#13737#16966#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/home.module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#124#807#0" expanded="false" />
-            <element signature="e#1786#1833#0" expanded="false" />
-            <element signature="e#8049#8969#0" expanded="false" />
-            <element signature="e#9028#10415#0" expanded="false" />
-            <marker date="1533377175737" expanded="true" signature="3982:4100" ph="..." />
-            <marker date="1533377175737" expanded="true" signature="4196:4259" ph="..." />
+            <element signature="e#2610#3033#0" expanded="false" />
+            <element signature="e#7182#7737#0" expanded="false" />
+            <element signature="e#7789#7867#0" expanded="false" />
+            <element signature="e#7917#8222#0" expanded="false" />
+            <element signature="e#8282#9202#0" expanded="false" />
+            <element signature="e#9261#10648#0" expanded="false" />
+            <element signature="e#15267#18847#0" expanded="false" />
+            <element signature="e#18902#20949#0" expanded="false" />
+            <element signature="e#19664#20837#0" expanded="false" />
+            <element signature="e#21004#22686#0" expanded="false" />
+            <element signature="e#22726#23503#0" expanded="false" />
+            <element signature="e#23553#23916#0" expanded="false" />
+            <element signature="e#23973#26795#0" expanded="false" />
+            <element signature="e#26841#32018#0" expanded="false" />
+            <element signature="e#32064#32213#0" expanded="false" />
+            <element signature="e#32265#35926#0" expanded="false" />
+            <element signature="e#35956#36702#0" expanded="false" />
+            <marker date="1533788729209" expanded="true" signature="4363:4485" ph="..." />
+            <marker date="1533788729209" expanded="true" signature="4581:4654" ph="..." />
           </folding>
         </state>
       </provider>
@@ -854,9 +834,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -865,9 +843,15 @@
         <state relative-caret-position="697">
           <caret line="60" column="83" lean-forward="false" selection-start-line="60" selection-start-column="83" selection-end-line="60" selection-end-column="83" />
           <folding>
-            <element signature="e#4205#6498#0" expanded="false" />
-            <element signature="e#13285#13668#0" expanded="false" />
-            <element signature="e#13737#16966#0" expanded="false" />
+            <element signature="e#51#734#0" expanded="false" />
+            <element signature="e#2734#3876#0" expanded="false" />
+            <element signature="e#3073#3282#0" expanded="false" />
+            <element signature="e#3340#3549#0" expanded="false" />
+            <element signature="e#4952#5556#0" expanded="false" />
+            <element signature="e#8162#8326#0" expanded="false" />
+            <element signature="e#8593#8976#0" expanded="false" />
+            <element signature="e#9045#12274#0" expanded="false" />
+            <element signature="e#12360#13238#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -877,7 +861,7 @@
         <state relative-caret-position="425">
           <caret line="25" column="18" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
           <folding>
-            <element signature="e#7790#7970#0" expanded="false" />
+            <element signature="e#7897#8077#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -888,11 +872,25 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#124#807#0" expanded="false" />
-            <element signature="e#1786#1833#0" expanded="false" />
-            <element signature="e#8049#8969#0" expanded="false" />
-            <element signature="e#9028#10415#0" expanded="false" />
-            <marker date="1533377175737" expanded="true" signature="3982:4100" ph="..." />
-            <marker date="1533377175737" expanded="true" signature="4196:4259" ph="..." />
+            <element signature="e#2610#3033#0" expanded="false" />
+            <element signature="e#7182#7737#0" expanded="false" />
+            <element signature="e#7789#7867#0" expanded="false" />
+            <element signature="e#7917#8222#0" expanded="false" />
+            <element signature="e#8282#9202#0" expanded="false" />
+            <element signature="e#9261#10648#0" expanded="false" />
+            <element signature="e#15267#18847#0" expanded="false" />
+            <element signature="e#18902#20949#0" expanded="false" />
+            <element signature="e#19664#20837#0" expanded="false" />
+            <element signature="e#21004#22686#0" expanded="false" />
+            <element signature="e#22726#23503#0" expanded="false" />
+            <element signature="e#23553#23916#0" expanded="false" />
+            <element signature="e#23973#26795#0" expanded="false" />
+            <element signature="e#26841#32018#0" expanded="false" />
+            <element signature="e#32064#32213#0" expanded="false" />
+            <element signature="e#32265#35926#0" expanded="false" />
+            <element signature="e#35956#36702#0" expanded="false" />
+            <marker date="1533788729209" expanded="true" signature="4363:4485" ph="..." />
+            <marker date="1533788729209" expanded="true" signature="4581:4654" ph="..." />
           </folding>
         </state>
       </provider>
@@ -922,9 +920,15 @@
         <state relative-caret-position="697">
           <caret line="60" column="83" lean-forward="false" selection-start-line="60" selection-start-column="83" selection-end-line="60" selection-end-column="83" />
           <folding>
-            <element signature="e#4205#6498#0" expanded="false" />
-            <element signature="e#13285#13668#0" expanded="false" />
-            <element signature="e#13737#16966#0" expanded="false" />
+            <element signature="e#51#734#0" expanded="false" />
+            <element signature="e#2734#3876#0" expanded="false" />
+            <element signature="e#3073#3282#0" expanded="false" />
+            <element signature="e#3340#3549#0" expanded="false" />
+            <element signature="e#4952#5556#0" expanded="false" />
+            <element signature="e#8162#8326#0" expanded="false" />
+            <element signature="e#8593#8976#0" expanded="false" />
+            <element signature="e#9045#12274#0" expanded="false" />
+            <element signature="e#12360#13238#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -933,9 +937,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -944,7 +946,7 @@
         <state relative-caret-position="425">
           <caret line="25" column="18" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
           <folding>
-            <element signature="e#7790#7970#0" expanded="false" />
+            <element signature="e#7897#8077#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -955,11 +957,25 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#124#807#0" expanded="false" />
-            <element signature="e#1786#1833#0" expanded="false" />
-            <element signature="e#8049#8969#0" expanded="false" />
-            <element signature="e#9028#10415#0" expanded="false" />
-            <marker date="1533377175737" expanded="true" signature="3982:4100" ph="..." />
-            <marker date="1533377175737" expanded="true" signature="4196:4259" ph="..." />
+            <element signature="e#2610#3033#0" expanded="false" />
+            <element signature="e#7182#7737#0" expanded="false" />
+            <element signature="e#7789#7867#0" expanded="false" />
+            <element signature="e#7917#8222#0" expanded="false" />
+            <element signature="e#8282#9202#0" expanded="false" />
+            <element signature="e#9261#10648#0" expanded="false" />
+            <element signature="e#15267#18847#0" expanded="false" />
+            <element signature="e#18902#20949#0" expanded="false" />
+            <element signature="e#19664#20837#0" expanded="false" />
+            <element signature="e#21004#22686#0" expanded="false" />
+            <element signature="e#22726#23503#0" expanded="false" />
+            <element signature="e#23553#23916#0" expanded="false" />
+            <element signature="e#23973#26795#0" expanded="false" />
+            <element signature="e#26841#32018#0" expanded="false" />
+            <element signature="e#32064#32213#0" expanded="false" />
+            <element signature="e#32265#35926#0" expanded="false" />
+            <element signature="e#35956#36702#0" expanded="false" />
+            <marker date="1533788729209" expanded="true" signature="4363:4485" ph="..." />
+            <marker date="1533788729209" expanded="true" signature="4581:4654" ph="..." />
           </folding>
         </state>
       </provider>
@@ -988,9 +1004,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -999,9 +1013,15 @@
         <state relative-caret-position="1020">
           <caret line="60" column="83" lean-forward="false" selection-start-line="60" selection-start-column="83" selection-end-line="60" selection-end-column="83" />
           <folding>
-            <element signature="e#4205#6498#0" expanded="false" />
-            <element signature="e#13285#13668#0" expanded="false" />
-            <element signature="e#13737#16966#0" expanded="false" />
+            <element signature="e#51#734#0" expanded="false" />
+            <element signature="e#2734#3876#0" expanded="false" />
+            <element signature="e#3073#3282#0" expanded="false" />
+            <element signature="e#3340#3549#0" expanded="false" />
+            <element signature="e#4952#5556#0" expanded="false" />
+            <element signature="e#8162#8326#0" expanded="false" />
+            <element signature="e#8593#8976#0" expanded="false" />
+            <element signature="e#9045#12274#0" expanded="false" />
+            <element signature="e#12360#13238#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1011,7 +1031,7 @@
         <state relative-caret-position="425">
           <caret line="25" column="18" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
           <folding>
-            <element signature="e#7790#7970#0" expanded="false" />
+            <element signature="e#7897#8077#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1022,11 +1042,25 @@
           <caret line="169" column="33" lean-forward="false" selection-start-line="169" selection-start-column="33" selection-end-line="169" selection-end-column="33" />
           <folding>
             <element signature="e#124#807#0" expanded="false" />
-            <element signature="e#1786#1833#0" expanded="false" />
-            <element signature="e#8049#8969#0" expanded="false" />
-            <element signature="e#9028#10415#0" expanded="false" />
-            <marker date="1533377175737" expanded="true" signature="3982:4100" ph="..." />
-            <marker date="1533377175737" expanded="true" signature="4196:4259" ph="..." />
+            <element signature="e#2610#3033#0" expanded="false" />
+            <element signature="e#7182#7737#0" expanded="false" />
+            <element signature="e#7789#7867#0" expanded="false" />
+            <element signature="e#7917#8222#0" expanded="false" />
+            <element signature="e#8282#9202#0" expanded="false" />
+            <element signature="e#9261#10648#0" expanded="false" />
+            <element signature="e#15267#18847#0" expanded="false" />
+            <element signature="e#18902#20949#0" expanded="false" />
+            <element signature="e#19664#20837#0" expanded="false" />
+            <element signature="e#21004#22686#0" expanded="false" />
+            <element signature="e#22726#23503#0" expanded="false" />
+            <element signature="e#23553#23916#0" expanded="false" />
+            <element signature="e#23973#26795#0" expanded="false" />
+            <element signature="e#26841#32018#0" expanded="false" />
+            <element signature="e#32064#32213#0" expanded="false" />
+            <element signature="e#32265#35926#0" expanded="false" />
+            <element signature="e#35956#36702#0" expanded="false" />
+            <marker date="1533788729209" expanded="true" signature="4363:4485" ph="..." />
+            <marker date="1533788729209" expanded="true" signature="4581:4654" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1035,9 +1069,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2465">
           <caret line="145" column="40" lean-forward="false" selection-start-line="145" selection-start-column="40" selection-end-line="145" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,9 +1078,15 @@
         <state relative-caret-position="1581">
           <caret line="133" column="41" lean-forward="false" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="41" />
           <folding>
-            <element signature="e#4205#6498#0" expanded="false" />
-            <element signature="e#13285#13668#0" expanded="false" />
-            <element signature="e#13737#16966#0" expanded="false" />
+            <element signature="e#51#734#0" expanded="false" />
+            <element signature="e#2734#3876#0" expanded="false" />
+            <element signature="e#3073#3282#0" expanded="false" />
+            <element signature="e#3340#3549#0" expanded="false" />
+            <element signature="e#4952#5556#0" expanded="false" />
+            <element signature="e#8162#8326#0" expanded="false" />
+            <element signature="e#8593#8976#0" expanded="false" />
+            <element signature="e#9045#12274#0" expanded="false" />
+            <element signature="e#12360#13238#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1058,7 +1096,7 @@
         <state relative-caret-position="663">
           <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
           <folding>
-            <element signature="e#7790#7970#0" expanded="false" />
+            <element signature="e#7897#8077#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1117,76 +1155,136 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/promotion.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="52" lean-forward="false" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/popper.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="381">
           <caret line="3" column="19891" lean-forward="false" selection-start-line="3" selection-start-column="19891" selection-end-line="3" selection-end-column="19891" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="338" column="57" lean-forward="false" selection-start-line="322" selection-start-column="7" selection-end-line="338" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../27 thang4/sell.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="876" column="9" lean-forward="false" selection-start-line="876" selection-start-column="9" selection-end-line="876" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/7X837KMKZ0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="79" lean-forward="false" selection-start-line="0" selection-start-column="79" selection-end-line="0" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chi duong">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8925">
+          <caret line="525" column="4" lean-forward="false" selection-start-line="525" selection-start-column="4" selection-end-line="525" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chi duong android">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="102" column="22" lean-forward="false" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2584">
+          <caret line="152" column="17" lean-forward="false" selection-start-line="152" selection-start-column="17" selection-end-line="152" selection-end-column="17" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#7897#8077#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/promotion.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="65" lean-forward="false" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/news.module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="14" />
+        <state relative-caret-position="969">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/home.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="106" column="40" lean-forward="false" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="40" />
+          <folding>
+            <element signature="e#124#807#0" expanded="false" />
+            <element signature="e#2610#3033#0" expanded="false" />
+            <element signature="e#7182#7737#0" expanded="false" />
+            <element signature="e#7789#7867#0" expanded="false" />
+            <element signature="e#7917#8222#0" expanded="false" />
+            <element signature="e#8282#9202#0" expanded="false" />
+            <element signature="e#9261#10648#0" expanded="false" />
+            <element signature="e#15267#18847#0" expanded="false" />
+            <element signature="e#18902#20949#0" expanded="false" />
+            <element signature="e#19664#20837#0" expanded="false" />
+            <element signature="e#21004#22686#0" expanded="false" />
+            <element signature="e#22726#23503#0" expanded="false" />
+            <element signature="e#23553#23916#0" expanded="false" />
+            <element signature="e#23973#26795#0" expanded="false" />
+            <element signature="e#26841#32018#0" expanded="false" />
+            <element signature="e#32064#32213#0" expanded="false" />
+            <element signature="e#32265#35926#0" expanded="false" />
+            <element signature="e#35956#36702#0" expanded="false" />
+            <marker date="1533788729209" expanded="true" signature="4363:4485" ph="..." />
+            <marker date="1533788729209" expanded="true" signature="4581:4654" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/map.module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="75" column="38" lean-forward="true" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
+        <state relative-caret-position="449">
+          <caret line="111" column="26" lean-forward="true" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
           <folding>
-            <element signature="e#4205#6498#0" expanded="false" />
-            <element signature="e#13285#13668#0" expanded="false" />
-            <element signature="e#13737#16966#0" expanded="false" />
+            <element signature="e#51#734#0" expanded="false" />
+            <element signature="e#2734#3876#0" expanded="false" />
+            <element signature="e#3073#3282#0" expanded="false" />
+            <element signature="e#3340#3549#0" expanded="false" />
+            <element signature="e#4952#5556#0" expanded="false" />
+            <element signature="e#8162#8326#0" expanded="false" />
+            <element signature="e#8593#8976#0" expanded="false" />
+            <element signature="e#9045#12274#0" expanded="false" />
+            <element signature="e#12360#13238#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="171" column="22" lean-forward="true" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#section#1;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/home.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="34" column="42" lean-forward="false" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
-          <folding>
-            <element signature="e#124#807#0" expanded="false" />
-            <element signature="e#1786#1833#0" expanded="false" />
-            <element signature="e#8049#8969#0" expanded="false" />
-            <element signature="e#9028#10415#0" expanded="false" />
-            <marker date="1533377175737" expanded="true" signature="3982:4100" ph="..." />
-            <marker date="1533377175737" expanded="true" signature="4196:4259" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="428" column="23" lean-forward="true" selection-start-line="428" selection-start-column="23" selection-end-line="428" selection-end-column="23" />
-          <folding>
-            <element signature="e#7790#7970#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="203">
+          <caret line="166" column="36" lean-forward="false" selection-start-line="166" selection-start-column="36" selection-end-line="166" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>

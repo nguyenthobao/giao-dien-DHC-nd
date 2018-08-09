@@ -108,9 +108,9 @@ $(document).ready(function () {
         };
 
         var browserGeolocationSuccess = function (position) {
-            // alert("Browser geolocation success!" +
-            //     "lat = " + position.coords.latitude + "" +
-            //     "lng = " + position.coords.longitude);
+            alert("Browser geolocation success!" +
+                "lat = " + position.coords.latitude + "" +
+                "lng = " + position.coords.longitude);
         };
 
         var browserGeolocationFail = function (error) {
