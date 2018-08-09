@@ -42,12 +42,12 @@ function getListNews() {
             var newsData = result.data.results;
             $('#list-news').html('');
             $.each(newsData, function (k, v) {
-                var news_image = JSON.parse(v.news_image);
-                if(news_image[0]!=undefined)
-                    news_image[0]=(news_image[0]).slice(0,4)+'s'+ (news_image[0]).slice(4);
+                var news_image =v.news_image;
+                if(news_image!=undefined && news_image!='')
+                    news_image=(news_image).slice(0,4)+'s'+ (news_image).slice(4);
                 var html = '<div class="col-12 col-lg-6 col-md-6 news-item" data-id="'+v.news_id+'">';
                 html += '<div class="col-12 col-lg-5 col-md-5 col-sm-6 img-news" data-id="'+v.news_id+'">';
-                html += '<img src="' + news_image[0] + '" alt="'+ v.news_name +'">';
+                html += '<img src="' + news_image + '" alt="'+ v.news_name +'">';
                 html += '</div>';
                 html += '<div class="col-12 col-lg-7 col-md-7 col-sm-5 news-content">';
                 html += '<h6 class="news-title">'+ v.news_name +'</h6>';
