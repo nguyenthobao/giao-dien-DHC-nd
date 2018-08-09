@@ -51,7 +51,6 @@ $(document).ready(function () {
         var tryAPIGeolocation = function () {
             alert(1.5);
             jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function (success) {
-                alert(12);
                 apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
             }).fail(function (err) {
                     alert("API Geolocation error! " + err);
@@ -131,12 +130,14 @@ $(document).ready(function () {
         };
 
         var tryGeolocation = function () {
+            alert(1.6);
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     browserGeolocationSuccess,
                     browserGeolocationFail,
                     {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
             }
+            alert(1.7);
         };
 
         tryGeolocation();
