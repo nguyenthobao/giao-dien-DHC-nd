@@ -84,6 +84,7 @@ $(document).ready(function () {
                 }else{
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
+                    $('#marker').show();
                     $('.label_instant').hide();
                     $('.img_instant').hide();
                     scroll(x,y,x,y);
