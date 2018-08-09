@@ -384,13 +384,9 @@ function checkSpecialPath1(beginPoint, endPoint) {
         isFirst1 = false;
         var endTmpPoint = (tmpCurrentEndPoint[1] < 4150) ? list_path8[0] : list_path8[list_path8.length - 1];
         var list_findPath = findPath(tmpCurrentBeginPoint, endTmpPoint, list_path8);
-        $.each(list_findPath, function (k, v) {
-            arrPoint.push(v);
-        });
+        arrPoint.concat(list_findPath);
         var list_findPath = findPath(endTmpPoint, tmpCurrentEndPoint);
-        $.each(list_findPath, function (k, v) {
-            arrPoint.push(v);
-        });
+        arrPoint.concat(list_findPath);
         if (currentEndPoint[0] != endPoint[0] || currentEndPoint[1] != endPoint[1]) {
             var rtArrPoint = [];
             for (var i = arrPoint.length - 1; i > -1; i--) {
@@ -461,12 +457,8 @@ function checkSpecialPath2(beginPoint, endPoint) {
         var tmpCurrentEndPoint = (distance2 < 15000) ? beginPoint : endPoint;
         var arrPoint = [];
         isFirst2 = false;
-        $.each(findPath(tmpCurrentBeginPoint, list_path9[0], list_path9), function (k, v) {
-            arrPoint.push(v);
-        });
-        $.each(findPath(list_path9[0], tmpCurrentEndPoint), function (k, v) {
-            arrPoint.push(v);
-        });
+        arrPoint.concat(findPath(tmpCurrentBeginPoint, list_path9[0], list_path9));
+        arrPoint.concat(findPath(list_path9[0], tmpCurrentEndPoint));
         if (JSON.stringify(currentBeginPoint) == JSON.stringify(tmpCurrentBeginPoint)) {
             var rtArrPoint = [];
             for (var i = arrPoint.length - 1; i > -1; i--) {
@@ -498,23 +490,13 @@ function checkSpecialPath3(beginPoint, endPoint) {
         var tmpEndPoint = (JSON.stringify(beginPoint) != JSON.stringify(tmpBeginPoint)) ? beginPoint : endPoint;
         var arrPoint = [];
         isFirst3 = false;
-        $.each(findPath(tmpBeginPoint, list_path11[0]), function (k, v) {
-            arrPoint.push(v);
-        });
-        $.each(list_path11, function (k, v) {
-            arrPoint.push(v);
-        });
-        $.each(list_path13, function (k, v) {
-            arrPoint.push(v);
-        });
-        $.each(findPath(list_path13[list_path13.length - 1], tmpEndPoint), function (k, v) {
-            arrPoint.push(v);
-        });
+        arrPoint.concat(findPath(tmpBeginPoint, list_path11[0]));
+        arrPoint.concat(list_path11);
+        arrPoint.concat(list_path13);
+        arrPoint.concat(findPath(list_path13[list_path13.length - 1], tmpEndPoint));
         if (JSON.stringify(tmpBeginPoint) == JSON.stringify(beginPoint)) {
             var rtArrPoint = [];
-            for (var i = arrPoint.length - 1; i > -1; i--) {
-                rtArrPoint.push(arrPoint[i]);
-            }
+                rtArrPoint.concat(arrPoint);
             path3 = [];
             path3.push(['POINTTYPE', 1]);
             path3.push(['LIST_POINT', rtArrPoint]);
@@ -634,13 +616,11 @@ function findPath(beginPoint, endPoint, listPoint) {
 function findPath(beginPoint, endPoint) {
     var arrPoint = [];
     if ((endPoint[0] == 4531 && endPoint[1] == 3941) && beginPoint[0] > 4713) {
-        console.log(1);
         return findPath(beginPoint, [4723, 3924]);
     }
     var tmpPoint1 = checkSpecialPoint(beginPoint);
     var tmpPoint2 = checkSpecialPoint(endPoint);
     if (tmpPoint1[0] != beginPoint[0] || tmpPoint1[1] != beginPoint[1] || tmpPoint2[0] != endPoint[0] || tmpPoint2[1] != endPoint[1]) {
-        console.log(2);
         return findPath(tmpPoint1, tmpPoint2);
     }
     var dicData1 = checkSpecialPath1(beginPoint, endPoint);
@@ -707,9 +687,7 @@ function findPath(beginPoint, endPoint) {
     arrRePoint.push(list_path2[0]);
 
     if (endIndex == beginIndex) {
-        $.each(findPath(currentBeginPoint, currentEndPoint, arrPath[endIndex]), function (k, v) {
-            arrPoint.push(v);
-        });
+        arrPoint.concat(findPath(currentBeginPoint, currentEndPoint, arrPath[endIndex]));
         return arrPoint;
     }
     var point1 = beginPoint;
@@ -752,6 +730,7 @@ function findPath(beginPoint, endPoint) {
         }
         return arrPoint;
     }
+    console.log(beginIndex,endIndex);
     for (var j = beginIndex + 1; j > endIndex; j--) {
         arrPoint.concat(findPath((j == beginIndex + 1) ? currentBeginPoint : arrRePoint[j], (j == endIndex + 1) ? currentEndPoint : arrRePoint[j - 1], arrPath[j - 1]));
 
