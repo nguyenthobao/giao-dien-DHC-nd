@@ -357,7 +357,7 @@ var list_path13 = [[4422, 3368], [4423, 3331], [4424, 3302], [4433, 3265], [4465
 var isFirst = true, isFirst1 = true, isFirst2 = true, isFirst3 = true;
 
 
-function distanc(beginPoint, endPoint) {
+function distance(beginPoint, endPoint) {
     return (endPoint[0] - beginPoint[0]) * (endPoint[0] - beginPoint[0]) + (endPoint[1] - beginPoint[1]) * (endPoint[1] - beginPoint[1]);
 }
 
@@ -550,9 +550,8 @@ function checkSpecialPoint(point) {
 
 
     for (var i = 0; i < arrCenterSpecialPoint.length; i++) {
-        alert(JSON.stringify(arrCenterSpecialPoint[i]));
-        var distance = distanc(point,arrCenterSpecialPoint[i]);
-        if (distance < 16000) return arrGateSpecialPoint[i];
+        var distanc = distance(point,arrCenterSpecialPoint[i]);
+        if (distanc < 16000) return arrGateSpecialPoint[i];
     }
     return point;
 }
