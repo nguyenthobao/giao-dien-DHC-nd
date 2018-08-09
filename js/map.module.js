@@ -828,6 +828,7 @@ $(document).ready(function () {
 
     function generate_way(){
         var html = '', top, left;
+        console.log(listMainPoint1);
         var all_way = listMainPoint1.concat(listMainPoint2).concat(list_path1).concat(list_path2).concat(list_path3).concat(list_path4).concat(list_path5)
             .concat(list_path6).concat(list_path7).concat(list_path8).concat(list_path9).concat(list_path10).concat(list_path11)
             .concat(list_path12).concat(list_path13);
@@ -871,12 +872,11 @@ $(document).ready(function () {
         scaleY = deltaY / (y2 - y1);
     }
 
-    function getXPixcelValue(lat, lng) {
+    function getXPixcelValue(lat, lng){
         var l1 = topLeftRealX;//-79815182.874506816,-80785543.091131881
         var xValue = getX1Value(lat, lng);
         return (xValue - l1) / scaleX;
     }
-
     function getYPixcelValue(lat, lng) {
         var l1 = topLeftRealY;
         var yValue = getY1Value(lat, lng);
