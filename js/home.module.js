@@ -54,7 +54,7 @@ $(document).ready(function () {
                 html = '<div class="item-point" data-id="' + v.point_id + '">';
                 var pointImage = JSON.parse(v.point_images);
                 if(pointImage[0]!=undefined)
-                pointImage[0]=(pointImage[0]).splice(0,4)+'s'+ (pointImage[0]).splice(4);
+                pointImage[0]=(pointImage[0]).toString().splice(0,4)+'s'+ (pointImage[0]).toString().splice(4);
                 html += '<img src="' + pointImage[0] + '" class="img-thumbnail" alt="' + v.point_name + '">';
                 html += '<h5 class="point-title">' + v.point_name + '</h5>';
                 html += '</div>';
@@ -87,7 +87,7 @@ $(document).ready(function () {
             $.each(pointData, function (k, v) {
                 var pointImage = JSON.parse(v.point_images);
                 if(pointImage[0]!=undefined)
-                pointImage[0]=(pointImage[0]).splice(0,4)+'s'+ (pointImage[0]).splice(4);
+                pointImage[0]=(pointImage[0]).toString().splice(0,4)+'s'+ (pointImage[0]).toString().splice(4);
                 var url = '';
                 x = parseFloat(v.lat / parseFloat(9798 / 2048));
                 y = parseFloat(v.long / parseFloat(7046 / heightmap));
