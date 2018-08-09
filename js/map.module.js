@@ -130,12 +130,14 @@ $(document).ready(function () {
         };
 
         var tryGeolocation = function () {
+            alert(10);
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     browserGeolocationSuccess,
                     browserGeolocationFail,
                     {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
             }
+            alert(11);
         };
 
         tryGeolocation();
