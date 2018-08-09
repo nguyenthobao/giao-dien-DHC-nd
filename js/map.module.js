@@ -47,21 +47,19 @@ $(document).ready(function () {
       into_map();
     });
     function into_map(){
-        alert(1);
-        var tryAPIGeolocation = function () {
-            jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function (success) {
-                apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
-            }).fail(function (err) {
-                    alert("API Geolocation error! " + err);
-                    scroll(750,690,750,500);
-                });
-        };
-        var apiGeolocationSuccess = function (position) {
-
-        };
+        // var tryAPIGeolocation = function () {
+        //     jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function (success) {
+        //         apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
+        //     }).fail(function (err) {
+        //             alert("API Geolocation error! " + err);
+        //             scroll(750,690,750,500);
+        //         });
+        // };
+        // var apiGeolocationSuccess = function (position) {
+        //
+        // };
 
         var browserGeolocationSuccess = function (position) {
-            alert(2);
             x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude));
             y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude));
             x = x / (9798 / $('#mapdhc')[0].width);
@@ -91,15 +89,12 @@ $(document).ready(function () {
                 if (width > 1000) $('#download').hide();
             }
             else {
-                alert(4);
                 $('html').attr('style', 'width:10000px;height:3000px');
                 $('html').addClass('height-screen');
                 $('#content2').addClass('color_content2');
                 if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
-                    alert(5);
                     scroll(750,690,750,500);
-                }else{
-                    alert(6);
+                }else{;
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();

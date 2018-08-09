@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a371e09c-094e-4ee6-a00c-907fd1dc9577" name="Default" comment="update dhc user">
+    <list default="true" id="a371e09c-094e-4ee6-a00c-907fd1dc9577" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change beforePath="$PROJECT_DIR$/js/map.module.js" afterPath="$PROJECT_DIR$/js/map.module.js" />
@@ -40,18 +40,18 @@
       <file leaf-file-name="map.module.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/map.module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="111" column="26" lean-forward="true" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
+            <state relative-caret-position="289">
+              <caret line="62" column="45" lean-forward="false" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
               <folding>
                 <element signature="e#51#734#0" expanded="false" />
-                <element signature="e#2734#3876#0" expanded="false" />
-                <element signature="e#3073#3282#0" expanded="false" />
-                <element signature="e#3340#3549#0" expanded="false" />
-                <element signature="e#4952#5556#0" expanded="false" />
-                <element signature="e#8162#8326#0" expanded="false" />
-                <element signature="e#8593#8976#0" expanded="false" />
-                <element signature="e#9045#12274#0" expanded="false" />
-                <element signature="e#12360#13238#0" expanded="false" />
+                <element signature="e#2785#3927#0" expanded="false" />
+                <element signature="e#3124#3333#0" expanded="false" />
+                <element signature="e#3391#3600#0" expanded="false" />
+                <element signature="e#4679#5283#0" expanded="false" />
+                <element signature="e#7841#8005#0" expanded="false" />
+                <element signature="e#8272#8655#0" expanded="false" />
+                <element signature="e#8724#11953#0" expanded="false" />
+                <element signature="e#12039#12917#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -358,21 +358,7 @@
       <workItem from="1533521633572" duration="10784000" />
       <workItem from="1533608199709" duration="22577000" />
       <workItem from="1533694915286" duration="26407000" />
-      <workItem from="1533781109247" duration="8100000" />
-    </task>
-    <task id="LOCAL-00884" summary="update dhc user">
-      <created>1533700572760</created>
-      <option name="number" value="00884" />
-      <option name="presentableId" value="LOCAL-00884" />
-      <option name="project" value="LOCAL" />
-      <updated>1533700572760</updated>
-    </task>
-    <task id="LOCAL-00885" summary="update dhc user">
-      <created>1533718035782</created>
-      <option name="number" value="00885" />
-      <option name="presentableId" value="LOCAL-00885" />
-      <option name="project" value="LOCAL" />
-      <updated>1533718035782</updated>
+      <workItem from="1533781109247" duration="8910000" />
     </task>
     <task id="LOCAL-00886" summary="update dhc user">
       <created>1533719135773</created>
@@ -703,11 +689,25 @@
       <option name="project" value="LOCAL" />
       <updated>1533789604870</updated>
     </task>
-    <option name="localTasksCounter" value="933" />
+    <task id="LOCAL-00933" summary="update dhc user">
+      <created>1533790247138</created>
+      <option name="number" value="00933" />
+      <option name="presentableId" value="LOCAL-00933" />
+      <option name="project" value="LOCAL" />
+      <updated>1533790247138</updated>
+    </task>
+    <task id="LOCAL-00934" summary="update dhc user">
+      <created>1533790418501</created>
+      <option name="number" value="00934" />
+      <option name="presentableId" value="LOCAL-00934" />
+      <option name="project" value="LOCAL" />
+      <updated>1533790418501</updated>
+    </task>
+    <option name="localTasksCounter" value="935" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="465252000" />
+    <option name="totallyTimeSpent" value="466062000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -844,14 +844,14 @@
           <caret line="60" column="83" lean-forward="false" selection-start-line="60" selection-start-column="83" selection-end-line="60" selection-end-column="83" />
           <folding>
             <element signature="e#51#734#0" expanded="false" />
-            <element signature="e#2734#3876#0" expanded="false" />
-            <element signature="e#3073#3282#0" expanded="false" />
-            <element signature="e#3340#3549#0" expanded="false" />
-            <element signature="e#4952#5556#0" expanded="false" />
-            <element signature="e#8162#8326#0" expanded="false" />
-            <element signature="e#8593#8976#0" expanded="false" />
-            <element signature="e#9045#12274#0" expanded="false" />
-            <element signature="e#12360#13238#0" expanded="false" />
+            <element signature="e#2785#3927#0" expanded="false" />
+            <element signature="e#3124#3333#0" expanded="false" />
+            <element signature="e#3391#3600#0" expanded="false" />
+            <element signature="e#4679#5283#0" expanded="false" />
+            <element signature="e#7841#8005#0" expanded="false" />
+            <element signature="e#8272#8655#0" expanded="false" />
+            <element signature="e#8724#11953#0" expanded="false" />
+            <element signature="e#12039#12917#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -921,14 +921,14 @@
           <caret line="60" column="83" lean-forward="false" selection-start-line="60" selection-start-column="83" selection-end-line="60" selection-end-column="83" />
           <folding>
             <element signature="e#51#734#0" expanded="false" />
-            <element signature="e#2734#3876#0" expanded="false" />
-            <element signature="e#3073#3282#0" expanded="false" />
-            <element signature="e#3340#3549#0" expanded="false" />
-            <element signature="e#4952#5556#0" expanded="false" />
-            <element signature="e#8162#8326#0" expanded="false" />
-            <element signature="e#8593#8976#0" expanded="false" />
-            <element signature="e#9045#12274#0" expanded="false" />
-            <element signature="e#12360#13238#0" expanded="false" />
+            <element signature="e#2785#3927#0" expanded="false" />
+            <element signature="e#3124#3333#0" expanded="false" />
+            <element signature="e#3391#3600#0" expanded="false" />
+            <element signature="e#4679#5283#0" expanded="false" />
+            <element signature="e#7841#8005#0" expanded="false" />
+            <element signature="e#8272#8655#0" expanded="false" />
+            <element signature="e#8724#11953#0" expanded="false" />
+            <element signature="e#12039#12917#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1014,14 +1014,14 @@
           <caret line="60" column="83" lean-forward="false" selection-start-line="60" selection-start-column="83" selection-end-line="60" selection-end-column="83" />
           <folding>
             <element signature="e#51#734#0" expanded="false" />
-            <element signature="e#2734#3876#0" expanded="false" />
-            <element signature="e#3073#3282#0" expanded="false" />
-            <element signature="e#3340#3549#0" expanded="false" />
-            <element signature="e#4952#5556#0" expanded="false" />
-            <element signature="e#8162#8326#0" expanded="false" />
-            <element signature="e#8593#8976#0" expanded="false" />
-            <element signature="e#9045#12274#0" expanded="false" />
-            <element signature="e#12360#13238#0" expanded="false" />
+            <element signature="e#2785#3927#0" expanded="false" />
+            <element signature="e#3124#3333#0" expanded="false" />
+            <element signature="e#3391#3600#0" expanded="false" />
+            <element signature="e#4679#5283#0" expanded="false" />
+            <element signature="e#7841#8005#0" expanded="false" />
+            <element signature="e#8272#8655#0" expanded="false" />
+            <element signature="e#8724#11953#0" expanded="false" />
+            <element signature="e#12039#12917#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1079,14 +1079,14 @@
           <caret line="133" column="41" lean-forward="false" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="41" />
           <folding>
             <element signature="e#51#734#0" expanded="false" />
-            <element signature="e#2734#3876#0" expanded="false" />
-            <element signature="e#3073#3282#0" expanded="false" />
-            <element signature="e#3340#3549#0" expanded="false" />
-            <element signature="e#4952#5556#0" expanded="false" />
-            <element signature="e#8162#8326#0" expanded="false" />
-            <element signature="e#8593#8976#0" expanded="false" />
-            <element signature="e#9045#12274#0" expanded="false" />
-            <element signature="e#12360#13238#0" expanded="false" />
+            <element signature="e#2785#3927#0" expanded="false" />
+            <element signature="e#3124#3333#0" expanded="false" />
+            <element signature="e#3391#3600#0" expanded="false" />
+            <element signature="e#4679#5283#0" expanded="false" />
+            <element signature="e#7841#8005#0" expanded="false" />
+            <element signature="e#8272#8655#0" expanded="false" />
+            <element signature="e#8724#11953#0" expanded="false" />
+            <element signature="e#12039#12917#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1264,18 +1264,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/map.module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="111" column="26" lean-forward="true" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
+        <state relative-caret-position="289">
+          <caret line="62" column="45" lean-forward="false" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
           <folding>
             <element signature="e#51#734#0" expanded="false" />
-            <element signature="e#2734#3876#0" expanded="false" />
-            <element signature="e#3073#3282#0" expanded="false" />
-            <element signature="e#3340#3549#0" expanded="false" />
-            <element signature="e#4952#5556#0" expanded="false" />
-            <element signature="e#8162#8326#0" expanded="false" />
-            <element signature="e#8593#8976#0" expanded="false" />
-            <element signature="e#9045#12274#0" expanded="false" />
-            <element signature="e#12360#13238#0" expanded="false" />
+            <element signature="e#2785#3927#0" expanded="false" />
+            <element signature="e#3124#3333#0" expanded="false" />
+            <element signature="e#3391#3600#0" expanded="false" />
+            <element signature="e#4679#5283#0" expanded="false" />
+            <element signature="e#7841#8005#0" expanded="false" />
+            <element signature="e#8272#8655#0" expanded="false" />
+            <element signature="e#8724#11953#0" expanded="false" />
+            <element signature="e#12039#12917#0" expanded="false" />
           </folding>
         </state>
       </provider>
