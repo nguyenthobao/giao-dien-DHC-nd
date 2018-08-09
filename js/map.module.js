@@ -292,8 +292,8 @@ $(document).ready(function () {
         if (lat > $('#mapdhc')[0].width || lat < 0 || long > heightmap || long < 0)
             beginPoint = [$(that).data('lat'), $(that).data('long')];
         else beginPoint = [lat, long];
-        alert(JSON.stringify(beginPoint)+',[' +  $(($(this).parent()).data('lat') + ',' +  $(($(this).parent()).data('long') + ']');
-        findPath(beginPoint, [ $(($(this).parent()).data('lat'), $(($(this).parent()).data('long')]);
+        alert(JSON.stringify(beginPoint)+',[' +  $($(this).parent()).data('lat') + ',' +  $($(this).parent()).data('long') + ']');
+        findPath(beginPoint, [ $($(this).parent()).data('lat'), $($(this).parent()).data('long')]);
         that = this;
         // var that = this;
         // list_drop_index = {};
