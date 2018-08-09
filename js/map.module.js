@@ -856,19 +856,19 @@ function checkSmallPath(beginPoint, endPoint) {
     return smallpath;
 }
 
-function generate_way() {
-    var html = '', top, left;
-    var all_way = list_node1.concat(list_node2).concat(list_path1).concat(list_path2).concat(list_path3).concat(list_path4).concat(list_path5)
-        .concat(list_path6).concat(list_path7).concat(list_path8).concat(list_path9).concat(list_path10).concat(list_path11)
-        .concat(list_path12).concat(list_path13);
-    console.log(all_way);
-    $.each(all_way, function (k, v) {
-        left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
-        top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
-        html += '<div class="node_way" style="margin-top:' + top + 'px; margin-left:' + left + 'px"></div>';
-    });
-    $('#content2').append(html);
-}
+// function generate_way() {
+//     var html = '', top, left;
+//     var all_way = list_node1.concat(list_node2).concat(list_path1).concat(list_path2).concat(list_path3).concat(list_path4).concat(list_path5)
+//         .concat(list_path6).concat(list_path7).concat(list_path8).concat(list_path9).concat(list_path10).concat(list_path11)
+//         .concat(list_path12).concat(list_path13);
+//     console.log(all_way);
+//     $.each(all_way, function (k, v) {
+//         left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
+//         top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
+//         html += '<div class="node_way" style="margin-top:' + top + 'px; margin-left:' + left + 'px"></div>';
+//     });
+//     $('#content2').append(html);
+// }
 
 function getOriginal1(lat1, lng1, lat2, lng2, x1, y1, x2, y2) {
     var realX1 = getX1Value(lat1, lng1);
