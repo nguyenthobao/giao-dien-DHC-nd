@@ -39,6 +39,7 @@ $(document).ready(function () {
     $('#download').show();
     $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
+    alert(0);
     into_map();
     $('#tab2').click(function () {
         into_map();
@@ -47,12 +48,15 @@ $(document).ready(function () {
       into_map();
     });
     function into_map(){
+        alert(1);
         var apiGeolocationSuccess = function (position) {
+            alert(2);
             x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude));
             y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude));
             x = x / (9798 / $('#mapdhc')[0].width);
             y = y / (7046 / heightmap);
             if (isMobile.any() == null) {
+                alert(3);
                 if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
                     $('#marker').css("margin-top", 850 + "px");
                     $('#marker').css("margin-left", 920 + "px");
@@ -76,12 +80,15 @@ $(document).ready(function () {
                 if (width > 1000) $('#download').hide();
             }
             else {
+                alert(4);
                 $('html').attr('style', 'width:10000px;height:3000px');
                 $('html').addClass('height-screen');
                 $('#content2').addClass('color_content2');
                 if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
+                    alert(5);
                     scroll(750,690,750,500);
                 }else{
+                    alert(6);
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
