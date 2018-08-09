@@ -123,7 +123,7 @@ $(document).ready(function () {
                 }
             });
 
-            generate_way();
+            // generate_way();
         },
         error: function (e) {
             alert('Có lỗi');

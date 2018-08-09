@@ -543,10 +543,9 @@ function checkSpecialPoint(point) {
 
 //        CGPoint.init(x: 3979, y: 3838), CGPoint.init(x: 5811, y: 4663)
 
-    alert(JSON.stringify(arrCenterSpecialPoint));
-    alert(JSON.stringify(point));
 
     for (var i = 0; i < arrCenterSpecialPoint.length; i++) {
+        alert(JSON.stringify(arrCenterSpecialPoint[i]));
         var distance = distance(point, arrCenterSpecialPoint[i]);
         if (distance < 16000) return arrGateSpecialPoint[i];
     }
@@ -856,7 +855,7 @@ function checkSmallPath(beginPoint, endPoint) {
     return smallpath;
 }
 
-// function generate_way() {
+// function generate_way(){
 //     var html = '', top, left;
 //     var all_way = list_node1.concat(list_node2).concat(list_path1).concat(list_path2).concat(list_path3).concat(list_path4).concat(list_path5)
 //         .concat(list_path6).concat(list_path7).concat(list_path8).concat(list_path9).concat(list_path10).concat(list_path11)
