@@ -292,8 +292,8 @@ $(document).ready(function () {
         if (lat > $('#mapdhc')[0].width || lat < 0 || long > heightmap || long < 0)
             beginPoint = [$(that).data('lat'), $(that).data('long')];
         else beginPoint = [lat, long];
-        alert(JSON.stringify(beginPoint)+',[' + $(this).data('lat') + ',' + $(this).data('long') + ']');
-        findPath(beginPoint, [$(this).data('lat'), $(this).data('long')]);
+        alert(JSON.stringify(beginPoint)+',[' +  $(($(this).parent()).data('lat') + ',' +  $(($(this).parent()).data('long') + ']');
+        findPath(beginPoint, [ $(($(this).parent()).data('lat'), $(($(this).parent()).data('long')]);
         that = this;
         // var that = this;
         // list_drop_index = {};
@@ -543,6 +543,8 @@ function checkSpecialPoint(point) {
 
 //        CGPoint.init(x: 3979, y: 3838), CGPoint.init(x: 5811, y: 4663)
 
+    alert(JSON.stringify(arrCenterSpecialPoint));
+    alert(JSON.stringify(point));
 
     for (var i = 0; i < arrCenterSpecialPoint.length; i++) {
         var distance = distance(point, arrCenterSpecialPoint[i]);
