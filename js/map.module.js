@@ -632,14 +632,15 @@ function findPath(beginPoint, endPoint, listPoint) {
 }
 
 function findPath(beginPoint, endPoint) {
-    console.log('1 lần');
     var arrPoint = [];
     if ((endPoint[0] == 4531 && endPoint[1] == 3941) && beginPoint[0] > 4713) {
+        console.log(1);
         return findPath(beginPoint, [4723, 3924]);
     }
     var tmpPoint1 = checkSpecialPoint(beginPoint);
     var tmpPoint2 = checkSpecialPoint(endPoint);
     if (tmpPoint1[0] != beginPoint[0] || tmpPoint1[1] != beginPoint[1] || tmpPoint2[0] != endPoint[0] || tmpPoint2[1] != endPoint[1]) {
+        console.log(2);
         return findPath(tmpPoint1, tmpPoint2);
     }
     var dicData1 = checkSpecialPath1(beginPoint, endPoint);
