@@ -53,7 +53,6 @@ $(document).ready(function () {
                 }
                 html = '<div class="item-point" data-id="' + v.point_id + '">';
                 var pointImage = JSON.parse(v.point_images);
-                console.log(pointImage[0], typeof pointImage[0]);
                 if(pointImage[0]!=undefined)
                 pointImage[0]=(pointImage[0]).slice(0,4)+'s'+ (pointImage[0]).slice(4);
                 html += '<img src="' + pointImage[0] + '" class="img-thumbnail" alt="' + v.point_name + '">';
@@ -142,8 +141,9 @@ $(document).ready(function () {
             var promotionData = result.data.results;
             $('#list-promotion-home').html('');
             $.each(promotionData, function (k,v) {
+
+                console.log(v.promotion_image);
                 var promotion_image = JSON.parse(v.promotion_image);
-                console.log(v.promotion_image,promotion_image,promotion_image[0]);
                 if(promotion_image[0]!=undefined)
                     promotion_image[0]=(promotion_image[0]).slice(0,4)+'s'+ (promotion_image[0]).slice(4);
                 var html = '<div class="col-12 col-md-6 promotion-item" data-id="' + v.promotion_id + '">';
