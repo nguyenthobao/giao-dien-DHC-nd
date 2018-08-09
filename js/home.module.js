@@ -142,8 +142,11 @@ $(document).ready(function () {
             var promotionData = result.data.results;
             $('#list-promotion-home').html('');
             $.each(promotionData, function (k, v) {
+                var pointImage = JSON.parse(v.point_images);
+                if(pointImage[0]!=undefined)
+                    pointImage[0]=(pointImage[0]).slice(0,4)+'s'+ (pointImage[0]).slice(4);
                 var html = '<div class="col-12 col-md-6 promotion-item" data-id="' + v.promotion_id + '">';
-                html += '<img src="' + v.promotion_image + '" title="' + v.promotion_name + '" alt="' + v.promotion_name + '">';
+                html += '<img src="' + pointImage[0] + '" title="' + v.promotion_name + '" alt="' + v.promotion_name + '">';
                 html += '</div>';
 
                 $('#list-promotion-home').append(html);
