@@ -10,8 +10,6 @@ html{
 }
 .node_way{
     position: absolute;
-    width:3px;
-    height: 2px;
     z-index: 9;
     background-color:#7B0D09;
 }

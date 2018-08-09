@@ -41,6 +41,7 @@ $(document).ready(function () {
     $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
     into_map();
+    generate_way();
     $('#tab2').click(function () {
         into_map();
     });
@@ -383,10 +384,8 @@ function checkSpecialPath1(beginPoint, endPoint) {
         var arrPoint = [];
         isFirst1 = false;
         var endTmpPoint = (tmpCurrentEndPoint[1] < 4150) ? list_path8[0] : list_path8[list_path8.length - 1];
-        var list_findPath = findPath(tmpCurrentBeginPoint, endTmpPoint, list_path8);
-        arrPoint.concat(list_findPath);
-        var list_findPath = findPath(endTmpPoint, tmpCurrentEndPoint);
-        arrPoint.concat(list_findPath);
+        arrPoint.concat(findPath(tmpCurrentBeginPoint, endTmpPoint, list_path8));
+        arrPoint.concat(findPath(endTmpPoint, tmpCurrentEndPoint));
         if (currentEndPoint[0] != endPoint[0] || currentEndPoint[1] != endPoint[1]) {
             var rtArrPoint = [];
             for (var i = arrPoint.length - 1; i > -1; i--) {
@@ -403,8 +402,7 @@ function checkSpecialPath1(beginPoint, endPoint) {
         path1.push(['LIST_POINT', arrPoint]);
         return path1;
     }
-    if ((distance2 < circle && beginPoint[0] < 4906) ||
-        (distance1 < circle && endPoint[0] < 4906)) {
+    if ((distance2 < circle && beginPoint[0] < 4906) ||(distance1 < circle && endPoint[0] < 4906)) {
         var tmpCurrentBeginPoint = (distance1 < circle) ? currentBeginPoint : currentEndPoint;
         var tmpCurrentEndPoint = (distance1 < circle) ? endPoint : beginPoint;
         var arrPoint = [];
@@ -730,7 +728,6 @@ function findPath(beginPoint, endPoint) {
         }
         return arrPoint;
     }
-    console.log(beginIndex,endIndex);
     for (var j = beginIndex + 1; j > endIndex; j--) {
         arrPoint.concat(findPath((j == beginIndex + 1) ? currentBeginPoint : arrRePoint[j], (j == endIndex + 1) ? currentEndPoint : arrRePoint[j - 1], arrPath[j - 1]));
 
@@ -830,19 +827,37 @@ function checkSmallPath(beginPoint, endPoint) {
     return smallpath;
 }
 
-// function generate_way(){
-//     var html = '', top, left;
-//     var all_way = list_node1.concat(list_node2).concat(list_path1).concat(list_path2).concat(list_path3).concat(list_path4).concat(list_path5)
-//         .concat(list_path6).concat(list_path7).concat(list_path8).concat(list_path9).concat(list_path10).concat(list_path11)
-//         .concat(list_path12).concat(list_path13);
-//     console.log(all_way);
-//     $.each(all_way, function (k, v) {
-//         left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
-//         top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
-//         html += '<div class="node_way" style="margin-top:' + top + 'px; margin-left:' + left + 'px"></div>';
-//     });
-//     $('#content2').append(html);
-// }
+function generate_way(){
+    var html = '', top, left;
+    var all_way = listMainPoint1.concat(listMainPoint2).concat(list_path1).concat(list_path2).concat(list_path3).concat(list_path4).concat(list_path5)
+        .concat(list_path6).concat(list_path7).concat(list_path8).concat(list_path9).concat(list_path10).concat(list_path11)
+        .concat(list_path12).concat(list_path13);
+    var top_before,left_before;
+    $.each(all_way, function (k, v) {
+        left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
+        top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
+        if(k!=0) {
+            var width=Math.abs(left-left_before);
+            var height=Math.abs(top-top_before);
+            var xien;
+            if((left-left_before)<0 &&(top-top_before<0)) xien=2;
+            if((left-left_before)>0 &&(top-top_before>0)) xien=1;
+            if((left-left_before)<0 &&(top-top_before>0)) xien=4;
+            if((left-left_before)<0 &&(top-top_before<0)) xien=3;
+            html += '<canvas class="node_way" data-xien="'+xien+'" style="margin-top:' + top + 'px; margin-left:' + left + 'px;width:'+width+'px;height: '+height+'px"></canvas>';
+        }
+        top_before =top;left_before=left;
+    });
+    $('#content2').append(html);
+    $('.node_way').each(function(k,v){
+        ctx.beginPath();
+        ctx.setLineDash([5,3]);
+        ctx.moveTo(([1,2].indexOf($(this).data('xien'))?0:$(v).css('height')), 0);
+        ctx.lineTo($(v).css('width'), ([3,4].indexOf($(v).data('xien'))?0:$(v).css('height')));
+        ctx.stroke();
+    });
+
+}
 
 function getOriginal1(lat1, lng1, lat2, lng2, x1, y1, x2, y2) {
     var realX1 = getX1Value(lat1, lng1);
