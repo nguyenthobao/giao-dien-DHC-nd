@@ -415,15 +415,9 @@ function checkSpecialPath1(beginPoint, endPoint) {
 
 
         var endTmpPoint = list_path8[8];
-        $.each(findPath(tmpCurrentBeginPoint, endTmpPoint, listPath8), function (k, v) {
-            arrPoint.push(v);
-        });
-        $.each(listPath10, function (k, v) {
-            arrPoint.push(v);
-        });
-        $.each(findPath(listPath10[listPath10.length - 1], tmpCurrentEndPoint), function (k, v) {
-            arrPoint.push(v);
-        });
+        arrPoint.concat(findPath(tmpCurrentBeginPoint, endTmpPoint, list_path8));
+        arrPoint.concat(list_path10);
+        arrPoint.concat(findPath(list_path10[list_path10.length - 1], tmpCurrentEndPoint));
         if (pointEqual(currentEndPoint, endPoint)) {
             var rtArrPoint = [];
             for (var i = arrPoint.length - 1; i > -1; i--) {
@@ -504,7 +498,7 @@ function checkSpecialPath3(beginPoint, endPoint) {
         var tmpEndPoint = (JSON.stringify(beginPoint) != JSON.stringify(tmpBeginPoint)) ? beginPoint : endPoint;
         var arrPoint = [];
         isFirst3 = false;
-        $.each(findPath(tmpBeginPoint, listPath11[0]), function (k, v) {
+        $.each(findPath(tmpBeginPoint, list_path11[0]), function (k, v) {
             arrPoint.push(v);
         });
         $.each(list_path11, function (k, v) {
@@ -513,7 +507,7 @@ function checkSpecialPath3(beginPoint, endPoint) {
         $.each(list_path13, function (k, v) {
             arrPoint.push(v);
         });
-        $.each(findPath(listPath13[listPath13.length - 1], tmpEndPoint), function (k, v) {
+        $.each(findPath(list_path13[list_path13.length - 1], tmpEndPoint), function (k, v) {
             arrPoint.push(v);
         });
         if (JSON.stringify(tmpBeginPoint) == JSON.stringify(beginPoint)) {
@@ -670,10 +664,10 @@ function findPath(beginPoint, endPoint) {
     var arrPath = [];
     arrPath.push(listMainPoint1);
     arrPath.push(listMainPoint2);
-    arrPath.push(listPath1);
-    arrPath.push(listPath2);
-    arrPath.push(listPath3);
-    arrPath.push(listPath4);
+    arrPath.push(list_path1);
+    arrPath.push(list_path2);
+    arrPath.push(list_path3);
+    arrPath.push(list_path4);
 
     var beginIndex = 0;
     var endIndex = 0;
@@ -707,8 +701,8 @@ function findPath(beginPoint, endPoint) {
     var arrRePoint = [];
     arrRePoint.push(listMainPoint1[0]);
     arrRePoint.push(listMainPoint2[0]);
-    arrRePoint.push(listPath1[0]);
-    arrRePoint.push(listPath2[0]);
+    arrRePoint.push(list_path1[0]);
+    arrRePoint.push(list_path2[0]);
 
     if (endIndex == beginIndex) {
         $.each(findPath(currentBeginPoint, currentEndPoint, arrPath[endIndex]), function (k, v) {
