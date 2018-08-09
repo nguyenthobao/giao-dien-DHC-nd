@@ -842,6 +842,7 @@ function generate_way(){
         if(k!=0) {
             var width=Math.abs(left-left_before);
             var height=Math.abs(top-top_before);
+            console.log(width,height);
             var xien;
             if((left-left_before)<0 &&(top-top_before<0)) xien=2;
             if((left-left_before)>0 &&(top-top_before>0)) xien=1;
