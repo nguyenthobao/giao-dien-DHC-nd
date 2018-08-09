@@ -128,7 +128,6 @@ $(document).ready(function () {
         };
 
         var tryGeolocation = function () {
-            console.log(navigator.geolocation);
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     browserGeolocationSuccess,
