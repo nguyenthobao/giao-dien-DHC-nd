@@ -660,8 +660,8 @@ function findPath(beginPoint, endPoint) {
     var currentBeginPoint = null;
     var i = 0;
     $.each(arrPath, function (k, listPoint) {
-        console.log('size listpoint',listPoint.length);
-        var tmpPoint = findNearestPoint(beginPoint, listPoint);
+        var tmpPoint = findNearestPoint(beginPoint, listPoint)
+        console.log('tmp point',tmpPoint);
         if (distance(beginPoint, tmpPoint) < distanc) {
             distanc = distance(beginPoint, tmpPoint);
             currentBeginPoint = tmpPoint;
