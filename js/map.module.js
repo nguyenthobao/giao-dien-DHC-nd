@@ -862,6 +862,7 @@ function generate_way() {
     });
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas"  style="margin-top:' + maxH + 'px; margin-left:' + minW + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
 
+    $('#content2').append(html);
     var ctx = (document.getElementById('can')).getContext('2d');
     ctx.beginPath();
     top_before=100, left_before=100;
@@ -916,8 +917,8 @@ function generate_way() {
     //     });
     //     top_before = 100;
     //     left_before = 100;
-    // });
-    $('#content2').append(html);
+    // // });
+    // $('#content2').append(html);
     // $('.node_way').each(function (k, v) {
     //     var ctx = v.getContext('2d');
     //     var start_y=0,end_y=0;
