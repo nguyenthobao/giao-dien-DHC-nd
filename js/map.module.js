@@ -645,12 +645,12 @@ function findPath(beginPoint, endPoint) {
         return dicData['LIST_POINT'];
     }
     var arrPath = [];
-    arrPath.push(listMainPoint1);
-    arrPath.push(listMainPoint2);
-    arrPath.push(list_path1);
-    arrPath.push(list_path2);
-    arrPath.push(list_path3);
-    arrPath.push(list_path4);
+    arrPath.concat(listMainPoint1);
+    arrPath.concat(listMainPoint2);
+    arrPath.concat(list_path1);
+    arrPath.concat(list_path2);
+    arrPath.concat(list_path3);
+    arrPath.concat(list_path4);
 
     var beginIndex = 0;
     var endIndex = 0;
@@ -686,7 +686,7 @@ function findPath(beginPoint, endPoint) {
     arrRePoint.push(listMainPoint2[0]);
     arrRePoint.push(list_path1[0]);
     arrRePoint.push(list_path2[0]);
-
+       console.log('ở đây',currentBeginPoint, currentEndPoint, arrPath[endIndex]);
     if (endIndex == beginIndex) {
         arrPoint.concat(findPath(currentBeginPoint, currentEndPoint, arrPath[endIndex]));
         return arrPoint;
