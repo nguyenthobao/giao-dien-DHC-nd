@@ -42,7 +42,6 @@ $(document).ready(function () {
     $('#div_search').show();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
     into_map();
-    generate_way();
     $('#tab2').click(function () {
         into_map();
     });
@@ -295,7 +294,8 @@ $(document).ready(function () {
             beginPoint = [$(that).data('lat'), $(that).data('long')];
         else beginPoint = [lat, long];
         // alert(JSON.stringify(beginPoint)+',[' +  $($(this).parent()).data('lat') + ',' +  $($(this).parent()).data('long') + ']');
-        findPath(beginPoint, [$($(this).parent()).data('lat'), $($(this).parent()).data('long')]);
+
+        generate_way(findPath(beginPoint, [$($(this).parent()).data('lat'), $($(this).parent()).data('long')]));
         that = this;
         // var that = this;
         // list_drop_index = {};
@@ -829,116 +829,41 @@ function checkSmallPath(beginPoint, endPoint) {
     return smallpath;
 }
 
-function generate_way() {
+function generate_way(listP) {
     var html = '', top, left;
-    var all_way = [];
-    all_way.push(listMainPoint1);
-    all_way.push(listMainPoint2);
-    all_way.push(list_path1);
-    all_way.push(list_path2);
-    all_way.push(list_path3);
-    all_way.push(list_path4);
-    all_way.push(list_path5);
-    all_way.push(list_path6);
-    all_way.push(list_path7);
-    all_way.push(list_path8);
-    all_way.push(list_path9);
-    all_way.push(list_path10);
-    all_way.push(list_path11);
-    all_way.push(list_path12);
-    all_way.push(list_path13);
-    var top_before=100, left_before=100, width=0, height=0,minW=0, maxH=-99999,maxW=0, minH=0;
-    $.each(listMainPoint1,function(k,v){
+    var top_before = 100, left_before = 100, width = 0, height = 0, minW = 0, maxH = -99999, maxW = 0, minH = 0, scaleX,
+        scaleY;
+    $.each(listP, function (k, v) {
         left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
-        top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
-        console.log(top,left);
-        if(top>maxH) maxH=top;
-        if(left<minW ||minW==0) minW=left;
-        if(top<minH) minH=top;
-        if(left>maxW) maxW=left;
+        top = parseFloat(v[1] / parseFloat(7046 / heightmap));
+        if (isMobile.any() != null) top-=1038;
+        console.log(top, left);
+        if (top > maxH) maxH = top;
+        if (left < minW || minW == 0) minW = left;
+        if (top < minH) minH = top;
+        if (left > maxW) maxW = left;
         top_before = top;
         left_before = left;
         // console.log(minW, maxH,maxW, minH);
     });
-    // width=maxW-minW;
-    // height=maxH-minH;
-    // console.log(width,height,minW, maxH);
-    // html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas"  style="margin-top:' + maxH + 'px; margin-left:' + minW + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
-    //
-    // $('#content2').append(html);
-    // var ctx = (document.getElementById('can')).getContext('2d');
-    // ctx.beginPath();
-    // ctx.lineTo(0,0);
-    // ctx.lineTo(width,height);
-    // ctx.stroke();
-    // top_before=100,left_before=100;
-    // var start_draw=0;
-    // $.each(listMainPoint1,function(k,v){
-    //     left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
-    //     top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
-    //     if(start_draw==0) start_draw=left-minW;
-    //     if(top_before!=100 || left_before!=100){
-    //         width = Math.abs(left - left_before);
-    //         height = Math.abs(top - top_before);
-    //         if ((width > 30 || height > 30) && width<100 && height<100) {
-    //             var xien;
-    //             if ((left - left_before) < 0 && (top - top_before < 0)) xien = 4;
-    //             if ((left - left_before) > 0 && (top - top_before > 0)) xien = 3;
-    //             if ((left - left_before) < 0 && (top - top_before > 0)) xien = 2;
-    //             if ((left - left_before) > 0 && (top - top_before < 0)) xien = 1;
-    //             var start_y=0,end_y=0;
-    //             if(xien==1 || xien==2){ start_y=0; end_y=height;}
-    //             else { end_y=0;start_y=height;}
-    //             ctx.moveTo(start_draw,start_y);
-    //             ctx.lineTo(width,end_y);
-    //             ctx.stroke();
-    //             start_draw=0;
-    //             }
-    //     }else{top_before=0;}
-    //     if (width > 50 || height > 50) {
-    //         top_before = top;
-    //         left_before = left;
-    //     }
-    // });
-    // $.each(all_way, function (u, listP) {
-    //     $.each(listP, function (k, v) {
-    //         left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
-    //         top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
-    //         if(top_before!=100 || left_before!=100){
-    //             width = Math.abs(left - left_before);
-    //             height = Math.abs(top - top_before);
-    //             if ((width > 30 || height > 30) && width<100 && height<100) {
-    //                 var xien;
-    //                 if ((left - left_before) < 0 && (top - top_before < 0)) xien = 4;
-    //                 if ((left - left_before) > 0 && (top - top_before > 0)) xien = 3;
-    //                 if ((left - left_before) < 0 && (top - top_before > 0)) xien = 2;
-    //                 if ((left - left_before) > 0 && (top - top_before < 0)) xien = 1;
-    //                 html += '<canvas data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" data-xien="' + xien + '" style="margin-top:' + top + 'px; margin-left:' + left + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
-    //             }
-    //         }else{top_before=0;}
-    //         if (width > 50 || height > 50) {
-    //             top_before = top;
-    //             left_before = left;
-    //         }
-    //     });
-    //     top_before = 100;
-    //     left_before = 100;
-    // // });
-    // $('#content2').append(html);
-    // $('.node_way').each(function (k, v) {
-    //     var ctx = v.getContext('2d');
-    //     var start_y=0,end_y=0;
-    //     if($(v).data('xien')==1 || $(v).data('xien')==2)  start_y=0;
-    //     else start_y=$(v).data('height');
-    //     if($(v).data('xien')==3 || $(v).data('xien')==4) end_y=0;
-    //     else  end_y=$(v).data('height');
-    //     console.log(0,start_y, $(v).data('width'), end_y);
-    //     console.log(v);
-    //     ctx.beginPath();
-    //     ctx.moveTo(0,start_y);
-    //     ctx.lineTo($(v).data('width'),end_y);
-    //     ctx.stroke();
-    // });
+    width = maxW - minW;
+    height = maxH - minH;
+    html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
+        ' style="margin-top:' + maxH + 'px; margin-left:' + minW + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
+    $('#content2').append(html);
+    var ctx = (document.getElementById('can')).getContext('2d');
+    ctx.beginPath();
+    ctx.setLineDash([5,2]);
+    scaleX = parseFloat(ctx.canvas.width / width);
+    scaleY = parseFloat(ctx.canvas.height / height);
+    top_before = 100, left_before = 100;
+    var start_draw = 0;
+    $.each(listMainPoint1, function (k, v) {
+        left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
+        top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
+        ctx.lineTo(Math.abs(minW-left) * scaleX, Math.abs(maxH-top) * scaleY);
+    });
+    ctx.stroke();
 
 }
 
