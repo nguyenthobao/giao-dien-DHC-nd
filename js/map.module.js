@@ -836,6 +836,7 @@ function checkSmallPath(beginPoint, endPoint) {
 }
 
 function generate_way(listP) {
+    console.log('gen',listP);
     var html = '', top, left;
     var top_before = 100, left_before = 100, width = 0, height = 0, minW = 0, maxH = -99999, maxW = 0, minH = 0, scaleX,
         scaleY;
