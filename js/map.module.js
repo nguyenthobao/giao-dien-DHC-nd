@@ -705,6 +705,8 @@ function findPath(beginPoint, endPoint) {
     }
 
     if (endIndex > 3) {
+        console.log('begin',arrPath[beginIndex][arrPath[beginIndex].length - 1]);
+        console.log('end',arrPath[endIndex][arrPath[endIndex].length - 1]);
         arrPoint.concat(findPath(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
         arrPoint.concat(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[endIndex][arrPath[endIndex].length - 1]));
         arrPoint.concat(findPath(arrPath[endIndex][arrPath[endIndex].length - 1], currentEndPoint, arrPath[endIndex]));
