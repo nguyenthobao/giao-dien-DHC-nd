@@ -851,13 +851,14 @@ function generate_way() {
     $.each(listMainPoint1,function(k,v){
         left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
         top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
+        console.log(top,left);
         if(top>maxH) maxH=top;
         if(left<minW ||minW==0) minW=left;
         if(top<minH) minH=top;
         if(left>maxW) maxW=left;
         top_before = top;
         left_before = left;
-        console.log(minW, maxH,maxW, minH);
+        // console.log(minW, maxH,maxW, minH);
     });
     width=maxW-minW;
     height=maxH-minH;
