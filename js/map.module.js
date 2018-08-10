@@ -883,6 +883,7 @@ function generate_way() {
         if($(v).data('xien')==3 || $(v).data('xien')==4) end_y=0;
         else  end_y=$(v).data('height');
         console.log(0,start_y, $(v).data('width'), end_y);
+        console.log(v);
         ctx.moveTo(0,start_y);
         ctx.lineTo($(v).data('width'),end_y);
         ctx.stroke();
