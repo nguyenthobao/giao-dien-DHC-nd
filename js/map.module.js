@@ -660,13 +660,14 @@ function findPath(beginPoint, endPoint) {
     var currentBeginPoint = null;
     var i = 0;
     $.each(arrPath, function (k, listPoint) {
-        var tmpPoint = findNearestPoint(beginPoint, listPoint)
+        var tmpPoint = findNearestPoint(beginPoint, listPoint);
+        if(k<10)
         console.log('tmp point',beginPoint,tmpPoint,distance(beginPoint, tmpPoint));
         if (distance(beginPoint, tmpPoint) < distanc) {
             distanc = distance(beginPoint, tmpPoint);
             currentBeginPoint = tmpPoint;
             beginIndex = i;
-            console.log('currentBeginPoint',distance(beginPoint, tmpPoint),beginIndex,currentBeginPoint);
+            if(k<10) console.log('currentBeginPoint',distance(beginPoint, tmpPoint),beginIndex,currentBeginPoint);
         }
         i += 1;
     });
