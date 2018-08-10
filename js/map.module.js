@@ -693,8 +693,9 @@ function findPath(beginPoint, endPoint) {
     arrRePoint.push(list_path2[0]);
        console.log('ở đây',currentBeginPoint, currentEndPoint, beginIndex,endIndex);
     if (endIndex == beginIndex) {
-        arrPoint.concat(findPath1(currentBeginPoint, currentEndPoint, arrPath[endIndex]));
-        console.log('endIndex == beginIndex',arrPoint);
+        var tmpArPoint=findPath1(currentBeginPoint, currentEndPoint, arrPath[endIndex]);
+        arrPoint.concat(tmpArPoint);
+        console.log('endIndex == beginIndex',tmpArPoint,arrPoint);
         return arrPoint;
     }
     var point1 = beginPoint;
