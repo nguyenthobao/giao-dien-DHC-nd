@@ -873,14 +873,8 @@ function generate_way() {
         left_before = 100;
     });
     $('#content2').append(html);
-    var can=(document.getElementsByTagName('canvas')[0]).getContext('2d');
-    can.beginPath();
-    can.moveTo(0,0);
-    can.lineTo(100,200);
-    can.stroke();
     $('.node_way').each(function (k, v) {
         var ctx = v.getContext('2d');
-        ctx.beginPath();
         var start_y=0,end_y=0;
         if($(v).data('xien')==1 || $(v).data('xien')==2)  start_y=0;
         else start_y=$(v).data('height');
@@ -888,6 +882,7 @@ function generate_way() {
         else  end_y=$(v).data('height');
         console.log(0,start_y, $(v).data('width'), end_y);
         console.log(v);
+        ctx.beginPath();
         ctx.moveTo(0,start_y);
         ctx.lineTo($(v).data('width'),end_y);
         ctx.stroke();
