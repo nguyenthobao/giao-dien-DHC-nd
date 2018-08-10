@@ -831,12 +831,24 @@ function checkSmallPath(beginPoint, endPoint) {
 
 function generate_way(){
     var html = '', top, left;
-    console.log(listMainPoint1);
-    var all_way = listMainPoint1.concat(listMainPoint2).concat(list_path1).concat(list_path2).concat(list_path3).concat(list_path4).concat(list_path5)
-        .concat(list_path6).concat(list_path7).concat(list_path8).concat(list_path9).concat(list_path10).concat(list_path11)
-        .concat(list_path12).concat(list_path13);
+    all_way.push(listMainPoint1);
+    all_way.push(listMainPoint2);
+    all_way.push(list_path1);
+    all_way.push(list_path2);
+    all_way.push(list_path3);
+    all_way.push(list_path4);
+    all_way.push(list_path5);
+    all_way.push(list_path6);
+    all_way.push(list_path7);
+    all_way.push(list_path8);
+    all_way.push(list_path9);
+    all_way.push(list_path10);
+    all_way.push(list_path11);
+    all_way.push(list_path12);
+    all_way.push(list_path13);
     var top_before,left_before;
-    $.each(all_way, function (k, v) {
+    $.each(all_way,function(u,listP){
+    $.each(listP, function (k, v) {
         left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
         top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
         if(k!=0) {
@@ -851,6 +863,7 @@ function generate_way(){
             html += '<canvas data-width="'+width+'" data-height="'+height+'" class="node_way" data-xien="'+xien+'" style="margin-top:' + top + 'px; margin-left:' + left + 'px;width:'+width+'px;height: '+height+'px"></canvas>';
         }
         top_before =top;left_before=left;
+    });
     });
     $('#content2').append(html);
     $('.node_way').each(function(k,v){
