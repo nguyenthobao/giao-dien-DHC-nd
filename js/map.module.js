@@ -847,12 +847,12 @@ function generate_way() {
     all_way.push(list_path11);
     all_way.push(list_path12);
     all_way.push(list_path13);
-    var top_before, left_before, width, height;
+    var top_before=100, left_before=100, width, height;
     $.each(all_way, function (u, listP) {
         $.each(listP, function (k, v) {
             left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
             top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
-            if (k != 0) {
+            if (top_before!=100 || left_before!=100) {
                 width = Math.abs(left - left_before);
                 height = Math.abs(top - top_before);
                 if (width > 30 || height > 30) {
