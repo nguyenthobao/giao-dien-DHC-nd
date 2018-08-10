@@ -880,8 +880,8 @@ function generate_way() {
         var start_y=0,end_y=0;
         if($(v).data('xien')==1 || $(v).data('xien')==2)  start_y=0;
         else start_y=$(v).data('height');
-        if($(v).data('xien')==3 || $(v).data('xien')==4)  end_y=$(v).data('height');
-        else end_y=0;
+        if($(v).data('xien')==3 || $(v).data('xien')==4) end_y=0;
+        else  end_y=$(v).data('height');
         console.log(0,start_y, $(v).data('width'), end_y);
         ctx.moveTo(0,start_y);
         ctx.lineTo($(v).data('width'),end_y);
