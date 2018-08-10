@@ -692,6 +692,7 @@ function findPath(beginPoint, endPoint) {
        console.log('ở đây',currentBeginPoint, currentEndPoint, beginIndex,endIndex);
     if (endIndex == beginIndex) {
         arrPoint.concat(findPath1(currentBeginPoint, currentEndPoint, arrPath[endIndex]));
+        console.log('endIndex == beginIndex',arrPoint);
         return arrPoint;
     }
     var point1 = beginPoint;
@@ -720,7 +721,10 @@ function findPath(beginPoint, endPoint) {
             }
             return rtArrPoint;
         }
+        console.log('endIndex>3',rtArrPoint);
+
         return arrPoint;
+
     }
     if (beginIndex > 3) {
         console.log('begin',arrPath[beginIndex][arrPath[beginIndex].length - 1]);
@@ -734,6 +738,7 @@ function findPath(beginPoint, endPoint) {
             }
             return rtArrPoint;
         }
+        console.log('beginIndex>3',rtArrPoint);
         return arrPoint;
     }
     for (var j = beginIndex + 1; j > endIndex; j--) {
@@ -746,8 +751,10 @@ function findPath(beginPoint, endPoint) {
         for (var j = arrPoint.length - 1; j > -1; j--) {
             rtArrPoint.push(arrPoint[j]);
         }
+        console.log('JSON',rtArrPoint);
         return rtArrPoint;
     }
+    console.log('dèault',rtArrPoint);
     return arrPoint;
 }
 
