@@ -719,9 +719,10 @@ function findPath(beginPoint, endPoint) {
             for (var j = arrPoint.length - 1; j > -1; j--) {
                 rtArrPoint.push(arrPoint[j]);
             }
+            console.log('endIndex>3',rtArrPoint);
             return rtArrPoint;
         }
-        console.log('endIndex>3',rtArrPoint);
+        console.log('endIndex>3',arrPoint);
 
         return arrPoint;
 
@@ -736,9 +737,10 @@ function findPath(beginPoint, endPoint) {
             for (var j = arrPoint.length - 1; j > -1; j--) {
                 rtArrPoint.push(arrPoint[j]);
             }
+            console.log('beginIndex>3',rtArrPoint);
             return rtArrPoint;
         }
-        console.log('beginIndex>3',rtArrPoint);
+        console.log('beginIndex>3',arrPoint);
         return arrPoint;
     }
     for (var j = beginIndex + 1; j > endIndex; j--) {
@@ -754,7 +756,7 @@ function findPath(beginPoint, endPoint) {
         console.log('JSON',rtArrPoint);
         return rtArrPoint;
     }
-    console.log('dèault',rtArrPoint);
+    console.log('fional',arrPoint);
     return arrPoint;
 }
 
