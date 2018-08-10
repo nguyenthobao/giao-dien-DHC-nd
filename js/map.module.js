@@ -548,6 +548,7 @@ function findNearestPoint(point, listPoint) {
 }
 
 function findPath(beginPoint, endPoint, listPoint) {
+    console.log('findPath',beginPoint,endPoint, listPoint.length);
     var arrPoint = [];
     var indexStart = listPoint.indexOf(beginPoint);
     var indexEnd = listPoint.indexOf(endPoint);
@@ -555,7 +556,7 @@ function findPath(beginPoint, endPoint, listPoint) {
     var sign = (indexEnd > indexStart) ? 1 : -1;
     var tmpIndexStart = (indexStart < indexEnd) ? indexStart : indexEnd;
     var tmpIndexEnd = (indexStart > indexEnd) ? indexStart : indexEnd;
-    console.log('so sanh dau cuoi',JSON.stringify(listPoint[0]) == JSON.stringify(listPoint[listPoint.length - 1]));
+
     if (JSON.stringify(listPoint[0]) == JSON.stringify(listPoint[listPoint.length - 1]) &&
         lng > (listPoint.length - lng)) {
 
@@ -616,6 +617,7 @@ function findPath(beginPoint, endPoint, listPoint) {
 }
 
 function findPath(beginPoint, endPoint) {
+    console.log('findPath',beginPoint, endPoint);
     var arrPoint = [];
     if ((endPoint[0] == 4531 && endPoint[1] == 3941) && beginPoint[0] > 4713) {
         return findPath(beginPoint, [4723, 3924]);
@@ -661,8 +663,7 @@ function findPath(beginPoint, endPoint) {
     var i = 0;
     $.each(arrPath, function (k, listPoint) {
         var tmpPoint = findNearestPoint(beginPoint, listPoint);
-        if(k<5)
-        console.log('tmp point','a'+beginPoint,'a'+tmpPoint,'a'+distance(beginPoint, tmpPoint));
+
         if (distance(beginPoint, tmpPoint) < distanc) {
             distanc = distance(beginPoint, tmpPoint);
             currentBeginPoint = tmpPoint;
@@ -688,7 +689,7 @@ function findPath(beginPoint, endPoint) {
     arrRePoint.push(listMainPoint2[0]);
     arrRePoint.push(list_path1[0]);
     arrRePoint.push(list_path2[0]);
-       console.log('ở đây',currentBeginPoint, currentEndPoint, arrPath[endIndex],endIndex);
+       console.log('ở đây',currentBeginPoint, currentEndPoint, beginIndex,endIndex);
     if (endIndex == beginIndex) {
         arrPoint.concat(findPath(currentBeginPoint, currentEndPoint, arrPath[endIndex]));
         return arrPoint;
@@ -707,8 +708,7 @@ function findPath(beginPoint, endPoint) {
     }
 
     if (endIndex > 3) {
-        console.log('begin',arrPath[beginIndex][arrPath[beginIndex].length - 1]);
-        console.log('end',arrPath[endIndex][arrPath[endIndex].length - 1]);
+
         arrPoint.concat(findPath(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
         arrPoint.concat(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[endIndex][arrPath[endIndex].length - 1]));
         arrPoint.concat(findPath(arrPath[endIndex][arrPath[endIndex].length - 1], currentEndPoint, arrPath[endIndex]));
