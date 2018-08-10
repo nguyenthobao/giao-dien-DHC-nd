@@ -881,7 +881,7 @@ function generate_way() {
         console.log(([1, 2].indexOf($(this).data('xien')) ? 0 : $(v).data('height')), 0);
         console.log($(v).data('width'), ([3, 4].indexOf($(v).data('xien'))!=-1 ? 0 : $(v).data('height')));
         ctx.moveTo(([1, 2].indexOf($(this).data('xien')) ? 0 : $(v).data('height')), 0);
-        ctx.lineTo($(v).data('width'), ([3, 4].indexOf($(v).data('xien'))!=-1 ? 0 : $(v).data('height')));
+        ctx.lineTo($(v).data('width'),  $(v).data('height'));
         ctx.stroke();
     });
 
