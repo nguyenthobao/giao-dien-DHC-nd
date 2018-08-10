@@ -388,8 +388,12 @@ function checkSpecialPath1(beginPoint, endPoint) {
         var arrPoint = [];
         isFirst1 = false;
         var endTmpPoint = (tmpCurrentEndPoint[1] < 4150) ? list_path8[0] : list_path8[list_path8.length - 1];
-        arrPoint.concat(findPath1(tmpCurrentBeginPoint, endTmpPoint, list_path8));
-        arrPoint.concat(findPath(endTmpPoint, tmpCurrentEndPoint));
+        $.each(findPath1(tmpCurrentBeginPoint, endTmpPoint, list_path8),function(k,v){
+            arrPoint.push(v);
+        });
+        $.each(findPath(endTmpPoint, tmpCurrentEndPoint),function(k,v){
+            arrPoint.push(v);
+        });
         if (currentEndPoint[0] != endPoint[0] || currentEndPoint[1] != endPoint[1]) {
             var rtArrPoint = [];
             for (var i = arrPoint.length - 1; i > -1; i--) {
@@ -413,9 +417,15 @@ function checkSpecialPath1(beginPoint, endPoint) {
 
 
         var endTmpPoint = list_path8[8];
-        arrPoint.concat(findPath1(tmpCurrentBeginPoint, endTmpPoint, list_path8));
-        arrPoint.concat(list_path10);
-        arrPoint.concat(findPath(list_path10[list_path10.length - 1], tmpCurrentEndPoint));
+        $.each(findPath1(tmpCurrentBeginPoint, endTmpPoint, list_path8),function(k,v){
+            arrPoint.push(v);
+        });
+        $.each(list_path10,function(k,v){
+            arrPoint.push(v);
+        });
+        $.each(findPath(list_path10[list_path10.length - 1], tmpCurrentEndPoint),function(k,v){
+            arrPoint.push(v);
+        });
         if (pointEqual(currentEndPoint, endPoint)) {
             var rtArrPoint = [];
             for (var i = arrPoint.length - 1; i > -1; i--) {
@@ -459,8 +469,12 @@ function checkSpecialPath2(beginPoint, endPoint) {
         var tmpCurrentEndPoint = (distance2 < 15000) ? beginPoint : endPoint;
         var arrPoint = [];
         isFirst2 = false;
-        arrPoint.concat(findPath1(tmpCurrentBeginPoint, list_path9[0], list_path9));
-        arrPoint.concat(findPath(list_path9[0], tmpCurrentEndPoint));
+        $.each(findPath1(tmpCurrentBeginPoint, list_path9[0], list_path9),function(k,v){
+            arrPoint.push(v);
+        });
+        $.each(findPath(list_path9[0], tmpCurrentEndPoint),function(k,v){
+            arrPoint.push(v);
+        });
         if (JSON.stringify(currentBeginPoint) == JSON.stringify(tmpCurrentBeginPoint)) {
             var rtArrPoint = [];
             for (var i = arrPoint.length - 1; i > -1; i--) {
@@ -492,13 +506,23 @@ function checkSpecialPath3(beginPoint, endPoint) {
         var tmpEndPoint = (JSON.stringify(beginPoint) != JSON.stringify(tmpBeginPoint)) ? beginPoint : endPoint;
         var arrPoint = [];
         isFirst3 = false;
-        arrPoint.concat(findPath(tmpBeginPoint, list_path11[0]));
-        arrPoint.concat(list_path11);
-        arrPoint.concat(list_path13);
-        arrPoint.concat(findPath(list_path13[list_path13.length - 1], tmpEndPoint));
+        $.each(findPath(tmpBeginPoint, list_path11[0]),function(k,v){
+            arrPoint.push(v);
+        });
+        $.each(list_path11,function(k,v){
+            arrPoint.push(v);
+        });
+        $.each(list_path13,function(k,v){
+            arrPoint.push(v);
+        });
+        $.each(findPath(list_path13[list_path13.length - 1], tmpEndPoint),function(k,v){
+            arrPoint.push(v);
+        });
         if (JSON.stringify(tmpBeginPoint) == JSON.stringify(beginPoint)) {
             var rtArrPoint = [];
-            rtArrPoint.concat(arrPoint);
+            $.each(arrPoint,function(k,v){
+                rtArrPoint.push(v);
+            });
             path3 = [];
             path3.push(['POINTTYPE', 1]);
             path3.push(['LIST_POINT', rtArrPoint]);
@@ -694,7 +718,9 @@ function findPath(beginPoint, endPoint) {
        console.log('ở đây',currentBeginPoint, currentEndPoint, beginIndex,endIndex);
     if (endIndex == beginIndex) {
         var tmpArPoint=findPath1(currentBeginPoint, currentEndPoint, arrPath[endIndex]);
-        arrPoint.concat(tmpArPoint);
+        $.each(tmpArPoint,function(k,v){
+            arrPoint.push(v);
+        });
         console.log('endIndex == beginIndex',tmpArPoint,arrPoint);
         return arrPoint;
     }
@@ -712,10 +738,15 @@ function findPath(beginPoint, endPoint) {
     }
 
     if (endIndex > 3) {
-
-        arrPoint.concat(findPath1(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
-        arrPoint.concat(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[endIndex][arrPath[endIndex].length - 1]));
-        arrPoint.concat(findPath1(arrPath[endIndex][arrPath[endIndex].length - 1], currentEndPoint, arrPath[endIndex]));
+        $.each(findPath1(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]),function(k,v){
+            arrPoint.push(v);
+        });
+        $.each(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[endIndex][arrPath[endIndex].length - 1]),function(k,v){
+            arrPoint.push(v);
+        });
+        $.each(findPath1(arrPath[endIndex][arrPath[endIndex].length - 1], currentEndPoint, arrPath[endIndex]),function(k,v){
+            arrPoint.push(v);
+        });
 
         if (JSON.stringify(point1) != JSON.stringify(beginPoint)) {
             var rtArrPoint = [];
@@ -732,9 +763,13 @@ function findPath(beginPoint, endPoint) {
     }
     if (beginIndex > 3) {
         console.log('begin',arrPath[beginIndex][arrPath[beginIndex].length - 1]);
-        arrPoint.concat(findPath1(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
-        arrPoint.concat(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], currentEndPoint));
 
+        $.each(findPath1(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]),function(k,v){
+            arrPoint.push(v);
+        });
+        $.each(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], currentEndPoint),function(k,v){
+            arrPoint.push(v);
+        });
         if (JSON.stringify(point1) != JSON.stringify(beginPoint)) {
             var rtArrPoint = [];
             for (var j = arrPoint.length - 1; j > -1; j--) {
@@ -747,8 +782,9 @@ function findPath(beginPoint, endPoint) {
         return arrPoint;
     }
     for (var j = beginIndex + 1; j > endIndex; j--) {
-        arrPoint.concat(findPath1((j == beginIndex + 1) ? currentBeginPoint : arrRePoint[j], (j == endIndex + 1) ? currentEndPoint : arrRePoint[j - 1], arrPath[j - 1]));
-
+        $.each(findPath1((j == beginIndex + 1) ? currentBeginPoint : arrRePoint[j], (j == endIndex + 1) ? currentEndPoint : arrRePoint[j - 1], arrPath[j - 1]),function(k,v){
+            arrPoint.push(v);
+        });
     }
     if (JSON.stringify(point1) != JSON.stringify(beginPoint)) {
         var rtArrPoint = [];
@@ -818,25 +854,39 @@ function checkSmallPath(beginPoint, endPoint) {
         return smallpath;
     }
     if (distance1 < CIRCLE && distance2 < CIRCLE) {
-        arrPoint.concat(findPath1(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
-        arrPoint.concat(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[endIndex][arrPath[endIndex].length - 1]));
-        arrPoint.concat(findPath1(arrPath[endIndex][arrPath[endIndex].length - 1], currentEndPoint, arrPath[endIndex]));
+        $.each(findPath1(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]),function(k,v){
+            arrPoint.push(v);
+        });
+        $.each(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[endIndex][arrPath[endIndex].length - 1]),function(k,v){
+            arrPoint.push(v);
+        });
+        $.each(findPath1(arrPath[endIndex][arrPath[endIndex].length - 1], currentEndPoint, arrPath[endIndex]),function(k,v){
+            arrPoint.push(v);
+        });
         var smallpath = [];
         smallpath.push('POINTTYPE', 1);
         smallpath.push('LIST_POINT', arrpoint);
         return smallpath;
     }
     if (distance1 < CIRCLE) {
-        arrPoint.concat(findPath1(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
-        arrPoint.concat(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], endPoint));
+        $.each(findPath1(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]),function(k,v){
+            arrPoint.push(v);
+        });
+        $.each(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], endPoint),function(k,v){
+            arrPoint.push(v);
+        });
         var smallpath = [];
         smallpath.push('POINTTYPE', 1);
         smallpath.push('LIST_POINT', arrpoint);
         return smallpath;
     }
     if (distance2 < CIRCLE) {
-        arrPoint.concat(findPath(beginPoint, arrPath[endIndex][arrPath[endIndex].length - 1]));
-        arrPoint.concat(findPath1(arrPath[endIndex][arrPath[endIndex].length - 1], currentEndPoint, arrPath[endIndex]));
+        $.each(findPath(beginPoint, arrPath[endIndex][arrPath[endIndex].length - 1]),function(k,v){
+            arrPoint.push(v);
+        });
+        $.each(findPath1(arrPath[endIndex][arrPath[endIndex].length - 1], currentEndPoint, arrPath[endIndex]),function(k,v){
+            arrPoint.push(v);
+        });
         var smallpath = [];
         smallpath.push('POINTTYPE', 1);
         smallpath.push('LIST_POINT', arrpoint);
