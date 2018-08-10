@@ -362,7 +362,6 @@ var isFirst = true, isFirst1 = true, isFirst2 = true, isFirst3 = true;
 
 function distance(beginPoint, endPoint) {
     var rs=(endPoint[0] - beginPoint[0]) * (endPoint[0] - beginPoint[0]) + (endPoint[1] - beginPoint[1]) * (endPoint[1] - beginPoint[1]);
-    console.log('distanc',rs);
     return rs;
 }
 
@@ -666,6 +665,8 @@ function findPath(beginPoint, endPoint) {
             distanc = distance(beginPoint, tmpPoint);
             currentBeginPoint = tmpPoint;
             beginIndex = i;
+
+            console.log('currentBeginPoint',distance(beginPoint, tmpPoint),beginIndex,currentBeginPoint);
         }
         i += 1;
     });
