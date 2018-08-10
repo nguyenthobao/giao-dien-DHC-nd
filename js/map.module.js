@@ -645,12 +645,12 @@ function findPath(beginPoint, endPoint) {
         return dicData['LIST_POINT'];
     }
     var arrPath = [];
-    arrPath.concat(listMainPoint1);
-    arrPath.concat(listMainPoint2);
-    arrPath.concat(list_path1);
-    arrPath.concat(list_path2);
-    arrPath.concat(list_path3);
-    arrPath.concat(list_path4);
+    arrPath.push(listMainPoint1);
+    arrPath.push(listMainPoint2);
+    arrPath.push(list_path1);
+    arrPath.push(list_path2);
+    arrPath.push(list_path3);
+    arrPath.push(list_path4);
 
     var beginIndex = 0;
     var endIndex = 0;
@@ -658,7 +658,7 @@ function findPath(beginPoint, endPoint) {
     var distanc = 20000000;
     var currentBeginPoint = null;
     var i = 0;
-
+console.log('array path',arrPath);
     $.each(arrPath, function (k, listPoint) {
         var tmpPoint = findNearestPoint(beginPoint, listPoint);
         if (distance(beginPoint, tmpPoint) < distanc) {
