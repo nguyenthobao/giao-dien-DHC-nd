@@ -859,7 +859,7 @@ function generate_way() {
         left_before = left;
     });
     width=maxW-minW;
-    height=maxH-minW;
+    height=maxH-minH;
     console.log(width,height,minW, maxH);
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas"  style="margin-top:' + maxH + 'px; margin-left:' + minW + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
 
