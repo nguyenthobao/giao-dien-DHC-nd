@@ -855,7 +855,7 @@ function generate_way() {
             if (top_before!=100 || left_before!=100) {
                 width = Math.abs(left - left_before);
                 height = Math.abs(top - top_before);
-                if (width > 30 || height > 30) {
+                if ((width > 30 || height > 30)&& width<100 &&height<100) {
                     console.log(width,height);
                     var xien;
                     if ((left - left_before) < 0 && (top - top_before < 0)) xien = 2;
