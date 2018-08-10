@@ -868,10 +868,10 @@ function generate_way() {
     $('#content2').append(html);
     var ctx = (document.getElementById('can')).getContext('2d');
     ctx.beginPath();
-    ctx.moveTo(0,0);
+    ctx.lineTo(0,0);
     ctx.lineTo(10,10);
     ctx.stroke();
-    top_before=100, left_before=100;
+    top_before=100,left_before=100;
     var start_draw=0;
     // $.each(listMainPoint1,function(k,v){
     //     left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
