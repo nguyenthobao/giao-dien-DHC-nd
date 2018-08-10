@@ -554,8 +554,7 @@ function findPath(beginPoint, endPoint, listPoint) {
     var sign = (indexEnd > indexStart) ? 1 : -1;
     var tmpIndexStart = (indexStart < indexEnd) ? indexStart : indexEnd;
     var tmpIndexEnd = (indexStart > indexEnd) ? indexStart : indexEnd;
-    if (listPoint[0][0] == listPoint[listPoint.length - 1][0] &&
-        listPoint[0][1] == listPoint[listPoint.length - 1][1] &&
+    if (JSON.stringify(listPoint[0]) == JSON.stringify(listPoint[listPoint.length - 1]) &&
         lng > (listPoint.length - lng)) {
 
         if (listPoint.length >= 65 && tmpIndexEnd >= 52 && tmpIndexStart >= 5 && tmpIndexStart < 24) {
