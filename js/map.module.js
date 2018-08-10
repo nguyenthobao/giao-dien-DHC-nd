@@ -661,12 +661,11 @@ function findPath(beginPoint, endPoint) {
     var i = 0;
     $.each(arrPath, function (k, listPoint) {
         var tmpPoint = findNearestPoint(beginPoint, listPoint)
-        console.log('tmp point',tmpPoint);
+        console.log('tmp point',beginPoint,tmpPoint,distance(beginPoint, tmpPoint));
         if (distance(beginPoint, tmpPoint) < distanc) {
             distanc = distance(beginPoint, tmpPoint);
             currentBeginPoint = tmpPoint;
             beginIndex = i;
-
             console.log('currentBeginPoint',distance(beginPoint, tmpPoint),beginIndex,currentBeginPoint);
         }
         i += 1;
