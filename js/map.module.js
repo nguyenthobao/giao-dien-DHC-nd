@@ -856,7 +856,6 @@ function generate_way() {
                 width = Math.abs(left - left_before);
                 height = Math.abs(top - top_before);
                 if ((width > 30 || height > 30)&& width<100 &&height<100) {
-                    console.log(width,height);
                     var xien;
                     if ((left - left_before) < 0 && (top - top_before < 0)) xien = 2;
                     if ((left - left_before) > 0 && (top - top_before > 0)) xien = 1;
@@ -878,10 +877,9 @@ function generate_way() {
         var ctx = this.getContext('2d');
         ctx.beginPath();
         ctx.setLineDash([]);
-        console.log(([1, 2].indexOf($(this).data('xien')) ? 0 : $(v).data('height')), 0);
-        console.log($(v).data('width'), ([3, 4].indexOf($(v).data('xien'))!=-1 ? 0 : $(v).data('height')));
+        console.log(([1, 2].indexOf($(this).data('xien')) ? 0 : $(v).data('height')), 0,$(v).data('width'), ([3, 4].indexOf($(v).data('xien'))!=-1 ? 0 : $(v).data('height')));
         ctx.moveTo(([1, 2].indexOf($(this).data('xien')) ? 0 : $(v).data('height')), 0);
-        ctx.lineTo($(v).data('width'),  $(v).data('height'));
+        ctx.lineTo($(v).data('width'), ([3, 4].indexOf($(v).data('xien'))!=-1 ? 0 : $(v).data('height')));
         ctx.stroke();
     });
 
