@@ -869,7 +869,7 @@ function generate_way() {
     var ctx = (document.getElementById('can')).getContext('2d');
     ctx.beginPath();
     ctx.lineTo(0,0);
-    ctx.lineTo(10,10);
+    ctx.lineTo(width-1,height-1);
     ctx.stroke();
     top_before=100,left_before=100;
     var start_draw=0;
