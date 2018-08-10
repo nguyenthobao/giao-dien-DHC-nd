@@ -661,8 +661,8 @@ function findPath(beginPoint, endPoint) {
     var i = 0;
     $.each(arrPath, function (k, listPoint) {
         var tmpPoint = findNearestPoint(beginPoint, listPoint);
-        if(k<10)
-        console.log('tmp point',beginPoint,tmpPoint,distance(beginPoint, tmpPoint));
+        if(k<5)
+        console.log('tmp point','a'+beginPoint,'a'+tmpPoint,'a'+distance(beginPoint, tmpPoint));
         if (distance(beginPoint, tmpPoint) < distanc) {
             distanc = distance(beginPoint, tmpPoint);
             currentBeginPoint = tmpPoint;
