@@ -365,6 +365,7 @@ function distance(beginPoint, endPoint) {
 }
 
 function checkSpecialPath1(beginPoint, endPoint) {
+    console.log(" checkSpecialPath1", isFirst1);
     if (!isFirst1) return ['POINTTYPE', 2];
     var currentBeginPoint = findNearestPoint(beginPoint, list_path8);
     var currentEndPoint = findNearestPoint(endPoint, list_path8);
@@ -837,7 +838,6 @@ function generate_way(listP) {
         left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
         top = parseFloat(v[1] / parseFloat(7046 / heightmap));
         if (isMobile.any() != null) top-=1038;
-        console.log(top, left);
         if (top > maxH) maxH = top;
         if (left < minW || minW == 0) minW = left;
         if (top < minH) minH = top;
