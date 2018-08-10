@@ -852,7 +852,7 @@ function generate_way() {
         left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
         top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
         if(top>maxH) maxH=top;
-        if(left<minW) minW=left;
+        if(left<minW ||minW==0) minW=left;
         if(top<minH) minH=top;
         if(left>maxW) maxW=left;
         top_before = top;
