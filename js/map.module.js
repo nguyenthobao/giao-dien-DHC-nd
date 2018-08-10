@@ -873,6 +873,11 @@ function generate_way() {
         left_before = 100;
     });
     $('#content2').append(html);
+    var can=(document.getElementById('can')).getContext('2d');
+    can.beginPath();
+    can.moveTo(0,0);
+    can.lineTo(100,200);
+    can.stroke();
     $('.node_way').each(function (k, v) {
         var ctx = (document.getElementsByTagName('canvas')[k]).getContext('2d');
         ctx.beginPath();
