@@ -861,7 +861,7 @@ function generate_way() {
                     if ((left - left_before) > 0 && (top - top_before > 0)) xien = 3;
                     if ((left - left_before) < 0 && (top - top_before > 0)) xien = 2;
                     if ((left - left_before) > 0 && (top - top_before < 0)) xien = 1;
-                    html += '<canvas data-width="' + width + '" data-height="' + height + '" class="node_way" data-xien="' + xien + '" style="margin-top:' + top + 'px; margin-left:' + left + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
+                    html += '<canvas data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" data-xien="' + xien + '" style="margin-top:' + top + 'px; margin-left:' + left + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
                 }
             }else{top_before=0;}
             if (width > 50 || height > 50) {
@@ -874,7 +874,7 @@ function generate_way() {
     });
     $('#content2').append(html);
     $('.node_way').each(function (k, v) {
-        var ctx = this.getContext('2d');
+        var ctx = v.getContext('2d');
         ctx.beginPath();
         ctx.setLineDash([20]);
         var start_y=0,end_y=0;
