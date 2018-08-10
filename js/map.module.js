@@ -554,6 +554,7 @@ function findPath(beginPoint, endPoint, listPoint) {
     var sign = (indexEnd > indexStart) ? 1 : -1;
     var tmpIndexStart = (indexStart < indexEnd) ? indexStart : indexEnd;
     var tmpIndexEnd = (indexStart > indexEnd) ? indexStart : indexEnd;
+    console.log('so sanh dau cuoi',JSON.stringify(listPoint[0]) == JSON.stringify(listPoint[listPoint.length - 1]));
     if (JSON.stringify(listPoint[0]) == JSON.stringify(listPoint[listPoint.length - 1]) &&
         lng > (listPoint.length - lng)) {
 
