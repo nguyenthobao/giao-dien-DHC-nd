@@ -847,19 +847,19 @@ function generate_way() {
     all_way.push(list_path11);
     all_way.push(list_path12);
     all_way.push(list_path13);
-    var top_before=100, left_before=100, width=0, height=0,minW=0, maxH=0;
+    var top_before=100, left_before=100, width=0, height=0,minW=0, maxH=0,maxW=0, minH=0;
     $.each(listMainPoint1,function(k,v){
         left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
         top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
         if(top>maxH) maxH=top;
         if(left<minW) minW=left;
-        if(top_before!=100 || left_before!=100) {
-            width = Math.abs(left - left_before);
-            height = Math.abs(top - top_before);
-        }
+        if(top<minH) minH=top;
+        if(left>maxW) maxW=left;
         top_before = top;
         left_before = left;
     });
+    width=maxW-minW;
+    height=maxH-minW;
     console.log(width,height,minW, maxH);
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas"  style="margin-top:' + maxH + 'px; margin-left:' + minW + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
 
