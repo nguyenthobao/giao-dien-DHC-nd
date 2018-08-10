@@ -857,6 +857,7 @@ function generate_way() {
         if(left>maxW) maxW=left;
         top_before = top;
         left_before = left;
+        console.log(minW, maxH,maxW, minH);
     });
     width=maxW-minW;
     height=maxH-minH;
