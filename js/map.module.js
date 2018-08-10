@@ -723,6 +723,7 @@ function findPath(beginPoint, endPoint) {
         return arrPoint;
     }
     if (beginIndex > 3) {
+        console.log('begin',arrPath[beginIndex][arrPath[beginIndex].length - 1]);
         arrPoint.concat(findPath(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
         arrPoint.concat(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], currentEndPoint));
 
