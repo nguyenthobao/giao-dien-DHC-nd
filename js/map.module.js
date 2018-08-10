@@ -874,7 +874,7 @@ function generate_way() {
     });
     $('#content2').append(html);
     $('.node_way').each(function (k, v) {
-        var ctx = v.getContext('2d');
+        var ctx = (document.getElementsByTagName('canvas')[k]).getContext('2d');
         ctx.beginPath();
         var start_y=0,end_y=0;
         if($(v).data('xien')==1 || $(v).data('xien')==2)  start_y=0;
