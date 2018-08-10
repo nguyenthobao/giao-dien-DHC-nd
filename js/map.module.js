@@ -295,7 +295,7 @@ $(document).ready(function () {
             beginPoint = [$(that).data('lat'), $(that).data('long')];
         else beginPoint = [lat, long];
         // alert(JSON.stringify(beginPoint)+',[' +  $($(this).parent()).data('lat') + ',' +  $($(this).parent()).data('long') + ']');
-        findPath(beginPoint, [ $($(this).parent()).data('lat'), $($(this).parent()).data('long')]);
+        findPath(beginPoint, [$($(this).parent()).data('lat'), $($(this).parent()).data('long')]);
         that = this;
         // var that = this;
         // list_drop_index = {};
@@ -404,7 +404,7 @@ function checkSpecialPath1(beginPoint, endPoint) {
         path1.push(['LIST_POINT', arrPoint]);
         return path1;
     }
-    if ((distance2 < circle && beginPoint[0] < 4906) ||(distance1 < circle && endPoint[0] < 4906)) {
+    if ((distance2 < circle && beginPoint[0] < 4906) || (distance1 < circle && endPoint[0] < 4906)) {
         var tmpCurrentBeginPoint = (distance1 < circle) ? currentBeginPoint : currentEndPoint;
         var tmpCurrentEndPoint = (distance1 < circle) ? endPoint : beginPoint;
         var arrPoint = [];
@@ -526,7 +526,7 @@ function checkSpecialPoint(point) {
 
 
     for (var i = 0; i < arrCenterSpecialPoint.length; i++) {
-        var distanc = distance(point,arrCenterSpecialPoint[i]);
+        var distanc = distance(point, arrCenterSpecialPoint[i]);
         if (distanc < 16000) return arrGateSpecialPoint[i];
     }
     return point;
@@ -829,7 +829,7 @@ function checkSmallPath(beginPoint, endPoint) {
     return smallpath;
 }
 
-function generate_way(){
+function generate_way() {
     var html = '', top, left;
     var all_way = [];
     all_way.push(listMainPoint1);
@@ -847,32 +847,38 @@ function generate_way(){
     all_way.push(list_path11);
     all_way.push(list_path12);
     all_way.push(list_path13);
-    var top_before,left_before;
-    $.each(all_way,function(u,listP){
-    $.each(listP, function (k, v) {
-        left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
-        top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
-        if(k!=0) {
-            var width=Math.abs(left-left_before);
-            var height=Math.abs(top-top_before);
-            console.log(width,height);
-            var xien;
-            if((left-left_before)<0 &&(top-top_before<0)) xien=2;
-            if((left-left_before)>0 &&(top-top_before>0)) xien=1;
-            if((left-left_before)<0 &&(top-top_before>0)) xien=4;
-            if((left-left_before)>0 &&(top-top_before<0)) xien=3;
-            html += '<canvas data-width="'+width+'" data-height="'+height+'" class="node_way" data-xien="'+xien+'" style="margin-top:' + top + 'px; margin-left:' + left + 'px;width:'+width+'px;height: '+height+'px"></canvas>';
-        }
-        top_before =top;left_before=left;
-    });
+    var top_before, left_before, width, height;
+    $.each(all_way, function (u, listP) {
+        $.each(listP, function (k, v) {
+            left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
+            top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
+            if (k != 0) {
+                width = Math.abs(left - left_before);
+                height = Math.abs(top - top_before);
+                if (width > 30 || height > 30) {
+                    var xien;
+                    if ((left - left_before) < 0 && (top - top_before < 0)) xien = 2;
+                    if ((left - left_before) > 0 && (top - top_before > 0)) xien = 1;
+                    if ((left - left_before) < 0 && (top - top_before > 0)) xien = 4;
+                    if ((left - left_before) > 0 && (top - top_before < 0)) xien = 3;
+                    html += '<canvas data-width="' + width + '" data-height="' + height + '" class="node_way" data-xien="' + xien + '" style="margin-top:' + top + 'px; margin-left:' + left + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
+                }
+            }
+            if (width > 50 || height > 50) {
+                top_before = top;
+                left_before = left;
+            }
+        });
+        top_before = 100;
+        left_before = 100;
     });
     $('#content2').append(html);
-    $('.node_way').each(function(k,v){
+    $('.node_way').each(function (k, v) {
         var ctx = this.getContext('2d');
         ctx.beginPath();
-        ctx.setLineDash([5,3]);
-        ctx.moveTo(([1,2].indexOf($(this).data('xien'))?0:$(v).data('height')), 0);
-        ctx.lineTo($(v).data('width'), ([3,4].indexOf($(v).data('xien'))?0:$(v).data('height')));
+        ctx.setLineDash([5, 3]);
+        ctx.moveTo(([1, 2].indexOf($(this).data('xien')) ? 0 : $(v).data('height')), 0);
+        ctx.lineTo($(v).data('width'), ([3, 4].indexOf($(v).data('xien')) ? 0 : $(v).data('height')));
         ctx.stroke();
     });
 
@@ -891,11 +897,12 @@ function getOriginal1(lat1, lng1, lat2, lng2, x1, y1, x2, y2) {
     scaleY = deltaY / (y2 - y1);
 }
 
-function getXPixcelValue(lat, lng){
+function getXPixcelValue(lat, lng) {
     var l1 = topLeftRealX;//-79815182.874506816,-80785543.091131881
     var xValue = getX1Value(lat, lng);
     return (xValue - l1) / scaleX;
 }
+
 function getYPixcelValue(lat, lng) {
     var l1 = topLeftRealY;
     var yValue = getY1Value(lat, lng);
