@@ -376,7 +376,7 @@ function checkSpecialPath1(beginPoint, endPoint) {
     var path1 = [];
     if (distance1 < circle && distance2 < circle) {
         isFirst1 = false;
-        var arrpoint = findPath(currentBeginPoint, currentEndPoint, list_path8);
+        var arrpoint = findPath1(currentBeginPoint, currentEndPoint, list_path8);
         path1 = [];
         path1.push(['POINTTYPE', 1]);
         path1.push(['LIST_POINT', arrpoint]);
@@ -388,7 +388,7 @@ function checkSpecialPath1(beginPoint, endPoint) {
         var arrPoint = [];
         isFirst1 = false;
         var endTmpPoint = (tmpCurrentEndPoint[1] < 4150) ? list_path8[0] : list_path8[list_path8.length - 1];
-        arrPoint.concat(findPath(tmpCurrentBeginPoint, endTmpPoint, list_path8));
+        arrPoint.concat(findPath1(tmpCurrentBeginPoint, endTmpPoint, list_path8));
         arrPoint.concat(findPath(endTmpPoint, tmpCurrentEndPoint));
         if (currentEndPoint[0] != endPoint[0] || currentEndPoint[1] != endPoint[1]) {
             var rtArrPoint = [];
@@ -413,7 +413,7 @@ function checkSpecialPath1(beginPoint, endPoint) {
 
 
         var endTmpPoint = list_path8[8];
-        arrPoint.concat(findPath(tmpCurrentBeginPoint, endTmpPoint, list_path8));
+        arrPoint.concat(findPath1(tmpCurrentBeginPoint, endTmpPoint, list_path8));
         arrPoint.concat(list_path10);
         arrPoint.concat(findPath(list_path10[list_path10.length - 1], tmpCurrentEndPoint));
         if (pointEqual(currentEndPoint, endPoint)) {
@@ -447,7 +447,7 @@ function checkSpecialPath2(beginPoint, endPoint) {
     var distance1 = distance(currentBeginPoint, beginPoint);
     var distance2 = distance(currentEndPoint, endPoint);
     if (distance1 < 15000 && distance2 < 15000) {
-        var arrpoint = findPath(currentBeginPoint, currentEndPoint, list_path9);
+        var arrpoint = findPath1(currentBeginPoint, currentEndPoint, list_path9);
         path2 = [];
         path2.push(['POINTTYPE', 1]);
         path2.push(['LIST_POINT', arrpoint]);
@@ -459,7 +459,7 @@ function checkSpecialPath2(beginPoint, endPoint) {
         var tmpCurrentEndPoint = (distance2 < 15000) ? beginPoint : endPoint;
         var arrPoint = [];
         isFirst2 = false;
-        arrPoint.concat(findPath(tmpCurrentBeginPoint, list_path9[0], list_path9));
+        arrPoint.concat(findPath1(tmpCurrentBeginPoint, list_path9[0], list_path9));
         arrPoint.concat(findPath(list_path9[0], tmpCurrentEndPoint));
         if (JSON.stringify(currentBeginPoint) == JSON.stringify(tmpCurrentBeginPoint)) {
             var rtArrPoint = [];
@@ -547,8 +547,8 @@ function findNearestPoint(point, listPoint) {
     return currentPoint;
 }
 
-function findPath(beginPoint, endPoint, listPoint) {
-    console.log('findPath',beginPoint,endPoint, listPoint.length);
+function findPath1(beginPoint, endPoint, listPoint) {
+    console.log('findPath1',beginPoint,endPoint, listPoint.length);
     var arrPoint = [];
     var indexStart = listPoint.indexOf(beginPoint);
     var indexEnd = listPoint.indexOf(endPoint);
@@ -691,7 +691,7 @@ function findPath(beginPoint, endPoint) {
     arrRePoint.push(list_path2[0]);
        console.log('ở đây',currentBeginPoint, currentEndPoint, beginIndex,endIndex);
     if (endIndex == beginIndex) {
-        arrPoint.concat(findPath(currentBeginPoint, currentEndPoint, arrPath[endIndex]));
+        arrPoint.concat(findPath1(currentBeginPoint, currentEndPoint, arrPath[endIndex]));
         return arrPoint;
     }
     var point1 = beginPoint;
@@ -709,9 +709,9 @@ function findPath(beginPoint, endPoint) {
 
     if (endIndex > 3) {
 
-        arrPoint.concat(findPath(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
+        arrPoint.concat(findPath1(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
         arrPoint.concat(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[endIndex][arrPath[endIndex].length - 1]));
-        arrPoint.concat(findPath(arrPath[endIndex][arrPath[endIndex].length - 1], currentEndPoint, arrPath[endIndex]));
+        arrPoint.concat(findPath1(arrPath[endIndex][arrPath[endIndex].length - 1], currentEndPoint, arrPath[endIndex]));
 
         if (JSON.stringify(point1) != JSON.stringify(beginPoint)) {
             var rtArrPoint = [];
@@ -724,7 +724,7 @@ function findPath(beginPoint, endPoint) {
     }
     if (beginIndex > 3) {
         console.log('begin',arrPath[beginIndex][arrPath[beginIndex].length - 1]);
-        arrPoint.concat(findPath(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
+        arrPoint.concat(findPath1(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
         arrPoint.concat(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], currentEndPoint));
 
         if (JSON.stringify(point1) != JSON.stringify(beginPoint)) {
@@ -737,7 +737,7 @@ function findPath(beginPoint, endPoint) {
         return arrPoint;
     }
     for (var j = beginIndex + 1; j > endIndex; j--) {
-        arrPoint.concat(findPath((j == beginIndex + 1) ? currentBeginPoint : arrRePoint[j], (j == endIndex + 1) ? currentEndPoint : arrRePoint[j - 1], arrPath[j - 1]));
+        arrPoint.concat(findPath1((j == beginIndex + 1) ? currentBeginPoint : arrRePoint[j], (j == endIndex + 1) ? currentEndPoint : arrRePoint[j - 1], arrPath[j - 1]));
 
     }
     if (JSON.stringify(point1) != JSON.stringify(beginPoint)) {
@@ -806,16 +806,16 @@ function checkSmallPath(beginPoint, endPoint) {
         return smallpath;
     }
     if (distance1 < CIRCLE && distance2 < CIRCLE) {
-        arrPoint.concat(findPath(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
+        arrPoint.concat(findPath1(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
         arrPoint.concat(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[endIndex][arrPath[endIndex].length - 1]));
-        arrPoint.concat(findPath(arrPath[endIndex][arrPath[endIndex].length - 1], currentEndPoint, arrPath[endIndex]));
+        arrPoint.concat(findPath1(arrPath[endIndex][arrPath[endIndex].length - 1], currentEndPoint, arrPath[endIndex]));
         var smallpath = [];
         smallpath.push('POINTTYPE', 1);
         smallpath.push('LIST_POINT', arrpoint);
         return smallpath;
     }
     if (distance1 < CIRCLE) {
-        arrPoint.concat(findPath(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
+        arrPoint.concat(findPath1(currentBeginPoint, arrPath[beginIndex][arrPath[beginIndex].length - 1], arrPath[beginIndex]));
         arrPoint.concat(findPath(arrPath[beginIndex][arrPath[beginIndex].length - 1], endPoint));
         var smallpath = [];
         smallpath.push('POINTTYPE', 1);
@@ -824,7 +824,7 @@ function checkSmallPath(beginPoint, endPoint) {
     }
     if (distance2 < CIRCLE) {
         arrPoint.concat(findPath(beginPoint, arrPath[endIndex][arrPath[endIndex].length - 1]));
-        arrPoint.concat(findPath(arrPath[endIndex][arrPath[endIndex].length - 1], currentEndPoint, arrPath[endIndex]));
+        arrPoint.concat(findPath1(arrPath[endIndex][arrPath[endIndex].length - 1], currentEndPoint, arrPath[endIndex]));
         var smallpath = [];
         smallpath.push('POINTTYPE', 1);
         smallpath.push('LIST_POINT', arrpoint);
