@@ -862,7 +862,7 @@ function generate_way() {
                     if ((left - left_before) < 0 && (top - top_before > 0)) xien = 2;
                     if ((left - left_before) > 0 && (top - top_before < 0)) xien = 1;
                     html += '<canvas data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" data-xien="' + xien + '" style="margin-top:' + top + 'px; margin-left:' + left + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
-                }
+                return false;}
             }else{top_before=0;}
             if (width > 50 || height > 50) {
                 top_before = top;
