@@ -831,6 +831,7 @@ function checkSmallPath(beginPoint, endPoint) {
 
 function generate_way(){
     var html = '', top, left;
+    var all_way = [];
     all_way.push(listMainPoint1);
     all_way.push(listMainPoint2);
     all_way.push(list_path1);
