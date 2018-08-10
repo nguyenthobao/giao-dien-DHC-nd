@@ -852,15 +852,15 @@ function generate_way() {
         $.each(listP, function (k, v) {
             left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
             top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
-            if (top_before!=100 || left_before!=100) {
+            if(top_before!=100 || left_before!=100){
                 width = Math.abs(left - left_before);
                 height = Math.abs(top - top_before);
-                if ((width > 30 || height > 30)&& width<100 &&height<100) {
+                if ((width > 30 || height > 30) && width<100 && height<100) {
                     var xien;
-                    if ((left - left_before) < 0 && (top - top_before < 0)) xien = 2;
-                    if ((left - left_before) > 0 && (top - top_before > 0)) xien = 1;
-                    if ((left - left_before) < 0 && (top - top_before > 0)) xien = 4;
-                    if ((left - left_before) > 0 && (top - top_before < 0)) xien = 3;
+                    if ((left - left_before) < 0 && (top - top_before < 0)) xien = 4;
+                    if ((left - left_before) > 0 && (top - top_before > 0)) xien = 3;
+                    if ((left - left_before) < 0 && (top - top_before > 0)) xien = 2;
+                    if ((left - left_before) > 0 && (top - top_before < 0)) xien = 1;
                     html += '<canvas data-width="' + width + '" data-height="' + height + '" class="node_way" data-xien="' + xien + '" style="margin-top:' + top + 'px; margin-left:' + left + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
                 }
             }else{top_before=0;}
