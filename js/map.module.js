@@ -847,46 +847,91 @@ function generate_way() {
     all_way.push(list_path11);
     all_way.push(list_path12);
     all_way.push(list_path13);
-    var top_before=100, left_before=100, width, height;
-    $.each(all_way, function (u, listP) {
-        $.each(listP, function (k, v) {
-            left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
-            top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
-            if(top_before!=100 || left_before!=100){
-                width = Math.abs(left - left_before);
-                height = Math.abs(top - top_before);
-                if ((width > 30 || height > 30) && width<100 && height<100) {
-                    var xien;
-                    if ((left - left_before) < 0 && (top - top_before < 0)) xien = 4;
-                    if ((left - left_before) > 0 && (top - top_before > 0)) xien = 3;
-                    if ((left - left_before) < 0 && (top - top_before > 0)) xien = 2;
-                    if ((left - left_before) > 0 && (top - top_before < 0)) xien = 1;
-                    html += '<canvas data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" data-xien="' + xien + '" style="margin-top:' + top + 'px; margin-left:' + left + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
-                return false;}
-            }else{top_before=0;}
-            if (width > 50 || height > 50) {
-                top_before = top;
-                left_before = left;
-            }
-        });
-        top_before = 100;
-        left_before = 100;
+    var top_before=100, left_before=100, width, height,minW=0, maxH=0;
+    $.each(listMainPoint1,function(k,v){
+        left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
+        top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
+        if(top>maxH) maxH=top;
+        if(left<minW) minW=left;
+        if(top_before!=100 || left_before!=100) {
+            width = Math.abs(left - left_before);
+            height = Math.abs(top - top_before);
+        }
+        top_before = top;
+        left_before = left;
     });
+    html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas"  style="margin-top:' + maxH + 'px; margin-left:' + minW + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
+
+    var ctx = (document.getElementById('can')).getContext('2d');
+    ctx.beginPath();
+    top_before=100, left_before=100;
+    var start_draw=0;
+    $.each(listMainPoint1,function(k,v){
+        left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
+        top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
+        if(start_draw==0) start_draw=left-minW;
+        if(top_before!=100 || left_before!=100){
+            width = Math.abs(left - left_before);
+            height = Math.abs(top - top_before);
+            if ((width > 30 || height > 30) && width<100 && height<100) {
+                var xien;
+                if ((left - left_before) < 0 && (top - top_before < 0)) xien = 4;
+                if ((left - left_before) > 0 && (top - top_before > 0)) xien = 3;
+                if ((left - left_before) < 0 && (top - top_before > 0)) xien = 2;
+                if ((left - left_before) > 0 && (top - top_before < 0)) xien = 1;
+                var start_y=0,end_y=0;
+                if(xien==1 || xien==2){ start_y=0; end_y=height;}
+                else { end_y=0;start_y=height;}
+                ctx.moveTo(start_draw,start_y);
+                ctx.lineTo(width,end_y);
+                ctx.stroke();
+                start_draw=0;
+                }
+        }else{top_before=0;}
+        if (width > 50 || height > 50) {
+            top_before = top;
+            left_before = left;
+        }
+    });
+    // $.each(all_way, function (u, listP) {
+    //     $.each(listP, function (k, v) {
+    //         left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
+    //         top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
+    //         if(top_before!=100 || left_before!=100){
+    //             width = Math.abs(left - left_before);
+    //             height = Math.abs(top - top_before);
+    //             if ((width > 30 || height > 30) && width<100 && height<100) {
+    //                 var xien;
+    //                 if ((left - left_before) < 0 && (top - top_before < 0)) xien = 4;
+    //                 if ((left - left_before) > 0 && (top - top_before > 0)) xien = 3;
+    //                 if ((left - left_before) < 0 && (top - top_before > 0)) xien = 2;
+    //                 if ((left - left_before) > 0 && (top - top_before < 0)) xien = 1;
+    //                 html += '<canvas data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" data-xien="' + xien + '" style="margin-top:' + top + 'px; margin-left:' + left + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
+    //             }
+    //         }else{top_before=0;}
+    //         if (width > 50 || height > 50) {
+    //             top_before = top;
+    //             left_before = left;
+    //         }
+    //     });
+    //     top_before = 100;
+    //     left_before = 100;
+    // });
     $('#content2').append(html);
-    $('.node_way').each(function (k, v) {
-        var ctx = v.getContext('2d');
-        var start_y=0,end_y=0;
-        if($(v).data('xien')==1 || $(v).data('xien')==2)  start_y=0;
-        else start_y=$(v).data('height');
-        if($(v).data('xien')==3 || $(v).data('xien')==4) end_y=0;
-        else  end_y=$(v).data('height');
-        console.log(0,start_y, $(v).data('width'), end_y);
-        console.log(v);
-        ctx.beginPath();
-        ctx.moveTo(0,start_y);
-        ctx.lineTo($(v).data('width'),end_y);
-        ctx.stroke();
-    });
+    // $('.node_way').each(function (k, v) {
+    //     var ctx = v.getContext('2d');
+    //     var start_y=0,end_y=0;
+    //     if($(v).data('xien')==1 || $(v).data('xien')==2)  start_y=0;
+    //     else start_y=$(v).data('height');
+    //     if($(v).data('xien')==3 || $(v).data('xien')==4) end_y=0;
+    //     else  end_y=$(v).data('height');
+    //     console.log(0,start_y, $(v).data('width'), end_y);
+    //     console.log(v);
+    //     ctx.beginPath();
+    //     ctx.moveTo(0,start_y);
+    //     ctx.lineTo($(v).data('width'),end_y);
+    //     ctx.stroke();
+    // });
 
 }
 
