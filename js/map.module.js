@@ -361,7 +361,9 @@ var isFirst = true, isFirst1 = true, isFirst2 = true, isFirst3 = true;
 
 
 function distance(beginPoint, endPoint) {
-    return (endPoint[0] - beginPoint[0]) * (endPoint[0] - beginPoint[0]) + (endPoint[1] - beginPoint[1]) * (endPoint[1] - beginPoint[1]);
+    var rs=(endPoint[0] - beginPoint[0]) * (endPoint[0] - beginPoint[0]) + (endPoint[1] - beginPoint[1]) * (endPoint[1] - beginPoint[1]);
+    console.log('distanc',rs);
+    return rs;
 }
 
 function checkSpecialPath1(beginPoint, endPoint) {
@@ -658,7 +660,6 @@ function findPath(beginPoint, endPoint) {
     var distanc = 20000000;
     var currentBeginPoint = null;
     var i = 0;
-console.log('array path',arrPath);
     $.each(arrPath, function (k, listPoint) {
         var tmpPoint = findNearestPoint(beginPoint, listPoint);
         if (distance(beginPoint, tmpPoint) < distanc) {
