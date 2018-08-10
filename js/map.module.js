@@ -876,7 +876,7 @@ function generate_way() {
     $('.node_way').each(function (k, v) {
         var ctx = this.getContext('2d');
         ctx.beginPath();
-        ctx.setLineDash([]);
+        ctx.setLineDash([50,0]);
         var start_y=0,end_y=0;
         if($(v).data('xien')==1 || $(v).data('xien')==2)  start_y=0;
         else start_y=$(v).data('height');
