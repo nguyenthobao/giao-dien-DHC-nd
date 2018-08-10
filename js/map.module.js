@@ -877,8 +877,11 @@ function generate_way() {
         var ctx = this.getContext('2d');
         ctx.beginPath();
         ctx.setLineDash([]);
-        if($(v).data('xien')==1 || $(v).data('xien')==2) var start_y=0;
-        else if($(v).data('xien')==3 || $(v).data('xien')==4) var end_y=$(v).data('height');
+        var start_y=0,end_y=0;
+        if($(v).data('xien')==1 || $(v).data('xien')==2)  start_y=0;
+        else start_y=$(v).data('height');
+        if($(v).data('xien')==3 || $(v).data('xien')==4)  end_y=$(v).data('height');
+        else end_y=0;
         console.log(0,start_y, $(v).data('width'), end_y);
         ctx.moveTo(0,start_y);
         ctx.lineTo($(v).data('width'),end_y);
