@@ -609,6 +609,7 @@ function findPath1(beginPoint, endPoint, listPoint) {
 
 
     } else {
+        console.log('sakjfbhuweilgvo;');
         for (var i = 0; i < lng + 1; i++) {
             arrPoint.push(listPoint[indexStart + sign * i]);
         }
