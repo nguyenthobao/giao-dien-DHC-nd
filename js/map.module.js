@@ -860,19 +860,19 @@ function generate_way() {
         left_before = left;
         // console.log(minW, maxH,maxW, minH);
     });
-    width=maxW-minW;
-    height=maxH-minH;
-    console.log(width,height,minW, maxH);
-    html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas"  style="margin-top:' + maxH + 'px; margin-left:' + minW + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
-
-    $('#content2').append(html);
-    var ctx = (document.getElementById('can')).getContext('2d');
-    ctx.beginPath();
-    ctx.lineTo(0,0);
-    ctx.lineTo(width-1,height-1);
-    ctx.stroke();
-    top_before=100,left_before=100;
-    var start_draw=0;
+    // width=maxW-minW;
+    // height=maxH-minH;
+    // console.log(width,height,minW, maxH);
+    // html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas"  style="margin-top:' + maxH + 'px; margin-left:' + minW + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
+    //
+    // $('#content2').append(html);
+    // var ctx = (document.getElementById('can')).getContext('2d');
+    // ctx.beginPath();
+    // ctx.lineTo(0,0);
+    // ctx.lineTo(width,height);
+    // ctx.stroke();
+    // top_before=100,left_before=100;
+    // var start_draw=0;
     // $.each(listMainPoint1,function(k,v){
     //     left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
     //     top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
