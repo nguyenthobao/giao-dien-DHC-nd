@@ -922,9 +922,6 @@ function generate_way(listP) {
     var ctx = (document.getElementById('can')).getContext('2d');
     ctx.beginPath();
     ctx.setLineDash([5,2]);
-    ctx.lineWidth=8;
-    ctx.lineCap='round';
-    ctx.strokeStyle = '#ff6653';
     scaleX = parseFloat(ctx.canvas.width / width);
     scaleY = parseFloat(ctx.canvas.height / height);
     top_before = 100, left_before = 100;
@@ -934,6 +931,9 @@ function generate_way(listP) {
         top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
         ctx.lineTo(Math.abs(minW-left) * scaleX, Math.abs(maxH-top) * scaleY);
     });
+    // ctx.lineWidth=8;
+    // ctx.lineCap='round';
+    // ctx.strokeStyle = '#ff6653';
     ctx.stroke();
 
 }
