@@ -653,26 +653,26 @@ function findPath(beginPoint, endPoint) {
     if (tmpPoint1[0] != beginPoint[0] || tmpPoint1[1] != beginPoint[1] || tmpPoint2[0] != endPoint[0] || tmpPoint2[1] != endPoint[1]) {
         return findPath(tmpPoint1, tmpPoint2);
     }
-    // var dicData1 = checkSpecialPath1(beginPoint, endPoint);
-    // var type1 = dicData1['POINTTYPE'];
-    // if (type1 == 1) {
-    //     return dicData1['LIST_POINT'];
-    // }
-    // var dicData2 = checkSpecialPath2(beginPoint, endPoint);
-    // var type2 = dicData2['POINTTYPE'];
-    // if (type2 == 1) {
-    //     return dicData2['LIST_POINT'];
-    // }
-    // var dicData3 = checkSpecialPath3(beginPoint, endPoint);
-    // var type3 = dicData3['POINTTYPE'];
-    // if (type3 == 1) {
-    //     return dicData3['LIST_POINT'];
-    // }
-    // var dicData = checkSmallPath(beginPoint, endPoint);
-    // var type = dicData['POINTTYPE'];
-    // if (type == 1) {
-    //     return dicData['LIST_POINT'];
-    // }
+    var dicData1 = checkSpecialPath1(beginPoint, endPoint);
+    var type1 = dicData1['POINTTYPE'];
+    if (type1 == 1) {
+        return dicData1['LIST_POINT'];
+    }
+    var dicData2 = checkSpecialPath2(beginPoint, endPoint);
+    var type2 = dicData2['POINTTYPE'];
+    if (type2 == 1) {
+        return dicData2['LIST_POINT'];
+    }
+    var dicData3 = checkSpecialPath3(beginPoint, endPoint);
+    var type3 = dicData3['POINTTYPE'];
+    if (type3 == 1) {
+        return dicData3['LIST_POINT'];
+    }
+    var dicData = checkSmallPath(beginPoint, endPoint);
+    var type = dicData['POINTTYPE'];
+    if (type == 1) {
+        return dicData['LIST_POINT'];
+    }
     var arrPath = [];
     arrPath.push(listMainPoint1);
     arrPath.push(listMainPoint2);
