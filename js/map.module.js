@@ -100,7 +100,6 @@ $(document).ready(function () {
                 if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
                     scroll(750, 690, 750, 500);
                 } else {
-                    ;
                     $('#marker').css("margin-top", y + "px");
                     $('#marker').css("margin-left", x + "px");
                     $('#marker').show();
@@ -280,6 +279,8 @@ $(document).ready(function () {
         });
     });
     $('body').on('click', '.point_important', function () {
+        $('.book-seat').hide();
+        $('.point-marker').hide();
         x = $(this).data('x');
         y = $(this).data('y');
         var beginPoint;
