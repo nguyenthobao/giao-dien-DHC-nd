@@ -274,10 +274,7 @@ $(document).ready(function () {
                     });
                     $('#modalForm').animate({scrollTop: 0}, 'fast');
                 }
-                $('button.book-seat').each(function(){
-                    $(this).hide();
-                });
-                $('button.point-marker').each(function(){
+                $('#modalForm .col-lg-6').each(function(){
                     $(this).hide();
                 });
             },
@@ -287,14 +284,6 @@ $(document).ready(function () {
         });
     });
     $('body').on('click', '.point_important', function () {
-        console.log($('button.book-seat'));
-        console.log($('button.point-marker'));
-        $('button.book-seat').each(function(){
-            $(this).hide();
-        });
-        $('button.point-marker').each(function(){
-            $(this).hide();
-        });
         x = $(this).data('x');
         y = $(this).data('y');
         var beginPoint;
