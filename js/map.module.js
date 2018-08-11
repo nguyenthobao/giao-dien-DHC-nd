@@ -933,7 +933,9 @@ function generate_way(listP) {
         var marginTop=(minH-1510);
         var marginLeft=(minW+10);
     } else {
+        if((window.innerWidth > 0) ? window.innerWidth : screen.width>380)
         var marginTop=(minH-1034);
+        else var marginTop=(minH-1050);
         var marginLeft=(minW+2);
     }
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
