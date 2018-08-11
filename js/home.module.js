@@ -24,7 +24,7 @@ $(document).ready(function () {
     var x_before = 0, y_before = 0;
     var heightmap;
     if (isMobile.any() != null) heightmap = 1200; else heightmap = 1450;
-
+    if ((window.innerWidth > 0) ? window.innerWidth : screen.width >900 && (window.innerWidth > 0) ? window.innerWidth : screen.width<1100) heightmap = 1470;
     urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     // $('*').bind('touchmove', false);
