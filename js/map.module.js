@@ -216,10 +216,10 @@ $(document).ready(function () {
     });
     $('body').on('click', '.item-point,.img_instant', function () {
         if ($(this).hasClass('img_instant')) {
-            $('.book-seat').each(function(k,v){
+            $('button.book-seat').each(function(k,v){
                 $(v).hide();
             });
-            $('.point-marker').each(function(k,v){
+            $('button.point-marker').each(function(k,v){
                 $(v).hide();
             });
         }
@@ -239,6 +239,8 @@ $(document).ready(function () {
                 $('#modalForm').modal('show');
                 $('#modalFormLabel').text(result.data.result.point_name);
                 var pointImage = JSON.parse(result.data.result.point_images);
+                if(pointImage[0]!=undefined)
+                    pointImage[0]=(pointImage[0]).slice(0,4)+'s'+ (pointImage[0]).slice(4);
                 html = '<div class="row img-point">';
                 html += '<div class="col-12"><img src="' + pointImage[0] + '" alt=""></div>';
                 html += '</div>';
@@ -287,8 +289,12 @@ $(document).ready(function () {
         });
     });
     $('body').on('click', '.point_important', function () {
-        $('.book-seat').hide();
-        $('.point-marker').hide();
+        $('button.book-seat').each(function(k,v){
+            $(v).hide();
+        });
+        $('button.point-marker').each(function(k,v){
+            $(v).hide();
+        });
         x = $(this).data('x');
         y = $(this).data('y');
         var beginPoint;
