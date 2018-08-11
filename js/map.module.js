@@ -929,7 +929,7 @@ function generate_way(listP) {
     if(document.getElementById('can'))
     (document.getElementById('can')).remove();
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
-        ' style="margin-top:' + maxH + 'px; margin-left:' + minW + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
+        ' style="margin-top:' + (-maxH-1038) + 'px; margin-left:' + minW + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
     $('#content2').append(html);
     var ctx = (document.getElementById('can')).getContext('2d');
     ctx.beginPath();
