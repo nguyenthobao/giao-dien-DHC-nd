@@ -910,15 +910,14 @@ function checkSmallPath(beginPoint, endPoint) {
 function generate_way(listP) {
     console.log('gen',listP);
     var html = '', top, left;
-    var top_before = 100, left_before = 100, width = 0, height = 0, minW = 0, maxH = -99999, maxW = 0, minH = 0, scaleX,
+    var top_before = 100, left_before = 100, width = 0, height = 0, minW = 0, maxH = 0, maxW = 0, minH = 0, scaleX,
         scaleY;
     $.each(listP, function (k, v) {
         left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
         top = parseFloat(v[1] / parseFloat(7046 / heightmap));
-        top-=1038;
-        if (top > maxH) maxH = top;
+        if (top > maxH || maxH==0) maxH = top;
         if (left < minW || minW == 0) minW = left;
-        if (top < minH) minH = top;
+        if (top < minH || minH==0) minH = top;
         if (left > maxW) maxW = left;
         top_before = top;
         left_before = left;
@@ -929,7 +928,7 @@ function generate_way(listP) {
     if(document.getElementById('can'))
     (document.getElementById('can')).remove();
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
-        ' style="margin-top:' + (maxH-575) + 'px; margin-left:' + (minW+10) + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
+        ' style="margin-top:' + (minH-1510) + 'px; margin-left:' + (minW+10) + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
     $('#content2').append(html);
     var ctx = (document.getElementById('can')).getContext('2d');
     ctx.beginPath();
@@ -939,10 +938,10 @@ function generate_way(listP) {
     top_before = 100, left_before = 100;
     var start_draw = 0;
     $.each(listP, function (k, v) {
-        left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
-        top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
+        left = parseFloat(v[0] / parseFloat(9798 / 2048))-8;
+        top = parseFloat(v[1] / parseFloat(7046 / heightmap));
         console.log(Math.abs(left-minW) * scaleX, Math.abs(maxH-top) * scaleY);
-        ctx.lineTo(Math.abs(left-minW) * scaleX, Math.abs(minH-top) * scaleY);
+        ctx.lineTo(Math.abs(left-minW) * scaleX, Math.abs(top-minH) * scaleY);
     });
     ctx.lineWidth=4;
     ctx.lineCap='round';
