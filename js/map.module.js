@@ -929,7 +929,7 @@ function generate_way(listP) {
     if(document.getElementById('can'))
     (document.getElementById('can')).remove();
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
-        ' style="margin-top:' + (-maxH-1038) + 'px; margin-left:' + minW + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
+        ' style="margin-top:' + (maxH-575) + 'px; margin-left:' + (minW+10) + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
     $('#content2').append(html);
     var ctx = (document.getElementById('can')).getContext('2d');
     ctx.beginPath();
@@ -941,7 +941,8 @@ function generate_way(listP) {
     $.each(listP, function (k, v) {
         left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
         top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
-        ctx.lineTo(Math.abs(minW-left) * scaleX, Math.abs(maxH-top) * scaleY);
+        console.log(Math.abs(left-minW) * scaleX, Math.abs(maxH-top) * scaleY);
+        ctx.lineTo(Math.abs(left-minW) * scaleX, Math.abs(minH-top) * scaleY);
     });
     ctx.lineWidth=4;
     ctx.lineCap='round';
