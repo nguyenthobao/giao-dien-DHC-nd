@@ -311,6 +311,8 @@ $(document).ready(function () {
         // $.each(list_drop_index, function (k, v) {
         //     $(v).css('z-index', k);
         // });
+        $('.img_instant').hide();
+        $('.label_instant').hide();
         $(($(this).parent()).find('.img_instant')).show();
         $(($(this).parent()).find('.label_instant')).show();
         setTimeout(document.getElementById('search_place').scrollIntoView(), 1000);
@@ -927,8 +929,15 @@ function generate_way(listP) {
     height = maxH - minH;
     if(document.getElementById('can'))
     (document.getElementById('can')).remove();
+    if (isMobile.any() == null) {
+        var marginTop=(minH-1510);
+        var marginLeft=(minW+10);
+    } else {
+        var marginTop=(minH-1050);
+        var marginLeft=(minW+2);
+    }
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
-        ' style="margin-top:' + (minH-1510) + 'px; margin-left:' + (minW+10) + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
+        ' style="margin-top:' +  marginTop+ 'px; margin-left:' + marginLeft + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
     $('#content2').append(html);
     var ctx = (document.getElementById('can')).getContext('2d');
     ctx.beginPath();
