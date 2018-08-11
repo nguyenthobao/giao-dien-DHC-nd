@@ -19,17 +19,18 @@ var isMobile = {
     }
 };
 var heightmap;
+
+
+var topLeftRealX = 0;
+var topLeftRealY = 0;
+var scaleX = 1;
+var scaleY = 1;
+var x = -1, y = -1, lat = -1, long = -1;
+var that = null;
 if (isMobile.any() != null) heightmap = 1200; else heightmap = 1450;
 urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
 urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
 $(document).ready(function () {
-
-    var topLeftRealX = 0;
-    var topLeftRealY = 0;
-    var scaleX = 1;
-    var scaleY = 1;
-    var x = -1, y = -1, lat = -1, long = -1;
-    var that = null;
     $('#tab2').prop('checked', true);
     $('main > label').hide();
     $('.container').attr('style', 'min-width: 100%');
@@ -285,7 +286,7 @@ $(document).ready(function () {
         if (that == null) {
             $('.div_marker').each(function (k, v) {
                 if ($(v).data('lat') == 4310 && $(v).data('long') == 4104) {
-                    that = this;
+                    that =v;
                     return false;
                 }
             });
@@ -294,9 +295,9 @@ $(document).ready(function () {
             beginPoint = [$(that).data('lat'), $(that).data('long')];
         else beginPoint = [lat, long];
         // alert(JSON.stringify(beginPoint)+',[' +  $($(this).parent()).data('lat') + ',' +  $($(this).parent()).data('long') + ']');
-
+        console.log('beginPoint',beginPoint);
         generate_way(findPath(beginPoint, [$($(this).parent()).data('lat'), $($(this).parent()).data('long')]));
-        that = this;
+        // that = this;
         // var that = this;
         // list_drop_index = {};
         // $('.point_important').each(function() {
@@ -570,12 +571,20 @@ function findNearestPoint(point, listPoint) {
     });
     return currentPoint;
 }
-
+function getIndexArray(point,list){
+    var index=-1;
+    $.each(list,function(k,v){
+        if(point[0]==v[0] && point[1]==v[1]){
+            index=k; return false;
+        }
+    });
+    return index;
+}
 function findPath1(beginPoint, endPoint, listPoint) {
     console.log('findPath1',beginPoint,endPoint, listPoint.length);
     var arrPoint = [];
-    var indexStart = listPoint.indexOf(beginPoint);
-    var indexEnd = listPoint.indexOf(endPoint);
+    var indexStart = getIndexArray(beginPoint,listPoint);
+    var indexEnd = getIndexArray(endPoint,listPoint);
     var lng = Math.abs(indexEnd - indexStart);
     var sign = (indexEnd > indexStart) ? 1 : -1;
     var tmpIndexStart = (indexStart < indexEnd) ? indexStart : indexEnd;
@@ -781,10 +790,11 @@ function findPath(beginPoint, endPoint) {
         console.log('beginIndex>3',arrPoint);
         return arrPoint;
     }
+    console.log(beginIndex,endIndex,arrRePoint);
     for (var j = beginIndex + 1; j > endIndex; j--) {
         $.each(findPath1((j == beginIndex + 1) ? currentBeginPoint : arrRePoint[j], (j == endIndex + 1) ? currentEndPoint : arrRePoint[j - 1], arrPath[j - 1]),function(k,v){
             arrPoint.push(v);
-        });
+        }); console.log(' vong'+j,arrPoint);
     }
     if (JSON.stringify(point1) != JSON.stringify(beginPoint)) {
         var rtArrPoint = [];
@@ -905,7 +915,7 @@ function generate_way(listP) {
     $.each(listP, function (k, v) {
         left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
         top = parseFloat(v[1] / parseFloat(7046 / heightmap));
-        if (isMobile.any() != null) top-=1038;
+        top-=1038;
         if (top > maxH) maxH = top;
         if (left < minW || minW == 0) minW = left;
         if (top < minH) minH = top;
@@ -916,6 +926,8 @@ function generate_way(listP) {
     });
     width = maxW - minW;
     height = maxH - minH;
+    if(document.getElementById('can'))
+    (document.getElementById('can')).remove();
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
         ' style="margin-top:' + maxH + 'px; margin-left:' + minW + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
     $('#content2').append(html);
@@ -926,14 +938,14 @@ function generate_way(listP) {
     scaleY = parseFloat(ctx.canvas.height / height);
     top_before = 100, left_before = 100;
     var start_draw = 0;
-    $.each(listMainPoint1, function (k, v) {
+    $.each(listP, function (k, v) {
         left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
         top = parseFloat(v[1] / parseFloat(7046 / heightmap)) - 1038;
         ctx.lineTo(Math.abs(minW-left) * scaleX, Math.abs(maxH-top) * scaleY);
     });
-    // ctx.lineWidth=8;
-    // ctx.lineCap='round';
-    // ctx.strokeStyle = '#ff6653';
+    ctx.lineWidth=4;
+    ctx.lineCap='round';
+    ctx.strokeStyle = '#ff3b31';
     ctx.stroke();
 
 }
