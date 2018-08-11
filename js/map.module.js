@@ -215,10 +215,13 @@ $(document).ready(function () {
         }
     });
     $('body').on('click', '.item-point,.img_instant', function () {
-        alert($(this).hasClass('img_instant'));
         if ($(this).hasClass('img_instant')) {
-            $('.book-seat').hide();
-            $('.point-marker').hide();
+            $('.book-seat').each(function(k,v){
+                $(v).hide();
+            });
+            $('.point-marker').each(function(k,v){
+                $(v).hide();
+            });
         }
         var pointId = $(this).data('id');
         $.ajax({
