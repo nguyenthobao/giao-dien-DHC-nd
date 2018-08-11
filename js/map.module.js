@@ -215,6 +215,7 @@ $(document).ready(function () {
         }
     });
     $('body').on('click', '.item-point,.img_instant', function () {
+        alert($(this).hasClass('img_instant'));
         if ($(this).hasClass('img_instant')) {
             $('.book-seat').hide();
             $('.point-marker').hide();
@@ -329,6 +330,9 @@ $(document).ready(function () {
             y = 700;
         }
         scroll(x - 150, y, x - 150, y);
+    });
+    $('body').on('click','canvas,#mapdhc',function(){
+        (document.getElementById('can')).remove();
     });
 
 });
