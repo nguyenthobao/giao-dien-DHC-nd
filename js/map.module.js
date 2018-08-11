@@ -274,7 +274,7 @@ $(document).ready(function () {
                     });
                     $('#modalForm').animate({scrollTop: 0}, 'fast');
                 }
-                $('#modalForm .col-lg-6').each(function(){
+                $('#modalForm div.col-lg-6').each(function(){
                     $(this).hide();
                 });
             },
