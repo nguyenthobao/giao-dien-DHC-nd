@@ -215,14 +215,6 @@ $(document).ready(function () {
         }
     });
     $('body').on('click', '.item-point,.img_instant', function () {
-        if ($(this).hasClass('img_instant')) {
-            $('button.book-seat').each(function(k,v){
-                $(v).hide();
-            });
-            $('button.point-marker').each(function(k,v){
-                $(v).hide();
-            });
-        }
         var pointId = $(this).data('id');
         $.ajax({
             url: baseApi + 'point/get-point',
@@ -282,6 +274,12 @@ $(document).ready(function () {
                     });
                     $('#modalForm').animate({scrollTop: 0}, 'fast');
                 }
+                $('button.book-seat').each(function(){
+                    $(this).hide();
+                });
+                $('button.point-marker').each(function(){
+                    $(this).hide();
+                });
             },
             error: function (e) {
                 alert('Có lỗi');
@@ -289,11 +287,13 @@ $(document).ready(function () {
         });
     });
     $('body').on('click', '.point_important', function () {
-        $('button.book-seat').each(function(k,v){
-            $(v).hide();
+        console.log($('button.book-seat'));
+        console.log($('button.point-marker'));
+        $('button.book-seat').each(function(){
+            $(this).hide();
         });
-        $('button.point-marker').each(function(k,v){
-            $(v).hide();
+        $('button.point-marker').each(function(){
+            $(this).hide();
         });
         x = $(this).data('x');
         y = $(this).data('y');
