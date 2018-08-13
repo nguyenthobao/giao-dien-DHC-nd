@@ -21,10 +21,7 @@ $(document).ready(function () {
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
-    var x_before = 0, y_before = 0;
-    var heightmap;
-    if (isMobile.any() != null) heightmap = 1200; else heightmap = 1450;
-    if ((window.innerWidth > 0) ? window.innerWidth : screen.width >900 && (window.innerWidth > 0) ? window.innerWidth : screen.width<1100) heightmap = 1470;
+    var x_before = 0, y_before = 0,
     urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     // $('*').bind('touchmove', false);
@@ -89,8 +86,8 @@ $(document).ready(function () {
                 if(pointImage[0]!=undefined)
                 pointImage[0]=(pointImage[0]).slice(0,4)+'s'+ (pointImage[0]).slice(4);
                 var url = '';
-                x = parseFloat(v.lat / parseFloat(9798 / 2048));
-                y = parseFloat(v.long / parseFloat(7046 / heightmap));
+                x = parseFloat(v.lat / parseFloat(9798 / $('#mapdhc').width()));
+                y = parseFloat(v.long / parseFloat(7046 / $('#mapdhc').height()));
                 if (isMobile.any() != null) {
                     console.log(x, y);
                 }

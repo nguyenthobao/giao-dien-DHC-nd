@@ -18,7 +18,6 @@ var isMobile = {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
-var heightmap;
 
 
 var topLeftRealX = 0;
@@ -26,9 +25,7 @@ var topLeftRealY = 0;
 var scaleX = 1;
 var scaleY = 1;
 var x = -1, y = -1, lat = -1, long = -1;
-var that = null;
-if (isMobile.any() != null) heightmap = 1200; else heightmap = 1450;
-if ((window.innerWidth > 0) ? window.innerWidth : screen.width > 900 && (window.innerWidth > 0) ? window.innerWidth : screen.width < 1100) heightmap = 1470;
+var that = null,
 urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
 urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
 $(document).ready(function () {
@@ -59,12 +56,12 @@ $(document).ready(function () {
         var browserGeolocationSuccess = function (position) {
             x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude));
             y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude));
-            x = x / (9798 / $('#mapdhc')[0].width);
-            y = y / (7046 / heightmap);
-            lat = parseFloat(x / $('#mapdhc')[0].width) * 9798;
-            long = parseFloat(y / heightmap) * 7046;
+            x = x / (9798 / $('#mapdhc').width());
+            y = y / (7046 / $('#mapdhc').height());
+            lat = parseFloat(x /$('#mapdhc').width()) * 9798;
+            long = parseFloat(y / $('#mapdhc').height()) * 7046;
             if (isMobile.any() == null) {
-                if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
+                if (x > $('#mapdhc').width() || x < 0 || y > $('#mapdhc').height() || y < 0) {
                     $('#marker').css("margin-top", 850 + "px");
                     $('#marker').css("margin-left", 920 + "px");
                     $('#marker').show();
@@ -90,7 +87,7 @@ $(document).ready(function () {
                 $('html').attr('style', 'width:10000px;height:3000px');
                 $('html').addClass('height-screen');
                 $('#content2').addClass('color_content2');
-                if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
+                if (x > $('#mapdhc').width() || x < 0 || y > $('#mapdhc').height() || y < 0) {
                     scroll(750, 690, 750, 500);
                 } else {
                     $('#marker').css("margin-top", y + "px");
@@ -163,8 +160,8 @@ $(document).ready(function () {
 
     $('body').on('change', '#search_place', function () {
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
-        x = parseFloat($('#search_place option:selected').data('left') / (9798 / 2048));
-        y = parseFloat($('#search_place option:selected').data('top') / (7046 / heightmap));
+        x = parseFloat($('#search_place option:selected').data('left') / (9798 / $('#mapdhc').width()));
+        y = parseFloat($('#search_place option:selected').data('top') / (7046 / $('#mapdhc').height()));
         $('.img_instant').each(function () {
             $('.img_instant').hide();
         });
