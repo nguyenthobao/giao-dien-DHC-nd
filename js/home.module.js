@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // $('#search_place').select2();
+    $('#search_place').select2();
     /*Get all point in home*/
     var that, isMobile = {
         Android: function () {
@@ -80,7 +80,7 @@ $(document).ready(function () {
                 if (a.point_name > b.point_name) return 1;
                 return 0;
             });
-            var html_select = '<option>Chọn địa điểm</option>', html_marker = '';
+            var html_select = '', html_marker = '';
             $.each(pointData, function (k, v) {
                 var pointImage = JSON.parse(v.point_images);
                 if(pointImage[0]!=undefined)
@@ -95,7 +95,7 @@ $(document).ready(function () {
                 else if (v.point_type == 4) url = '/images/food_marker.png';
                 else url = '/images/blank_marker.png';
                 if (v.point_id == 28) console.log(v);
-                html_select += '<option data-top="' + v.long + '" data-left="' + v.lat + '" >' + v.point_name + '</option>';
+                html_select += '<li data-top="' + v.long + '" data-left="' + v.lat + '" >' + v.point_name + '</li>';
 
                 html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute; ">' +
                     '<img src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="z-index:9;max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +

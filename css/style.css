@@ -427,11 +427,19 @@ main input:checked + label {
     /*font-weight: bold;*/
 /*}*/
 
-#search_place {
+#choose{
     width: 90vw;
     height: 30px;
     margin-top: 10px;
     margin-left: 5.5vw;
+    border-radius: 5px;
+    max-width: 500px;
+}
+#search_place{
+    width: 90vw;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 13vw;
     border-radius: 5px;
     max-width: 500px;
 }
