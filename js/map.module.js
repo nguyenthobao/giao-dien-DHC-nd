@@ -296,7 +296,7 @@ $(document).ready(function () {
                 }
             });
         }
-        if (lat > $('#mapdhc')[0].width || lat < 0 || long > heightmap || long < 0)
+        if (lat >9798 || lat < 0 || long > 7048 || long < 0)
             beginPoint = [$(that).data('lat'), $(that).data('long')];
         else beginPoint = [lat, long];
         // alert(JSON.stringify(beginPoint)+',[' +  $($(this).parent()).data('lat') + ',' +  $($(this).parent()).data('long') + ']');
