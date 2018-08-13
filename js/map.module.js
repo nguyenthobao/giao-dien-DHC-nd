@@ -915,14 +915,15 @@ function checkSmallPath(beginPoint, endPoint) {
 }
 
 function generate_way(listP) {
-
+alert($('#mapdhc').width());
+alert($('#mapdhc').height());
     isFirst = true, isFirst1 = true, isFirst2 = true, isFirst3 = true;
     var html = '', top, left;
     var top_before = 100, left_before = 100, width = 0, height = 0, minW = 0, maxH = 0, maxW = 0, minH = 0, scaleX,
         scaleY;
     $.each(listP, function (k, v) {
-        left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
-        top = parseFloat(v[1] / parseFloat(7046 / heightmap));
+        left = parseFloat(v[0] / parseFloat(9798 / $('#mapdhc').width()));
+        top = parseFloat(v[1] / parseFloat(7046 / $('#mapdhc').height()));
         if (top > maxH || maxH == 0) maxH = top;
         if (left < minW || minW == 0) minW = left;
         if (top < minH || minH == 0) minH = top;
@@ -935,20 +936,21 @@ function generate_way(listP) {
     height = maxH - minH;
     if (document.getElementById('can'))
         (document.getElementById('can')).remove();
-    if (isMobile.any() == null) {
-        var marginTop = (minH - 1520);
-        var marginLeft = (minW + 10);
-    } else {
-        if ((window.innerWidth > 0) ? window.innerWidth : screen.width > 380)
-            var marginTop = (minH - 1174);
-        else if ((window.innerWidth > 0) ? window.innerWidth : screen.width < 350)
-            var marginTop = (minH - 1160);
-        else var marginTop = (minH - 1190);
-        var marginLeft = (minW + 2);
-    }
+    // if (isMobile.any() == null) {
+    //     var marginTop = (minH - 1520);
+    //     var marginLeft = (minW + 10);
+    // } else {
+        var marginTop = ($('#mapdhc').height()-minH);
+        // if ((window.innerWidth > 0) ? window.innerWidth : screen.width > 380)
+        //     var marginTop = (minH - 1174);
+        // else if ((window.innerWidth > 0) ? window.innerWidth : screen.width < 350)
+        //     var marginTop = (minH - 1160);
+        // else var marginTop = (minH - 1190);
+        var marginLeft = (minW);
+    // }
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
         ' style="margin-top:' + marginTop + 'px; margin-left:' + marginLeft + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
-    $('#content2').append(html);
+    $('.addCanvas').append(html);
     var ctx = (document.getElementById('can')).getContext('2d');
     ctx.beginPath();
     ctx.setLineDash([5, 2]);
@@ -957,8 +959,8 @@ function generate_way(listP) {
     top_before = 100, left_before = 100;
     var start_draw = 0;
     $.each(listP, function (k, v) {
-        left = parseFloat(v[0] / parseFloat(9798 / 2048)) - 8;
-        top = parseFloat(v[1] / parseFloat(7046 / heightmap));
+        left = parseFloat(v[0] / parseFloat(9798 /$('#mapdhc').width()));
+        top = parseFloat(v[1] / parseFloat(7046 / $('#mapdhc').height()));
         ctx.lineTo(Math.abs(left - minW) * scaleX, Math.abs(top - minH) * scaleY);
     });
     ctx.lineWidth = 4;
