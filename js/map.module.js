@@ -52,18 +52,10 @@ $(document).ready(function () {
     });
 
     function into_map() {
-        // var tryAPIGeolocation = function () {
-        //     jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function (success) {
-        //         apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
-        //     }).fail(function (err) {
-        //             alert("API Geolocation error! " + err);
-        //             scroll(750,690,750,500);
-        //         });
-        // };
-        // var apiGeolocationSuccess = function (position) {
-        //
-        // };
-
+        if (isMobile.any() == null) {
+            $('#marker').css("margin-top", 850 + "px");
+            $('#marker').css("margin-left", 920 + "px");
+        }
         var browserGeolocationSuccess = function (position) {
             x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude));
             y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude));
