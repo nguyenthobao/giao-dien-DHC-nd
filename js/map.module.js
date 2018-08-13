@@ -69,8 +69,8 @@ $(document).ready(function () {
             y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude));
             x = x / (9798 / $('#mapdhc')[0].width);
             y = y / (7046 / heightmap);
-            lat = x;
-            long = y;
+            lat = parseFloat(x/$('#mapdhc')[0].width)*9798;
+            long = parseFloat(y/heightmap)*7046;
             if (isMobile.any() == null) {
                 if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
                     $('#marker').css("margin-top", 850 + "px");
@@ -302,20 +302,6 @@ $(document).ready(function () {
         // alert(JSON.stringify(beginPoint)+',[' +  $($(this).parent()).data('lat') + ',' +  $($(this).parent()).data('long') + ']');
         console.log('beginPoint', beginPoint);
         generate_way(findPath(beginPoint, [$($(this).parent()).data('lat'), $($(this).parent()).data('long')]));
-        // that = this;
-        // var that = this;
-        // list_drop_index = {};
-        // $('.point_important').each(function() {
-        //     $(($(this).parent()).find('.img_instant')).hide();
-        //     $(($(this).parent()).find('.label_instant')).hide();
-        //     if (Math.abs($(that).data('lat') - $(this).data('lat')) > 500 || Math.abs($(that).data('long') - $(this).data('long')) > 500) {
-        //         list_drop_index[$(this).css('z-index')] = this;
-        //         $(this).css('z-index', '0');
-        //     }
-        // });
-        // $.each(list_drop_index, function (k, v) {
-        //     $(v).css('z-index', k);
-        // });
         $('.img_instant').hide();
         $('.label_instant').hide();
         $(($(this).parent()).find('.img_instant')).show();
