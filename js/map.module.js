@@ -915,8 +915,6 @@ function checkSmallPath(beginPoint, endPoint) {
 }
 
 function generate_way(listP) {
-alert($('#mapdhc').width());
-alert($('#mapdhc').height());
     isFirst = true, isFirst1 = true, isFirst2 = true, isFirst3 = true;
     var html = '', top, left;
     var top_before = 100, left_before = 100, width = 0, height = 0, minW = 0, maxH = 0, maxW = 0, minH = 0, scaleX,
@@ -940,7 +938,7 @@ alert($('#mapdhc').height());
     //     var marginTop = (minH - 1520);
     //     var marginLeft = (minW + 10);
     // } else {
-        var marginTop = ($('#mapdhc').height()-minH);
+        var marginTop = (minH+3);
         // if ((window.innerWidth > 0) ? window.innerWidth : screen.width > 380)
         //     var marginTop = (minH - 1174);
         // else if ((window.innerWidth > 0) ? window.innerWidth : screen.width < 350)
