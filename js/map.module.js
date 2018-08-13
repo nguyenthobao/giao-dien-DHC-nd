@@ -928,7 +928,7 @@ function generate_way(listP) {
     if (document.getElementById('can'))
         (document.getElementById('can')).remove();
     if (isMobile.any() == null) {
-        var marginTop = (minH - 1510);
+        var marginTop = (minH - 1520);
         var marginLeft = (minW + 10);
     } else {
         if ((window.innerWidth > 0) ? window.innerWidth : screen.width > 380)
