@@ -91,6 +91,7 @@ $(document).ready(function () {
                     scroll(750, 690, 950, 890);
                     $('#marker').hide();
                 }
+
                 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
                 if (width > 1000) $('#download').hide();
             }
