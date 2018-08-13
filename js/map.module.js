@@ -50,7 +50,6 @@ $(document).ready(function () {
     $('#tab2').change(function () {
         into_map();
     });
-
     function into_map() {
         // var tryAPIGeolocation = function () {
         //     jQuery.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBZKcLL5G9t6MGhYHwl7JN50LEhvDysIZ8", function (success) {
@@ -929,7 +928,7 @@ function generate_way(listP) {
     if (document.getElementById('can'))
         (document.getElementById('can')).remove();
     if (isMobile.any() == null) {
-        var marginTop = (minH - 1510);
+        var marginTop = (minH - 1500);
         var marginLeft = (minW + 10);
     } else {
         if ((window.innerWidth > 0) ? window.innerWidth : screen.width > 380)
