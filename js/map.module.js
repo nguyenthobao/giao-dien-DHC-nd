@@ -160,6 +160,7 @@ $(document).ready(function () {
     }
 
     $('body').on('click', '#search_place>li', function () {
+        $('#choose').text($(this).text());
         var li=this;
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
         x = parseFloat($(this).data('left') / (9798 / $('#mapdhc').width()));
