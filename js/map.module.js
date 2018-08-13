@@ -812,7 +812,7 @@ function findPath(beginPoint, endPoint) {
         console.log('JSON', rtArrPoint);
         return rtArrPoint;
     }
-    console.log('fional', arrPoint);
+    console.log('final', arrPoint);
     return arrPoint;
 }
 
@@ -940,8 +940,8 @@ function generate_way(listP) {
         var marginLeft = (minW + 10);
     } else {
         if ((window.innerWidth > 0) ? window.innerWidth : screen.width > 380)
-            var marginTop = (minH - 1034);
-        else var marginTop = (minH - 1050);
+            var marginTop = (minH - 896);
+        else var marginTop = (minH - 910);
         var marginLeft = (minW + 2);
     }
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
