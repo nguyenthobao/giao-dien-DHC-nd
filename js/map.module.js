@@ -28,7 +28,7 @@ var scaleY = 1;
 var x = -1, y = -1, lat = -1, long = -1;
 var that = null;
 if (isMobile.any() != null) heightmap = 1200; else heightmap = 1450;
-if ((window.innerWidth > 0) ? window.innerWidth : screen.width >900 && (window.innerWidth > 0) ? window.innerWidth : screen.width<1100) heightmap = 1470;
+if ((window.innerWidth > 0) ? window.innerWidth : screen.width > 900 && (window.innerWidth > 0) ? window.innerWidth : screen.width < 1100) heightmap = 1470;
 urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
 urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
 $(document).ready(function () {
@@ -61,8 +61,8 @@ $(document).ready(function () {
             y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude));
             x = x / (9798 / $('#mapdhc')[0].width);
             y = y / (7046 / heightmap);
-            lat = parseFloat(x/$('#mapdhc')[0].width)*9798;
-            long = parseFloat(y/heightmap)*7046;
+            lat = parseFloat(x / $('#mapdhc')[0].width) * 9798;
+            long = parseFloat(y / heightmap) * 7046;
             if (isMobile.any() == null) {
                 if (x > $('#mapdhc')[0].width || x < 0 || y > heightmap || y < 0) {
                     $('#marker').css("margin-top", 850 + "px");
@@ -224,8 +224,8 @@ $(document).ready(function () {
                 $('#modalForm').modal('show');
                 $('#modalFormLabel').text(result.data.result.point_name);
                 var pointImage = JSON.parse(result.data.result.point_images);
-                if(pointImage[0]!=undefined)
-                    pointImage[0]=(pointImage[0]).slice(0,4)+'s'+ (pointImage[0]).slice(4);
+                if (pointImage[0] != undefined)
+                    pointImage[0] = (pointImage[0]).slice(0, 4) + 's' + (pointImage[0]).slice(4);
                 html = '<div class="row img-point">';
                 html += '<div class="col-12"><img src="' + pointImage[0] + '" alt=""></div>';
                 html += '</div>';
@@ -267,7 +267,7 @@ $(document).ready(function () {
                     });
                     $('#modalForm').animate({scrollTop: 0}, 'fast');
                 }
-                $('#modalForm div.col-lg-6').each(function(){
+                $('#modalForm div.col-lg-6').each(function () {
                     $(this).hide();
                 });
             },
@@ -288,7 +288,7 @@ $(document).ready(function () {
                 }
             });
         }
-        if (lat >9798 || lat < 0 || long > 7048 || long < 0)
+        if (lat > 9798 || lat < 0 || long > 7048 || long < 0)
             beginPoint = [$(that).data('lat'), $(that).data('long')];
         else beginPoint = [lat, long];
         // alert(JSON.stringify(beginPoint)+',[' +  $($(this).parent()).data('lat') + ',' +  $($(this).parent()).data('long') + ']');
@@ -308,7 +308,7 @@ $(document).ready(function () {
         }
         scroll(x - 150, y, x - 150, y);
     });
-    $('body').on('click','canvas,#mapdhc',function(){
+    $('body').on('click', 'canvas,#mapdhc', function () {
         (document.getElementById('can')).remove();
     });
 
@@ -369,7 +369,7 @@ function checkSpecialPath1(beginPoint, endPoint) {
         path1 = [];
         path1.push(['POINTTYPE', 1]);
         path1.push(['LIST_POINT', arrpoint]);
-        console.log(path1,1);
+        console.log(path1, 1);
         return path1;
     }
     if ((distance2 < circle && beginPoint[0] > 4906) || (distance1 < circle && endPoint[0] > 4906)) {
@@ -398,7 +398,7 @@ function checkSpecialPath1(beginPoint, endPoint) {
         path1 = [];
         path1.push(['POINTTYPE', 1]);
         path1.push(['LIST_POINT', arrPoint]);
-        console.log("checkSpecialPath1 return3",path1);
+        console.log("checkSpecialPath1 return3", path1);
         return path1;
     }
     if ((distance2 < circle && beginPoint[0] < 4906) || (distance1 < circle && endPoint[0] < 4906)) {
@@ -415,7 +415,7 @@ function checkSpecialPath1(beginPoint, endPoint) {
         $.each(findPath(list_path10[list_path10.length - 1], tmpCurrentEndPoint), function (k, v) {
             arrPoint.push(v);
         });
-        if (JSON.stringify(currentEndPoint)==JSON.stringify(endPoint)) {
+        if (JSON.stringify(currentEndPoint) == JSON.stringify(endPoint)) {
             var rtArrPoint = [];
             for (var i = arrPoint.length - 1; i > -1; i--) {
                 rtArrPoint.push(arrPoint[i]);
@@ -423,7 +423,7 @@ function checkSpecialPath1(beginPoint, endPoint) {
             path1 = [];
             path1.push(['POINTTYPE', 1]);
             path1.push(['LIST_POINT', rtArrPoint]);
-            console.log("checkSpecialPath1 return1",path1);
+            console.log("checkSpecialPath1 return1", path1);
             return path1;
 
         }
@@ -431,13 +431,13 @@ function checkSpecialPath1(beginPoint, endPoint) {
         path1.push(['POINTTYPE', 1]);
         path1.push(['LIST_POINT', arrPoint]);
         isFirst1 = false;
-        console.log("checkSpecialPath1 return2",path1,3);
+        console.log("checkSpecialPath1 return2", path1, 3);
         return path1;
     }
     path1 = [];
     path1.push(['POINTTYPE', 2]);
     isFirst1 = false;
-    console.log("checkSpecialPath1 return4 ",path1);
+    console.log("checkSpecialPath1 return4 ", path1);
     return path1;
 }
 
@@ -455,8 +455,8 @@ function checkSpecialPath2(beginPoint, endPoint) {
         path2.push(['POINTTYPE', 1]);
         path2.push(['LIST_POINT', arrpoint]);
         isFirst2 = false;
-        console.log(path2,1);
-        console.log("checkSpecialPath2 return",arrpoint);
+        console.log(path2, 1);
+        console.log("checkSpecialPath2 return", arrpoint);
         return path2;
     }
     if ((distance2 < 15000 && beginPoint[0] > 4045) || (distance1 < 15000 && endPoint[0] > 4045)) {
@@ -485,7 +485,7 @@ function checkSpecialPath2(beginPoint, endPoint) {
         path2.push(['POINTTYPE', 1]);
         path2.push(['LIST_POINT', arrPoint]);
         isFirst2 = false;
-        console.log(path2,2);
+        console.log(path2, 2);
         return path2;
     }
     path2 = [];
@@ -531,7 +531,7 @@ function checkSpecialPath3(beginPoint, endPoint) {
         path3.push(['POINTTYPE', 1]);
         path3.push(['LIST_POINT', arrPoint]);
         isFirst3 = false;
-        console.log(path3,1);
+        console.log(path3, 1);
         return path3;
     }
     path3 = [];
@@ -658,34 +658,34 @@ function findPath(beginPoint, endPoint) {
     }
     var tmpPoint1 = checkSpecialPoint(beginPoint);
     var tmpPoint2 = checkSpecialPoint(endPoint);
-    console.log('tmpPoint1',tmpPoint1);
-    console.log('tmpPoint2',tmpPoint2);
+    console.log('tmpPoint1', tmpPoint1);
+    console.log('tmpPoint2', tmpPoint2);
     if (tmpPoint1[0] != beginPoint[0] || tmpPoint1[1] != beginPoint[1] || tmpPoint2[0] != endPoint[0] || tmpPoint2[1] != endPoint[1]) {
         return findPath(tmpPoint1, tmpPoint2);
     }
     var dicData1 = checkSpecialPath1(beginPoint, endPoint);
-    console.log("checkSpecialPath1 type",dicData1);
+    console.log("checkSpecialPath1 type", dicData1);
     var type1 = dicData1[0][1];
     if (type1 == 1) {
-        console.log("checkSpecialPath1 type1",type1);
+        console.log("checkSpecialPath1 type1", type1);
         return dicData1[1][1];
     }
     var dicData2 = checkSpecialPath2(beginPoint, endPoint);
     var type2 = dicData2[0][1];
     if (type2 == 1) {
-        console.log("checkSpecialPath2 type",type2);
+        console.log("checkSpecialPath2 type", type2);
         return dicData2[1][1];
     }
     var dicData3 = checkSpecialPath3(beginPoint, endPoint);
     var type3 = dicData3[0][1];
     if (type3 == 1) {
-        console.log("checkSpecialPath3 type",type3);
+        console.log("checkSpecialPath3 type", type3);
         return dicData3[1][1];
     }
     var dicData = checkSmallPath(beginPoint, endPoint);
     var type = dicData[0][1];
     if (type == 1) {
-        console.log("checkSmallPath type",type);
+        console.log("checkSmallPath type", type);
         return dicData[1][1];
     }
     var arrPath = [];
@@ -916,7 +916,7 @@ function checkSmallPath(beginPoint, endPoint) {
 
 function generate_way(listP) {
 
-    isFirst = true,isFirst1 = true, isFirst2 = true, isFirst3 = true;
+    isFirst = true, isFirst1 = true, isFirst2 = true, isFirst3 = true;
     var html = '', top, left;
     var top_before = 100, left_before = 100, width = 0, height = 0, minW = 0, maxH = 0, maxW = 0, minH = 0, scaleX,
         scaleY;
@@ -941,8 +941,9 @@ function generate_way(listP) {
     } else {
         if ((window.innerWidth > 0) ? window.innerWidth : screen.width > 380)
             var marginTop = (minH - 1174);
-        else if((window.innerWidth > 0) ? window.innerWidth : screen.width<350)
-            else var marginTop = (minH - 1160);
+        else if ((window.innerWidth > 0) ? window.innerWidth : screen.width < 350)
+            var marginTop = (minH - 1160);
+        else var marginTop = (minH - 1190);
         var marginLeft = (minW + 2);
     }
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
