@@ -20,6 +20,7 @@ var isMobile = {
 };
 
 var point_flag = null;
+var enable_flag=false;
 var topLeftRealX = 0;
 var topLeftRealY = 0;
 var scaleX = 1;
@@ -39,6 +40,8 @@ $(document).ready(function () {
     $('#mapdhc').show();
     $('#download').show();
     $('#div_search').show();
+    $('#icon_flag').hide();
+    $('#disable_flag').hide();
     getOriginal1(15.971174, 108.017871, 15.968976, 108.018555, 3725, 2183 + 15, 4311, 4103 + 15);
     into_map();
     $('#tab2').click(function () {
@@ -54,15 +57,7 @@ $(document).ready(function () {
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
         x = parseFloat($(this).data('left') / (9798 / $('#mapdhc').width()));
         y = parseFloat($(this).data('top') / (7046 / $('#mapdhc').height()));
-        $('.point_important').each(function () {
-            $(this).removeClass('flag');
-        });
-        $('.point_important').each(function () {
-            if ($(li).data('left') == $(this).data('lat') && $(li).data('long') == $(this).data('long'))
-                $(this).addClass('flag');
-        });
-        $(this).addClass('flag');
-        $('.img_instant').each(function () {
+              $('.img_instant').each(function () {
             $('.img_instant').hide();
         });
         $('.label_instant').each(function () {
@@ -91,6 +86,18 @@ $(document).ready(function () {
         var offset = $(this).offset();
         if (e.pageX - offset.left > 1200 || e.pageY - offset.top > 1500)
             $('html').attr('style', '');
+        if(enable_flag) {
+            var leftFlag=e.pageX;
+            var topFlag=e.pageY-160;
+            $('#icon_flag').css('margin-top',topFlag+'px');
+            $('#icon_flag').css('margin-left',leftFlag+'px');
+            $('#icon_flag').show();
+            $('#disable_flag').show();
+            leftFlag = (leftFlag *9798) / $('#mapdhc').width();
+            topFlag = (topFlag*7046) / $('#mapdhc').height();
+            point_flag=[leftFlag,topFlag];
+            console.log(point_flag);
+        }
     });
     $('body').on('click', '#download', function () {
 
@@ -185,7 +192,8 @@ $(document).ready(function () {
                 }
             });
         }
-        if (point_flag != null) beginPoint = [$(point_flag).data('lat'), $(point_flag).data('long')];
+        console.log(point_flag);
+        if (point_flag != null) beginPoint = point_flag;
         else if (lat > 9798 || lat < 0 || long > 7048 || long < 0)
             beginPoint = [$(that).data('lat'), $(that).data('long')];
         else beginPoint = [lat, long];
@@ -220,7 +228,13 @@ $(document).ready(function () {
         });
     });
     $('body').on('click', '#flag', function () {
-        point_flag = $('.flag')[0];
+        enable_flag=true;
+        $('#icon_flag').show();
+    });
+    $('body').on('click', '#disable_flag', function () {
+        enable_flag=false;
+        $(this).hide();
+        $('#icon_flag').hide();
     });
 
     function into_map() {

@@ -4,22 +4,44 @@ body {
     color: #555;
     /*background: #eee;*/
 }
-html{
+
+html {
     -webkit-text-size-adjust: none;
     touch-action: manipulation;
 }
-#flag{
+#icon_flag{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    z-index: 99;
+}
+#disable_flag {
+    position: fixed;
+    border: none;
+    border-radius: 5px;
+    width: 86vw;
+    bottom: 5px;
+    right: 50px;
+    background: #aecc8c;
+    font-size: 10px;
+    height: 39px;
+    z-index: 99;
+}
+
+#flag {
     position: fixed;
     border-radius: 10px;
     bottom: 5px;
     right: 5px;
     background: #aecc8c;
 }
-.node_way{
+
+.node_way {
     position: absolute;
     z-index: 9;
     /*background-color:#7B0D09;*/
 }
+
 .comeIn {
     margin-top: -13px !important;
 }
@@ -322,9 +344,11 @@ main input:checked + label {
     .news-item {
         display: block !important;
     }
+
     .height-screen {
         background-color: #8FB88F;
     }
+
     #label_tab1, #label_tab3 {
         margin-left: 40px;
     }
@@ -394,6 +418,7 @@ main input:checked + label {
         border: none;
         background-color: #4caf50;
     }
+
     #content2 {
         margin-top: -90px;
         background-color: #8FB88F;
@@ -421,22 +446,23 @@ main input:checked + label {
 }
 
 /*#searchlabel {*/
-    /*background-color: white;*/
-    /*margin-top: 8px;*/
-    /*height: 30px;*/
-    /*padding-top: 8px;*/
-    /*margin-bottom: 10px;*/
-    /*margin-left: 2vw;*/
-    /*border: 0px;*/
-    /*border-radius: 5px;*/
-    /*color: #4caf50;*/
-    /*text-transform: uppercase;*/
-    /*font-weight: bold;*/
+/*background-color: white;*/
+/*margin-top: 8px;*/
+/*height: 30px;*/
+/*padding-top: 8px;*/
+/*margin-bottom: 10px;*/
+/*margin-left: 2vw;*/
+/*border: 0px;*/
+/*border-radius: 5px;*/
+/*color: #4caf50;*/
+/*text-transform: uppercase;*/
+/*font-weight: bold;*/
 /*}*/
-.color_dropdown{
-    background:white ;
+.color_dropdown {
+    background: white;
 }
-#choose{
+
+#choose {
     width: 90vw;
     height: 30px;
     margin-top: 10px;
@@ -444,7 +470,8 @@ main input:checked + label {
     border-radius: 5px;
     max-width: 500px;
 }
-#search_place{
+
+#search_place {
     width: 90vw;
     height: 30px;
     margin-top: 10px;
@@ -453,7 +480,7 @@ main input:checked + label {
     max-width: 500px;
 }
 
-@media (max-width: 991px) and (min-width: 766px){
+@media (max-width: 991px) and (min-width: 766px) {
     .img-news {
         padding-right: 0;
         margin-right: 50px;
