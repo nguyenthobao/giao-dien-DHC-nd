@@ -26,6 +26,7 @@ html {
     font-size: 10px;
     height: 39px;
     z-index: 99;
+    max-width: 400px;
 }
 
 #flag {
