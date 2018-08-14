@@ -557,7 +557,7 @@ function checkSpecialPath3(beginPoint, endPoint) {
         path3 = [];
         path3.push(['POINTTYPE', 1]);
         path3.push(['LIST_POINT', arrPoint]);
-        isFirst3 = false;;
+        isFirst3 = false;
         return path3;
     }
     path3 = [];
@@ -700,8 +700,10 @@ function findPath(beginPoint, endPoint) {
         return dicData2[1][1];
     }
     var dicData3 = checkSpecialPath3(beginPoint, endPoint);
-    var type3 = dicData3[0][1];console.log('type3',type3);
+    var type3 = dicData3[0][1];
+    console.log('type3',type3);
     if (type3 == 1) {
+        console.log('type3 return',dicData3);
         return dicData3[1][1];
     }
     var dicData = checkSmallPath(beginPoint, endPoint);
@@ -824,7 +826,7 @@ function findPath(beginPoint, endPoint) {
 
         for (var j = arrPoint.length - 1; j > -1; j--) {
             rtArrPoint.push(arrPoint[j]);
-        }
+        } console.log('rtArrPoint',rtArrPoint);
         return rtArrPoint;
     }
     return arrPoint;
@@ -867,7 +869,7 @@ function checkSmallPath(beginPoint, endPoint) {
         }
         i += 1;
     });
-
+console.log('distant',distance1,distance2,beginIndex,endIndex);
     var CIRCLE = 3000;
     if (currentBeginPoint != null &&
         currentBeginPoint[0] == arrPath[beginIndex][arrPath[beginIndex].length - 1][0] &&
@@ -881,8 +883,8 @@ function checkSmallPath(beginPoint, endPoint) {
     if (distance1 < CIRCLE && distance2 < CIRCLE && beginIndex == endIndex) {
         var arrpoint = findPath(currentBeginPoint, currentEndPoint, arrPath[beginIndex]);
         var smallpath = [];
-        smallpath.push('POINTTYPE', 1);
-        smallpath.push('LIST_POINT', arrpoint);
+        smallpath.push(['POINTTYPE', 1]);
+        smallpath.push(['LIST_POINT', arrpoint]);
         return smallpath;
     }
     if (distance1 < CIRCLE && distance2 < CIRCLE) {
@@ -896,8 +898,8 @@ function checkSmallPath(beginPoint, endPoint) {
             arrPoint.push(v);
         });
         var smallpath = [];
-        smallpath.push('POINTTYPE', 1);
-        smallpath.push('LIST_POINT', arrpoint);
+        smallpath.push(['POINTTYPE', 1]);
+        smallpath.push(['LIST_POINT', arrpoint]);
         return smallpath;
     }
     if (distance1 < CIRCLE) {
@@ -908,8 +910,8 @@ function checkSmallPath(beginPoint, endPoint) {
             arrPoint.push(v);
         });
         var smallpath = [];
-        smallpath.push('POINTTYPE', 1);
-        smallpath.push('LIST_POINT', arrpoint);
+        smallpath.push(['POINTTYPE', 1]);
+        smallpath.push(['LIST_POINT', arrpoint]);
         return smallpath;
     }
     if (distance2 < CIRCLE) {
@@ -920,8 +922,8 @@ function checkSmallPath(beginPoint, endPoint) {
             arrPoint.push(v);
         });
         var smallpath = [];
-        smallpath.push('POINTTYPE', 1);
-        smallpath.push('LIST_POINT', arrpoint);
+        smallpath.push(['POINTTYPE', 1]);
+        smallpath.push(['LIST_POINT', arrPoint]);
         return smallpath;
     }
     var smallpath = [];
