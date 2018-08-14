@@ -208,7 +208,7 @@ $(document).ready(function () {
         }
         scroll(x - 150, y, x - 150, y);
     });
-    $('body').on('click', 'canvas,#mapdhc,.point_important', function () {
+    $('body').on('click', 'canvas,#mapdhc', function () {
         if(document.getElementById('can')) (document.getElementById('can')).remove();
     });
     $('#choose').on('keyup', function () {
