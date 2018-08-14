@@ -233,6 +233,7 @@ $(document).ready(function () {
     });
     $('body').on('click', '#disable_flag', function () {
         enable_flag=false;
+        point_flag=null;
         $(this).hide();
         $('#icon_flag').hide();
     });
