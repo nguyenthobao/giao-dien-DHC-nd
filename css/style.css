@@ -426,7 +426,9 @@ main input:checked + label {
     /*text-transform: uppercase;*/
     /*font-weight: bold;*/
 /*}*/
-
+.color_dropdown{
+    background:white ;
+}
 #choose{
     width: 90vw;
     height: 30px;
@@ -439,7 +441,7 @@ main input:checked + label {
     width: 90vw;
     height: 30px;
     margin-top: 10px;
-    margin-left: 13vw;
+    margin-left: 47px;
     border-radius: 5px;
     max-width: 500px;
 }
