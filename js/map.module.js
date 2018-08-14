@@ -230,6 +230,7 @@ $(document).ready(function () {
     $('body').on('click', '#flag', function () {
         enable_flag=true;
         $('#icon_flag').show();
+        alert('Click bản đồ chọn vị trí ghim !');
     });
     $('body').on('click', '#disable_flag', function () {
         enable_flag=false;
