@@ -88,9 +88,6 @@ $(document).ready(function () {
                 var url = '';
                 x = parseFloat(v.lat / parseFloat(9798 / $('#mapdhc').width()));
                 y = parseFloat(v.long / parseFloat(7046 / $('#mapdhc').height()));
-                if (isMobile.any() != null) {
-                    console.log(x, y);
-                }
                 if (v.point_type == 3) url = '/images/play_marker.png';
                 else if (v.point_type == 4) url = '/images/food_marker.png';
                 else url = '/images/blank_marker.png';
@@ -226,9 +223,6 @@ $(document).ready(function () {
                 return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
             }
         };
-
-        console.log(isMobile.any());
-
         urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
         urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
 
