@@ -231,10 +231,18 @@ $(document).ready(function () {
         alert('Click bản đồ chọn vị trí ghim !');
     });
     $('body').on('click', '#disable_flag', function () {
-        enable_flag=false;
-        point_flag=null;
-        $(this).hide();
-        $('#icon_flag').hide();
+        if($(this).data('flag')){
+            enable_flag=false;
+            $(this).data('flag',0);
+            $(this).text('BỎ GHIM VỊ TRÍ');
+        }else {
+            enable_flag = true;
+            point_flag = null;
+            $(this).data('flag',1);
+            $(this).text('GHIM VỊ TRÍ');
+            $('#icon_flag').hide();
+            (document.getElementById('can')).remove();
+        }
     });
     function into_map() {
         if (isMobile.any() == null) {
