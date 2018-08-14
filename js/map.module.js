@@ -19,14 +19,14 @@ var isMobile = {
     }
 };
 
-
+var point_flag = null;
 var topLeftRealX = 0;
 var topLeftRealY = 0;
 var scaleX = 1;
 var scaleY = 1;
 var x = -1, y = -1, lat = -1, long = -1;
 var that = null,
-urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
+    urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
 urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
 $(document).ready(function () {
     $('#tab2').prop('checked', true);
@@ -48,123 +48,20 @@ $(document).ready(function () {
         into_map();
     });
 
-    function into_map() {
-        if (isMobile.any() == null) {
-            $('#marker').css("margin-top", 850 + "px");
-            $('#marker').css("margin-left", 920 + "px");
-        }
-        scroll(600, 690, 950, 890);
-        var browserGeolocationSuccess = function (position) {
-            x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude));
-            y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude));
-            x = x / (9798 / $('#mapdhc').width());
-            y = y / (7046 / $('#mapdhc').height());
-            lat = parseFloat(x /$('#mapdhc').width()) * 9798;
-            long = parseFloat(y / $('#mapdhc').height()) * 7046;
-            if (isMobile.any() == null) {
-                if (x > $('#mapdhc').width() || x < 0 || y > $('#mapdhc').height() || y < 0) {
-                    $('#marker').css("margin-top", 850 + "px");
-                    $('#marker').css("margin-left", 920 + "px");
-                    $('#marker').show();
-                    $('.label_instant').each(function () {
-                        if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
-                            $(this).attr('style', 'display:block;');
-                        }
-                    });
-                    $('.img_instant').each(function () {
-                        if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
-                            $(this).attr('style', 'display:block;');
-                        }
-                    });
-                    scroll(x, y, x, y);
-                } else {
-                    scroll(750, 690, 950, 890);
-                    $('#marker').hide();
-                }
-                var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-                if (width > 1000) $('#download').hide();
-            }
-            else {
-                $('html').attr('style', 'width:10000px;height:3000px');
-                $('html').addClass('height-screen');
-                $('#content2').addClass('color_content2');
-                if (x > $('#mapdhc').width() || x < 0 || y > $('#mapdhc').height() || y < 0) {
-                    scroll(750, 690, 750, 500);
-                } else {
-                    $('#marker').css("margin-top", y + "px");
-                    $('#marker').css("margin-left", x + "px");
-                    $('#marker').show();
-                    $('.label_instant').hide();
-                    $('.img_instant').hide();
-                    scroll(x, y, x, y);
-                }
-            }
-        };
-
-        var browserGeolocationFail = function (error) {
-            switch (error.code) {
-                case error.TIMEOUT:
-                    alert("Tìm kiếm vị trí của bạn quá thời gian cho phép");
-                    break;
-                case error.PERMISSION_DENIED:
-                    if (error.message.indexOf("Only secure origins are allowed") == 0) {
-                        tryAPIGeolocation();
-                    }
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    alert("Trình duyệt bạn dùng không hỗ trợ tìm vị trí hoặc chức năng đã bị tắt");
-                    break;
-            }
-        };
-
-        var tryGeolocation = function () {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    browserGeolocationSuccess,
-                    browserGeolocationFail,
-                    {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
-            }
-        };
-
-        tryGeolocation();
-    }
-
-    function scroll(xAndroid, yAndroid, xIOS, yIOS) {
-        setTimeout($('html').animate({
-            scrollTop: yAndroid,
-            scrollLeft: xAndroid
-        }), 100);
-        var ua = navigator.userAgent.toLowerCase();
-        if (ua.indexOf('safari') > -1) {
-            sTimeout = setTimeout(function () {
-                $('body').animate({
-                    scrollTop: yIOS,
-                    scrollLeft: xIOS
-                })
-            }.bind(this), 2000);
-            Function.prototype.bind = function (parent) {
-                var f = this;
-                var args = [];
-
-                for (var a = 1; a < arguments.length; a++) {
-                    args[args.length] = arguments[a];
-                }
-
-                var temp = function () {
-                    return f.apply(parent, args);
-                }
-
-                return (temp);
-            }
-        }
-    }
-
     $('body').on('click', '#search_place>li', function () {
         $('#choose').val($(this).text());
-        var li=this;
+        var li = this;
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
         x = parseFloat($(this).data('left') / (9798 / $('#mapdhc').width()));
         y = parseFloat($(this).data('top') / (7046 / $('#mapdhc').height()));
+        $('.point_important').each(function () {
+            $(this).removeClass('flag');
+        });
+        $('.point_important').each(function () {
+            if ($(li).data('left') == $(this).data('lat') && $(li).data('long') == $(this).data('long'))
+                $(this).addClass('flag');
+        });
+        $(this).addClass('flag');
         $('.img_instant').each(function () {
             $('.img_instant').hide();
         });
@@ -288,17 +185,20 @@ $(document).ready(function () {
                 }
             });
         }
-        if (lat > 9798 || lat < 0 || long > 7048 || long < 0)
+        if (point_flag != null) beginPoint = [$(point_flag).data('lat'), $(point_flag).data('long')];
+        else if (lat > 9798 || lat < 0 || long > 7048 || long < 0)
             beginPoint = [$(that).data('lat'), $(that).data('long')];
         else beginPoint = [lat, long];
-        // alert(JSON.stringify(beginPoint)+',[' +  $($(this).parent()).data('lat') + ',' +  $($(this).parent()).data('long') + ']');
-        console.log('beginPoint', beginPoint);
         generate_way(findPath(beginPoint, [$($(this).parent()).data('lat'), $($(this).parent()).data('long')]));
         $('.img_instant').hide();
         $('.label_instant').hide();
         $(($(this).parent()).find('.img_instant')).show();
         $(($(this).parent()).find('.label_instant')).show();
-        setTimeout(document.getElementById('search_place').scrollIntoView(), 1000);
+
+        $('.point_important').each(function () {
+            $(this).removeClass('flag');
+        });
+        $(this).addClass('flag');
     });
     $('body').on('click', '#form-footer>button', function () {
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
@@ -308,17 +208,131 @@ $(document).ready(function () {
         }
         scroll(x - 150, y, x - 150, y);
     });
-    $('body').on('click', 'canvas,#mapdhc,.point_important,.div_marker', function () {
-        (document.getElementById('can')).remove();
+    $('body').on('click', 'canvas,#mapdhc,.point_important', function () {
+        if(document.getElementById('can')) (document.getElementById('can')).remove();
     });
-    $('#choose').on('keyup',function(){
-        $('li').each(function(){
-            var text=(document.getElementById('choose')).value.toUpperCase();
-            if(($(this).text()).toUpperCase().indexOf(text) <= -1)
+    $('#choose').on('keyup', function () {
+        $('li').each(function () {
+            var text = (document.getElementById('choose')).value.toUpperCase();
+            if (($(this).text()).toUpperCase().indexOf(text) <= -1)
                 $(this).hide();
             else $(this).show();
         });
     });
+    $('body').on('click', '#flag', function () {
+        point_flag = $('.flag')[0];
+    });
+
+    function into_map() {
+        if (isMobile.any() == null) {
+            $('#marker').css("margin-top", 850 + "px");
+            $('#marker').css("margin-left", 920 + "px");
+        }
+        scroll(600, 690, 950, 890);
+        var browserGeolocationSuccess = function (position) {
+            x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude));
+            y = parseFloat(getYPixcelValue(position.coords.latitude, position.coords.longitude));
+            x = x / (9798 / $('#mapdhc').width());
+            y = y / (7046 / $('#mapdhc').height());
+            lat = parseFloat(x / $('#mapdhc').width()) * 9798;
+            long = parseFloat(y / $('#mapdhc').height()) * 7046;
+            if (isMobile.any() == null) {
+                if (x > $('#mapdhc').width() || x < 0 || y > $('#mapdhc').height() || y < 0) {
+                    $('#marker').css("margin-top", 850 + "px");
+                    $('#marker').css("margin-left", 920 + "px");
+                    $('#marker').show();
+                    $('.label_instant').each(function () {
+                        if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
+                            $(this).attr('style', 'display:block;');
+                        }
+                    });
+                    $('.img_instant').each(function () {
+                        if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
+                            $(this).attr('style', 'display:block;');
+                        }
+                    });
+                    scroll(x, y, x, y);
+                } else {
+                    scroll(750, 690, 950, 890);
+                    $('#marker').hide();
+                }
+                var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+                if (width > 1000) $('#download').hide();
+            }
+            else {
+                $('html').attr('style', 'width:10000px;height:3000px');
+                $('html').addClass('height-screen');
+                $('#content2').addClass('color_content2');
+                if (x > $('#mapdhc').width() || x < 0 || y > $('#mapdhc').height() || y < 0) {
+                    scroll(750, 690, 750, 500);
+                } else {
+                    $('#marker').css("margin-top", y + "px");
+                    $('#marker').css("margin-left", x + "px");
+                    $('#marker').show();
+                    $('.label_instant').hide();
+                    $('.img_instant').hide();
+                    scroll(x, y, x, y);
+                }
+            }
+        };
+
+        var browserGeolocationFail = function (error) {
+            switch (error.code) {
+                case error.TIMEOUT:
+                    alert("Tìm kiếm vị trí của bạn quá thời gian cho phép");
+                    break;
+                case error.PERMISSION_DENIED:
+                    if (error.message.indexOf("Only secure origins are allowed") == 0) {
+                        tryAPIGeolocation();
+                    }
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Trình duyệt bạn dùng không hỗ trợ tìm vị trí hoặc chức năng đã bị tắt");
+                    break;
+            }
+        };
+
+        var tryGeolocation = function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    browserGeolocationSuccess,
+                    browserGeolocationFail,
+                    {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
+            }
+        };
+
+        tryGeolocation();
+    }
+
+    function scroll(xAndroid, yAndroid, xIOS, yIOS) {
+        setTimeout($('html').animate({
+            scrollTop: yAndroid,
+            scrollLeft: xAndroid
+        }), 100);
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf('safari') > -1) {
+            sTimeout = setTimeout(function () {
+                $('body').animate({
+                    scrollTop: yIOS,
+                    scrollLeft: xIOS
+                })
+            }.bind(this), 2000);
+            Function.prototype.bind = function (parent) {
+                var f = this;
+                var args = [];
+
+                for (var a = 1; a < arguments.length; a++) {
+                    args[args.length] = arguments[a];
+                }
+
+                var temp = function () {
+                    return f.apply(parent, args);
+                }
+
+                return (temp);
+            }
+        }
+    }
 
 });
 
@@ -923,6 +937,7 @@ function checkSmallPath(beginPoint, endPoint) {
 }
 
 function generate_way(listP) {
+    console.log('gen',listP);
     isFirst = true, isFirst1 = true, isFirst2 = true, isFirst3 = true;
     var html = '', top, left;
     var top_before = 100, left_before = 100, width = 0, height = 0, minW = 0, maxH = 0, maxW = 0, minH = 0, scaleX,
@@ -942,21 +957,12 @@ function generate_way(listP) {
     height = maxH - minH;
     if (document.getElementById('can'))
         (document.getElementById('can')).remove();
-    // if (isMobile.any() == null) {
-    //     var marginTop = (minH - 1520);
-    //     var marginLeft = (minW + 10);
-    // } else {
-        var marginTop = (minH+3);
-        // if ((window.innerWidth > 0) ? window.innerWidth : screen.width > 380)
-        //     var marginTop = (minH - 1174);
-        // else if ((window.innerWidth > 0) ? window.innerWidth : screen.width < 350)
-        //     var marginTop = (minH - 1160);
-        // else var marginTop = (minH - 1190);
-        var marginLeft = (minW);
-    // }
+    var marginTop = (minH + 3);
+    var marginLeft = (minW);
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
         ' style="margin-top:' + marginTop + 'px; margin-left:' + marginLeft + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
     $('.addCanvas').append(html);
+    console.log(html);
     var ctx = (document.getElementById('can')).getContext('2d');
     ctx.beginPath();
     ctx.setLineDash([5, 2]);
@@ -965,7 +971,7 @@ function generate_way(listP) {
     top_before = 100, left_before = 100;
     var start_draw = 0;
     $.each(listP, function (k, v) {
-        left = parseFloat(v[0] / parseFloat(9798 /$('#mapdhc').width()));
+        left = parseFloat(v[0] / parseFloat(9798 / $('#mapdhc').width()));
         top = parseFloat(v[1] / parseFloat(7046 / $('#mapdhc').height()));
         ctx.lineTo(Math.abs(left - minW) * scaleX, Math.abs(top - minH) * scaleY);
     });

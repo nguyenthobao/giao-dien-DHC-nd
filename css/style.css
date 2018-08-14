@@ -8,6 +8,13 @@ html{
     -webkit-text-size-adjust: none;
     touch-action: manipulation;
 }
+#flag{
+    position: fixed;
+    border-radius: 10px;
+    bottom: 5px;
+    right: 5px;
+    background: #aecc8c;
+}
 .node_way{
     position: absolute;
     z-index: 9;
