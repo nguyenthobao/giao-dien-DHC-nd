@@ -230,27 +230,12 @@ $(document).ready(function () {
     $('body').on('click', '#flag', function () {
         enable_flag=true;
         $('#icon_flag').show();
-        Message('click vị trí ghim bản đồ');
     });
     $('body').on('click', '#disable_flag', function () {
         enable_flag=false;
         $(this).hide();
         $('#icon_flag').hide();
     });
-    function Message(title, content, class_name) {
-        if (class_name == '') {
-            class_name = 'gritter-primary';
-        }
-        $('.gritter-item-wrapper').remove();
-        $.gritter.add({
-            title: title,
-            text: content,
-            class_name: class_name
-        });
-
-        return true;
-
-    }
     function into_map() {
         if (isMobile.any() == null) {
             $('#marker').css("margin-top", 850 + "px");
