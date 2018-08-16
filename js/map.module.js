@@ -315,7 +315,7 @@ $(document).ready(function () {
 
         var tryGeolocation = function () {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
+                navigator.geolocation.watchPosition(
                     browserGeolocationSuccess,
                     browserGeolocationFail,
                     {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
