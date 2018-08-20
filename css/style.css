@@ -15,6 +15,28 @@ html {
     height: 25px;
     z-index: 99;
 }
+#increase_scale {
+    position: fixed;
+    font-size: 25px;
+    border: none;
+    border-radius: 3px;
+    width: 39px;
+    bottom: 74px;
+    right: 5px;
+    background: #aecc8c;
+    z-index: 99;
+}
+#sub_scale {
+    position: fixed;
+    font-size: 25px;
+    border: none;
+    border-radius: 3px;
+    width: 39px;
+    bottom: 46px;
+    right: 5px;
+    background: #aecc8c;
+    z-index: 99;
+}
 #disable_flag {
     position: fixed;
     border: none;

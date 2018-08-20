@@ -20,7 +20,7 @@ var isMobile = {
 };
 
 var point_flag = null;
-var enable_flag=false;
+var enable_flag = false;
 var topLeftRealX = 0;
 var topLeftRealY = 0;
 var scaleX = 1;
@@ -57,7 +57,7 @@ $(document).ready(function () {
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
         x = parseFloat($(this).data('left') / (9798 / $('#mapdhc').width()));
         y = parseFloat($(this).data('top') / (7046 / $('#mapdhc').height()));
-              $('.img_instant').each(function () {
+        $('.img_instant').each(function () {
             $('.img_instant').hide();
         });
         $('.label_instant').each(function () {
@@ -82,20 +82,43 @@ $(document).ready(function () {
             $('html').attr('style', '');
         }
     });
+    var scale=1;
+    $('body').on('click', '#increase_scale', function () {
+        if (scale < 1.5) {
+            scale+=0.1;
+            // alert($('#mapdhc')[0].getBoundingClientRect().width+','+$('.addCanvas')[0].getBoundingClientRect().width);
+            // $('#mapdhc').css('transform', 'scale(' +(scale-0.1)+ ')');
+            $('.addCanvas').css('transform', 'scale(' + (scale) + ')');
+            $('#mapdhc').css('width','100%');
+            $('#mapdhc').css('height','100%');
+            alert($('#mapdhc')[0].getBoundingClientRect().width +','+ $('.addCanvas')[0].getBoundingClientRect().width);
+            // resetPoint();
+        }
+    });
+    $('body').on('click', '#sub_scale', function () {
+        if (scale >0.7) {
+            // resetPoint();
+            scale-=0.1;
+            $('.addCanvas').css('transform', 'scale(' + (scale) + ')');
+            $('#mapdhc').css('width','100%');
+            $('#mapdhc').css('height','100%');
+        }
+
+    });
     $('body').on('click', '#mapdhc', function (e) {
         var offset = $(this).offset();
         if (e.pageX - offset.left > 1200 || e.pageY - offset.top > 1500)
             $('html').attr('style', '');
-        if(enable_flag) {
-            var leftFlag=e.pageX;
-            var topFlag=e.pageY-160;
-            $('#icon_flag').css('margin-top',topFlag+'px');
-            $('#icon_flag').css('margin-left',leftFlag+'px');
+        if (enable_flag) {
+            var leftFlag = e.pageX;
+            var topFlag = e.pageY - 160;
+            $('#icon_flag').css('margin-top', topFlag + 'px');
+            $('#icon_flag').css('margin-left', leftFlag + 'px');
             $('#icon_flag').show();
             $('#disable_flag').show();
-            leftFlag = (leftFlag *9798) / $('#mapdhc').width();
-            topFlag = (topFlag*7046) / $('#mapdhc').height();
-            point_flag=[leftFlag,topFlag];
+            leftFlag = (leftFlag * 9798) / $('#mapdhc').width();
+            topFlag = (topFlag * 7046) / $('#mapdhc').height();
+            point_flag = [leftFlag, topFlag];
         }
     });
     $('body').on('click', '#download', function () {
@@ -215,7 +238,7 @@ $(document).ready(function () {
         scroll(x - 150, y, x - 150, y);
     });
     $('body').on('click', 'canvas,#mapdhc', function () {
-        if(document.getElementById('can')) (document.getElementById('can')).remove();
+        if (document.getElementById('can')) (document.getElementById('can')).remove();
     });
     $('#choose').on('keyup', function () {
         $('li').each(function () {
@@ -226,24 +249,34 @@ $(document).ready(function () {
         });
     });
     $('body').on('click', '#flag', function () {
-        enable_flag=true;
+        enable_flag = true;
         $('#icon_flag').show();
         alert('Click bản đồ chọn vị trí ghim !');
     });
     $('body').on('click', '#disable_flag', function () {
-        if($(this).data('flag')){
-            enable_flag=false;
-            $(this).data('flag',0);
+        if ($(this).data('flag')) {
+            enable_flag = false;
+            $(this).data('flag', 0);
             $(this).text('BỎ GHIM VỊ TRÍ');
-        }else {
+        } else {
             enable_flag = true;
             point_flag = null;
-            $(this).data('flag',1);
+            $(this).data('flag', 1);
             $(this).text('GHIM VỊ TRÍ');
             $('#icon_flag').hide();
             (document.getElementById('can')).remove();
         }
     });
+
+    function resetPoint(){
+        var u,v;
+        $('.div_marker').each(function(){
+            u = parseFloat($(this).data('lat')/ parseFloat(9798 / $('#mapdhc')[0].getBoundingClientRect().width));
+            v = parseFloat($(this).data('long')/ parseFloat(7046 / $('#mapdhc')[0].getBoundingClientRect().height));
+            $(this).css('margin-top',u+'px');
+            $(this).css('margin-left',v+'px');
+        });
+    }
     function into_map() {
         if (isMobile.any() == null) {
             $('#marker').css("margin-top", 850 + "px");
@@ -321,8 +354,12 @@ $(document).ready(function () {
                     {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
             }
         };
-
         tryGeolocation();
+        if (lat > 0 && long > 0)
+            setInterval(function () {
+                tryGeolocation();
+            }, 20000);
+
     }
 
     function scroll(xAndroid, yAndroid, xIOS, yIOS) {
@@ -398,7 +435,7 @@ function distance(beginPoint, endPoint) {
 }
 
 function checkSpecialPath1(beginPoint, endPoint) {
-     console.log(" checkSpecialPath1", isFirst1);
+    console.log(" checkSpecialPath1", isFirst1);
     if (!isFirst1) return [['POINTTYPE', 2]];
     var currentBeginPoint = findNearestPoint(beginPoint, list_path8);
     var currentEndPoint = findNearestPoint(endPoint, list_path8);
@@ -698,24 +735,27 @@ function findPath(beginPoint, endPoint) {
         return findPath(tmpPoint1, tmpPoint2);
     }
     var dicData1 = checkSpecialPath1(beginPoint, endPoint);
-    var type1 = dicData1[0][1]; console.log('type1',type1);
+    var type1 = dicData1[0][1];
+    console.log('type1', type1);
     if (type1 == 1) {
         return dicData1[1][1];
     }
     var dicData2 = checkSpecialPath2(beginPoint, endPoint);
-    var type2 = dicData2[0][1];console.log('type2',type2);
+    var type2 = dicData2[0][1];
+    console.log('type2', type2);
     if (type2 == 1) {
         return dicData2[1][1];
     }
     var dicData3 = checkSpecialPath3(beginPoint, endPoint);
     var type3 = dicData3[0][1];
-    console.log('type3',type3);
+    console.log('type3', type3);
     if (type3 == 1) {
-        console.log('type3 return',dicData3);
+        console.log('type3 return', dicData3);
         return dicData3[1][1];
     }
     var dicData = checkSmallPath(beginPoint, endPoint);
-    var type = dicData[0][1];console.log('type',type);
+    var type = dicData[0][1];
+    console.log('type', type);
     if (type == 1) {
         return dicData[1][1];
     }
@@ -762,7 +802,7 @@ function findPath(beginPoint, endPoint) {
     arrRePoint.push(list_path1[0]);
     arrRePoint.push(list_path2[0]);
     console.log('ở đây', currentBeginPoint, currentEndPoint, beginIndex, endIndex);
-    if (endIndex == beginIndex){
+    if (endIndex == beginIndex) {
         var tmpArPoint = findPath1(currentBeginPoint, currentEndPoint, arrPath[endIndex]);
         $.each(tmpArPoint, function (k, v) {
             arrPoint.push(v);
@@ -834,14 +874,15 @@ function findPath(beginPoint, endPoint) {
 
         for (var j = arrPoint.length - 1; j > -1; j--) {
             rtArrPoint.push(arrPoint[j]);
-        } console.log('rtArrPoint',rtArrPoint);
+        }
+        console.log('rtArrPoint', rtArrPoint);
         return rtArrPoint;
     }
     return arrPoint;
 }
 
 function checkSmallPath(beginPoint, endPoint) {
-    console.log('schecksmallpath',beginPoint, endPoint);
+    console.log('schecksmallpath', beginPoint, endPoint);
     if (!isFirst) return [['POINTTYPE', 2]];
     isFirst = false;
     var arrPath = [];
@@ -877,7 +918,7 @@ function checkSmallPath(beginPoint, endPoint) {
         }
         i += 1;
     });
-console.log('distant',distance1,distance2,beginIndex,endIndex);
+    console.log('distant', distance1, distance2, beginIndex, endIndex);
     var CIRCLE = 3000;
     if (currentBeginPoint != null &&
         currentBeginPoint[0] == arrPath[beginIndex][arrPath[beginIndex].length - 1][0] &&
@@ -942,7 +983,8 @@ console.log('distant',distance1,distance2,beginIndex,endIndex);
 function generate_way(listP) {
     isFirst = true, isFirst1 = true, isFirst2 = true, isFirst3 = true;
     var html = '', top, left;
-    var top_before = 100, left_before = 100, width = 0, height = 0, minW = 0, maxH = 0, maxW = 0, minH = 0, scaleX,scaleY;
+    var top_before = 100, left_before = 100, width = 0, height = 0, minW = 0, maxH = 0, maxW = 0, minH = 0, scaleX,
+        scaleY;
     $.each(listP, function (k, v) {
         left = parseFloat(v[0] / parseFloat(9798 / $('#mapdhc').width()));
         top = parseFloat(v[1] / parseFloat(7046 / $('#mapdhc').height()));
