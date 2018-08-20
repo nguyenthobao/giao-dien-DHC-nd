@@ -26,10 +26,18 @@ $(document).ready(function () {
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     // $('*').bind('touchmove', false);
     document.addEventListener('gesturestart', function (e) {
+        if ( $(this).data("prevented") === true ) {
+            $(this).data("prevented", false);
+            return;
+        }
         e.preventDefault();
         $('#mapdhc').data("prevented", true).trigger("gesturestart");
     });
     document.addEventListener('touchmove', function (event) {
+        if ( $(this).data("prevented") === true ) {
+            $(this).data("prevented", false);
+            return;
+        }
         event = event.originalEvent || event;
         if (event.scale !== undefined && event.scale !== 1) {
             event.preventDefault();
@@ -37,6 +45,10 @@ $(document).ready(function () {
         $('#mapdhc').data("prevented", true).trigger("touchmove");
     }, false);
     document.documentElement.addEventListener('touchmove', function (event) {
+        if ( $(this).data("prevented") === true ) {
+            $(this).data("prevented", false);
+            return;
+        }
         event.preventDefault();
         $('#mapdhc').data("prevented", true).trigger("touchmove");
     }, false);

@@ -321,8 +321,9 @@ $(document).ready(function () {
                     {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
             }
         };
-
         tryGeolocation();
+        setInterval(function(){ tryGeolocation();}, 20000);
+
     }
 
     function scroll(xAndroid, yAndroid, xIOS, yIOS) {
