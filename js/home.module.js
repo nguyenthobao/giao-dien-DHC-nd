@@ -22,20 +22,23 @@ $(document).ready(function () {
         }
     };
     var x_before = 0, y_before = 0,
-    urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
+        urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     // $('*').bind('touchmove', false);
     document.addEventListener('gesturestart', function (e) {
         e.preventDefault();
+        $('#mapdhc').data("prevented", true).trigger("gesturestart");
     });
     document.addEventListener('touchmove', function (event) {
         event = event.originalEvent || event;
         if (event.scale !== undefined && event.scale !== 1) {
             event.preventDefault();
         }
+        $('#mapdhc').data("prevented", true).trigger("touchmove");
     }, false);
     document.documentElement.addEventListener('touchmove', function (event) {
         event.preventDefault();
+        $('#mapdhc').data("prevented", true).trigger("touchmove");
     }, false);
     $.ajax({
         url: baseApi + 'point/get-all-point',
@@ -50,9 +53,9 @@ $(document).ready(function () {
                 }
                 html = '<div class="item-point" data-id="' + v.point_id + '">';
                 var pointImage = JSON.parse(v.point_images);
-                if(pointImage[0]!=undefined)
-                pointImage[0]=(pointImage[0]).slice(0,4)+'s'+ (pointImage[0]).slice(4);
-                html += '<img '+( pointImage[0]!=undefined? 'src="' + pointImage[0] + '"':'')+' class="img-thumbnail" alt="' + v.point_name + '">';
+                if (pointImage[0] != undefined)
+                    pointImage[0] = (pointImage[0]).slice(0, 4) + 's' + (pointImage[0]).slice(4);
+                html += '<img ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img-thumbnail" alt="' + v.point_name + '">';
                 html += '<h5 class="point-title">' + v.point_name + '</h5>';
                 html += '</div>';
                 $('.point-list').append(html);
@@ -83,8 +86,8 @@ $(document).ready(function () {
             var html_select = '', html_marker = '';
             $.each(pointData, function (k, v) {
                 var pointImage = JSON.parse(v.point_images);
-                if(pointImage[0]!=undefined)
-                pointImage[0]=(pointImage[0]).slice(0,4)+'s'+ (pointImage[0]).slice(4);
+                if (pointImage[0] != undefined)
+                    pointImage[0] = (pointImage[0]).slice(0, 4) + 's' + (pointImage[0]).slice(4);
                 var url = '';
                 x = parseFloat(v.lat / parseFloat(9798 / $('#mapdhc').width()));
                 y = parseFloat(v.long / parseFloat(7046 / $('#mapdhc').height()));
@@ -96,7 +99,7 @@ $(document).ready(function () {
                 html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute; ">' +
                     '<img data-lat="' + v.lat + '" data-long="' + v.long + '" src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="z-index:9;max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +
                     '<br><label data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '">' + v.point_name + '</label><br>';
-                if (v.point_images != '[]') html_marker += '<img data-id="' + v.point_id + '" id="img_' + x + '"  '+( pointImage[0]!=undefined? 'src="' + pointImage[0] + '"':'')+' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
+                if (v.point_images != '[]') html_marker += '<img data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
                 html_marker += '</div>';
             });
             $('#search_place').html(html_select);
@@ -112,7 +115,7 @@ $(document).ready(function () {
                 if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
                     $(this).attr('style', 'display:block;');
                 } else {
-                        $(this).css('margin-top', '1px');
+                    $(this).css('margin-top', '1px');
                 }
             });
 
@@ -132,10 +135,10 @@ $(document).ready(function () {
         success: function (result) {
             var promotionData = result.data.results;
             $('#list-promotion-home').html('');
-            $.each(promotionData, function (k,v) {
+            $.each(promotionData, function (k, v) {
                 var promotion_image = v.promotion_image;
-                if(promotion_image!=undefined && promotion_image!='')
-                    promotion_image=(promotion_image).slice(0,4)+'s'+ (promotion_image).slice(4);
+                if (promotion_image != undefined && promotion_image != '')
+                    promotion_image = (promotion_image).slice(0, 4) + 's' + (promotion_image).slice(4);
                 var html = '<div class="col-12 col-md-6 promotion-item" data-id="' + v.promotion_id + '">';
                 html += '<img src="' + promotion_image + '" title="' + v.promotion_name + '" alt="' + v.promotion_name + '">';
                 html += '</div>';
