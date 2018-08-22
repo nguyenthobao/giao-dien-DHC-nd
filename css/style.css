@@ -25,6 +25,7 @@ html {
     right: 5px;
     background: #aecc8c;
     z-index: 99;
+    text-align: center;
 }
 #sub_scale {
     position: fixed;
@@ -36,6 +37,7 @@ html {
     right: 5px;
     background: #aecc8c;
     z-index: 99;
+    text-align: center;
 }
 #disable_flag {
     position: fixed;
