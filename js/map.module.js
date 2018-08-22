@@ -237,8 +237,16 @@ $(document).ready(function () {
         }
         scroll(x - 150, y, x - 150, y);
     });
+    var check_display_canvas=0;
     $('body').on('click', 'canvas,#mapdhc', function () {
-        if (document.getElementById('can')) (document.getElementById('can')).remove();
+        if(check_display_canvas==0){
+            $('.img_instant').hide();
+            $('.label_instant').hide();
+            check_display_canvas==1;
+        }else{
+            if (document.getElementById('can')) (document.getElementById('can')).remove();
+            check_display_canvas==0
+        }
     });
     $('#choose').on('keyup', function () {
         $('li').each(function () {
