@@ -91,7 +91,6 @@ $(document).ready(function () {
             $('.addCanvas').css('transform', 'scale(' + (scale) + ')');
             $('#mapdhc').css('width','100%');
             $('#mapdhc').css('height','100%');
-            alert($('#mapdhc')[0].getBoundingClientRect().width +','+ $('.addCanvas')[0].getBoundingClientRect().width);
             // resetPoint();
         }
     });
