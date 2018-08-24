@@ -26,6 +26,7 @@ $(document).ready(function () {
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     // $('*').bind('touchmove', false);
     document.getElementById('mapdhc').addEventListener('gesturestart', function (e) {
+        alert($(this).data("prevented"));
         $(this).data("prevented", false);
     });
     document.addEventListener('gesturestart', function (e) {
