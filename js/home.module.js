@@ -49,6 +49,19 @@ $(document).ready(function () {
         }
         event.preventDefault();
     }, false);
+    (document.getElementById('mapdhc')).addEventListener('gesturechange',function(e){
+
+        alert(e.scale);
+        if(e.scale>1){
+            //zoom in
+            //increase the size of image according to the e.scale
+        }
+
+        else if(e.scale<1){
+            //zoom out
+            //decrease the size of image according to the e.scale
+        }
+    });
     $.ajax({
         url: baseApi + 'point/get-all-point',
         method: 'POST',
@@ -115,7 +128,7 @@ $(document).ready(function () {
             $('#content2 .content .row').append(html_marker);
             $('.img_instant').hide();
             $('.label_instant').hide();
-            $('.label_instant').each(function () {
+            $('.label_instant').each(function (){
                 if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
                     $(this).attr('style', 'display:block;');
                 }
