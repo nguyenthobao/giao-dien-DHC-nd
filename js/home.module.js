@@ -26,6 +26,7 @@ $(document).ready(function () {
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     // $('*').bind('touchmove', false);
     document.addEventListener('gesturestart', function (e) {
+        alert(1);
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
             return;
@@ -33,6 +34,7 @@ $(document).ready(function () {
         e.preventDefault();
     });
     document.addEventListener('touchmove', function (event) {
+        alert(2);
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
             return;
@@ -43,6 +45,7 @@ $(document).ready(function () {
         }
     }, false);
     document.documentElement.addEventListener('touchmove', function (event) {
+        alert(3);
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
             return;
