@@ -30,6 +30,10 @@ var that = null,
     urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
 urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
 $(document).ready(function () {
+    var elem = document.getElementById('mapdhc');
+    var zm = new Zoom(elem, {
+        rotate: true
+    });
     alert('Click " + " hoặc " - " để phóng to hoặc thu nhỏ bản đồ' );
     $('#tab2').prop('checked', true);
     $('main > label').hide();
@@ -51,7 +55,6 @@ $(document).ready(function () {
     $('#tab2').change(function () {
         into_map();
     });
-
     $('body').on('click', '#search_place>li', function () {
         $('#choose').val($(this).text());
         var li = this;
