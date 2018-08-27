@@ -90,8 +90,6 @@ $(document).ready(function () {
     $('body').on('click', '#increase_scale', function () {
         if (scale < 1.5) {
             scale+=0.1;
-            // alert($('#mapdhc')[0].getBoundingClientRect().width+','+$('.addCanvas')[0].getBoundingClientRect().width);
-            // $('#mapdhc').css('transform', 'scale(' +(scale-0.1)+ ')');
             $('.addCanvas').css('transform', 'scale(' + (scale) + ')');
             $('#mapdhc').css('width','100%');
             $('#mapdhc').css('height','100%');
