@@ -197,7 +197,7 @@ $(document).ready(function () {
                 });
             },
             error: function (e) {
-                alert('Có lỗi');
+                alert('Có lỗi xảy ra');
             }
         });
     });
