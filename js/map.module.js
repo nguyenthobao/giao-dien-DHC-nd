@@ -334,7 +334,7 @@ $(document).ready(function () {
                 }
                 var elem = document.getElementById('mapdhc');
                 new Zoom(elem, {
-                    rotate:true
+                    rotate:false
                 });
             }
         };
