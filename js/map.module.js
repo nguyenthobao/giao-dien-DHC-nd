@@ -31,7 +31,7 @@ var that = null,
 urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
 $(document).ready(function () {
     var elem = document.getElementById('mapdhc');
-    var zm = new Zoom(elem, {
+    new Zoom(elem, {
         rotate: false
     });
     alert('Click " + " hoặc " - " để phóng to hoặc thu nhỏ bản đồ' );
