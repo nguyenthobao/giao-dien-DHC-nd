@@ -100,7 +100,20 @@ $(document).ready(function () {
             $('#mapdhc').css('height','100%');
         }
     });
+    var catchtouch=1;
+    document.documentElement.addEventListener('touchmove', function (event) {
+        if(catchtouch==1)
+        alert(catchtouch);
+        else alert(event.touches.length);
+        catchtouch=2;
+        if ( $(this).data("prevented") === true ) {
+            $(this).data("prevented", false);
+            return;
+        }
+        event.preventDefault();
+    }, false);
     $('body').on('click', '#mapdhc', function (e) {
+        catchtouch=1;
         var offset = $(this).offset();
         if (e.pageX - offset.left > 1200 || e.pageY - offset.top > 1500)
             $('html').attr('style', '');

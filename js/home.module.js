@@ -42,14 +42,7 @@ $(document).ready(function () {
             event.preventDefault();
         }
     }, false);
-    document.documentElement.addEventListener('touchmove', function (event) {
-        alert(JSON.stringify(event.touches));
-        if ( $(this).data("prevented") === true ) {
-            $(this).data("prevented", false);
-            return;
-        }
-        event.preventDefault();
-    }, false);
+
     $.ajax({
         url: baseApi + 'point/get-all-point',
         method: 'POST',
