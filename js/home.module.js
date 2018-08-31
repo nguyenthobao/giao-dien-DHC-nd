@@ -275,6 +275,6 @@ function resetPoint(){
         html_marker += '</div>';
     });
     $('#content2 .content .row').append(html_marker);
-    $('.img_instant').hide();
+    // $('.img_instant').hide();
     $('.label_instant').hide();
 }
