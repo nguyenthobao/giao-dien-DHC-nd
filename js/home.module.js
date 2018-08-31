@@ -150,7 +150,7 @@ $(document).ready(function () {
     hammer.get('pinch').set({ enable: true });
     hammer.on("pinch", function(e){
         $(img).css('transform','scale(' + e.scale + ')');
-        resetPoint();
+        // resetPoint();
     } );
     hammer.on( "pinchend", function( e ) {
         $(img).css('transform','scale(' + e.scale + ')');
@@ -258,7 +258,7 @@ function resetPoint(){
     });
     var html_marker = '';
     var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
-    alert(scale);
+
     $.each(pointData, function (k, v) {
         var pointImage = JSON.parse(v.point_images);
         if (pointImage[0] != undefined)
@@ -275,7 +275,6 @@ function resetPoint(){
         if (v.point_images != '[]') html_marker += '<img data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
         html_marker += '</div>';
     });
-    alert(html_marker);
     $('#content2 .content .row').append(html_marker);
     $('.img_instant').hide();
     $('.label_instant').hide();
