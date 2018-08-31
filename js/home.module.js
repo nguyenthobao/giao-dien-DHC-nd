@@ -146,10 +146,6 @@ $(document).ready(function () {
     });
 
     var img=document.getElementById('mapdhc');
-    var width = $(img).css('width');
-    var height = $(img).css('height');
-    var left = 0;
-    var top = 0;
     var hammer = new Hammer(img);
     hammer.get('pinch').set({ enable: true });
     hammer.on("pinch", function(e){
@@ -260,6 +256,7 @@ function resetPoint(){
     $('.div_marker').each(function(){
         $(this).remove();
     });
+    alert($('.div_marker').length?$('.div_marker').length:'0');
     var html_marker = '';
     $.each(pointData, function (k, v) {
         var pointImage = JSON.parse(v.point_images);
