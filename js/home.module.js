@@ -257,7 +257,7 @@ function resetPoint(){
         $(this).remove();
     });
     var html_marker = '';
-    var scale=$('#mapdhc').css('transform')!='none'?($('#mapdhc').css('transform')).substring(6,7):1;
+    var scale=$('#mapdhc').css('transform')!='none'?($('#mapdhc').css('transform')).substring(7,8):1;
     alert(scale);
     $.each(pointData, function (k, v) {
         var pointImage = JSON.parse(v.point_images);
