@@ -46,6 +46,7 @@ $(document).ready(function () {
         }
     }, false);
     document.documentElement.addEventListener('touchmove', function (e) {
+        alert(e.touches.length);
         if (e.touches.length > 1)
             alert(e.scale+',,'+e.originalEvent.scale);
         if ( $(this).data("prevented") === true ) {
