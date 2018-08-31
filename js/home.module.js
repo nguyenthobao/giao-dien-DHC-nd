@@ -42,8 +42,8 @@ $(document).ready(function () {
             event.preventDefault();
         }
     }, false);
-    document.documentElement.addEventListener('touchend', function (event) {
-        alert(event.changedTouches.length);
+    document.documentElement.addEventListener('touchmove', function (event) {
+        alert(event.targetTouches.length);
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
             return;
