@@ -107,10 +107,10 @@ $(document).ready(function () {
         }
         event.preventDefault();
     }, false);
-    var hammer = new Hammer(document.getElementById('mapdhc')[0]);
+    var hammer = new Hammer(document.getElementById('mapdhc'));
     hammer.get('pinch').set({ enable: true });
     hammer.on("pinch", function(event) {
-        alert('scale'+event.gesture.scale);
+        alert('scale');
         // do math...
     });
     $('body').on('click', '#mapdhc', function (e) {
