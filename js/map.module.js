@@ -114,13 +114,11 @@ $(document).ready(function () {
     var top = 0;
     var hammer = new Hammer(img);
     hammer.get('pinch').set({ enable: true });
-    hammer.on("pinch", function(e) {
-        $(img).css('width',width*e.scale()+'px');
-        $(img).css('height',height*e.scale()+'px');
+    hammer.on("pinch", function(e){
+        $(img).css('transform','scale(' + e.scale() + ')');
     } );
     hammer.on( "pinchend", function( e ) {
-        $(img).css('width',width*e.scale()+'px');
-        $(img).css('height',height*e.scale()+'px');
+        $(img).css('transform','scale(' + e.scale() + ')');
     } );
     $('body').on('click', '#mapdhc', function (e) {
         var offset = $(this).offset();
