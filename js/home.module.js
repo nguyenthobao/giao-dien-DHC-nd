@@ -26,40 +26,29 @@ $(document).ready(function () {
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     // $('#mapdhc').bind('touchmove', true);
     document.addEventListener('gesturestart', function (e) {
-        // if ( $(this).data("prevented") === true ) {
-        //     $(this).data("prevented", false);
-        //     return;
-        // }
-        // e.preventDefault();
-    });
-    $('body').on('gestureend', '#mapdhc', function (e) {
-        // alert(e.originalEvent.scale);
+        if ( $(this).data("prevented") === true ) {
+            $(this).data("prevented", false);
+            return;
+        }
+        e.preventDefault();
     });
     document.addEventListener('touchmove', function (event) {
-        if ($(this).data("prevented") === true){
+        if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
             return;
         }
         event = event.originalEvent || event;
-        if(event.scale !== undefined && event.scale !== 1) {
+        if (event.scale !== undefined && event.scale !== 1) {
             event.preventDefault();
         }
     }, false);
-    document.documentElement.addEventListener('touchstart', function (e) {
-        alert('scale'+$(e).css('transform')+e.touches.length);
-        if (parseInt(e.touches.length) > 1)
-            alert('scale' + e.scale);});
-    document.documentElement.addEventListener('touchmove', function (e) {
-        if ($(this).data("prevented") === true) {
+    document.documentElement.addEventListener('touchmove', function (event) {
+        if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
             return;
         }
         event.preventDefault();
     }, false);
-    document.addEventListener('touchend', function (e) {
-        if (e.touches.length > 1)
-            alert(e.scale + ',' + e.originalEvent.scale);
-    });
     $.ajax({
         url: baseApi + 'point/get-all-point',
         method: 'POST',
