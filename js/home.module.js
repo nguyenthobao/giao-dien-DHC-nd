@@ -1,3 +1,4 @@
+var pointData;
 $(document).ready(function () {
     $('#search_place').select2();
     /*Get all point in home*/
@@ -21,7 +22,6 @@ $(document).ready(function () {
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
-    var pointData;
     var x_before = 0, y_before = 0,
         urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
