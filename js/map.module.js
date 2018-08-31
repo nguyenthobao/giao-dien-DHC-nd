@@ -108,7 +108,7 @@ $(document).ready(function () {
         event.preventDefault();
     }, false);
     var hammer = new Hammer(document.getElementById('mapdhc'));
-
+    hammer.get('pinch').set({ enable: true });
     hammer.on("pinch", function(event) {
         alert('scale'+event.gesture.scale);
         // do math...
