@@ -45,10 +45,11 @@ $(document).ready(function () {
             event.preventDefault();
         }
     }, false);
-    document.documentElement.addEventListener('touchmove', function (e) {
-        alert('lenght'+e.touches.length);
+    document.documentElement.addEventListener('touchstart', function (e) {
+        alert($(e).css('transform')+e.touches.length);
         if (parseInt(e.touches.length) > 1)
-            alert('scale' + e.scale);
+            alert('scale' + e.scale);});
+    document.documentElement.addEventListener('touchmove', function (e) {
         if ($(this).data("prevented") === true) {
             $(this).data("prevented", false);
             return;
