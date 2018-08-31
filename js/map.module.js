@@ -115,22 +115,12 @@ $(document).ready(function () {
     var hammer = new Hammer(img);
     hammer.get('pinch').set({ enable: true });
     hammer.on("pinch", function(e) {
-        alert('1-'+e.scale);
-        if ( width * e.scale >= 300 ) {
-            img.style.width = (width * e.scale) + 'px';
-            img.style.marginLeft = (-left * e.scale) + 'px';
-            img.style.height = (height * e.scale) + 'px';
-            img.style.marginTop = (-top * e.scale) + 'px';
-        }
-        console.log( e.scale );
+        $(img).css('width',width*e.scale()+'px');
+        $(img).css('height',height*e.scale()+'px');
     } );
     hammer.on( "pinchend", function( e ) {
-        alert('2-'+e.scale);
-        width = width * e.scale;
-        height = height * e.scale;
-        left = left * e.scale;
-        top = top * e.scale;
-        console.log( width );
+        $(img).css('width',width*e.scale()+'px');
+        $(img).css('height',height*e.scale()+'px');
     } );
     $('body').on('click', '#mapdhc', function (e) {
         var offset = $(this).offset();
