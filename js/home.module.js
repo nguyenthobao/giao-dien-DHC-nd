@@ -274,7 +274,8 @@ function resetPoint(){
         if (v.point_images != '[]') html_marker += '<img data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
         html_marker += '</div>';
     });
+    alert(html_marker);
     $('#content2 .content .row').append(html_marker);
-    // $('.img_instant').hide();
+    $('.img_instant').hide();
     $('.label_instant').hide();
 }
