@@ -43,7 +43,7 @@ $(document).ready(function () {
         }
     }, false);
     document.documentElement.addEventListener('touchmove', function (event) {
-        alert(JSON.stringify(event.targetTouches));
+        alert(JSON.stringify(event.touches));
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
             return;
