@@ -594,7 +594,6 @@ main input:checked + label {
     font-weight: bold;
     font-size: 24px;
 }
-
 .point-description {
     margin-left: 0;
     line-height: 20px;

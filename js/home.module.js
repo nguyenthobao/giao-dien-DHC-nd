@@ -47,8 +47,8 @@ $(document).ready(function () {
     }, false);
     document.documentElement.addEventListener('touchmove', function (e) {
         alert(e.originalEvent.touches.length);
-        if (e.originalEvent.touches.length > 1)
-            alert(e.originalEvent.scale);
+        if (parseInt(e.originalEvent.touches.length) > 1)
+            alert('scale'+e.originalEvent.scale);
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
             return;
