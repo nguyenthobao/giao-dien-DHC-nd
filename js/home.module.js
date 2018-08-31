@@ -263,8 +263,8 @@ function resetPoint(){
         if (pointImage[0] != undefined)
             pointImage[0] = (pointImage[0]).slice(0, 4) + 's' + (pointImage[0]).slice(4);
         var url = '';
-        x = parseFloat(v.lat / parseFloat(9798 /( $('#mapdhc').width()*scale)));
-        y = parseFloat(v.long / parseFloat(7046 / ($('#mapdhc').height()*scale)));
+        x = parseFloat(v.lat / parseFloat(9798 /( $('#mapdhc').width()/scale)));
+        y = parseFloat(v.long / parseFloat(7046 / ($('#mapdhc').height()/scale)));
         if (v.point_type == 3) url = '/images/play_marker.png';
         else if (v.point_type == 4) url = '/images/food_marker.png';
         else url = '/images/blank_marker.png';
