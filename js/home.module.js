@@ -150,10 +150,12 @@ $(document).ready(function () {
     hammer.get('pinch').set({ enable: true });
     hammer.on("pinch", function(e){
         $(img).css('transform','scale(' + e.scale + ')');
-        // resetPoint();
+        $('.addCanvas').css('transform','scale(' + e.scale + ')');
+         resetPoint();
     } );
     hammer.on( "pinchend", function( e ) {
         $(img).css('transform','scale(' + e.scale + ')');
+        $('.addCanvas').css('transform','scale(' + e.scale + ')');
         resetPoint();
     } );
     $('body').on('click', '.fixed-top', function () {
