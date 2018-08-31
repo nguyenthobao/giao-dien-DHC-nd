@@ -48,7 +48,7 @@ $(document).ready(function () {
     document.documentElement.addEventListener('touchmove', function (e) {
         alert(e.touches.length);
         if (e.touches.length > 1)
-            alert(e.scale);
+            alert(e.originalEvent.scale);
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
             return;
