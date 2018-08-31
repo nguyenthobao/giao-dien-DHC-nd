@@ -100,26 +100,7 @@ $(document).ready(function () {
             $('#mapdhc').css('height','100%');
         }
     });
-    document.documentElement.addEventListener('touchmove', function (event) {
-        if ( $(this).data("prevented") === true ) {
-            $(this).data("prevented", false);
-            return;
-        }
-        event.preventDefault();
-    }, false);
-    var img=document.getElementById('mapdhc');
-    var width = $(img).css('width');
-    var height = $(img).css('height');
-    var left = 0;
-    var top = 0;
-    var hammer = new Hammer(img);
-    hammer.get('pinch').set({ enable: true });
-    hammer.on("pinch", function(e){
-        $(img).css('transform','scale(' + e.scale + ')');
-    } );
-    hammer.on( "pinchend", function( e ) {
-        $(img).css('transform','scale(' + e.scale + ')');
-    } );
+
     $('body').on('click', '#mapdhc', function (e) {
         var offset = $(this).offset();
         if (e.pageX - offset.left > 1200 || e.pageY - offset.top > 1500)

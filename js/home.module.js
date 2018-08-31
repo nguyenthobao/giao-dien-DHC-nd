@@ -21,28 +21,35 @@ $(document).ready(function () {
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
+    var pointData;
     var x_before = 0, y_before = 0,
         urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     // $('#mapdhc').bind('touchmove', true);
-    // document.addEventListener('gesturestart', function (e) {
-    //     if ( $(this).data("prevented") === true ) {
-    //         $(this).data("prevented", false);
-    //         return;
-    //     }
-    //     e.preventDefault();
-    // });
-    // document.addEventListener('touchmove', function (event) {
-    //     if ( $(this).data("prevented") === true ) {
-    //         $(this).data("prevented", false);
-    //         return;
-    //     }
-    //     event = event.originalEvent || event;
-    //     if (event.scale !== undefined && event.scale !== 1) {
-    //         event.preventDefault();
-    //     }
-    // }, false);
-
+    document.addEventListener('gesturestart', function (e) {
+        if ( $(this).data("prevented") === true ) {
+            $(this).data("prevented", false);
+            return;
+        }
+        e.preventDefault();
+    });
+    document.addEventListener('touchmove', function (event) {
+        if ( $(this).data("prevented") === true ) {
+            $(this).data("prevented", false);
+            return;
+        }
+        event = event.originalEvent || event;
+        if (event.scale !== undefined && event.scale !== 1) {
+            event.preventDefault();
+        }
+    }, false);
+    document.documentElement.addEventListener('touchmove', function (event) {
+        if ( $(this).data("prevented") === true ) {
+            $(this).data("prevented", false);
+            return;
+        }
+        event.preventDefault();
+    }, false);
     $.ajax({
         url: baseApi + 'point/get-all-point',
         method: 'POST',
@@ -86,29 +93,13 @@ $(document).ready(function () {
                 if (a.point_name > b.point_name) return 1;
                 return 0;
             });
-            var html_select = '', html_marker = '';
+            var html_select = '';
             $.each(pointData, function (k, v) {
-                var pointImage = JSON.parse(v.point_images);
-                if (pointImage[0] != undefined)
-                    pointImage[0] = (pointImage[0]).slice(0, 4) + 's' + (pointImage[0]).slice(4);
-                var url = '';
-                x = parseFloat(v.lat / parseFloat(9798 / $('#mapdhc').width()));
-                y = parseFloat(v.long / parseFloat(7046 / $('#mapdhc').height()));
-                if (v.point_type == 3) url = '/images/play_marker.png';
-                else if (v.point_type == 4) url = '/images/food_marker.png';
-                else url = '/images/blank_marker.png';
                 html_select += '<li class="color_dropdown" data-top="' + v.long + '" data-left="' + v.lat + '" >' + v.point_name + '</li>';
 
-                html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute; ">' +
-                    '<img data-lat="' + v.lat + '" data-long="' + v.long + '" src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="z-index:9;max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +
-                    '<br><label data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '">' + v.point_name + '</label><br>';
-                if (v.point_images != '[]') html_marker += '<img data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
-                html_marker += '</div>';
             });
             $('#search_place').html(html_select);
-            $('#content2 .content .row').append(html_marker);
-            $('.img_instant').hide();
-            $('.label_instant').hide();
+            resetPoint();
             $('.label_instant').each(function () {
                 if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
                     $(this).attr('style', 'display:block;');
@@ -153,6 +144,22 @@ $(document).ready(function () {
             alert('Có lỗi');
         }
     });
+
+    var img=document.getElementById('mapdhc');
+    var width = $(img).css('width');
+    var height = $(img).css('height');
+    var left = 0;
+    var top = 0;
+    var hammer = new Hammer(img);
+    hammer.get('pinch').set({ enable: true });
+    hammer.on("pinch", function(e){
+        $(img).css('transform','scale(' + e.scale + ')');
+        resetPoint();
+    } );
+    hammer.on( "pinchend", function( e ) {
+        $(img).css('transform','scale(' + e.scale + ')');
+        resetPoint();
+    } );
     $('body').on('click', '.fixed-top', function () {
         $('html').removeClass('height-screen');
         $('#content2').removeClass('color_content2');
@@ -249,3 +256,26 @@ $(document).ready(function () {
     });
 
 });
+function resetPoint(){
+    $('.div_marker').remove();
+    var html_marker = '';
+    $.each(pointData, function (k, v) {
+        var pointImage = JSON.parse(v.point_images);
+        if (pointImage[0] != undefined)
+            pointImage[0] = (pointImage[0]).slice(0, 4) + 's' + (pointImage[0]).slice(4);
+        var url = '';
+        x = parseFloat(v.lat / parseFloat(9798 / $('#mapdhc').width()));
+        y = parseFloat(v.long / parseFloat(7046 / $('#mapdhc').height()));
+        if (v.point_type == 3) url = '/images/play_marker.png';
+        else if (v.point_type == 4) url = '/images/food_marker.png';
+        else url = '/images/blank_marker.png';
+         html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute; ">' +
+            '<img data-lat="' + v.lat + '" data-long="' + v.long + '" src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="z-index:9;max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +
+            '<br><label data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '">' + v.point_name + '</label><br>';
+        if (v.point_images != '[]') html_marker += '<img data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
+        html_marker += '</div>';
+    });
+    $('#content2 .content .row').append(html_marker);
+    $('.img_instant').hide();
+    $('.label_instant').hide();
+}
