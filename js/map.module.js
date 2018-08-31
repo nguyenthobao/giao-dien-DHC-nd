@@ -115,11 +115,11 @@ $(document).ready(function () {
     var hammer = new Hammer(img);
     hammer.get('pinch').set({ enable: true });
     hammer.on("pinch", function(e){
-        alert(e.scale());
-        $(img).css('transform','scale(' + e.scale() + ')');
+        alert(e.scale);
+        $(img).css('transform','scale(' + e.scale + ')');
     } );
     hammer.on( "pinchend", function( e ) {
-        $(img).css('transform','scale(' + e.scale() + ')');
+        $(img).css('transform','scale(' + e.scale + ')');
     } );
     $('body').on('click', '#mapdhc', function (e) {
         var offset = $(this).offset();
