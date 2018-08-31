@@ -123,7 +123,7 @@ $(document).ready(function () {
         }
         console.log( e.scale );
     } );
-    ham.on( "pinchend", function( e ) {
+    hammer.on( "pinchend", function( e ) {
         width = width * e.scale;
         height = height * e.scale;
         left = left * e.scale;
