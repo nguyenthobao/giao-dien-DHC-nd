@@ -46,7 +46,7 @@ $(document).ready(function () {
         }
     }, false);
     document.documentElement.addEventListener('touchstart', function (e) {
-        alert($(e).css('transform')+e.touches.length);
+        alert('scale'+$(e).css('transform')+e.touches.length);
         if (parseInt(e.touches.length) > 1)
             alert('scale' + e.scale);});
     document.documentElement.addEventListener('touchmove', function (e) {
