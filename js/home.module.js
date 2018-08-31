@@ -32,7 +32,7 @@ $(document).ready(function () {
         // }
         // e.preventDefault();
     });
-    $('body').on('gestureend','#mapdhc', function (e) {
+    $('body').on('touchend','#mapdhc', function (e) {
       alert(e.originalEvent.scale);
     });
     document.addEventListener('touchmove', function (event) {
