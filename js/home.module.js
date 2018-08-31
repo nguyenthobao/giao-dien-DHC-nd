@@ -32,8 +32,8 @@ $(document).ready(function () {
         // }
         // e.preventDefault();
     });
-    $('body').on('touchend','#mapdhc', function (e) {
-      alert(e.originalEvent.scale);
+    $('body').on('gestureend','#mapdhc', function (e) {
+      // alert(e.originalEvent.scale);
     });
     document.addEventListener('touchmove', function (event) {
         if ( $(this).data("prevented") === true ) {
@@ -46,12 +46,18 @@ $(document).ready(function () {
         }
     }, false);
     document.documentElement.addEventListener('touchmove', function (event) {
+        if (e.touches.length > 1)
+            alert(e.scale+',,'+e.originalEvent.scale);
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
             return;
         }
         event.preventDefault();
     }, false);
+    document.addEventListener('touchend', function (e) {
+        if (e.touches.length > 1)
+            alert(e.scale+','+e.originalEvent.scale);
+            });
     $.ajax({
         url: baseApi + 'point/get-all-point',
         method: 'POST',
