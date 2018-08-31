@@ -107,14 +107,15 @@ $(document).ready(function () {
         }
         event.preventDefault();
     }, false);
-    var width = 1900;
-    var height = 400;
-    var left = 950;
-    var top = 220;
     var img=document.getElementById('mapdhc');
+    var width = $(img).css('width');
+    var height = $(img).css('height');
+    var left = 0;
+    var top = 0;
     var hammer = new Hammer(img);
     hammer.get('pinch').set({ enable: true });
     hammer.on("pinch", function(e) {
+        alert('1-'+e.scale);
         if ( width * e.scale >= 300 ) {
             img.style.width = (width * e.scale) + 'px';
             img.style.marginLeft = (-left * e.scale) + 'px';
@@ -124,6 +125,7 @@ $(document).ready(function () {
         console.log( e.scale );
     } );
     hammer.on( "pinchend", function( e ) {
+        alert('2-'+e.scale);
         width = width * e.scale;
         height = height * e.scale;
         left = left * e.scale;
