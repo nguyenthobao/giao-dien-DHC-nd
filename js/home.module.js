@@ -257,7 +257,9 @@ $(document).ready(function () {
 
 });
 function resetPoint(){
-    $('.div_marker').remove();
+    $('.div_marker').each(function(){
+        $(this).remove();
+    });
     var html_marker = '';
     $.each(pointData, function (k, v) {
         var pointImage = JSON.parse(v.point_images);
