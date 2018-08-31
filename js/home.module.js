@@ -35,6 +35,9 @@ $(document).ready(function () {
     $('html').on('gestureend', function (e) {
       alert(e.originalEvent.scale);
     });
+    $('html').on('touchmove', function (e) {
+        alert(e.originalEvent.scale);
+    });
     document.addEventListener('touchmove', function (event) {
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
