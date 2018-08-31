@@ -107,8 +107,8 @@ $(document).ready(function () {
         }
         event.preventDefault();
     }, false);
-    Hammer(document.getElementById('mapdhc')).on("pinch", function(event) {
-        alert(event.gesture.scale);
+    Hammer(document.getElementById('mapdhc'),{domEvents: true}).on("pinch", function(event) {
+        alert('scale'+event.gesture.scale);
         // do math...
     });
     $('body').on('click', '#mapdhc', function (e) {
