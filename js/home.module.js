@@ -32,24 +32,24 @@ $(document).ready(function () {
         // }
         // e.preventDefault();
     });
-    $('body').on('gestureend','#mapdhc', function (e) {
-      // alert(e.originalEvent.scale);
+    $('body').on('gestureend', '#mapdhc', function (e) {
+        // alert(e.originalEvent.scale);
     });
     document.addEventListener('touchmove', function (event) {
-        if ( $(this).data("prevented") === true ) {
+        if ($(this).data("prevented") === true){
             $(this).data("prevented", false);
             return;
         }
         event = event.originalEvent || event;
-        if (event.scale !== undefined && event.scale !== 1) {
+        if(event.scale !== undefined && event.scale !== 1) {
             event.preventDefault();
         }
     }, false);
     document.documentElement.addEventListener('touchmove', function (e) {
-        alert(e.originalEvent.touches.length);
+        alert('lenght'+e.originalEvent.touches.length);
         if (parseInt(e.originalEvent.touches.length) > 1)
-            alert('scale'+e.originalEvent.scale);
-        if ( $(this).data("prevented") === true ) {
+            alert('scale' + e.originalEvent.scale);
+        if ($(this).data("prevented") === true) {
             $(this).data("prevented", false);
             return;
         }
@@ -57,8 +57,8 @@ $(document).ready(function () {
     }, false);
     document.addEventListener('touchend', function (e) {
         if (e.touches.length > 1)
-            alert(e.scale+','+e.originalEvent.scale);
-            });
+            alert(e.scale + ',' + e.originalEvent.scale);
+    });
     $.ajax({
         url: baseApi + 'point/get-all-point',
         method: 'POST',
@@ -125,7 +125,7 @@ $(document).ready(function () {
             $('#content2 .content .row').append(html_marker);
             $('.img_instant').hide();
             $('.label_instant').hide();
-            $('.label_instant').each(function (){
+            $('.label_instant').each(function () {
                 if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
                     $(this).attr('style', 'display:block;');
                 }
