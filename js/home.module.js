@@ -32,11 +32,8 @@ $(document).ready(function () {
         // }
         // e.preventDefault();
     });
-    $('html').on('gestureend', function (e) {
+    $('body').on('gestureend','#mapdhc', function (e) {
       alert(e.originalEvent.scale);
-    });
-    $('html').on('touchmove', function (e) {
-        alert(e.originalEvent.scale);
     });
     document.addEventListener('touchmove', function (event) {
         if ( $(this).data("prevented") === true ) {
