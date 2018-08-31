@@ -107,9 +107,9 @@ $(document).ready(function () {
         }
         event.preventDefault();
     }, false);
-    var hammer = new Hammer(document.getElementById('mapdhc'));
+    var hammer = new Hammer(document.getElementById('mapdhc')[0]);
     hammer.get('pinch').set({ enable: true });
-    hammer.on("pinchmove", function(event) {
+    hammer.on("pinch", function(event) {
         alert('scale'+event.gesture.scale);
         // do math...
     });
