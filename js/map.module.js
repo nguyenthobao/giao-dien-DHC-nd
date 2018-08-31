@@ -115,6 +115,7 @@ $(document).ready(function () {
     var hammer = new Hammer(img);
     hammer.get('pinch').set({ enable: true });
     hammer.on("pinch", function(e){
+        alert(e.scale());
         $(img).css('transform','scale(' + e.scale() + ')');
     } );
     hammer.on( "pinchend", function( e ) {
