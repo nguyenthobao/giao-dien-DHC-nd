@@ -33,6 +33,7 @@ $(document).ready(function () {
         e.preventDefault();
     });
     document.addEventListener('touchmove', function (event) {
+        alert(window.scaleX);
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
             return;

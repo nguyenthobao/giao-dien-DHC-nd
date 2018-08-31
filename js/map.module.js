@@ -51,7 +51,7 @@ $(document).ready(function () {
     $('#tab2').change(function () {
         into_map();
     });
-    $('body').on('click', '#search_place>li', function () {
+    $('body').on('click','#search_place>li', function () {
         $('#choose').val($(this).text());
         var li = this;
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
@@ -83,7 +83,7 @@ $(document).ready(function () {
         }
     });
     var scale=1;
-    $('body').on('click', '#increase_scale', function () {
+    $('body').on('click', '#increase_scale',function () {
         if (scale < 1.5) {
             scale+=0.1;
             $('.addCanvas').css('transform', 'scale(' + (scale) + ')');
@@ -92,15 +92,13 @@ $(document).ready(function () {
             // resetPoint();
         }
     });
-    $('body').on('click', '#sub_scale', function () {
+    $('body').on('click', '#sub_scale', function (){
         if (scale >0.7) {
-            // resetPoint();
             scale-=0.1;
             $('.addCanvas').css('transform', 'scale(' + (scale) + ')');
             $('#mapdhc').css('width','100%');
             $('#mapdhc').css('height','100%');
         }
-
     });
     $('body').on('click', '#mapdhc', function (e) {
         var offset = $(this).offset();
