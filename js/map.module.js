@@ -107,12 +107,29 @@ $(document).ready(function () {
         }
         event.preventDefault();
     }, false);
-    var hammer = new Hammer(document.getElementById('mapdhc'));
+    var width = 1900;
+    var height = 400;
+    var left = 950;
+    var top = 220;
+    var img=document.getElementById('mapdhc');
+    var hammer = new Hammer(img);
     hammer.get('pinch').set({ enable: true });
-    hammer.on("pinch", function(event) {
-        alert('scale');
-        // do math...
-    });
+    hammer.on("pinch", function(e) {
+        if ( width * e.scale >= 300 ) {
+            img.style.width = (width * e.scale) + 'px';
+            img.style.marginLeft = (-left * e.scale) + 'px';
+            img.style.height = (height * e.scale) + 'px';
+            img.style.marginTop = (-top * e.scale) + 'px';
+        }
+        console.log( e.scale );
+    } );
+    ham.on( "pinchend", function( e ) {
+        width = width * e.scale;
+        height = height * e.scale;
+        left = left * e.scale;
+        top = top * e.scale;
+        console.log( width );
+    } );
     $('body').on('click', '#mapdhc', function (e) {
         var offset = $(this).offset();
         if (e.pageX - offset.left > 1200 || e.pageY - offset.top > 1500)
