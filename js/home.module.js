@@ -32,8 +32,8 @@ $(document).ready(function () {
         // }
         // e.preventDefault();
     });
-    document.addEventListener('gestureend', function (event) {
-      alert(window.scaleX);
+    $('html').on('gestureend', function (e) {
+      alert(e.originalEvent.scale);
     });
     document.addEventListener('touchmove', function (event) {
         if ( $(this).data("prevented") === true ) {
