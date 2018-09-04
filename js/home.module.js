@@ -298,6 +298,5 @@ function resetPoint(){
         $('#content2 .content .row').append(html_marker);
         $('.img_instant').hide();
         $('.label_instant').hide();
-        $('html *').css('background-color','#8FB88F');
         reset=0;
 }
