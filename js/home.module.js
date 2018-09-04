@@ -28,7 +28,9 @@ $(document).ready(function () {
     // $('#mapdhc').bind('touchmove', true);
     setInterval(function(){
         if(interval) interval=0;
-        else interval=1;
+        else {
+            interval=1; resetPoint();
+        }
     },500);
     document.addEventListener('gesturestart', function (e) {
         if ( $(this).data("prevented") === true ) {
