@@ -980,13 +980,13 @@ function checkSmallPath(beginPoint, endPoint) {
 }
 
 function generate_way(listP) {
-    isFirst = true, isFirst1 = true, isFirst2 = true, isFirst3 = true;
+    isFirst = true, isFirst1 = true, isFirst2 = true ,isFirst3 = true;
     var html = '', top, left;
     var top_before = 100, left_before = 100, width = 0, height = 0, minW = 0, maxH = 0, maxW = 0, minH = 0, scaleX,
         scaleY;
     $.each(listP, function (k, v) {
-        left = parseFloat(v[0] / parseFloat(9798 / $('#mapdhc').width()/sessionStorage.getItem('scale')));
-        top = parseFloat(v[1] / parseFloat(7046 / $('#mapdhc').height()/sessionStorage.getItem('scale')));
+        left = parseFloat(v[0] / parseFloat(9798 / $('#mapdhc').width()));
+        top = parseFloat(v[1] / parseFloat(7046 / $('#mapdhc').height()));
         if (top > maxH || maxH == 0) maxH = top;
         if (left < minW || minW == 0) minW = left;
         if (top < minH || minH == 0) minH = top;
@@ -994,12 +994,14 @@ function generate_way(listP) {
         top_before = top;
         left_before = left;
     });
-    width = maxW - minW;
-    height = maxH - minH;
+    width = (maxW - minW)*sessionStorage.getItem('scale');
+    height = (maxH - minH)*sessionStorage.getItem('scale');
     if (document.getElementById('can'))
         (document.getElementById('can')).remove();
-    var marginTop = (minH + 3);
-    var marginLeft = (minW);
+    var marginLeftParent = ($('#mapdhc').width() - $('#mapdhc').width() * scale) / 2;
+    var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale ) / 2;
+    var marginTop =marginTopParent+(minH + 3)*sessionStorage.getItem('scale');
+    var marginLeft = marginLeftParent +(minW *sessionStorage.getItem('scale'));
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
         ' style="margin-top:' + marginTop + 'px; margin-left:' + marginLeft + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
     $('.addCanvas').append(html);
@@ -1013,7 +1015,7 @@ function generate_way(listP) {
     $.each(listP, function (k, v) {
         left = parseFloat(v[0] / parseFloat(9798 / $('#mapdhc').width()));
         top = parseFloat(v[1] / parseFloat(7046 / $('#mapdhc').height()));
-        ctx.lineTo(Math.abs(left - minW) * scaleX, Math.abs(top - minH) * scaleY);
+        ctx.lineTo(Math.abs(left - minW) * scaleX*sessionStorage.getItem('scale'), Math.abs(top - minH) * scaleY*sessionStorage.getItem('scale'));
         // ctx.arc(Math.abs(left - minW) * scaleX, Math.abs(top - minH) * scaleY, 2, 0, 2 * Math.PI, false);
     });
     ctx.lineWidth = 4;
