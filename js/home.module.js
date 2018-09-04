@@ -266,7 +266,7 @@ $(document).ready(function () {
 function resetPoint(reset){
     var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
     sessionStorage.setItem('scale',scale);
-    if(scale<2 && scale>0.5 && reset && interval) {
+    if(reset && interval) {
         $('.div_marker').each(function () {
             $(this).remove();
         });
