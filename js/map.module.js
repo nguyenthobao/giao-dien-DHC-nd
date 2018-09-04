@@ -1003,7 +1003,8 @@ function generate_way(listP) {
     var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale ) / 2;
     var marginTop =marginTopParent+(minH + 3)*scale ;
     var marginLeft = marginLeftParent +(minW *scale);
-    if (scale < 1) marginTop -= 18 / scale;
+    if (scale < 1) marginTop -= 20 / scale;
+    if (scale >1) marginTop += 20*(scale-1);
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
         ' style="margin-top:' + marginTop + 'px; margin-left:' + marginLeft + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
     $('.addCanvas').append(html);
