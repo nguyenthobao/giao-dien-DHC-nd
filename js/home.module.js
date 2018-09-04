@@ -261,11 +261,10 @@ $(document).ready(function () {
 
 });
 function resetPoint(){
-    var matrix=$('#mapdhc').css('transform');
-    if(matrix.indexOf('2.')>=0) $('#mapdhc').css('transform','matrix(1.5,0,0,1.5,0,0)');
-    if(matrix.indexOf('0.4')>=0) $('#mapdhc').css('transform','matrix(0.5,0,0,0.5,0,0)');
+    // var matrix=$('#mapdhc').css('transform');
+    // if(matrix.indexOf('2.')>=0) $('#mapdhc').css('transform','matrix(1.5,0,0,1.5,0,0)');
+    // if(matrix.indexOf('0.4')>=0) $('#mapdhc').css('transform','matrix(0.5,0,0,0.5,0,0)');
     var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
-    alert(scale);
     sessionStorage.setItem('scale',scale);
         $('.div_marker').each(function () {
             $(this).remove();
@@ -296,6 +295,7 @@ function resetPoint(){
             if (v.point_images != '[]') html_marker += '<img data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
             html_marker += '</div>';
         });
+        alert(html_marker);
         $('#content2 .content .row').append(html_marker);
         $('.img_instant').hide();
         $('.label_instant').hide();
