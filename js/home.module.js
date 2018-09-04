@@ -260,7 +260,9 @@ function resetPoint(){
     });
     var html_marker = '';
     var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
-
+    var p = document.getElementById("mapdhc");
+    var style = p.currentStyle || window.getComputedStyle(p);
+    alert("Current marginTop: " + style.marginTop);
     $.each(pointData, function (k, v) {
         var pointImage = JSON.parse(v.point_images);
         if (pointImage[0] != undefined)
