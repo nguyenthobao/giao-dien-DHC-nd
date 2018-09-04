@@ -271,16 +271,6 @@ $(document).ready(function () {
             (document.getElementById('can')).remove();
         }
     });
-
-    function resetPoint(){
-        var u,v;
-        $('.div_marker').each(function(){
-            u = parseFloat($(this).data('lat')/ parseFloat(9798 / $('#mapdhc')[0].getBoundingClientRect().width));
-            v = parseFloat($(this).data('long')/ parseFloat(7046 / $('#mapdhc')[0].getBoundingClientRect().height));
-            $(this).css('margin-top',u+'px');
-            $(this).css('margin-left',v+'px');
-        });
-    }
     function into_map() {
         if (isMobile.any() == null) {
             $('#marker').css("margin-top", 850 + "px");
@@ -994,8 +984,8 @@ function generate_way(listP) {
     var top_before = 100, left_before = 100, width = 0, height = 0, minW = 0, maxH = 0, maxW = 0, minH = 0, scaleX,
         scaleY;
     $.each(listP, function (k, v) {
-        left = parseFloat(v[0] / parseFloat(9798 / $('#mapdhc').width()));
-        top = parseFloat(v[1] / parseFloat(7046 / $('#mapdhc').height()));
+        left = parseFloat(v[0] / parseFloat(9798 / $('#mapdhc').width()/sessionStorage.getItem('scale')));
+        top = parseFloat(v[1] / parseFloat(7046 / $('#mapdhc').height()/sessionStorage.getItem('scale')));
         if (top > maxH || maxH == 0) maxH = top;
         if (left < minW || minW == 0) minW = left;
         if (top < minH || minH == 0) minH = top;

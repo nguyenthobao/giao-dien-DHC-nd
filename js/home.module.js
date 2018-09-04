@@ -255,8 +255,10 @@ $(document).ready(function () {
 
 });
 function resetPoint(){
+    if (document.getElementById('can')) (document.getElementById('can')).remove();
     var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
-if(scale<2 && scale>0.5) {
+    sessionStorage.setItem('scale',scale);
+    if(scale<2 && scale>0.5) {
     $('.div_marker').each(function () {
         $(this).remove();
     });
