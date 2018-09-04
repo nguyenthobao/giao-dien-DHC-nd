@@ -994,14 +994,15 @@ function generate_way(listP) {
         top_before = top;
         left_before = left;
     });
-    width = (maxW - minW)*sessionStorage.getItem('scale');
-    height = (maxH - minH)*sessionStorage.getItem('scale');
+    var scale=sessionStorage.getItem('scale')
+    width = (maxW - minW)*scale;
+    height = (maxH - minH)*scale;
     if (document.getElementById('can'))
         (document.getElementById('can')).remove();
     var marginLeftParent = ($('#mapdhc').width() - $('#mapdhc').width() * scale) / 2;
     var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale ) / 2;
-    var marginTop =marginTopParent+(minH + 3)*sessionStorage.getItem('scale');
-    var marginLeft = marginLeftParent +(minW *sessionStorage.getItem('scale'));
+    var marginTop =marginTopParent+(minH + 3)*scale;
+    var marginLeft = marginLeftParent +(minW *scale);
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
         ' style="margin-top:' + marginTop + 'px; margin-left:' + marginLeft + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
     $('.addCanvas').append(html);
@@ -1015,7 +1016,7 @@ function generate_way(listP) {
     $.each(listP, function (k, v) {
         left = parseFloat(v[0] / parseFloat(9798 / $('#mapdhc').width()));
         top = parseFloat(v[1] / parseFloat(7046 / $('#mapdhc').height()));
-        ctx.lineTo(Math.abs(left - minW) * scaleX*sessionStorage.getItem('scale'), Math.abs(top - minH) * scaleY*sessionStorage.getItem('scale'));
+        ctx.lineTo(Math.abs(left - minW) * scaleX*scale, Math.abs(top - minH) * scaleY*scale);
         // ctx.arc(Math.abs(left - minW) * scaleX, Math.abs(top - minH) * scaleY, 2, 0, 2 * Math.PI, false);
     });
     ctx.lineWidth = 4;

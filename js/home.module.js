@@ -1,4 +1,4 @@
-var pointData;
+var pointData,interval=0;
 $(document).ready(function () {
     $('#search_place').select2();
     /*Get all point in home*/
@@ -26,6 +26,10 @@ $(document).ready(function () {
         urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     // $('#mapdhc').bind('touchmove', true);
+    setInterval(function(){
+        if(interval) interval=0;
+        else interval=1;
+    },500);
     document.addEventListener('gesturestart', function (e) {
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
@@ -262,30 +266,35 @@ function resetPoint(){
     $('.div_marker').each(function () {
         $(this).remove();
     });
-    var html_marker = '';
-    var marginLeftParent = ($('#mapdhc').width() - $('#mapdhc').width() * scale) / 2;
-    var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale ) / 2;
-     if(scale<1) marginTopParent-=40/scale;
-    // else marginTopParent+=100/scale;
-    $.each(pointData, function (k, v) {
-        var pointImage = JSON.parse(v.point_images);
-        if (pointImage[0] != undefined)
-            pointImage[0] = (pointImage[0]).slice(0, 4) + 's' + (pointImage[0]).slice(4);
-        var url = '';
-        x = parseFloat(v.lat / parseFloat(9798 / ($('#mapdhc').width() * scale)));
-        y = parseFloat(v.long / parseFloat(7046 / ($('#mapdhc').height() * scale)));
-        if(scale!=1){ x+= marginLeftParent; y+=marginTopParent}
-        if (v.point_type == 3) url = '/images/play_marker.png';
-        else if (v.point_type == 4) url = '/images/food_marker.png';
-        else url = '/images/blank_marker.png';
-        html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute; ">' +
-            '<img data-lat="' + v.lat + '" data-long="' + v.long + '" src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="z-index:9;max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +
-            '<br><label data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '">' + v.point_name + '</label><br>';
-        if (v.point_images != '[]') html_marker += '<img data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
-        html_marker += '</div>';
-    });
-    $('#content2 .content .row').append(html_marker);
-    $('.img_instant').hide();
-    $('.label_instant').hide();
+    if(interval) {
+        var html_marker = '';
+        var marginLeftParent = ($('#mapdhc').width() - $('#mapdhc').width() * scale) / 2;
+        var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale) / 2;
+        if (scale < 1) marginTopParent -= 40 / scale;
+        // else marginTopParent+=100/scale;
+        $.each(pointData, function (k, v) {
+            var pointImage = JSON.parse(v.point_images);
+            if (pointImage[0] != undefined)
+                pointImage[0] = (pointImage[0]).slice(0, 4) + 's' + (pointImage[0]).slice(4);
+            var url = '';
+            x = parseFloat(v.lat / parseFloat(9798 / ($('#mapdhc').width() * scale)));
+            y = parseFloat(v.long / parseFloat(7046 / ($('#mapdhc').height() * scale)));
+            if (scale != 1) {
+                x += marginLeftParent;
+                y += marginTopParent
+            }
+            if (v.point_type == 3) url = '/images/play_marker.png';
+            else if (v.point_type == 4) url = '/images/food_marker.png';
+            else url = '/images/blank_marker.png';
+            html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute; ">' +
+                '<img data-lat="' + v.lat + '" data-long="' + v.long + '" src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="z-index:9;max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +
+                '<br><label data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '">' + v.point_name + '</label><br>';
+            if (v.point_images != '[]') html_marker += '<img data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
+            html_marker += '</div>';
+        });
+        $('#content2 .content .row').append(html_marker);
+        $('.img_instant').hide();
+        $('.label_instant').hide();
+    }
 }
 }
