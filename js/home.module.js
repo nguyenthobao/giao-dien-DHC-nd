@@ -261,7 +261,7 @@ function resetPoint(){
     var html_marker = '';
     var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
     realScale*=scale;
-    alert($('#mapdhc').width()*realScale);
+    alert(scale,realScale);
     $.each(pointData, function (k, v) {
         var pointImage = JSON.parse(v.point_images);
         if (pointImage[0] != undefined)
