@@ -155,12 +155,12 @@ $(document).ready(function () {
     var hammer = new Hammer(img);
     hammer.get('pinch').set({ enable: true });
     hammer.on("pinch", function(e){
-        $(img).css('transform','scale(' + e.scale + ')');
+        // $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
          resetPoint();
     } );
     hammer.on( "pinchend", function( e ) {
-        $(img).css('transform','scale(' + e.scale + ')');
+        // $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
         resetPoint();
     } );
