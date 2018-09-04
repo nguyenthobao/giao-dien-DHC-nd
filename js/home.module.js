@@ -262,14 +262,15 @@ if(scale<2 && scale>0.5) {
     });
     var html_marker = '';
     var marginLeftParent = ($('#mapdhc').width() - $('#mapdhc').width() * scale) / 2;
-    var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()+250) * scale) / 2;
+    var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()+75) * scale) / 2;
     $.each(pointData, function (k, v) {
         var pointImage = JSON.parse(v.point_images);
         if (pointImage[0] != undefined)
             pointImage[0] = (pointImage[0]).slice(0, 4) + 's' + (pointImage[0]).slice(4);
         var url = '';
-        x = parseFloat(v.lat / parseFloat(9798 / ($('#mapdhc').width() * scale))) + marginLeftParent;
-        y = parseFloat(v.long / parseFloat(7046 / ($('#mapdhc').height() * scale))) + marginTopParent;
+        x = parseFloat(v.lat / parseFloat(9798 / ($('#mapdhc').width() * scale)));
+        y = parseFloat(v.long / parseFloat(7046 / ($('#mapdhc').height() * scale)));
+        if(scale!=1) x+= marginLeftParent; y+=marginTopParent ;
         if (v.point_type == 3) url = '/images/play_marker.png';
         else if (v.point_type == 4) url = '/images/food_marker.png';
         else url = '/images/blank_marker.png';
