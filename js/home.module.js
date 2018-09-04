@@ -1,4 +1,4 @@
-var pointData;
+var pointData,realScale=1;
 $(document).ready(function () {
     $('#search_place').select2();
     /*Get all point in home*/
@@ -258,9 +258,10 @@ function resetPoint(){
     $('.div_marker').each(function(){
         $(this).remove();
     });
-    alert($('#mapdhc').width());
     var html_marker = '';
     var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
+    realScale*=scale;
+    alert($('#mapdhc').width()*realScale);
     $.each(pointData, function (k, v) {
         var pointImage = JSON.parse(v.point_images);
         if (pointImage[0] != undefined)
