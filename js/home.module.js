@@ -264,14 +264,13 @@ $(document).ready(function () {
 
 });
 function resetPoint(reset){
-    if (document.getElementById('can')) (document.getElementById('can')).remove();
     var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
     sessionStorage.setItem('scale',scale);
-    if(scale<2 && scale>0.5 && reset) {
-    $('.div_marker').each(function () {
-        $(this).remove();
-    });
-    if(interval) {
+    if(scale<2 && scale>0.5 && reset && interval) {
+        $('.div_marker').each(function () {
+            $(this).remove();
+        });
+        if (document.getElementById('can')) (document.getElementById('can')).remove();
         var html_marker = '';
         var marginLeftParent = ($('#mapdhc').width() - $('#mapdhc').width() * scale) / 2;
         var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale) / 2;
@@ -301,6 +300,6 @@ function resetPoint(reset){
         $('.img_instant').hide();
         $('.label_instant').hide();
         reset=0;
-    }
+
 }
 }
