@@ -261,7 +261,7 @@ function resetPoint(){
     var html_marker = '';
     var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
     var marginLeftParent=($('#mapdhc').width()-$('#mapdhc').width()*scale)/2;
-    var marginTopParent=($('#mapdhc').height()-$('#mapdhc').height()*scale);
+    var marginTopParent=($('#mapdhc').height()-$('#mapdhc').height()*scale-250)/2;
     $.each(pointData, function (k, v) {
         var pointImage = JSON.parse(v.point_images);
         if (pointImage[0] != undefined)
