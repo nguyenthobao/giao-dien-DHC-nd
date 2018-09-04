@@ -105,8 +105,7 @@ $(document).ready(function () {
 
             });
             $('#search_place').html(html_select);
-            reset=1;
-            resetPoint(reset);
+            resetPoint();
             $('.label_instant').each(function () {
                 if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
                     $(this).attr('style', 'display:block;');
@@ -158,14 +157,12 @@ $(document).ready(function () {
     hammer.on("pinch", function(e){
         $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
-        reset=1;
-         resetPoint(reset);
+         resetPoint();
     } );
     hammer.on( "pinchend", function( e ) {
         $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
-        reset=1;
-        resetPoint(reset);
+        resetPoint();
     } );
     $('body').on('click', '.fixed-top', function () {
         $('html').removeClass('height-screen');
@@ -263,10 +260,9 @@ $(document).ready(function () {
     });
 
 });
-function resetPoint(reset){
+function resetPoint(){
     var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
     sessionStorage.setItem('scale',scale);
-    if(reset && interval) {
         $('.div_marker').each(function () {
             $(this).remove();
         });
@@ -301,6 +297,4 @@ function resetPoint(reset){
         $('.img_instant').hide();
         $('.label_instant').hide();
         reset=0;
-
-}
 }
