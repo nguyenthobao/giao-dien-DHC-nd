@@ -262,6 +262,7 @@ $(document).ready(function () {
 });
 function resetPoint(){
     var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
+    alert($('#mapdhc').css('transform'));
     sessionStorage.setItem('scale',scale);
         $('.div_marker').each(function () {
             $(this).remove();
@@ -272,7 +273,6 @@ function resetPoint(){
         var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale) / 2;
         if (scale < 1) marginTopParent -= 40 / scale;
         if (scale >1) marginTop += 20*(scale-1);
-        alert(scale);
         $.each(pointData, function (k, v) {
             var pointImage = JSON.parse(v.point_images);
             if (pointImage[0] != undefined)
