@@ -262,7 +262,9 @@ if(scale<2 && scale>0.5) {
     });
     var html_marker = '';
     var marginLeftParent = ($('#mapdhc').width() - $('#mapdhc').width() * scale) / 2;
-    var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale) / 2;
+    var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale ) / 2;
+    if(scale<1) marginTopParent-=250/scale;
+    else marginTopParent+=250/scale;
     $.each(pointData, function (k, v) {
         var pointImage = JSON.parse(v.point_images);
         if (pointImage[0] != undefined)
