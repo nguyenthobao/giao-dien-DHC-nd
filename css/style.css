@@ -76,12 +76,14 @@ html {
     width: 180px;
     margin-top: -13px;
     height: 120px;
+    transform:scale(1) !important;
 }
 
 .label_instant {
     font-size: 9px;
     padding: 12px 20px 5px;
-    z-index: 99999;
+    z-index: 99999 !important;
+    transform:scale(1) !important;
 }
 
 .point_important::before {
@@ -94,6 +96,7 @@ html {
     transition: background 0.5s ease;
     z-index: 1;
     background-color: rgba(19, 80, 91, 0.7) !important;
+    transform:scale(1) !important;
 }
 
 .div_marker label {
@@ -106,6 +109,7 @@ html {
     height: 20px;
     padding-top: 4px;
     border-radius: 4px;
+    transform:scale(1) !important;
 }
 
 @media (min-width: 992px) {
