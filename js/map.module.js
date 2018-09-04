@@ -30,7 +30,8 @@ var that = null,
     urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
 urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
 $(document).ready(function () {
-    alert('Click " + " hoặc " - " để phóng to hoặc thu nhỏ bản đồ' );
+    // alert('Click " + " hoặc " - " để phóng to hoặc thu nhỏ bản đồ' );
+    sessionStorage.setItem('scale',1);
     $('#tab2').prop('checked', true);
     $('main > label').hide();
     $('.container').attr('style', 'min-width: 100%');
