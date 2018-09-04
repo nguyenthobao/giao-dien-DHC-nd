@@ -26,12 +26,12 @@ $(document).ready(function () {
         urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
     // $('#mapdhc').bind('touchmove', true);
-    setInterval(function(){
-        if(interval) interval=0;
-        else {
-            interval=1; if(reset) resetPoint(reset);
-        }
-    },500);
+    // setInterval(function(){
+    //     if(interval) interval=0;
+    //     else {
+    //         interval=1; if(reset) resetPoint(reset);
+    //     }
+    // },500);
     document.addEventListener('gesturestart', function (e) {
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
