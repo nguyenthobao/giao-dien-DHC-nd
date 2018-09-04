@@ -994,7 +994,7 @@ function generate_way(listP) {
         top_before = top;
         left_before = left;
     });
-    var scale=sessionStorage.getItem('scale')
+    var scale=sessionStorage.getItem('scale');
     width = (maxW - minW)*scale;
     height = (maxH - minH)*scale;
     if (document.getElementById('can'))

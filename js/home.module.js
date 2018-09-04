@@ -270,9 +270,9 @@ function resetPoint(){
         var html_marker = '';
         var marginLeftParent = ($('#mapdhc').width() - $('#mapdhc').width() * scale) / 2;
         var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale) / 2;
-        if (scale < 1) marginTopParent -= 5;
-        if (scale >1) marginTop +=3;
-        // else marginTopParent+=100/scale;
+        if (scale < 1) marginTopParent -= 40 / scale;
+        if (scale >1) marginTop += 20*(scale-1);
+        alert(scale);
         $.each(pointData, function (k, v) {
             var pointImage = JSON.parse(v.point_images);
             if (pointImage[0] != undefined)
