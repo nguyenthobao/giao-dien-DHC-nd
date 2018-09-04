@@ -1,4 +1,4 @@
-var pointData,interval=0;
+var pointData,interval=1;
 $(document).ready(function () {
     $('#search_place').select2();
     /*Get all point in home*/
