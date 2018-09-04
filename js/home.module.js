@@ -255,24 +255,25 @@ $(document).ready(function () {
 
 });
 function resetPoint(){
-    $('.div_marker').each(function(){
+    var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
+if(scale<2 && scale>0.5) {
+    $('.div_marker').each(function () {
         $(this).remove();
     });
     var html_marker = '';
-    var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
-    var marginLeftParent=($('#mapdhc').width()-$('#mapdhc').width()*scale)/2;
-    var marginTopParent=($('#mapdhc').height()-$('#mapdhc').height()*scale)/2;
+    var marginLeftParent = ($('#mapdhc').width() - $('#mapdhc').width() * scale) / 2;
+    var marginTopParent = ($('#mapdhc').height() - $('#mapdhc').height() * scale);
     $.each(pointData, function (k, v) {
         var pointImage = JSON.parse(v.point_images);
         if (pointImage[0] != undefined)
             pointImage[0] = (pointImage[0]).slice(0, 4) + 's' + (pointImage[0]).slice(4);
         var url = '';
-        x = parseFloat(v.lat / parseFloat(9798 /( $('#mapdhc').width()*scale))) +marginLeftParent;
-        y = parseFloat(v.long / parseFloat(7046 / ($('#mapdhc').height()*scale)))+marginTopParent;
+        x = parseFloat(v.lat / parseFloat(9798 / ($('#mapdhc').width() * scale))) + marginLeftParent;
+        y = parseFloat(v.long / parseFloat(7046 / ($('#mapdhc').height() * scale))) + marginTopParent;
         if (v.point_type == 3) url = '/images/play_marker.png';
         else if (v.point_type == 4) url = '/images/food_marker.png';
         else url = '/images/blank_marker.png';
-         html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute; ">' +
+        html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute; ">' +
             '<img data-lat="' + v.lat + '" data-long="' + v.long + '" src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="z-index:9;max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +
             '<br><label data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '">' + v.point_name + '</label><br>';
         if (v.point_images != '[]') html_marker += '<img data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
@@ -281,4 +282,5 @@ function resetPoint(){
     $('#content2 .content .row').append(html_marker);
     $('.img_instant').hide();
     $('.label_instant').hide();
+}
 }
