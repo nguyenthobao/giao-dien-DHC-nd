@@ -282,7 +282,7 @@ function resetPoint(){
             var url = '';
             x = parseFloat(v.lat / parseFloat(9798 / ($('#mapdhc').width() * scale)));
             y = parseFloat(v.long / parseFloat(7046 / ($('#mapdhc').height() * scale)));
-            if (scale != 1) {
+            if (scale !== 1) {
                 x += marginLeftParent;
                 y += marginTopParent
             }
@@ -292,7 +292,7 @@ function resetPoint(){
             html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute; transform:scale(1) !important;">' +
                 '<img data-lat="' + v.lat + '" data-long="' + v.long + '" src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="transform:scale(1)  !important,z-index:9;max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +
                 '<br><label data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '" style="transform:scale(1) !important;">' + v.point_name + '</label><br>';
-            if (v.point_images != '[]') html_marker += '<img style="transform:scale(1) !important;'+(scale!=1?'margin-top:10px':'')+'" data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
+            if (v.point_images != '[]') html_marker += '<img style="transform:scale(1) !important;'+(scale!==1?'margin-top:10px':'')+'" data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
             html_marker += '</div>';
         });
         alert(html_marker);
