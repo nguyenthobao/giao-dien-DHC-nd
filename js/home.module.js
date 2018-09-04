@@ -1,4 +1,4 @@
-var pointData,interval=1;
+var pointData,interval=1,reset=1;
 $(document).ready(function () {
     $('#search_place').select2();
     /*Get all point in home*/
@@ -29,7 +29,7 @@ $(document).ready(function () {
     setInterval(function(){
         if(interval) interval=0;
         else {
-            interval=1; resetPoint();
+            interval=1; if(reset) resetPoint(reset);
         }
     },500);
     document.addEventListener('gesturestart', function (e) {
@@ -105,7 +105,8 @@ $(document).ready(function () {
 
             });
             $('#search_place').html(html_select);
-            resetPoint();
+            reset=1;
+            resetPoint(reset);
             $('.label_instant').each(function () {
                 if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
                     $(this).attr('style', 'display:block;');
@@ -157,12 +158,14 @@ $(document).ready(function () {
     hammer.on("pinch", function(e){
         $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
-         resetPoint();
+        reset=1;
+         resetPoint(reset);
     } );
     hammer.on( "pinchend", function( e ) {
         $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
-        resetPoint();
+        reset=1;
+        resetPoint(reset);
     } );
     $('body').on('click', '.fixed-top', function () {
         $('html').removeClass('height-screen');
@@ -260,11 +263,11 @@ $(document).ready(function () {
     });
 
 });
-function resetPoint(){
+function resetPoint(reset){
     if (document.getElementById('can')) (document.getElementById('can')).remove();
     var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
     sessionStorage.setItem('scale',scale);
-    if(scale<2 && scale>0.5) {
+    if(scale<2 && scale>0.5 && reset) {
     $('.div_marker').each(function () {
         $(this).remove();
     });
@@ -297,6 +300,7 @@ function resetPoint(){
         $('#content2 .content .row').append(html_marker);
         $('.img_instant').hide();
         $('.label_instant').hide();
+        reset=0;
     }
 }
 }
