@@ -76,13 +76,12 @@ html {
     width: 180px;
     margin-top: -13px;
     height: 120px;
-    z-index: 4;
 }
 
 .label_instant {
     font-size: 9px;
     padding: 12px 20px 5px;
-    z-index: 5;
+    z-index: 99999;
 }
 
 .point_important::before {
