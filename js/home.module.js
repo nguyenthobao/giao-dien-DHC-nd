@@ -40,6 +40,13 @@ $(document).ready(function () {
     window.addEventListener(orientationEvent, function(e) {
        e.preventDefault();
     }, false);
+    $(window).bind("orientationchange", function(){
+        var orientation = window.orientation;
+        var new_orientation = (orientation) ? 0 : 180 + orientation;
+        $('body').css({
+            "-webkit-transform": "rotate(" + new_orientation + "deg)"
+        });
+    });
     document.addEventListener('gesturestart', function (e) {
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);

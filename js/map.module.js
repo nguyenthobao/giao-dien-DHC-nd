@@ -277,7 +277,7 @@ $(document).ready(function () {
             $('#marker').css("margin-top", 850 + "px");
             $('#marker').css("margin-left", 920 + "px");
         }
-        $('html,main,#content2,.content').addClass('height-screen');
+        $('html,main,#content2,.content,.containermap').addClass('height-screen');
         scroll(600, 690, 950, 890);
         var browserGeolocationSuccess = function (position) {
             x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude));
