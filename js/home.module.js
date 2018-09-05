@@ -40,12 +40,13 @@ $(document).ready(function () {
     window.addEventListener(orientationEvent, function (e) {
         e.preventDefault();
     }, false);
-    $(window).bind("orientationchange", function () {
+    $(window).bind("orientationchange", function (e) {
         // var orientation = window.orientation;
         // var new_orientation = (orientation) ? 0 : 180 + orientation;
         // $('body').css({
         //     "-webkit-transform": "rotate(" + new_orientation + "deg)"
         // });
+        e.preventDefault();
         var width = $('#mapdhc').width();
         var height = $('#mapdhc').height();
         setTimeout(function () {
