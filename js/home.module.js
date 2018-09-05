@@ -266,6 +266,7 @@ function resetPoint(){
     // if(matrix.indexOf('0.4')>=0) $('#mapdhc').css('transform','matrix(0.5,0,0,0.5,0,0)');
     var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
     sessionStorage.setItem('scale',scale);
+    $('#mapdhc').css('transform','');
         $('.div_marker').each(function () {
             $(this).remove();
         });
