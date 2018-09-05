@@ -297,7 +297,7 @@ function resetPoint(){
             html_marker += '</div>';
         });
         $('#content2 .content .row').append(html_marker);
-        $('#choose').val($($('.img_instant')[0]).attr('style')+','+scale+','+1/scale);
+        $('#choose').val($('#mapdhc'));
         $('.img_instant').hide();
         $('.label_instant').hide();
         reset=0;
