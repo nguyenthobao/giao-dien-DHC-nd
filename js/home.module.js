@@ -32,6 +32,10 @@ $(document).ready(function () {
     //         interval=1; if(reset) resetPoint(reset);
     //     }
     // },500);
+    window.onresize = function (event) {
+        event.preventDefault();
+    };
+    screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
     document.addEventListener('gesturestart', function (e) {
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
