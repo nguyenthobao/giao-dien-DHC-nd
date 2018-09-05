@@ -43,9 +43,9 @@ $(document).ready(function () {
     $(window).bind("orientationchange", function (e) {
         // var orientation = window.orientation;
         // var new_orientation = (orientation) ? 0 : 180 + orientation;
-        // $('body').css({
-        //     "-webkit-transform": "rotate(" + new_orientation + "deg)"
-        // });
+        $('body').css({
+            "-webkit-transform": "rotate(" + 0 + "deg)"
+        });
         e.preventDefault();
         var width = $('#mapdhc').width();
         var height = $('#mapdhc').height();

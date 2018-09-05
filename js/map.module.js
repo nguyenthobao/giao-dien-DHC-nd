@@ -104,8 +104,8 @@ $(document).ready(function () {
 
     $('body').on('click', '#mapdhc', function (e) {
         var offset = $(this).offset();
-        // if (e.pageX - offset.left > 1200 || e.pageY - offset.top > 1500)
-        //     $('html').attr('style', '');
+        if (e.pageX - offset.left > 1200 || e.pageY - offset.top > 1500)
+            $('html').attr('style', '');
         if (enable_flag) {
             var leftFlag = e.pageX;
             var topFlag = e.pageY - 160;
