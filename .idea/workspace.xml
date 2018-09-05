@@ -102,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/js/home.module.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
-              <caret line="299" column="39" lean-forward="true" selection-start-line="299" selection-start-column="39" selection-end-line="299" selection-end-column="39" />
+              <caret line="299" column="49" lean-forward="false" selection-start-line="299" selection-start-column="49" selection-end-line="299" selection-end-column="49" />
               <folding>
                 <element signature="e#155#838#0" expanded="false" />
                 <element signature="e#1329#1492#0" expanded="false" />
@@ -113,9 +113,9 @@
                 <element signature="e#7083#7388#0" expanded="false" />
                 <element signature="e#7448#8368#0" expanded="false" />
                 <element signature="e#8427#9775#0" expanded="false" />
-                <marker date="1536115600684" expanded="true" signature="11780:11901" ph="..." />
-                <marker date="1536115600684" expanded="true" signature="12071:12144" ph="..." />
-                <marker date="1536115600684" expanded="true" signature="12485:12497" ph="..." />
+                <marker date="1536115674771" expanded="true" signature="11780:11901" ph="..." />
+                <marker date="1536115674771" expanded="true" signature="12071:12144" ph="..." />
+                <marker date="1536115674771" expanded="true" signature="12485:12497" ph="..." />
               </folding>
             </state>
           </provider>
@@ -367,14 +367,7 @@
       <workItem from="1535681625694" duration="22638000" />
       <workItem from="1536027475556" duration="21342000" />
       <workItem from="1536061525148" duration="3241000" />
-      <workItem from="1536114368463" duration="1227000" />
-    </task>
-    <task id="LOCAL-01220" summary="update dhc user">
-      <created>1536031789594</created>
-      <option name="number" value="01220" />
-      <option name="presentableId" value="LOCAL-01220" />
-      <option name="project" value="LOCAL" />
-      <updated>1536031789594</updated>
+      <workItem from="1536114368463" duration="1301000" />
     </task>
     <task id="LOCAL-01221" summary="update dhc user">
       <created>1536031933642</created>
@@ -712,11 +705,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536115488728</updated>
     </task>
-    <option name="localTasksCounter" value="1269" />
+    <task id="LOCAL-01269" summary="update dhc user">
+      <created>1536115607805</created>
+      <option name="number" value="01269" />
+      <option name="presentableId" value="LOCAL-01269" />
+      <option name="project" value="LOCAL" />
+      <updated>1536115607805</updated>
+    </task>
+    <option name="localTasksCounter" value="1270" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="699717000" />
+    <option name="totallyTimeSpent" value="699791000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -876,9 +876,9 @@
             <element signature="e#7083#7388#0" expanded="false" />
             <element signature="e#7448#8368#0" expanded="false" />
             <element signature="e#8427#9775#0" expanded="false" />
-            <marker date="1536115600684" expanded="true" signature="11780:11901" ph="..." />
-            <marker date="1536115600684" expanded="true" signature="12071:12144" ph="..." />
-            <marker date="1536115600684" expanded="true" signature="12485:12497" ph="..." />
+            <marker date="1536115674771" expanded="true" signature="11780:11901" ph="..." />
+            <marker date="1536115674771" expanded="true" signature="12071:12144" ph="..." />
+            <marker date="1536115674771" expanded="true" signature="12485:12497" ph="..." />
           </folding>
         </state>
       </provider>
@@ -962,9 +962,9 @@
             <element signature="e#7083#7388#0" expanded="false" />
             <element signature="e#7448#8368#0" expanded="false" />
             <element signature="e#8427#9775#0" expanded="false" />
-            <marker date="1536115600684" expanded="true" signature="11780:11901" ph="..." />
-            <marker date="1536115600684" expanded="true" signature="12071:12144" ph="..." />
-            <marker date="1536115600684" expanded="true" signature="12485:12497" ph="..." />
+            <marker date="1536115674771" expanded="true" signature="11780:11901" ph="..." />
+            <marker date="1536115674771" expanded="true" signature="12071:12144" ph="..." />
+            <marker date="1536115674771" expanded="true" signature="12485:12497" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1048,9 +1048,9 @@
             <element signature="e#7083#7388#0" expanded="false" />
             <element signature="e#7448#8368#0" expanded="false" />
             <element signature="e#8427#9775#0" expanded="false" />
-            <marker date="1536115600684" expanded="true" signature="11780:11901" ph="..." />
-            <marker date="1536115600684" expanded="true" signature="12071:12144" ph="..." />
-            <marker date="1536115600684" expanded="true" signature="12485:12497" ph="..." />
+            <marker date="1536115674771" expanded="true" signature="11780:11901" ph="..." />
+            <marker date="1536115674771" expanded="true" signature="12071:12144" ph="..." />
+            <marker date="1536115674771" expanded="true" signature="12485:12497" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1270,7 +1270,7 @@
     <entry file="file://$PROJECT_DIR$/js/home.module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="299" column="39" lean-forward="true" selection-start-line="299" selection-start-column="39" selection-end-line="299" selection-end-column="39" />
+          <caret line="299" column="49" lean-forward="false" selection-start-line="299" selection-start-column="49" selection-end-line="299" selection-end-column="49" />
           <folding>
             <element signature="e#155#838#0" expanded="false" />
             <element signature="e#1329#1492#0" expanded="false" />
@@ -1281,9 +1281,9 @@
             <element signature="e#7083#7388#0" expanded="false" />
             <element signature="e#7448#8368#0" expanded="false" />
             <element signature="e#8427#9775#0" expanded="false" />
-            <marker date="1536115600684" expanded="true" signature="11780:11901" ph="..." />
-            <marker date="1536115600684" expanded="true" signature="12071:12144" ph="..." />
-            <marker date="1536115600684" expanded="true" signature="12485:12497" ph="..." />
+            <marker date="1536115674771" expanded="true" signature="11780:11901" ph="..." />
+            <marker date="1536115674771" expanded="true" signature="12071:12144" ph="..." />
+            <marker date="1536115674771" expanded="true" signature="12485:12497" ph="..." />
           </folding>
         </state>
       </provider>
