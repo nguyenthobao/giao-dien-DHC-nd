@@ -382,10 +382,6 @@ main input:checked + label {
         margin-left: 40px;
     }
 
-    .color_content2 {
-        background-color: #8FB88F;
-    }
-
     #content2 .content {
         width: 2048px;
         height: 1000px;

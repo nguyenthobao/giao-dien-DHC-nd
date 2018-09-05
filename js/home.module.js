@@ -32,10 +32,14 @@ $(document).ready(function () {
     //         interval=1; if(reset) resetPoint(reset);
     //     }
     // },500);
-    window.onresize = function (event) {
-        event.preventDefault();
-    };
-    screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
+    // Detect whether device supports orientationchange event, otherwise fall back to
+// the resize event.
+    var supportsOrientationChange = "onorientationchange" in window,
+        orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+
+    window.addEventListener(orientationEvent, function() {
+        // alert('HOLY ROTATING SCREENS BATMAN:' + window.orientation + " " + screen.width);
+    }, false);
     document.addEventListener('gesturestart', function (e) {
         if ( $(this).data("prevented") === true ) {
             $(this).data("prevented", false);
@@ -173,7 +177,7 @@ $(document).ready(function () {
         resetPoint();
     } );
     $('body').on('click', '.fixed-top', function () {
-        $('html').removeClass('height-screen');
+        $('html,.container,main,.content').removeClass('height-screen');
         $('#content2').removeClass('color_content2');
         if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
             $('main > label').show();

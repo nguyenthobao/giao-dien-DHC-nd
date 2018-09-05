@@ -277,6 +277,7 @@ $(document).ready(function () {
             $('#marker').css("margin-top", 850 + "px");
             $('#marker').css("margin-left", 920 + "px");
         }
+        $('html,.container,main,#content2,.content').addClass('height-screen');
         scroll(600, 690, 950, 890);
         var browserGeolocationSuccess = function (position) {
             x = parseFloat(getXPixcelValue(position.coords.latitude, position.coords.longitude));
@@ -310,8 +311,6 @@ $(document).ready(function () {
             }
             else {
                 $('html').attr('style', 'width:10000px;height:3000px');
-                $('html').addClass('height-screen');
-                $('#content2').addClass('color_content2');
                 if (x > $('#mapdhc').width() || x < 0 || y > $('#mapdhc').height() || y < 0) {
                     scroll(750, 690, 750, 500);
                 } else {
