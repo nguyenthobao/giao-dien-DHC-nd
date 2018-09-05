@@ -52,6 +52,7 @@ $(document).ready(function () {
         setTimeout(function () {
             $('#mapdhc').css('width', width + 'px');
             $('#mapdhc').css('height', height + 'px');
+            $('#choose').val($('#mapdhc').width());
         }, 500);
     });
     document.addEventListener('gesturestart', function (e) {
