@@ -50,9 +50,10 @@ $(document).ready(function () {
         var width = $('#mapdhc').width();
         var height = $('#mapdhc').height();
         setTimeout(function () {
+            $('#mapdhc').attr('style','');
             $('#mapdhc').css('width', width + 'px');
             $('#mapdhc').css('height', height + 'px');
-            $('#choose').val($('#mapdhc').width());
+            // $('#choose').val($('#mapdhc').width());
         }, 500);
     });
     document.addEventListener('gesturestart', function (e) {
