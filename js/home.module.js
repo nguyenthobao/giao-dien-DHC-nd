@@ -158,14 +158,14 @@ $(document).ready(function () {
        // sessionStorage.setItem('scale',e.scale);
          // $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
-        // $('#choose').val(e.scale);
+         $('#scalehammer').val(e.scale);
          resetPoint();
     } );
     hammer.on( "pinchend", function( e ) {
         //sessionStorage.setItem('scale',e.scale);
          // $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
-        // $('#choose').val(e.scale);
+         $('#scalehammer').val(e.scale);
         resetPoint();
     } );
     $('body').on('click', '.fixed-top', function () {
@@ -271,6 +271,7 @@ function resetPoint(){
     // var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
      // var scale= $('#choose').val()!=''?$('#choose').val():1;
      var scale=1;
+     var scalehammer=$('#scalehammer').val()!=''?$('#scalehammer').val():1;
         $('.div_marker').each(function () {
             $(this).remove();
         });
@@ -289,14 +290,15 @@ function resetPoint(){
             y = parseFloat(v.long / parseFloat(7046 / ($('#mapdhc').height() * scale)));
             if (scale !== 1) {
                 x += marginLeftParent;
-                y += marginTopParent
+                y += marginTopParent;
             }
             if (v.point_type == 3) url = '/images/play_marker.png';
             else if (v.point_type == 4) url = '/images/food_marker.png';
             else url = '/images/blank_marker.png';
-            var transform='transform:scale('+parseFloat(1/scale)+') !important;';
+            var width='width:'+parseFloat(18/scalehammer)+'px !important;';
+            var height='height:'+parseFloat(25/scalehammer)+'px !important;';
             html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;    position: absolute;'+transform+'">' +
-                '<img data-lat="' + v.lat + '" data-long="' + v.long + '" src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="'+transform+'z-index:9;max-width: 20000px; width: 18px;margin-left: 75px; height: 25px" class="point_important img-fluid map" alt="">' +
+                '<img data-lat="' + v.lat + '" data-long="' + v.long + '" src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="'+transform+'z-index:9;max-width: 20000px;margin-left: 75px;'+width+height+' class="point_important img-fluid map" alt="">' +
                 '<br><label data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '" style="'+transform+'">' + v.point_name + '</label><br>';
             if (v.point_images != '[]') html_marker += '<img style="'+transform+'margin-top:0" data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
             html_marker += '</div>';
