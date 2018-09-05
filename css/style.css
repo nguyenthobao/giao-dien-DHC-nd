@@ -9,6 +9,11 @@ html {
     -webkit-text-size-adjust: none;
     touch-action: manipulation;
 }
+
+.height-screen {
+    background-color: #8FB88F;
+}
+
 #icon_flag{
     position: absolute;
     width: 25px;
@@ -372,10 +377,6 @@ main input:checked + label {
 @media (max-width: 425px) {
     .news-item {
         display: block !important;
-    }
-
-    .height-screen {
-        background-color: #8FB88F;
     }
 
     #label_tab1, #label_tab3 {
