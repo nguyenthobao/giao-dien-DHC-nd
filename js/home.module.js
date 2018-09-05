@@ -277,6 +277,7 @@ function resetPoint(){
         var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale) / 2;
         if (scale < 1) marginTopParent -= 40 / scale;
         if (scale >1) marginTop += 20*(scale-1);
+        $('#choose').val(scale+','+marginLeftParent+','+marginTopParent);
         $.each(pointData, function (k, v) {
             var pointImage = JSON.parse(v.point_images);
             if (pointImage[0] != undefined)
