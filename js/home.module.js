@@ -296,6 +296,7 @@ function resetPoint(){
             html_marker += '</div>';
         });
         $('#content2 .content .row').append(html_marker);
+        $('#choose').val($('.div_marker').length);
         $('.img_instant').hide();
         $('.label_instant').hide();
         reset=0;
