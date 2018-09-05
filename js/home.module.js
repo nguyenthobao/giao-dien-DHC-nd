@@ -37,8 +37,8 @@ $(document).ready(function () {
     var supportsOrientationChange = "onorientationchange" in window,
         orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
 
-    window.addEventListener(orientationEvent, function() {
-        // alert('HOLY ROTATING SCREENS BATMAN:' + window.orientation + " " + screen.width);
+    window.addEventListener(orientationEvent, function(e) {
+       e.preventDefault();
     }, false);
     document.addEventListener('gesturestart', function (e) {
         if ( $(this).data("prevented") === true ) {
@@ -177,7 +177,7 @@ $(document).ready(function () {
         resetPoint();
     } );
     $('body').on('click', '.fixed-top', function () {
-        $('html,.container,main,.content').removeClass('height-screen');
+        $('html,.containermap,main,.content').removeClass('height-screen');
         $('#content2').removeClass('color_content2');
         if (document.getElementsByTagName("label")[0].offsetLeft <= 0) {
             $('main > label').show();
