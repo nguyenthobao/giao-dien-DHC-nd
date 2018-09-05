@@ -269,7 +269,7 @@ function resetPoint(){
     // if(matrix.indexOf('2.')>=0) $('#mapdhc').css('transform','matrix(1.5,0,0,1.5,0,0)');
     // if(matrix.indexOf('0.4')>=0) $('#mapdhc').css('transform','matrix(0.5,0,0,0.5,0,0)');
     // var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
-      var scale= $('#choose').val();
+      var scale= $('#choose').val()!=''?$('#choose').val():1;
     // var scale=1;
         $('.div_marker').each(function () {
             $(this).remove();
