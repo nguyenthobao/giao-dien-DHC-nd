@@ -158,14 +158,14 @@ $(document).ready(function () {
        // sessionStorage.setItem('scale',e.scale);
          // $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
-        $(img).data('scale',e.scale);
+        $('#choose').val(e.scale);
          resetPoint();
     } );
     hammer.on( "pinchend", function( e ) {
         //sessionStorage.setItem('scale',e.scale);
          // $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
-        $(img).data('scale',e.scale);
+        $('#choose').val(e.scale);
         resetPoint();
     } );
     $('body').on('click', '.fixed-top', function () {
@@ -269,8 +269,8 @@ function resetPoint(){
     // if(matrix.indexOf('2.')>=0) $('#mapdhc').css('transform','matrix(1.5,0,0,1.5,0,0)');
     // if(matrix.indexOf('0.4')>=0) $('#mapdhc').css('transform','matrix(0.5,0,0,0.5,0,0)');
     // var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
-    //  var scale= $('#mapdhc').data('scale');
-    var scale=1;
+      var scale= $('#choose').val();
+    // var scale=1;
         $('.div_marker').each(function () {
             $(this).remove();
         });
