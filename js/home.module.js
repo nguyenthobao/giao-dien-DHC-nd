@@ -1,4 +1,4 @@
-var pointData,interval=1,reset=1;
+var pointData, interval = 1, reset = 1;
 $(document).ready(function () {
     $('#search_place').select2();
     /*Get all point in home*/
@@ -37,26 +37,31 @@ $(document).ready(function () {
     var supportsOrientationChange = "onorientationchange" in window,
         orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
 
-    window.addEventListener(orientationEvent, function(e) {
-       e.preventDefault();
+    window.addEventListener(orientationEvent, function (e) {
+        e.preventDefault();
     }, false);
-    $(window).bind("orientationchange", function(){
+    $(window).bind("orientationchange", function () {
         // var orientation = window.orientation;
         // var new_orientation = (orientation) ? 0 : 180 + orientation;
         // $('body').css({
         //     "-webkit-transform": "rotate(" + new_orientation + "deg)"
         // });
-        $('#choose').val($('#mapdhc').width()+','+$('#mapdhc').height());
+        var width = $('#mapdhc').width();
+        var height = $('#mapdhc').height();
+        setTimeout(function () {
+            $('#mapdhc').css('width', width + 'px');
+            $('#mapdhc').css('height', height + 'px');
+        }, 500);
     });
     document.addEventListener('gesturestart', function (e) {
-        if ( $(this).data("prevented") === true ) {
+        if ($(this).data("prevented") === true) {
             $(this).data("prevented", false);
             return;
         }
         e.preventDefault();
     });
     document.addEventListener('touchmove', function (event) {
-        if ( $(this).data("prevented") === true ) {
+        if ($(this).data("prevented") === true) {
             $(this).data("prevented", false);
             return;
         }
@@ -66,7 +71,7 @@ $(document).ready(function () {
         }
     }, false);
     document.documentElement.addEventListener('touchmove', function (event) {
-        if ( $(this).data("prevented") === true ) {
+        if ($(this).data("prevented") === true) {
             $(this).data("prevented", false);
             return;
         }
@@ -167,23 +172,23 @@ $(document).ready(function () {
         }
     });
 
-    var img=document.getElementById('mapdhc');
+    var img = document.getElementById('mapdhc');
     var hammer = new Hammer(img);
-    hammer.get('pinch').set({ enable: true });
-    hammer.on("pinch", function(e){
-       // sessionStorage.setItem('scale',e.scale);
-         // $(img).css('transform','scale(' + e.scale + ')');
-        $('.addCanvas').css('transform','scale(' + e.scale + ')');
-         $('#scalehammer').val(e.scale);
-         resetPoint();
-    } );
-    hammer.on( "pinchend", function( e ) {
-        //sessionStorage.setItem('scale',e.scale);
-         // $(img).css('transform','scale(' + e.scale + ')');
-        $('.addCanvas').css('transform','scale(' + e.scale + ')');
-         $('#scalehammer').val(e.scale);
+    hammer.get('pinch').set({enable: true});
+    hammer.on("pinch", function (e) {
+        // sessionStorage.setItem('scale',e.scale);
+        // $(img).css('transform','scale(' + e.scale + ')');
+        $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
+        $('#scalehammer').val(e.scale);
         resetPoint();
-    } );
+    });
+    hammer.on("pinchend", function (e) {
+        //sessionStorage.setItem('scale',e.scale);
+        // $(img).css('transform','scale(' + e.scale + ')');
+        $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
+        $('#scalehammer').val(e.scale);
+        resetPoint();
+    });
     $('body').on('click', '.fixed-top', function () {
         $('html,.containermap,main,.content').removeClass('height-screen');
         $('#content2').removeClass('color_content2');
@@ -280,47 +285,48 @@ $(document).ready(function () {
     });
 
 });
-function resetPoint(){
+
+function resetPoint() {
     // var matrix=$('#mapdhc').css('transform');
     // if(matrix.indexOf('2.')>=0) $('#mapdhc').css('transform','matrix(1.5,0,0,1.5,0,0)');
     // if(matrix.indexOf('0.4')>=0) $('#mapdhc').css('transform','matrix(0.5,0,0,0.5,0,0)');
     // var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
-     // var scale= $('#choose').val()!=''?$('#choose').val():1;
-     var scale=1;
-     var scalehammer=$('#scalehammer').val()!=''?$('#scalehammer').val():1;
-        $('.div_marker').each(function () {
-            $(this).remove();
-        });
-        if (document.getElementById('can')) (document.getElementById('can')).remove();
-        var html_marker = '';
-        var marginLeftParent = ($('#mapdhc').width() - $('#mapdhc').width() * scale) / 2;
-        var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale) / 2;
-        if (scale < 1) marginTopParent -= 40 / scale;
-        if (scale >1) marginTop += 20*(scale-1);
-        $.each(pointData, function (k, v) {
-            var pointImage = JSON.parse(v.point_images);
-            if (pointImage[0] != undefined)
-                pointImage[0] = (pointImage[0]).slice(0, 4) + 's' + (pointImage[0]).slice(4);
-            var url = '';
-            x = parseFloat(v.lat / parseFloat(9798 / ($('#mapdhc').width() * scale)));
-            y = parseFloat(v.long / parseFloat(7046 / ($('#mapdhc').height() * scale)));
-            if (scale !== 1) {
-                x += marginLeftParent;
-                y += marginTopParent;
-            }
-            if (v.point_type == 3) url = '/images/play_marker.png';
-            else if (v.point_type == 4) url = '/images/food_marker.png';
-            else url = '/images/blank_marker.png';
-            var width='width:'+parseFloat(18/scalehammer)+'px !important;';
-            var height='height:'+parseFloat(25/scalehammer)+'px !important;';
-            html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="width:'+parseFloat(180/scalehammer)+'px !important;z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;position: absolute">' +
-                '<img data-lat="' + v.lat + '" data-long="' + v.long + '" src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="z-index:9;max-width: 20000px;margin-left: 75px;'+width+height+'" class="point_important img-fluid map" alt="">' +
-                '<br><label style="font-size:'+12/scalehammer+'px;width:'+parseFloat(180/scalehammer)+'px !important" data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '">' + v.point_name + '</label><br>';
-            if (v.point_images != '[]') html_marker += '<img style="width:'+parseFloat(180/scalehammer)+'px !important;height:'+parseFloat(120/scalehammer)+'px !important;margin-top: 0" data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
-            html_marker += '</div>';
-        });
-        $('#content2 .content .row').append(html_marker);
-        $('.img_instant').hide();
-        $('.label_instant').hide();
-        reset=0;
+    // var scale= $('#choose').val()!=''?$('#choose').val():1;
+    var scale = 1;
+    var scalehammer = $('#scalehammer').val() != '' ? $('#scalehammer').val() : 1;
+    $('.div_marker').each(function () {
+        $(this).remove();
+    });
+    if (document.getElementById('can')) (document.getElementById('can')).remove();
+    var html_marker = '';
+    var marginLeftParent = ($('#mapdhc').width() - $('#mapdhc').width() * scale) / 2;
+    var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale) / 2;
+    if (scale < 1) marginTopParent -= 40 / scale;
+    if (scale > 1) marginTop += 20 * (scale - 1);
+    $.each(pointData, function (k, v) {
+        var pointImage = JSON.parse(v.point_images);
+        if (pointImage[0] != undefined)
+            pointImage[0] = (pointImage[0]).slice(0, 4) + 's' + (pointImage[0]).slice(4);
+        var url = '';
+        x = parseFloat(v.lat / parseFloat(9798 / ($('#mapdhc').width() * scale)));
+        y = parseFloat(v.long / parseFloat(7046 / ($('#mapdhc').height() * scale)));
+        if (scale !== 1) {
+            x += marginLeftParent;
+            y += marginTopParent;
+        }
+        if (v.point_type == 3) url = '/images/play_marker.png';
+        else if (v.point_type == 4) url = '/images/food_marker.png';
+        else url = '/images/blank_marker.png';
+        var width = 'width:' + parseFloat(18 / scalehammer) + 'px !important;';
+        var height = 'height:' + parseFloat(25 / scalehammer) + 'px !important;';
+        html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="width:' + parseFloat(180 / scalehammer) + 'px !important;z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;position: absolute">' +
+            '<img data-lat="' + v.lat + '" data-long="' + v.long + '" src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="z-index:9;max-width: 20000px;margin-left: 75px;' + width + height + '" class="point_important img-fluid map" alt="">' +
+            '<br><label style="font-size:' + 12 / scalehammer + 'px;width:' + parseFloat(180 / scalehammer) + 'px !important" data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '">' + v.point_name + '</label><br>';
+        if (v.point_images != '[]') html_marker += '<img style="width:' + parseFloat(180 / scalehammer) + 'px !important;height:' + parseFloat(120 / scalehammer) + 'px !important;margin-top: 0" data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
+        html_marker += '</div>';
+    });
+    $('#content2 .content .row').append(html_marker);
+    $('.img_instant').hide();
+    $('.label_instant').hide();
+    reset = 0;
 }
