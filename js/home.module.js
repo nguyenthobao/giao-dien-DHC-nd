@@ -155,11 +155,13 @@ $(document).ready(function () {
     var hammer = new Hammer(img);
     hammer.get('pinch').set({ enable: true });
     hammer.on("pinch", function(e){
+        sessionStorage.setItem('scale',e.scale);
          $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
          resetPoint();
     } );
     hammer.on( "pinchend", function( e ) {
+        sessionStorage.setItem('scale',e.scale);
          $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
         resetPoint();
@@ -264,9 +266,8 @@ function resetPoint(){
     // var matrix=$('#mapdhc').css('transform');
     // if(matrix.indexOf('2.')>=0) $('#mapdhc').css('transform','matrix(1.5,0,0,1.5,0,0)');
     // if(matrix.indexOf('0.4')>=0) $('#mapdhc').css('transform','matrix(0.5,0,0,0.5,0,0)');
-    var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
-    sessionStorage.setItem('scale',scale);
-    $('#mapdhc').css('transform','');
+    // var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
+     var scale= sessionStorage.getItem('scale');
         $('.div_marker').each(function () {
             $(this).remove();
         });
@@ -298,7 +299,6 @@ function resetPoint(){
             html_marker += '</div>';
         });
         $('#content2 .content .row').append(html_marker);
-        // $('#choose').val($('#mapdhc').css('transform'));
         $('.img_instant').hide();
         $('.label_instant').hide();
         reset=0;
