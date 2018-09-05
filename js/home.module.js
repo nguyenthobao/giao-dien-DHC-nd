@@ -158,14 +158,14 @@ $(document).ready(function () {
         sessionStorage.setItem('scale',e.scale);
          // $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
-        $('#choose').val(e.scale);
+        $('img').attr('data-scale',e.scale);
          resetPoint();
     } );
     hammer.on( "pinchend", function( e ) {
         sessionStorage.setItem('scale',e.scale);
          // $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
-        $('#choose').val(e.scale);
+        $('img').attr('data-scale',e.scale);
         resetPoint();
     } );
     $('body').on('click', '.fixed-top', function () {
@@ -269,7 +269,7 @@ function resetPoint(){
     // if(matrix.indexOf('2.')>=0) $('#mapdhc').css('transform','matrix(1.5,0,0,1.5,0,0)');
     // if(matrix.indexOf('0.4')>=0) $('#mapdhc').css('transform','matrix(0.5,0,0,0.5,0,0)');
     // var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
-     var scale= sessionStorage.getItem('scale');
+     var scale= $('#mapdhc').data('scale');
         $('.div_marker').each(function () {
             $(this).remove();
         });
@@ -279,7 +279,7 @@ function resetPoint(){
         var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale) / 2;
         if (scale < 1) marginTopParent -= 40 / scale;
         if (scale >1) marginTop += 20*(scale-1);
-        // $('#choose').val(scale+','+marginLeftParent+','+marginTopParent);
+         $('#choose').val(scale);
         $.each(pointData, function (k, v) {
             var pointImage = JSON.parse(v.point_images);
             if (pointImage[0] != undefined)
