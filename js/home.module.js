@@ -41,12 +41,12 @@ $(document).ready(function () {
        e.preventDefault();
     }, false);
     $(window).bind("orientationchange", function(){
-        var orientation = window.orientation;
-        var new_orientation = (orientation) ? 0 : 180 + orientation;
-        $('#choose').val(new_orientation);
-        $('body').css({
-            "-webkit-transform": "rotate(" + 90 + "deg)"
-        });
+        // var orientation = window.orientation;
+        // var new_orientation = (orientation) ? 0 : 180 + orientation;
+        // $('body').css({
+        //     "-webkit-transform": "rotate(" + new_orientation + "deg)"
+        // });
+        $('#choose').val($('#mapdhc').width()+','+$('#mapdhc').height());
     });
     document.addEventListener('gesturestart', function (e) {
         if ( $(this).data("prevented") === true ) {
