@@ -158,14 +158,14 @@ $(document).ready(function () {
        // sessionStorage.setItem('scale',e.scale);
          // $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
-        $(img).attr('data-scale',e.scale);
+        $(img).data('scale',e.scale);
          resetPoint();
     } );
     hammer.on( "pinchend", function( e ) {
         //sessionStorage.setItem('scale',e.scale);
          // $(img).css('transform','scale(' + e.scale + ')');
         $('.addCanvas').css('transform','scale(' + e.scale + ')');
-        $(img).attr('data-scale',e.scale);
+        $(img).data('scale',e.scale);
         resetPoint();
     } );
     $('body').on('click', '.fixed-top', function () {
