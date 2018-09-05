@@ -42,10 +42,10 @@ $(document).ready(function () {
     }, false);
     $(window).bind("orientationchange", function(){
         var orientation = window.orientation;
-        $('#choose').val(orientation);
         var new_orientation = (orientation) ? 0 : 180 + orientation;
+        $('#choose').val(new_orientation);
         $('body').css({
-            "-webkit-transform": "rotate(" + new_orientation + "deg)"
+            "-webkit-transform": "rotate(" + 90 + "deg)"
         });
     });
     document.addEventListener('gesturestart', function (e) {
