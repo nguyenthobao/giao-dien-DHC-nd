@@ -270,6 +270,7 @@ $(document).ready(function () {
             point_flag = null;
             $(this).data('flag', 1);
             $(this).text('GHIM VỊ TRÍ');
+            $(this).hide();
             $('#icon_flag').hide();
             (document.getElementById('can')).remove();
         }
