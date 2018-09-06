@@ -175,20 +175,20 @@ $(document).ready(function () {
         }
     });
 
-    var img = document.getElementsByClassName('addCanvas')[0];
+    var img = document.getElementById('mapdhc');
     var hammer = new Hammer(img);
     hammer.get('pinch').set({enable: true});
     hammer.on("pinch", function (e) {
         // sessionStorage.setItem('scale',e.scale);
         // $(img).css('transform','scale(' + e.scale + ')');
-        // $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
+        $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
         $('#scalehammer').val(e.scale);
         resetPoint();
     });
     hammer.on("pinchend", function (e) {
         //sessionStorage.setItem('scale',e.scale);
         // $(img).css('transform','scale(' + e.scale + ')');
-        // $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
+        $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
         $('#scalehammer').val(e.scale);
         resetPoint();
     });
