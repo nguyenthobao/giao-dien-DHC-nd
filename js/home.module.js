@@ -325,8 +325,8 @@ function resetPoint() {
         var height = 'height:' + parseFloat(25 / scalehammer) + 'px !important;';
         html_marker += '<div class="div_marker" data-id="' + v.point_id + '" data-lat="' + v.lat + '" data-long="' + v.long + '" style="width:30px;z-index:' + parseInt(100 / (k + 1.1)) + ';margin-top:' + y + 'px; margin-left: ' + (x - 75) + 'px;position: absolute">' +
             '<img data-lat="' + v.lat + '" data-long="' + v.long + '" src="' + url + '" data-x="' + x + '" data-y="' + y + '"  style="z-index:9;max-width: 20000px;margin-left: 75px;' + width + height + '" class="point_important img-fluid map" alt="">' +
-            '<br><label style="font-size:' + 12 / scalehammer + 'px;width:' + parseFloat(180 / scalehammer) + 'px !important" data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '">' + v.point_name + '</label><br>';
-        if (v.point_images != '[]') html_marker += '<img style="width:' + parseFloat(180 / scalehammer) + 'px !important;height:' + parseFloat(120 / scalehammer) + 'px !important;margin-top: 0" data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
+            '<br><label style="font-size:' + 12 / scalehammer + 'px;width:' + parseFloat(180 / scalehammer) + 'px " data-id="' + v.point_id + '" id="label_' + x + '" class="label_instant" data-lat="' + v.lat + '" data-long="' + v.long + '">' + v.point_name + '</label><br>';
+        if (v.point_images != '[]') html_marker += '<img style="width:' + parseFloat(180 / scalehammer) + 'px;height:' + parseFloat(120 / scalehammer) + 'px !important;margin-top: 0" data-id="' + v.point_id + '" id="img_' + x + '"  ' + (pointImage[0] != undefined ? 'src="' + pointImage[0] + '"' : '') + ' class="img_instant img-fluid map" alt="" data-lat="' + v.lat + '" data-long="' + v.long + '">';
         html_marker += '</div>';
     });
     $('#content2 .content .row').append(html_marker);

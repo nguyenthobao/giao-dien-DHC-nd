@@ -75,6 +75,7 @@ $(document).ready(function () {
         $('.img_instant').each(function () {
             if ($(this).data('lat') == $(li).data('left') && $(this).data('long') == $(li).data('top')) {
                 $(this).attr('style', 'display:block;');
+                $(this).css('width',$('#cachewidth').val()+'px');
             }
         });
         scroll(x - 200, y - 150, x - 200, y - 150);
