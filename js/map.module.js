@@ -67,6 +67,7 @@ $(document).ready(function () {
         $('.label_instant').each(function () {
             if ($(this).data('lat') == $(li).data('left') && $(li).data('long') == $(this).data('top')) {
                 $(this).attr('style', 'display: block');
+                $($(this).parent()).css('width',$('#cachewidth').val()+'px');
                 $(this).show();
                 return false;
             }
@@ -218,6 +219,7 @@ $(document).ready(function () {
         generate_way(findPath(beginPoint, [$($(this).parent()).data('lat'), $($(this).parent()).data('long')]));
         $('.img_instant').hide();
         $('.label_instant').hide();
+        $($(this).parent()).css('width',$('#cachewidth').val()+'px');
         $(($(this).parent()).find('.img_instant')).show();
         $(($(this).parent()).find('.label_instant')).show();
 
@@ -294,6 +296,7 @@ $(document).ready(function () {
                     $('.label_instant').each(function () {
                         if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
                             $(this).attr('style', 'display:block;');
+                            $($(this).parent()).css('width',$('#cachewidth').val()+'px');
                         }
                     });
                     $('.img_instant').each(function () {
