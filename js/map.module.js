@@ -80,11 +80,9 @@ $(document).ready(function () {
         });
         scroll(x - 200, y - 150, x - 200, y - 150);
     });
-    // $('body').on('touchmove', '#mapdhc', function (event) {
-    //     if (event.originalEvent.touches[0].pageX > 1200 || event.originalEvent.touches[0].pageY > 1200) {
-    //         $('html').attr('style', '');
-    //     }
-    // });
+    $('body').on('touchmove', '#mapdhc', function (e) {
+       $('#choose').val(e.originalEvent.changedTouches[0].pageX);
+    });
     var scale=1;
     $('body').on('click', '#increase_scale',function () {
         if (scale < 1.5) {
