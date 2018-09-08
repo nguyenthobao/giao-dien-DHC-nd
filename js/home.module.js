@@ -175,25 +175,31 @@ $(document).ready(function () {
             alert('Có lỗi');
         }
     });
-
+    var time= parseInt((new Date()).toLocaleTimeString());
     var img = document.getElementById('mapdhc');
     var hammer = new Hammer(img);
     hammer.get('pinch').set({enable: true});
     hammer.on("pinch", function (e) {
         // sessionStorage.setItem('scale',e.scale);
         // $(img).css('transform','scale(' + e.scale + ')');
-        $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
-        $('#scalehammer').val(e.scale);
-        resetPoint();
+        if(time<(parseInt((new Date()).toLocaleTimeString())-100)) {
+            $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
+            $('#scalehammer').val(e.scale);
+            resetPoint();
+            time= parseInt((new Date()).toLocaleTimeString());
+        }
     });
     hammer.on('touchmove',function(e){});
     hammer.on('click',function(e){});
     hammer.on("pinchend", function (e) {
         //sessionStorage.setItem('scale',e.scale);
         // $(img).css('transform','scale(' + e.scale + ')');
+        if(time<(parseInt((new Date()).toLocaleTimeString())-100)) {
         $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
         $('#scalehammer').val(e.scale);
         resetPoint();
+        time= parseInt((new Date()).toLocaleTimeString());
+        }
     });
     $('body').on('click', '.fixed-top', function () {
         $('html,.containermap,main,.content').removeClass('height-screen');
