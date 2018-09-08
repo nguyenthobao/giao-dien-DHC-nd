@@ -186,6 +186,8 @@ $(document).ready(function () {
         $('#scalehammer').val(e.scale);
         resetPoint();
     });
+    hammer.on('touchmove',function(e){});
+    hammer.on('click',function(e){});
     hammer.on("pinchend", function (e) {
         //sessionStorage.setItem('scale',e.scale);
         // $(img).css('transform','scale(' + e.scale + ')');
