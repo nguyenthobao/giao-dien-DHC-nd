@@ -4,7 +4,6 @@
     <list default="true" id="a371e09c-094e-4ee6-a00c-907fd1dc9577" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/js/map.module.js" afterPath="$PROJECT_DIR$/js/map.module.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +29,8 @@
       <file leaf-file-name="map.module.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/map.module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="92" column="60" lean-forward="false" selection-start-line="92" selection-start-column="60" selection-end-line="92" selection-end-column="60" />
+            <state relative-caret-position="204">
+              <caret line="93" column="53" lean-forward="true" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
               <folding>
                 <element signature="e#3847#4109#0" expanded="false" />
                 <element signature="e#5155#5538#0" expanded="false" />
@@ -382,14 +381,7 @@
       <workItem from="1536130145482" duration="9367000" />
       <workItem from="1536199731717" duration="4731000" />
       <workItem from="1536219470649" duration="645000" />
-      <workItem from="1536397976445" duration="1035000" />
-    </task>
-    <task id="LOCAL-01271" summary="update dhc user">
-      <created>1536115809742</created>
-      <option name="number" value="01271" />
-      <option name="presentableId" value="LOCAL-01271" />
-      <option name="project" value="LOCAL" />
-      <updated>1536115809742</updated>
+      <workItem from="1536397976445" duration="1305000" />
     </task>
     <task id="LOCAL-01272" summary="update dhc user">
       <created>1536116146746</created>
@@ -727,11 +719,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536398345385</updated>
     </task>
-    <option name="localTasksCounter" value="1320" />
+    <task id="LOCAL-01320" summary="update dhc user">
+      <created>1536399019164</created>
+      <option name="number" value="01320" />
+      <option name="presentableId" value="LOCAL-01320" />
+      <option name="project" value="LOCAL" />
+      <updated>1536399019164</updated>
+    </task>
+    <option name="localTasksCounter" value="1321" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="722108000" />
+    <option name="totallyTimeSpent" value="722378000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1278,8 +1277,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/map.module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="92" column="60" lean-forward="false" selection-start-line="92" selection-start-column="60" selection-end-line="92" selection-end-column="60" />
+        <state relative-caret-position="204">
+          <caret line="93" column="53" lean-forward="true" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
           <folding>
             <element signature="e#3847#4109#0" expanded="false" />
             <element signature="e#5155#5538#0" expanded="false" />
