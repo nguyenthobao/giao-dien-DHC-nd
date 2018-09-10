@@ -85,7 +85,7 @@ $(document).ready(function () {
         touchstartX=e.originalEvent.touches[0].pageX;
         touchstartY=e.originalEvent.touches[0].pageY;
         $('#divmove').css('margin-left',(touchstartX-20)+'px').css('margin-top',(touchstartY-180)+'px');
-        $('#divmove').show();
+        $('#divmove').show().click();
     });
     // $('body').on('touchmove', '#dz', function (e) {
     //     touchendX=e.originalEvent.changedTouches[0].pageX;
