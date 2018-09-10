@@ -181,8 +181,8 @@ $(document).ready(function () {
     hammer.get('pinch').set({enable: true});
     hammer.on("pinch", function (e) {
          $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
-        // $('#scalehammer').val(e.scale);
-        // resetPoint();
+        $('#scalehammer').val(e.scale);
+        resetPoint();
     });
     hammer.on("pinchend", function (e) {
         $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
