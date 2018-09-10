@@ -80,14 +80,17 @@ $(document).ready(function () {
         });
         scroll(x - 200, y - 150, x - 200, y - 150);
     });
-     var touchstartX,touchstartY;
+     var touchstartX,touchstartY,starttouch=true;
     $('body').on('touchstart', '#dz', function (e) {
         touchstartX=e.originalEvent.touches[0].pageX;
         touchstartY=e.originalEvent.touches[0].pageY;
-        $('#divmove').css('margin-left',(touchstartX-20)+'px').css('margin-top',(touchstartY-180)+'px');
-        $('#divmove').show();
-        var initevent=(document.getElementById('divmove')).createEvent('TouchEvent');
-        initevent.initTouchEvent();
+        if(starttouch) {
+            $('#divmove').css('margin-left', (touchstartX - 20) + 'px').css('margin-top', (touchstartY - 180) + 'px');
+            $('#divmove').show();
+            var initevent = (document.getElementById('divmove')).createEvent('TouchEvent');
+            initevent.initTouchEvent();
+            starttouch=false;
+        }
     });
     // $('body').on('touchmove', '#dz', function (e) {
     //     touchendX=e.originalEvent.changedTouches[0].pageX;
@@ -97,6 +100,7 @@ $(document).ready(function () {
     $('body').on('touchend', '#dz', function (e) {
          setTimeout(function(){
              $('#divmove').hide();},500);
+        starttouch=true;
     });
     var scale=1;
     $('body').on('click', '#increase_scale',function () {
