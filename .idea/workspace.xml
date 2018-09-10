@@ -4,7 +4,6 @@
     <list default="true" id="a371e09c-094e-4ee6-a00c-907fd1dc9577" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/js/map.module.js" afterPath="$PROJECT_DIR$/js/map.module.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -374,14 +373,7 @@
       <workItem from="1536219470649" duration="645000" />
       <workItem from="1536397976445" duration="5760000" />
       <workItem from="1536546140275" duration="9066000" />
-      <workItem from="1536570094414" duration="660000" />
-    </task>
-    <task id="LOCAL-01294" summary="update dhc user">
-      <created>1536130814150</created>
-      <option name="number" value="01294" />
-      <option name="presentableId" value="LOCAL-01294" />
-      <option name="project" value="LOCAL" />
-      <updated>1536130814150</updated>
+      <workItem from="1536570094414" duration="762000" />
     </task>
     <task id="LOCAL-01295" summary="update dhc user">
       <created>1536131334963</created>
@@ -719,11 +711,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536570522710</updated>
     </task>
-    <option name="localTasksCounter" value="1343" />
+    <task id="LOCAL-01343" summary="update dhc user">
+      <created>1536570762829</created>
+      <option name="number" value="01343" />
+      <option name="presentableId" value="LOCAL-01343" />
+      <option name="project" value="LOCAL" />
+      <updated>1536570762829</updated>
+    </task>
+    <option name="localTasksCounter" value="1344" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="736559000" />
+    <option name="totallyTimeSpent" value="736661000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
