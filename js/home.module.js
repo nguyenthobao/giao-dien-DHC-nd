@@ -180,7 +180,7 @@ $(document).ready(function () {
     var hammer = new Hammer(img);
     hammer.get('pinch').set({enable: true});
     hammer.on("pinch", function (e) {
-        // $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
+         $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
         // $('#scalehammer').val(e.scale);
         // resetPoint();
     });
