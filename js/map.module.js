@@ -91,7 +91,7 @@ $(document).ready(function () {
     });
     $('body').on('touchend', '#dz', function (e) {
         var u=2*touchstartX-touchendX ,v=2*touchstartX-touchendX ;
-        $('#choose').val(u+','+v);
+        $('#choose').val(touchstartX+','+touchstartY+','+touchendX+','+touchendY);
         scroll(u,v,u,v);
     });
     var scale=1;
