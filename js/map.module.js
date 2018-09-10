@@ -87,11 +87,11 @@ $(document).ready(function () {
         $('#divmove').css('margin-left',(touchstartX-20)+'px').css('margin-top',(touchstartY-180)+'px');
         $('#divmove').show();
     });
-    $('body').on('touchmove', '#dz', function (e) {
-        touchendX=e.originalEvent.changedTouches[0].pageX;
-        touchendY=e.originalEvent.changedTouches[0].pageY;
-        setTimeout($('#divmove').css('margin-left',(touchendX-20)+'px').css('margin-top',(touchendY-180)+'px'),200);
-    });
+    // $('body').on('touchmove', '#dz', function (e) {
+    //     touchendX=e.originalEvent.changedTouches[0].pageX;
+    //     touchendY=e.originalEvent.changedTouches[0].pageY;
+    //     setTimeout($('#divmove').css('margin-left',(touchendX-20)+'px').css('margin-top',(touchendY-180)+'px'),200);
+    // });
     $('body').on('touchend', '#dz', function (e) {
         $('#divmove').hide();
     });
