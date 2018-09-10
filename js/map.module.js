@@ -84,7 +84,7 @@ $(document).ready(function () {
     $('body').on('touchstart', '#dz', function (e) {
         touchstartX=e.originalEvent.touches[0].pageX;
         touchstartY=e.originalEvent.touches[0].pageY;
-        $('#divmove').css('margin-left',touchstartX+'px').css('margin-top',(touchstartY-180)+'px');
+        $('#divmove').css('margin-left',(touchstartX-20)+'px').css('margin-top',(touchstartY-180)+'px');
         $('#choose').val($('#divmove').attr('style'));
     });
     // $('body').on('touchmove', '#dz', function (e) {
