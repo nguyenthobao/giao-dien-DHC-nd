@@ -85,7 +85,7 @@ $(document).ready(function () {
         touchstartX=e.originalEvent.touches[0].pageX;
         touchstartY=e.originalEvent.touches[0].pageY;
         $('#divmove').css('margin-left',(touchstartX-20)+'px').css('margin-top',(touchstartY-180)+'px');
-        $('#divmove').show().touchmove();
+        $('#divmove').show().touch();
     });
     // $('body').on('touchmove', '#dz', function (e) {
     //     touchendX=e.originalEvent.changedTouches[0].pageX;
@@ -93,7 +93,7 @@ $(document).ready(function () {
     //     setTimeout($('#divmove').css('margin-left',(touchendX-20)+'px').css('margin-top',(touchendY-180)+'px'),200);
     // });
     $('body').on('touchend', '#dz', function (e) {
-        $('#divmove').hide();
+        setTimeout($('#divmove').hide(),500);
     });
     var scale=1;
     $('body').on('click', '#increase_scale',function () {
