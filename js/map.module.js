@@ -98,8 +98,8 @@ $(document).ready(function () {
     //     setTimeout($('#divmove').css('margin-left',(touchendX-20)+'px').css('margin-top',(touchendY-180)+'px'),200);
     // });
     $('body').on('touchend', '#dz', function (e) {
-         setTimeout(function(){
-             $('#divmove').hide();},500);
+         // setTimeout(function(){
+         //     $('#divmove').hide();},500);
         starttouch=true;
     });
     var scale=1;
