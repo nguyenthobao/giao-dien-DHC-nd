@@ -180,18 +180,14 @@ $(document).ready(function () {
     var hammer = new Hammer(img);
     hammer.get('pinch').set({enable: true});
     hammer.on("pinch", function (e) {
-        // sessionStorage.setItem('scale',e.scale);
-        // $(img).css('transform','scale(' + e.scale + ')');
-        $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
-        $('#scalehammer').val(e.scale);
-        resetPoint();
+        // $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
+        // $('#scalehammer').val(e.scale);
+        // resetPoint();
     });
     hammer.on("pinchend", function (e) {
-        //sessionStorage.setItem('scale',e.scale);
-        // $(img).css('transform','scale(' + e.scale + ')');
-        $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
-        $('#scalehammer').val(e.scale);
-        resetPoint();
+        // $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
+        // $('#scalehammer').val(e.scale);
+        // resetPoint();
     });
     $('body').on('click', '.fixed-top', function () {
         $('html,.containermap,main,.content').removeClass('height-screen');
