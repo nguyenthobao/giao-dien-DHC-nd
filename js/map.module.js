@@ -90,7 +90,7 @@ $(document).ready(function () {
     $('body').on('touchmove', '#dz', function (e) {
         touchendX=e.originalEvent.changedTouches[0].pageX;
         touchendY=e.originalEvent.changedTouches[0].pageY;
-        $('#divmove').css('margin-left',(touchendX-20)+'px').css('margin-top',(touchendY-180)+'px');
+        setTimeout($('#divmove').css('margin-left',(touchendX-20)+'px').css('margin-top',(touchendY-180)+'px'),200);
     });
     $('body').on('touchend', '#dz', function (e) {
         $('#divmove').hide();
