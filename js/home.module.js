@@ -185,8 +185,6 @@ $(document).ready(function () {
         // resetPoint();
     });
     hammer.on("pinchend", function (e) {
-        $('#choose').val(JSON.stringify(e));
-        alert(JSON.stringify(e));
         $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
         $('#scalehammer').val(e.scale);
         resetPoint();
