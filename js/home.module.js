@@ -1,6 +1,6 @@
 var pointData, interval = 1, reset = 1;
 $(document).ready(function () {
-    $('#search_place').select2();
+    // $('#search_place').select2();
     /*Get all point in home*/
     var that, isMobile = {
         Android: function () {
