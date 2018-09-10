@@ -81,15 +81,15 @@ $(document).ready(function () {
         scroll(x - 200, y - 150, x - 200, y - 150);
     });
     var touchstartX,touchstartY,touchendX,touchendY;
-    $('body').on('touchstart', '#mapdhc', function (e) {
+    $('body').on('touchstart', '#dz', function (e) {
         touchstartX=e.originalEvent.touches[0].pageX;
         touchstartY=e.originalEvent.touches[0].pageY;
     });
-    $('body').on('touchmove', '#mapdhc', function (e) {
+    $('body').on('touchmove', '#dz', function (e) {
         touchendX=e.originalEvent.changedTouches[0].pageX;
         touchendY=e.originalEvent.changedTouches[0].pageY;
     });
-    $('body').on('touchend', '#mapdhc', function (e) {
+    $('body').on('touchend', '#dz', function (e) {
         var u=2*touchstartX-touchendX ,v=2*touchstartX-touchendX ;
         $('#choose').val(u+','+v);
         scroll(u,v,u,v);
