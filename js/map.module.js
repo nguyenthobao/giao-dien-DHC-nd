@@ -95,7 +95,6 @@ $(document).ready(function () {
     $('body').on('touchend', '#dz', function (e) {
          setTimeout(function(){
              $('#divmove').hide();},500);
-         });
     });
     var scale=1;
     $('body').on('click', '#increase_scale',function () {
