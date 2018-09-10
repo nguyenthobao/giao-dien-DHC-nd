@@ -80,20 +80,20 @@ $(document).ready(function () {
         });
         scroll(x - 200, y - 150, x - 200, y - 150);
     });
-    var touchstartX,touchstartY,touchendX,touchendY;
-    $('body').on('touchstart', '#dz', function (e) {
-        touchstartX=e.originalEvent.touches[0].pageX;
-        touchstartY=e.originalEvent.touches[0].pageY;
-    });
-    $('body').on('touchmove', '#dz', function (e) {
-        touchendX=e.originalEvent.changedTouches[0].pageX;
-        touchendY=e.originalEvent.changedTouches[0].pageY;
-    });
-    $('body').on('touchend', '#dz', function (e) {
-        var u=2*touchstartX-touchendX ,v=2*touchstartX-touchendX ;
-        $('#choose').val(touchstartX+','+touchstartY+','+touchendX+','+touchendY);
-        scroll(u,v,u,v);
-    });
+    // var touchstartX,touchstartY,touchendX,touchendY;
+    // $('body').on('touchstart', '#dz', function (e) {
+    //     touchstartX=e.originalEvent.touches[0].pageX;
+    //     touchstartY=e.originalEvent.touches[0].pageY;
+    // });
+    // $('body').on('touchmove', '#dz', function (e) {
+    //     touchendX=e.originalEvent.changedTouches[0].pageX;
+    //     touchendY=e.originalEvent.changedTouches[0].pageY;
+    // });
+    // $('body').on('touchend', '#dz', function (e) {
+    //     var u=2*touchstartX-touchendX ,v=2*touchstartX-touchendX ;
+    //     $('#choose').val(touchstartX+','+touchstartY+','+touchendX+','+touchendY);
+    //     scroll(u,v,u,v);
+    // });
     var scale=1;
     $('body').on('click', '#increase_scale',function () {
         if (scale < 1.5) {
