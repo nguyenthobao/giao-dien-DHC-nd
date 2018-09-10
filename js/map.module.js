@@ -80,11 +80,12 @@ $(document).ready(function () {
         });
         scroll(x - 200, y - 150, x - 200, y - 150);
     });
-    // var touchstartX,touchstartY,touchendX,touchendY;
-    // $('body').on('touchstart', '#dz', function (e) {
-    //     touchstartX=e.originalEvent.touches[0].pageX;
-    //     touchstartY=e.originalEvent.touches[0].pageY;
-    // });
+     var touchstartX,touchstartY;
+    $('body').on('touchstart', '#dz', function (e) {
+        touchstartX=e.originalEvent.touches[0].pageX;
+        touchstartY=e.originalEvent.touches[0].pageY;
+        $('#divmove').css('margin-left',touchstartX+'px').css('margin-top',touchstartY+'px');
+    });
     // $('body').on('touchmove', '#dz', function (e) {
     //     touchendX=e.originalEvent.changedTouches[0].pageX;
     //     touchendY=e.originalEvent.changedTouches[0].pageY;
