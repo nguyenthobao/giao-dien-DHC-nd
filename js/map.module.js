@@ -92,6 +92,7 @@ $(document).ready(function () {
     //
     // });
      $('body').on('touchmove', '#dz', function (e) {
+         alert(e.touches);
          // $('#choose').val(e.originalEvent.changedTouches[0].pageX);
     //     touchendX=e.originalEvent.changedTouches[0].pageX;
     //     touchendY=e.originalEvent.changedTouches[0].pageY;

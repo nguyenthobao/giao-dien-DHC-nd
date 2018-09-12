@@ -180,23 +180,16 @@ $(document).ready(function () {
     var hammer = new Hammer(img);
     hammer.get('pinch').set({enable: true});
     hammer.on("pinch", function (e) {
-        $('#choose').val(e.scale);
-        if(e.scale!==1) {
-            $(img).css('z-index', 90);
-            $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
-            $('#scalehammer').val(e.scale);
-            resetPoint();
-            $('#area').attr('coords','0,0,0,0');
-        }else  $('#area').attr('coords','0,0,2000,2000');
+        $(img).css('z-index',90);
+         $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
+        $('#scalehammer').val(e.scale);
+        resetPoint();
     });
     hammer.on("pinchend", function (e) {
-        if(e.scale!==1) {
-            $(img).css('z-index', 1);
-            $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
-            $('#scalehammer').val(e.scale);
-            resetPoint();
-            $('#area').attr('coords','0,0,0,0');
-        }else  $('#area').attr('coords','0,0,2000,2000');
+        $(img).css('z-index',1);
+        $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
+        $('#scalehammer').val(e.scale);
+        resetPoint();
     });
     $('body').on('click', '.fixed-top', function () {
         $('html,.containermap,main,.content').removeClass('height-screen');
