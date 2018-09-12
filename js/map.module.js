@@ -84,7 +84,7 @@ $(document).ready(function () {
     $('body').on('touchstart', '#dz', function (e) {
         touchstartX=e.originalEvent.touches[0].pageX;
         touchstartY=e.originalEvent.touches[0].pageY;
-           $('#area').attr('coords',(touchstartX-50)+','+(touchstartY-100)+','+(touchstartX+50)+','+(touchstartY+100));
+           $('#area').attr('coords',(touchstartX-70)+','+(touchstartY-100)+','+(touchstartX+70)+','+(touchstartY+100));
            $('#choose').val($('#area').attr('coords'));
     });
      $('body').on('touchmove', '#dz', function (e) {
