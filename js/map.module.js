@@ -82,7 +82,7 @@ $(document).ready(function () {
     });
      var touchstartX,touchstartY,starttouch=true;
     $('body').on('touchstart', '#dz', function (e) {
-        alert(JSON.stringify(e));
+        alert(JSON.stringify(e.touches));
         touchstartX=e.originalEvent.touches[0].pageX;
         touchstartY=e.originalEvent.touches[0].pageY;
            $('#area').attr('coords',(touchstartX-70)+','+(touchstartY-100)+','+(touchstartX+70)+','+(touchstartY+100));
