@@ -87,6 +87,7 @@ $(document).ready(function () {
         if (e.touches.length== 1) {
             touchstartX = e.originalEvent.touches[0].pageX;
             touchstartY = e.originalEvent.touches[0].pageY;
+            $('#areamap').append('<area id="area" shape="rect" coords="">');
             $('#area').attr('coords', (touchstartX-100) + ',' + (touchstartY - 100) + ',' +(touchstartX+100) + ',' + (touchstartY + 300));
         }
         // e.reset();
@@ -100,7 +101,7 @@ $(document).ready(function () {
      });
     $('body').on('touchend', '#dz', function (e) {
          setTimeout(function(){
-             $('#area').hide();},300);
+            document.getElementById('area').remove();},300);
         starttouch=true;
     });
     var scale=1;
