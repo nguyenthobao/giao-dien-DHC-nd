@@ -85,7 +85,7 @@ $(document).ready(function () {
         if (e.touches.length== 1) {
             touchstartX = e.originalEvent.touches[0].pageX;
             touchstartY = e.originalEvent.touches[0].pageY;
-            $('#area').attr('coords', (touchstartX-100) + ',' + (touchstartY - 200) + ',' +(touchstartX+100) + ',' + (touchstartY + 200));
+            $('#area').attr('coords', (touchstartX-100) + ',' + (touchstartY - 100) + ',' +(touchstartX+100) + ',' + (touchstartY + 300));
             $('#choose').val($('#area').attr('coords'));
         }
         // e.reset();
@@ -97,11 +97,11 @@ $(document).ready(function () {
     //     touchendY=e.originalEvent.changedTouches[0].pageY;
     //     setTimeout($('#divmove').css('margin-left',(touchendX-20)+'px').css('margin-top',(touchendY-180)+'px'),200);
      });
-    // $('body').on('touchend', '#dz', function (e) {
-    //      // setTimeout(function(){
-    //      //     $('#divmove').hide();},500);
-    //     starttouch=true;
-    // });
+    $('body').on('touchend', '#dz', function (e) {
+         setTimeout(function(){
+             $('#area').hide();},1000);
+        starttouch=true;
+    });
     var scale=1;
     $('body').on('click', '#increase_scale',function () {
         if (scale < 1.5) {
