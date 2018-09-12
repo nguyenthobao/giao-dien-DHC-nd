@@ -86,7 +86,6 @@ $(document).ready(function () {
             touchstartX = e.originalEvent.touches[0].pageX;
             touchstartY = e.originalEvent.touches[0].pageY;
             $('#area').attr('coords', (touchstartX-100) + ',' + (touchstartY - 100) + ',' +(touchstartX+100) + ',' + (touchstartY + 300));
-            $('#choose').val($('#area').attr('coords'));
         }
         // e.reset();
 
@@ -99,7 +98,7 @@ $(document).ready(function () {
      });
     $('body').on('touchend', '#dz', function (e) {
          setTimeout(function(){
-             $('#area').hide();},1000);
+             $('#area').hide();},300);
         starttouch=true;
     });
     var scale=1;
