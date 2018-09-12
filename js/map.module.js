@@ -84,19 +84,18 @@ $(document).ready(function () {
     // $('body').on('touchstart', '#dz', function (e) {
     //     touchstartX=e.originalEvent.touches[0].pageX;
     //     touchstartY=e.originalEvent.touches[0].pageY;
-    //     if(starttouch) {
     //         $('#divmove').css('margin-left', (touchstartX - 20) + 'px').css('margin-top', (touchstartY - 180) + 'px');
     //         $('#divmove').show();
     //         var initevent = (document.getElementById('divmove')).createEvent('TouchEvent');
     //         initevent.initTouchEvent();
     //         starttouch=false;
-    //     }
     // });
-    // $('body').on('touchmove', '#dz', function (e) {
+     $('body').on('touchmove', '#dz', function (e) {
+         $('#choose').val(e.originalEvent.changedTouches[0].pageX);
     //     touchendX=e.originalEvent.changedTouches[0].pageX;
     //     touchendY=e.originalEvent.changedTouches[0].pageY;
     //     setTimeout($('#divmove').css('margin-left',(touchendX-20)+'px').css('margin-top',(touchendY-180)+'px'),200);
-    // });
+     });
     // $('body').on('touchend', '#dz', function (e) {
     //      // setTimeout(function(){
     //      //     $('#divmove').hide();},500);
