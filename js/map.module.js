@@ -81,27 +81,27 @@ $(document).ready(function () {
         scroll(x - 200, y - 150, x - 200, y - 150);
     });
      var touchstartX,touchstartY,starttouch=true;
-    $('body').on('touchstart', '#dz', function (e) {
-        touchstartX=e.originalEvent.touches[0].pageX;
-        touchstartY=e.originalEvent.touches[0].pageY;
-        if(starttouch) {
-            $('#divmove').css('margin-left', (touchstartX - 20) + 'px').css('margin-top', (touchstartY - 180) + 'px');
-            $('#divmove').show();
-            var initevent = (document.getElementById('divmove')).createEvent('TouchEvent');
-            initevent.initTouchEvent();
-            starttouch=false;
-        }
-    });
+    // $('body').on('touchstart', '#dz', function (e) {
+    //     touchstartX=e.originalEvent.touches[0].pageX;
+    //     touchstartY=e.originalEvent.touches[0].pageY;
+    //     if(starttouch) {
+    //         $('#divmove').css('margin-left', (touchstartX - 20) + 'px').css('margin-top', (touchstartY - 180) + 'px');
+    //         $('#divmove').show();
+    //         var initevent = (document.getElementById('divmove')).createEvent('TouchEvent');
+    //         initevent.initTouchEvent();
+    //         starttouch=false;
+    //     }
+    // });
     // $('body').on('touchmove', '#dz', function (e) {
     //     touchendX=e.originalEvent.changedTouches[0].pageX;
     //     touchendY=e.originalEvent.changedTouches[0].pageY;
     //     setTimeout($('#divmove').css('margin-left',(touchendX-20)+'px').css('margin-top',(touchendY-180)+'px'),200);
     // });
-    $('body').on('touchend', '#dz', function (e) {
-         // setTimeout(function(){
-         //     $('#divmove').hide();},500);
-        starttouch=true;
-    });
+    // $('body').on('touchend', '#dz', function (e) {
+    //      // setTimeout(function(){
+    //      //     $('#divmove').hide();},500);
+    //     starttouch=true;
+    // });
     var scale=1;
     $('body').on('click', '#increase_scale',function () {
         if (scale < 1.5) {

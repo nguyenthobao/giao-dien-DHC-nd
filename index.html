@@ -112,7 +112,10 @@
             <div class="content" id="dz" style="position: relative">
                 <div class="container containermap" style="margin-bottom: 10px;">
                     <div class="row addCanvas" >
-                        <img src="images/map_DHC.jpg" id="mapdhc"  data-scale="1" class="img-fluid map" alt="">
+                        <img src="images/map_DHC.jpg" id="mapdhc"  data-scale="1" class="img-fluid map" usemap="#planetmap" alt="">
+                        <map name="planetmap">
+                        <area shape="rect" coords="0,0,1400,1000" alt="Sun">
+                        </map>
                         <div id="divmove" style="width: 60px;height: 60px;border-radius:30px;background-color: #8FB88F;;z-index: 1;position:absolute"></div>
                         <img src="images/monkey.png" id="marker" class="img-fluid map" alt="">
                         <img src="images/red_flag.png" id="icon_flag" class="img-fluid map" alt="">
@@ -173,7 +176,7 @@
 <script src="js/home.module.js?v=3.25"></script>
 <!--End Map module-->
 <!--Map module-->
-<script src="js/map.module.js?v=3.73"></script>
+<script src="js/map.module.js?v=3.74"></script>
 <!--End Map module-->
 
 <!--News module-->
