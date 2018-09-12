@@ -87,11 +87,11 @@ $(document).ready(function () {
         if (e.touches.length== 1) {
             touchstartX = e.originalEvent.touches[0].pageX;
             touchstartY = e.originalEvent.touches[0].pageY;
-            // $('#area').attr('coords', (touchstartX-100) + ',' + (touchstartY - 100) + ',' +(touchstartX+100) + ',' + (touchstartY + 300));
-            $('#area').attr('coords','0,0,2000,2000');
+             $('#area').attr('coords', (touchstartX-100) + ',' + (touchstartY - 100) + ',' +(touchstartX+100) + ',' + (touchstartY + 300));
+            // $('#area').attr('coords','0,0,2000,2000');
         } else $('#area').attr('coords','0,0,10,10');
         // e.reset();
-
+        $('#choose').val($('#area').attr('coords'));
     });
      $('body').on('touchmove', '#dz', function (e) {
          // $('#choose').val(e.originalEvent.changedTouches[0].pageX);
