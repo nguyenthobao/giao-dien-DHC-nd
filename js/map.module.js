@@ -81,18 +81,17 @@ $(document).ready(function () {
         scroll(x - 200, y - 150, x - 200, y - 150);
     });
      var touchstartX,touchstartY,starttouch=true;
-    // $('body').on('touchstart', '#dz', function (e) {
-    //     if (e.touches.length== 1) {
-    //         touchstartX = e.originalEvent.touches[0].pageX;
-    //         touchstartY = e.originalEvent.touches[0].pageY;
-    //         $('#area').attr('coords','0,0,2000,2000');
-    //         $('#choose').val($('#area').attr('coords'));
-    //     }
-    //     // e.reset();
-    //
-    // });
+    $('body').on('touchstart', '#dz', function (e) {
+        if (e.touches.length== 1) {
+            touchstartX = e.originalEvent.touches[0].pageX;
+            touchstartY = e.originalEvent.touches[0].pageY;
+            $('#area').attr('coords', (touchstartX-100) + ',' + (touchstartY - 200) + ',' +(touchstartX+100) + ',' + (touchstartY + 200));
+            $('#choose').val($('#area').attr('coords'));
+        }
+        // e.reset();
+
+    });
      $('body').on('touchmove', '#dz', function (e) {
-         alert(e.touches);
          // $('#choose').val(e.originalEvent.changedTouches[0].pageX);
     //     touchendX=e.originalEvent.changedTouches[0].pageX;
     //     touchendY=e.originalEvent.changedTouches[0].pageY;
