@@ -82,10 +82,11 @@ $(document).ready(function () {
     });
      var touchstartX,touchstartY,starttouch=true;
     $('body').on('touchstart', '#dz', function (e) {
+        alert(JSON.stringify(e));
         touchstartX=e.originalEvent.touches[0].pageX;
         touchstartY=e.originalEvent.touches[0].pageY;
            $('#area').attr('coords',(touchstartX-70)+','+(touchstartY-100)+','+(touchstartX+70)+','+(touchstartY+100));
-           $('#choose').val($('#area').attr('coords'));
+           // $('#choose').val($('#area').attr('coords'));
     });
      $('body').on('touchmove', '#dz', function (e) {
          // $('#choose').val(e.originalEvent.changedTouches[0].pageX);
