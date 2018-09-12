@@ -82,7 +82,6 @@ $(document).ready(function () {
     });
      var touchstartX,touchstartY,starttouch=true;
     $('body').on('touchstart', '#dz', function (e) {
-        alert(JSON.stringify(e.touches));
         if (e.touches.length== 1) {
             touchstartX = e.originalEvent.touches[0].pageX;
             touchstartY = e.originalEvent.touches[0].pageY;
