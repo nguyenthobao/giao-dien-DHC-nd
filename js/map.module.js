@@ -85,7 +85,7 @@ $(document).ready(function () {
         if (e.touches.length== 1) {
             touchstartX = e.originalEvent.touches[0].pageX;
             touchstartY = e.originalEvent.touches[0].pageY;
-            $('#area').attr('coords',(touchstartX-70)+','+(touchstartY-280)+','+(touchstartX+30)+','+(touchstartY-80));
+            $('#area').attr('coords',(touchstartX-100)+','+(touchstartY-200)+','+(touchstartX+100)+','+(touchstartY-200));
         }
         // e.reset();
            // $('#choose').val($('#area').attr('coords'));
