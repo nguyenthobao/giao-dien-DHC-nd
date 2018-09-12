@@ -82,6 +82,8 @@ $(document).ready(function () {
     });
      var touchstartX,touchstartY,starttouch=true;
     $('body').on('touchstart', '#dz', function (e) {
+        $('.img_instant').hide();
+        $('.label_instant').hide();
         if (e.touches.length== 1) {
             touchstartX = e.originalEvent.touches[0].pageX;
             touchstartY = e.originalEvent.touches[0].pageY;
