@@ -85,9 +85,9 @@ $(document).ready(function () {
         if (e.touches.length== 1) {
             touchstartX = e.originalEvent.touches[0].pageX;
             touchstartY = e.originalEvent.touches[0].pageY;
-            $('#area').attr('coords', (touchstartX-20) + ',' + (touchstartY - 180) + ',' +100);
+            $('#area').attr('coords', (touchstartX-20) + ',' + (touchstartY - 180) + ',' +150);
         }
-        e.reset();
+        // e.reset();
            // $('#choose').val($('#area').attr('coords'));
     });
      $('body').on('touchmove', '#dz', function (e) {
