@@ -180,6 +180,7 @@ $(document).ready(function () {
     var hammer = new Hammer(img);
     hammer.get('pinch').set({enable: true});
     hammer.on("pinch", function (e) {
+        $('#choose').val(e.scale);
         if(e.scale!==1) {
             $(img).css('z-index', 90);
             $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
