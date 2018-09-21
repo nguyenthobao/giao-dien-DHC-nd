@@ -91,8 +91,6 @@ $(document).ready(function () {
         }
     });
     $('body').on('touchstart', '#dz', function (e) {
-        $('.img_instant').hide();
-        $('.label_instant').hide();
         if (e.touches.length== 1) {
             touchstartX = e.originalEvent.touches[0].pageX;
             touchstartY = e.originalEvent.touches[0].pageY;
@@ -126,6 +124,8 @@ $(document).ready(function () {
         }
     });
     $('body').on('click', '#mapdhc', function (e) {
+        $('.img_instant').hide();
+        $('.label_instant').hide();
         var offset = $(this).offset();
         if (e.pageX - offset.left > 1200 || e.pageY - offset.top > 1500)
             $('html').attr('style', '');
