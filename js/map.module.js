@@ -239,8 +239,8 @@ $(document).ready(function () {
             beginPoint = [$(that).data('lat'), $(that).data('long')];
         else beginPoint = [lat, long];
         generate_way(findPath(beginPoint, [$($(this).parent()).data('lat'), $($(this).parent()).data('long')]));
-        // $('.img_instant').hide();
-        // $('.label_instant').hide();
+        $('.img_instant').hide();
+        $('.label_instant').hide();
         $($(this).parent()).css('width',$('#cachewidth').val()+'px');
         $(($(this).parent()).find('.img_instant')).show();
         $(($(this).parent()).find('.label_instant')).show();
