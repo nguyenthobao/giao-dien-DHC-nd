@@ -488,7 +488,7 @@ main input:checked + label {
     background: white;
 }
 
-#choose {
+#choose1,#choose2 {
     width: 90vw;
     height: 30px;
     margin-top: 10px;
@@ -497,7 +497,7 @@ main input:checked + label {
     max-width: 500px;
 }
 
-#search_place {
+#search_place1,#search_place2 {
     width: 90vw;
     height: 30px;
     margin-top: 10px;

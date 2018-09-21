@@ -31,6 +31,8 @@ var that = null,
 urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
 $(document).ready(function () {
     // alert('Click " + " hoặc " - " để phóng to hoặc thu nhỏ bản đồ' );
+
+    var touchstartX,touchstartY,starttouch=true;
     sessionStorage.setItem('scale',1);
     $('#tab2').prop('checked', true);
     $('main > label').hide();
@@ -52,8 +54,12 @@ $(document).ready(function () {
     $('#tab2').change(function () {
         into_map();
     });
-    $('body').on('click','#search_place>li', function () {
-        $('#choose').val($(this).text());
+    $('body').on('click','#search_place1>li,#search_place2>li', function () {
+        var id=1;
+        if(($($(this).parent()).attr('id')).includes('2')) id=2;
+        $('#choose'+id).val($(this).text());
+        $('#choose'+id).attr('data-top',$(this).data('top'));
+        $('#choose'+id).attr('data-left',$(this).data('left'));
         var li = this;
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
         x = parseFloat($(this).data('left') / (9798 / $('#mapdhc').width()));
@@ -78,9 +84,12 @@ $(document).ready(function () {
                 $(this).css('width',$('#cachewidth').val()+'px');
             }
         });
+        if($('#choose1').val()=='' || $('#choose2').val()=='')
         scroll(x - 200, y - 150, x - 200, y - 150);
+        else {
+            generate_way(findPath([$('#choose1').data('top'),$('#choose1').data('left')], [$('#choose2').data('top'),$('#choose2').data('left')]));
+        }
     });
-     var touchstartX,touchstartY,starttouch=true;
     $('body').on('touchstart', '#dz', function (e) {
         $('.img_instant').hide();
         $('.label_instant').hide();
@@ -93,16 +102,9 @@ $(document).ready(function () {
         // e.reset();
         // $('#choose').val($('#area').attr('coords'));
     });
-     $('body').on('touchmove', '#dz', function (e) {
-         // $('#choose').val(e.originalEvent.changedTouches[0].pageX);
-    //     touchendX=e.originalEvent.changedTouches[0].pageX;
-    //     touchendY=e.originalEvent.changedTouches[0].pageY;
-    //     setTimeout($('#divmove').css('margin-left',(touchendX-20)+'px').css('margin-top',(touchendY-180)+'px'),200);
-     });
     $('body').on('touchend', '#dz', function (e) {
          setTimeout(function(){
              $('#area').attr('coords','0,0,10,10');
-             // $('#choose').val($('#area').attr('coords'));
              },300);
     });
     var scale=1;
@@ -123,7 +125,6 @@ $(document).ready(function () {
             $('#mapdhc').css('height','100%');
         }
     });
-
     $('body').on('click', '#mapdhc', function (e) {
         var offset = $(this).offset();
         if (e.pageX - offset.left > 1200 || e.pageY - offset.top > 1500)
@@ -257,20 +258,10 @@ $(document).ready(function () {
         }
         scroll(x - 150, y, x - 150, y);
     });
-    var check_display_canvas=0;
-    // $('body').on('click', 'canvas,#mapdhc', function () {
-    //     if(check_display_canvas==0){
-    //         $('.img_instant').hide();
-    //         $('.label_instant').hide();
-    //         check_display_canvas==1;
-    //     }else{
-    //         if (document.getElementById('can')) (document.getElementById('can')).remove();
-    //         check_display_canvas==0
-    //     }
-    // });
-    $('#choose').on('keyup', function () {
+    $('#choose1,#choose2').on('keyup', function () {
+        var input=this;
         $('li').each(function () {
-            var text = (document.getElementById('choose')).value.toUpperCase();
+            var text = ($(input).val()).toUpperCase();
             if (($(this).text()).toUpperCase().indexOf(text) <= -1)
                 $(this).hide();
             else $(this).show();

@@ -1,7 +1,7 @@
 var pointData, interval = 1, reset = 1;
+
+
 $(document).ready(function () {
-    // $('#search_place').select2();
-    /*Get all point in home*/
     var that, isMobile = {
         Android: function () {
             return navigator.userAgent.match(/Android/i);
@@ -25,15 +25,6 @@ $(document).ready(function () {
     var x_before = 0, y_before = 0,
         urlAndroid = 'https://play.google.com/store/apps/details?id=vn.anvui.hotspringpark';
     urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8';
-    // $('#mapdhc').bind('touchmove', true);
-    // setInterval(function(){
-    //     if(interval) interval=0;
-    //     else {
-    //         interval=1; if(reset) resetPoint(reset);
-    //     }
-    // },500);
-    // Detect whether device supports orientationchange event, otherwise fall back to
-// the resize event.
     var supportsOrientationChange = "onorientationchange" in window,
         orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
 
@@ -41,8 +32,6 @@ $(document).ready(function () {
         e.preventDefault();
     }, false);
     $(window).bind("orientationchange", function (e) {
-        // var orientation = window.orientation;
-        // var new_orientation = (orientation) ? 0 : 180 + orientation;
         $('body').css({
             "-webkit-transform": "rotate(" + 0 + "deg)"
         });
@@ -53,7 +42,6 @@ $(document).ready(function () {
             $('#mapdhc').attr('style','');
             $('#mapdhc').css('width', width + 'px');
             $('#mapdhc').css('height', height + 'px');
-            // $('#choose').val($('#mapdhc').width());
         }, 500);
     });
     document.addEventListener('gesturestart', function (e) {
@@ -128,7 +116,8 @@ $(document).ready(function () {
                 html_select += '<li class="color_dropdown" data-top="' + v.long + '" data-left="' + v.lat + '" >' + v.point_name + '</li>';
 
             });
-            $('#search_place').html(html_select);
+            $('#search_place1').html(html_select);
+            $('#search_place2').html(html_select);
             resetPoint();
             $('.label_instant').each(function () {
                 if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
@@ -191,6 +180,36 @@ $(document).ready(function () {
         $('#scalehammer').val(e.scale);
         resetPoint();
     });
+    // $('#bookmark').modal('show');
+    // $('body').on('click','#saveBM',function(e){
+    //     e.preventDefault();
+    //     var bookmarkURL = window.location.href;
+    //     var bookmarkTitle = document.title;
+    //
+    //     if ('addToHomescreen' in window && window.addToHomescreen.isCompatible) {
+    //         // Mobile browsers
+    //         addToHomescreen({ autostart: false, startDelay: 0 }).show(true);
+    //     } else if (window.sidebar && window.sidebar.addPanel) {
+    //         // Firefox version < 23
+    //         window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
+    //     } else if ((window.sidebar && /Firefox/i.test(navigator.userAgent)) || (window.opera && window.print)) {
+    //         // Firefox version >= 23 and Opera Hotlist
+    //         $(this).attr({
+    //             href: bookmarkURL,
+    //             title: bookmarkTitle,
+    //             rel: 'sidebar'
+    //         }).off(e);
+    //         return true;
+    //     } else if (window.external && ('AddFavorite' in window.external)) {
+    //         // IE Favorite
+    //         window.external.AddFavorite(bookmarkURL, bookmarkTitle);
+    //     } else {
+    //         // Other browsers (mainly WebKit - Chrome/Safari)
+    //         alert('Please press ' + (/Mac/i.test(navigator.userAgent) ? 'CMD' : 'Ctrl') + ' + D to add this page to your favorites.');
+    //     }
+    //
+    //     return false;
+    // });
     $('body').on('click', '.fixed-top', function () {
         $('html,.containermap,main,.content').removeClass('height-screen');
         $('#content2').removeClass('color_content2');

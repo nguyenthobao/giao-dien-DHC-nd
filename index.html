@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="jquery-confirm-v3.3.0/css/jquery-confirm.css">
     <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="owlcarousel/dist/assets/owl.theme.default.min.css">
-    <link href="css/style.css?v=1.26" rel="stylesheet">
+    <link href="css/style.css?v=1.27" rel="stylesheet">
     <!--<link rel="stylesheet" href="js/select2-4.0.3/dist/css/select2.min.css"/>-->
 
     <!--<link href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.2/select2.css" rel="stylesheet"/>-->
@@ -102,9 +102,15 @@
                 <!--</div>-->
                 <div class="row-fluid">
                     <div class="dropdown">
-                        <input type="text" placeholder="Chọn vị trí" id="choose" class="dropdown-toggle" data-toggle="dropdown" style="display: block">
+                        <input type="text" placeholder="Chọn điểm đi" id="choose1" class="dropdown-toggle" data-toggle="dropdown" style="display: block">
+                       <span class="caret"></span>
+                        <ul class="dropdown-menu" id="search_place1">
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <input type="text" placeholder="Chọn diểm đến" id="choose2" class="dropdown-toggle" data-toggle="dropdown" style="display: block">
                         <span class="caret"></span>
-                        <ul class="dropdown-menu" id="search_place">
+                        <ul class="dropdown-menu" id="search_place2">
                         </ul>
                     </div>
                 </div>
@@ -119,7 +125,7 @@
                         <div id="divmove" style="width: 60px;height: 60px;border-radius:30px;background-color: #8FB88F;;z-index: 1;position:absolute"></div>
                         <img src="images/monkey.png" id="marker" class="img-fluid map" alt="">
                         <img src="images/red_flag.png" id="icon_flag" class="img-fluid map" alt="">
-                        <button id="download">Download APP Thần Tài</button>
+                        <!--<button id="download">Download APP Thần Tài</button>-->
                     </div>
                     <button id="disable_flag" data-flag="1">GHIM VỊ TRÍ</button>
                     <img src="images/red_flag.png" id="flag" class="img-fluid map" alt="">
@@ -163,6 +169,22 @@
     </div>
 </div>
 <!-- End Modal -->
+
+<!--modal bookmark-->
+<div class="modal fade" id="bookmark" tabindex="-1" role="dialog" aria-labelledby="modalFormLabel" aria-hidden="true" style="z-index: 9999">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+            </div>
+            <div class="modal-body">
+                Bạn có muốn lưu trang web của chúng tôi
+            </div>
+            <div class="modal-footer" >
+                <button type="button" class="btn btn-outline-danger"id="saveBM" data-dismiss="modal">ĐỒNG Ý</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/jquery.zoom.js"></script>
@@ -173,10 +195,10 @@
 <script src="js/wheelzoom.js"></script>
 <script src="js/core.js?v=1.6"></script>
 <!--Map module-->
-<script src="js/home.module.js?v=3.28"></script>
+<script src="js/home.module.js?v=3.29"></script>
 <!--End Map module-->
 <!--Map module-->
-<script src="js/map.module.js?v=4.7"></script>
+<script src="js/map.module.js?v=4.8"></script>
 <!--End Map module-->
 
 <!--News module-->
@@ -188,4 +210,5 @@
 <!--End Promotion module-->
 <!--select2-->
 <script src="js/hammer.js"></script>
+<script src="js/bookmark.js"></script>
 </html>
