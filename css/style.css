@@ -457,7 +457,7 @@ main input:checked + label {
 }
 
 #div_search {
-    height: 50px !important;
+    height: 90px !important;
     position: fixed;
     width: 2045px;
     /*min-width: 380px;*/
