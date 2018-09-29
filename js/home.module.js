@@ -28,46 +28,6 @@ $(document).ready(function () {
     var supportsOrientationChange = "onorientationchange" in window,
         orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
 
-    window.addEventListener(orientationEvent, function (e) {
-        e.preventDefault();
-    }, false);
-    $(window).bind("orientationchange", function (e) {
-        $('body').css({
-            "-webkit-transform": "rotate(" + 0 + "deg)"
-        });
-        e.preventDefault();
-        var width = $('#mapdhc').width();
-        var height = $('#mapdhc').height();
-        setTimeout(function () {
-            $('#mapdhc').attr('style','');
-            $('#mapdhc').css('width', width + 'px');
-            $('#mapdhc').css('height', height + 'px');
-        }, 500);
-    });
-    document.addEventListener('gesturestart', function (e) {
-        if ($(this).data("prevented") === true) {
-            $(this).data("prevented", false);
-            return;
-        }
-        e.preventDefault();
-    });
-    document.addEventListener('touchmove', function (event) {
-        if ($(this).data("prevented") === true) {
-            $(this).data("prevented", false);
-            return;
-        }
-        event = event.originalEvent || event;
-        if (event.scale !== undefined && event.scale !== 1) {
-            event.preventDefault();
-        }
-    }, false);
-    document.documentElement.addEventListener('touchmove', function (event) {
-        if ($(this).data("prevented") === true) {
-            $(this).data("prevented", false);
-            return;
-        }
-        event.preventDefault();
-    }, false);
     $.ajax({
         url: baseApi + 'point/get-all-point',
         method: 'POST',
@@ -170,7 +130,7 @@ $(document).ready(function () {
     hammer.get('pinch').set({enable: true});
     hammer.on("pinch", function (e) {
         $(img).css('z-index',90);
-         $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
+        $('.addCanvas').css('transform', 'scale(' + e.scale + ')');
         $('#scalehammer').val(e.scale);
         resetPoint();
     });
@@ -180,6 +140,46 @@ $(document).ready(function () {
         $('#scalehammer').val(e.scale);
         resetPoint();
     });
+    window.addEventListener(orientationEvent, function (e) {
+        e.preventDefault();
+    }, false);
+    $(window).bind("orientationchange", function (e) {
+        $('body').css({
+            "-webkit-transform": "rotate(" + 0 + "deg)"
+        });
+        e.preventDefault();
+        var width = $('#mapdhc').width();
+        var height = $('#mapdhc').height();
+        setTimeout(function () {
+            $('#mapdhc').attr('style','');
+            $('#mapdhc').css('width', width + 'px');
+            $('#mapdhc').css('height', height + 'px');
+        }, 500);
+    });
+    document.addEventListener('gesturestart', function (e) {
+        if ($(this).data("prevented") === true) {
+            $(this).data("prevented", false);
+            return;
+        }
+        e.preventDefault();
+    });
+    document.addEventListener('touchmove', function (event) {
+        if ($(this).data("prevented") === true) {
+            $(this).data("prevented", false);
+            return;
+        }
+        event = event.originalEvent || event;
+        if (event.scale !== undefined && event.scale !== 1) {
+            event.preventDefault();
+        }
+    }, false);
+    document.documentElement.addEventListener('touchmove', function (event) {
+        if ($(this).data("prevented") === true) {
+            $(this).data("prevented", false);
+            return;
+        }
+        event.preventDefault();
+    }, false);
     // $('#bookmark').modal('show');
     // $('body').on('click','#saveBM',function(e){
     //     e.preventDefault();
@@ -308,11 +308,6 @@ $(document).ready(function () {
 });
 
 function resetPoint() {
-    // var matrix=$('#mapdhc').css('transform');
-    // if(matrix.indexOf('2.')>=0) $('#mapdhc').css('transform','matrix(1.5,0,0,1.5,0,0)');
-    // if(matrix.indexOf('0.4')>=0) $('#mapdhc').css('transform','matrix(0.5,0,0,0.5,0,0)');
-    // var scale=$('#mapdhc').css('transform')!='none'?parseFloat(($('#mapdhc').css('transform')).substring(7,14)):1;
-    // var scale= $('#choose').val()!=''?$('#choose').val():1;
     var scale = 1;
     var scalehammer = $('#scalehammer').val() != '' ? $('#scalehammer').val() : 1;
     $('.div_marker').each(function () {

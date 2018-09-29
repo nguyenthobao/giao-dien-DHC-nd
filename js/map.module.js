@@ -33,6 +33,7 @@ $(document).ready(function () {
     // alert('Click " + " hoặc " - " để phóng to hoặc thu nhỏ bản đồ' );
 
     var touchstartX,touchstartY,starttouch=true;
+    var scale=1;
     sessionStorage.setItem('scale',1);
     $('#tab2').prop('checked', true);
     $('main > label').hide();
@@ -105,7 +106,6 @@ $(document).ready(function () {
              $('#area').attr('coords','0,0,10,10');
              },300);
     });
-    var scale=1;
     $('body').on('click', '#increase_scale',function () {
         if (scale < 1.5) {
             scale+=0.1;
