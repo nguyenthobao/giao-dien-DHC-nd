@@ -59,8 +59,8 @@ $(document).ready(function () {
         var id=1;
         if(($($(this).parent()).attr('id')).includes('2')) id=2;
         $('#choose'+id).val($(this).text());
-        $('#choose'+id).attr('top',$(this).data('top'));
-        $('#choose'+id).attr('left',$(this).data('left'));
+        $('#choose'+id).attr('top',$(this).attr('data-top'));
+        $('#choose'+id).attr('left',$(this).attr('data-left'));
         var li = this;
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
         x = parseFloat($(this).data('left') / (9798 / $('#mapdhc').width()));
@@ -85,10 +85,11 @@ $(document).ready(function () {
                 $(this).css('width',$('#cachewidth').val()+'px');
             }
         });
+
         if($('#choose1').val()=='' || $('#choose2').val()=='')
         scroll(x - 200, y - 150, x - 200, y - 150);
         else {
-            generate_way(findPath([$('#choose1').attr('top'),$('#choose1').attr('left')], [$('#choose2').attr('top'),$('#choose2').attr('left')]));
+            generate_way(findPath([parseInt($('#choose1').attr('left')),parseInt($('#choose1').attr('top'))], [parseInt($('#choose2').attr('left')),parseInt($('#choose2').attr('top'))]));
         }
     });
     $('body').on('touchstart', '#dz', function (e) {
@@ -288,6 +289,37 @@ $(document).ready(function () {
         }
     });
     function into_map() {
+
+        $('#bookmark').modal('show');
+        $('body').on('click','#saveBM',function(e){
+            e.preventDefault();
+            var bookmarkURL = window.location.href;
+            var bookmarkTitle = document.title;
+
+            if ('addToHomescreen' in window && window.addToHomescreen.isCompatible) {
+                // Mobile browsers
+                addToHomescreen({ autostart: false, startDelay: 0 }).show(true);
+            } else if (window.sidebar && window.sidebar.addPanel) {
+                // Firefox version < 23
+                window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
+            } else if ((window.sidebar && /Firefox/i.test(navigator.userAgent)) || (window.opera && window.print)) {
+                // Firefox version >= 23 and Opera Hotlist
+                $(this).attr({
+                    href: bookmarkURL,
+                    title: bookmarkTitle,
+                    rel: 'sidebar'
+                }).off(e);
+                return true;
+            } else if (window.external && ('AddFavorite' in window.external)) {
+                // IE Favorite
+                window.external.AddFavorite(bookmarkURL, bookmarkTitle);
+            } else {
+                // Other browsers (mainly WebKit - Chrome/Safari)
+                // alert('Please press ' + (/Mac/i.test(navigator.userAgent) ? 'CMD' : 'Ctrl') + ' + D to add this page to your favorites.');
+            }
+
+            return false;
+        });
         if (isMobile.any() == null) {
             $('#marker').css("margin-top", 850 + "px");
             $('#marker').css("margin-left", 920 + "px");
