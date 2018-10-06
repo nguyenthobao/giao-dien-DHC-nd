@@ -19,6 +19,7 @@ var isMobile = {
     }
 };
 
+var begin,end;
 var point_flag = null;
 var enable_flag = false;
 var topLeftRealX = 0;
@@ -85,12 +86,11 @@ $(document).ready(function () {
                 $(this).css('width', $('#cachewidth').val() + 'px');
             }
         });
-
         scroll(x - 200, y - 150, x - 200, y - 150);
         if ($('#choose1').val() != '' && $('#choose2').val() != '') {
-            var begin = [parseInt($('#choose1').attr('left')), parseInt($('#choose1').attr('top'))];
+            begin = [parseInt($('#choose1').attr('left')), parseInt($('#choose1').attr('top'))];
             var end = [parseInt($('#choose2').attr('left')), parseInt($('#choose2').attr('top'))];
-            if (begin[0] != 4531)
+            if (begin[0] != 4531 && begin[0] != 3683)
                 generate_way(findPath(begin, end));
             else generate_way(findPath(end, begin));
         }
@@ -229,7 +229,6 @@ $(document).ready(function () {
     $('body').on('click', '.point_important', function () {
         x = $(this).data('x');
         y = $(this).data('y');
-        var beginPoint;
         if (that == null) {
             $('.div_marker').each(function (k, v) {
                 if ($(v).data('lat') == 4310 && $(v).data('long') == 4104) {
@@ -238,14 +237,14 @@ $(document).ready(function () {
                 }
             });
         }
-        if (point_flag != null) beginPoint = point_flag;
+        if (point_flag != null) begin = point_flag;
         else if (lat > 9798 || lat < 0 || long > 7048 || long < 0)
-            beginPoint = [$(that).data('lat'), $(that).data('long')];
-        else beginPoint = [lat, long];
-        var endPoint = [$($(this).parent()).data('lat'), $($(this).parent()).data('long')];
-        if (beginPoint[0] != 4531)
-            generate_way(findPath(beginPoint, endPoint));
-        else generate_way(findPath(endPoint, beginPoint));
+            begin = [$(that).data('lat'), $(that).data('long')];
+        else begin = [lat, long];
+        endPoint = [$($(this).parent()).data('lat'), $($(this).parent()).data('long')];
+        if (begin[0] != 4531 && begin[0] != 3683)
+            generate_way(findPath(begin, end));
+        else generate_way(findPath(end, begin));
         $('.img_instant').hide();
         $('.label_instant').hide();
         $($(this).parent()).css('width', $('#cachewidth').val() + 'px');
