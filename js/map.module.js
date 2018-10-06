@@ -86,9 +86,8 @@ $(document).ready(function () {
             }
         });
 
-        if ($('#choose1').val() == '' || $('#choose2').val() == '')
-            scroll(x - 200, y - 150, x - 200, y - 150);
-        else {
+        scroll(x - 200, y - 150, x - 200, y - 150);
+        if ($('#choose1').val() != '' && $('#choose2').val() != '') {
             var begin = [parseInt($('#choose1').attr('left')), parseInt($('#choose1').attr('top'))];
             var end = [parseInt($('#choose2').attr('left')), parseInt($('#choose2').attr('top'))];
             if (begin[0] != 4531)
