@@ -90,7 +90,7 @@ $(document).ready(function () {
         if ($('#choose1').val() != '' && $('#choose2').val() != '') {
             begin = [parseInt($('#choose1').attr('left')), parseInt($('#choose1').attr('top'))];
             var end = [parseInt($('#choose2').attr('left')), parseInt($('#choose2').attr('top'))];
-            if (begin[0] != 4531 && begin[0] != 3683)
+            if (begin[0] != 4531 && begin[0] != 3683 && begin[0] != 6304)
                 generate_way(findPath(begin, end));
             else generate_way(findPath(end, begin));
         }
@@ -242,7 +242,7 @@ $(document).ready(function () {
             begin = [$(that).data('lat'), $(that).data('long')];
         else begin = [lat, long];
         endPoint = [$($(this).parent()).data('lat'), $($(this).parent()).data('long')];
-        if (begin[0] != 4531 && begin[0] != 3683)
+        if (begin[0] != 4531 && begin[0] != 3683 && begin[0] != 6304)
             generate_way(findPath(begin, end));
         else generate_way(findPath(end, begin));
         $('.img_instant').hide();
