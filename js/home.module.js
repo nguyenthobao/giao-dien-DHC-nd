@@ -283,7 +283,7 @@ function resetPoint() {
     $('.div_marker').each(function () {
         $(this).remove();
     });
-    if (document.getElementById('can')) (document.getElementById('can')).remove();
+    // if (document.getElementById('can')) (document.getElementById('can')).remove();
     var html_marker = '';
     var marginLeftParent = ($('#mapdhc').width() - $('#mapdhc').width() * scale) / 2;
     var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale) / 2;
@@ -316,5 +316,5 @@ function resetPoint() {
     $('.img_instant').hide();
     $('.label_instant').hide();
     reset = 0;
-    if(begin && end) generate_way(findPath(begin,end));
+  //  if(begin && end) generate_way(findPath(begin,end));
 }
