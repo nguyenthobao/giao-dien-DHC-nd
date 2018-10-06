@@ -32,9 +32,9 @@ urlIOs = 'https://itunes.apple.com/us/app/dhc-travel/id1381272202?l=vi&ls=1&mt=8
 $(document).ready(function () {
     // alert('Click " + " hoặc " - " để phóng to hoặc thu nhỏ bản đồ' );
 
-    var touchstartX,touchstartY,starttouch=true;
-    var scale=1;
-    sessionStorage.setItem('scale',1);
+    var touchstartX, touchstartY, starttouch = true;
+    var scale = 1;
+    sessionStorage.setItem('scale', 1);
     $('#tab2').prop('checked', true);
     $('main > label').hide();
     $('.container').attr('style', 'min-width: 100%');
@@ -55,12 +55,12 @@ $(document).ready(function () {
     $('#tab2').change(function () {
         into_map();
     });
-    $('body').on('click','#search_place1>li,#search_place2>li', function () {
-        var id=1;
-        if(($($(this).parent()).attr('id')).includes('2')) id=2;
-        $('#choose'+id).val($(this).text());
-        $('#choose'+id).attr('top',$(this).attr('data-top'));
-        $('#choose'+id).attr('left',$(this).attr('data-left'));
+    $('body').on('click', '#search_place1>li,#search_place2>li', function () {
+        var id = 1;
+        if (($($(this).parent()).attr('id')).includes('2')) id = 2;
+        $('#choose' + id).val($(this).text());
+        $('#choose' + id).attr('top', $(this).attr('data-top'));
+        $('#choose' + id).attr('left', $(this).attr('data-left'));
         var li = this;
         if (isMobile.any() != null) $('html').attr('style', 'width:10000px;height:3000px');
         x = parseFloat($(this).data('left') / (9798 / $('#mapdhc').width()));
@@ -74,7 +74,7 @@ $(document).ready(function () {
         $('.label_instant').each(function () {
             if ($(this).data('lat') == $(li).data('left') && $(li).data('long') == $(this).data('top')) {
                 $(this).attr('style', 'display: block');
-                $($(this).parent()).css('width',$('#cachewidth').val()+'px');
+                $($(this).parent()).css('width', $('#cachewidth').val() + 'px');
                 $(this).show();
                 return false;
             }
@@ -82,46 +82,50 @@ $(document).ready(function () {
         $('.img_instant').each(function () {
             if ($(this).data('lat') == $(li).data('left') && $(this).data('long') == $(li).data('top')) {
                 $(this).attr('style', 'display:block;');
-                $(this).css('width',$('#cachewidth').val()+'px');
+                $(this).css('width', $('#cachewidth').val() + 'px');
             }
         });
 
-        if($('#choose1').val()=='' || $('#choose2').val()=='')
-        scroll(x - 200, y - 150, x - 200, y - 150);
+        if ($('#choose1').val() == '' || $('#choose2').val() == '')
+            scroll(x - 200, y - 150, x - 200, y - 150);
         else {
-            generate_way(findPath([parseInt($('#choose1').attr('left')),parseInt($('#choose1').attr('top'))], [parseInt($('#choose2').attr('left')),parseInt($('#choose2').attr('top'))]));
+            var begin = [parseInt($('#choose1').attr('left')), parseInt($('#choose1').attr('top'))];
+            var end = [parseInt($('#choose2').attr('left')), parseInt($('#choose2').attr('top'))];
+            if (begin[0] != 4531)
+                generate_way(findPath(begin, end));
+            else generate_way(findPath(end, begin));
         }
     });
     $('body').on('touchstart', '#dz', function (e) {
-        if (e.touches.length== 1) {
+        if (e.touches.length == 1) {
             touchstartX = e.originalEvent.touches[0].pageX;
             touchstartY = e.originalEvent.touches[0].pageY;
-             $('#area').attr('coords', (touchstartX-100) + ',' + (touchstartY - 100) + ',' +(touchstartX+100) + ',' + (touchstartY + 300));
+            $('#area').attr('coords', (touchstartX - 100) + ',' + (touchstartY - 100) + ',' + (touchstartX + 100) + ',' + (touchstartY + 300));
             // $('#area').attr('coords','0,0,2000,2000');
-        } else $('#area').attr('coords','0,0,10,10');
+        } else $('#area').attr('coords', '0,0,10,10');
         // e.reset();
         // $('#choose').val($('#area').attr('coords'));
     });
     $('body').on('touchend', '#dz', function (e) {
-         setTimeout(function(){
-             $('#area').attr('coords','0,0,10,10');
-             },300);
+        setTimeout(function () {
+            $('#area').attr('coords', '0,0,10,10');
+        }, 300);
     });
-    $('body').on('click', '#increase_scale',function () {
+    $('body').on('click', '#increase_scale', function () {
         if (scale < 1.5) {
-            scale+=0.1;
+            scale += 0.1;
             $('.addCanvas').css('transform', 'scale(' + (scale) + ')');
-            $('#mapdhc').css('width','100%');
-            $('#mapdhc').css('height','100%');
+            $('#mapdhc').css('width', '100%');
+            $('#mapdhc').css('height', '100%');
             // resetPoint();
         }
     });
-    $('body').on('click', '#sub_scale', function (){
-        if (scale >0.7) {
-            scale-=0.1;
+    $('body').on('click', '#sub_scale', function () {
+        if (scale > 0.7) {
+            scale -= 0.1;
             $('.addCanvas').css('transform', 'scale(' + (scale) + ')');
-            $('#mapdhc').css('width','100%');
-            $('#mapdhc').css('height','100%');
+            $('#mapdhc').css('width', '100%');
+            $('#mapdhc').css('height', '100%');
         }
     });
     $('body').on('click', '#mapdhc', function (e) {
@@ -239,10 +243,13 @@ $(document).ready(function () {
         else if (lat > 9798 || lat < 0 || long > 7048 || long < 0)
             beginPoint = [$(that).data('lat'), $(that).data('long')];
         else beginPoint = [lat, long];
-        generate_way(findPath(beginPoint, [$($(this).parent()).data('lat'), $($(this).parent()).data('long')]));
+        var endPoint = [$($(this).parent()).data('lat'), $($(this).parent()).data('long')];
+        if (beginPoint[0] != 4531)
+            generate_way(findPath(beginPoint, endPoint));
+        else generate_way(findPath(endPoint, beginPoint));
         $('.img_instant').hide();
         $('.label_instant').hide();
-        $($(this).parent()).css('width',$('#cachewidth').val()+'px');
+        $($(this).parent()).css('width', $('#cachewidth').val() + 'px');
         $(($(this).parent()).find('.img_instant')).show();
         $(($(this).parent()).find('.label_instant')).show();
 
@@ -260,7 +267,7 @@ $(document).ready(function () {
         scroll(x - 150, y, x - 150, y);
     });
     $('#choose1,#choose2').on('keyup', function () {
-        var input=this;
+        var input = this;
         $('li').each(function () {
             var text = ($(input).val()).toUpperCase();
             if (($(this).text()).toUpperCase().indexOf(text) <= -1)
@@ -288,17 +295,18 @@ $(document).ready(function () {
             (document.getElementById('can')).remove();
         }
     });
+
     function into_map() {
 
         $('#bookmark').modal('show');
-        $('body').on('click','#saveBM',function(e){
+        $('body').on('click', '#saveBM', function (e) {
             e.preventDefault();
             var bookmarkURL = window.location.href;
             var bookmarkTitle = document.title;
 
             if ('addToHomescreen' in window && window.addToHomescreen.isCompatible) {
                 // Mobile browsers
-                addToHomescreen({ autostart: false, startDelay: 0 }).show(true);
+                addToHomescreen({autostart: false, startDelay: 0}).show(true);
             } else if (window.sidebar && window.sidebar.addPanel) {
                 // Firefox version < 23
                 window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
@@ -341,7 +349,7 @@ $(document).ready(function () {
                     $('.label_instant').each(function () {
                         if ($(this).data('lat') == 4310 && $(this).data('long') == 4104) {
                             $(this).attr('style', 'display:block;');
-                            $($(this).parent()).css('width',$('#cachewidth').val()+'px');
+                            $($(this).parent()).css('width', $('#cachewidth').val() + 'px');
                         }
                     });
                     $('.img_instant').each(function () {
@@ -371,7 +379,7 @@ $(document).ready(function () {
                 }
                 var elem = document.getElementById('mapdhc');
                 new Zoom(elem, {
-                    rotate:false
+                    rotate: false
                 });
             }
         };
@@ -768,35 +776,32 @@ function findPath1(beginPoint, endPoint, listPoint) {
 }
 
 function findPath(beginPoint, endPoint) {
-    console.log('findPath', beginPoint, endPoint);
     var arrPoint = [];
     if ((endPoint[0] == 4531 && endPoint[1] == 3941) && beginPoint[0] > 4713) {
         return findPath(beginPoint, [4723, 3924]);
     }
     var tmpPoint1 = checkSpecialPoint(beginPoint);
     var tmpPoint2 = checkSpecialPoint(endPoint);
-    console.log('tmpPoint1', tmpPoint1);
-    console.log('tmpPoint2', tmpPoint2);
     if (tmpPoint1[0] != beginPoint[0] || tmpPoint1[1] != beginPoint[1] || tmpPoint2[0] != endPoint[0] || tmpPoint2[1] != endPoint[1]) {
         return findPath(tmpPoint1, tmpPoint2);
+        alert('vao day');
     }
     var dicData1 = checkSpecialPath1(beginPoint, endPoint);
     var type1 = dicData1[0][1];
-    console.log('type1', type1);
+    console.log('type1', dicData1);
     if (type1 == 1) {
         return dicData1[1][1];
     }
     var dicData2 = checkSpecialPath2(beginPoint, endPoint);
     var type2 = dicData2[0][1];
-    console.log('type2', type2);
+    console.log('type2', dicData2);
     if (type2 == 1) {
         return dicData2[1][1];
     }
     var dicData3 = checkSpecialPath3(beginPoint, endPoint);
     var type3 = dicData3[0][1];
-    console.log('type3', type3);
+    console.log('type3', dicData3);
     if (type3 == 1) {
-        console.log('type3 return', dicData3);
         return dicData3[1][1];
     }
     var dicData = checkSmallPath(beginPoint, endPoint);
@@ -1027,7 +1032,7 @@ function checkSmallPath(beginPoint, endPoint) {
 }
 
 function generate_way(listP) {
-    isFirst = true, isFirst1 = true, isFirst2 = true ,isFirst3 = true;
+    isFirst = true, isFirst1 = true, isFirst2 = true , isFirst3 = true;
     var html = '', top, left;
     var top_before = 100, left_before = 100, width = 0, height = 0, minW = 0, maxH = 0, maxW = 0, minH = 0, scaleX,
         scaleY;
@@ -1042,17 +1047,17 @@ function generate_way(listP) {
         left_before = left;
     });
     // var scale=sessionStorage.getItem('scale');
-    var scale=1;
-    width = (maxW - minW)*scale;
-    height = (maxH - minH)*scale;
+    var scale = 1;
+    width = (maxW - minW) * scale;
+    height = (maxH - minH) * scale;
     if (document.getElementById('can'))
         (document.getElementById('can')).remove();
     var marginLeftParent = ($('#mapdhc').width() - $('#mapdhc').width() * scale) / 2;
-    var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale ) / 2;
-    var marginTop =marginTopParent+(minH + 3)*scale ;
-    var marginLeft = marginLeftParent +(minW *scale);
+    var marginTopParent = ($('#mapdhc').height() - ($('#mapdhc').height()) * scale) / 2;
+    var marginTop = marginTopParent + (minH + 3) * scale;
+    var marginLeft = marginLeftParent + (minW * scale);
     if (scale < 1) marginTop -= 20 / scale;
-    if (scale >1) marginTop += 20*(scale-1);
+    if (scale > 1) marginTop += 20 * (scale - 1);
     html += '<canvas id="can" data-width="' + width + '" data-height="' + height + '" class="node_way playable-canvas" ' +
         ' style="margin-top:' + marginTop + 'px; margin-left:' + marginLeft + 'px;width:' + width + 'px;height: ' + height + 'px"></canvas>';
     $('.addCanvas').append(html);
@@ -1066,7 +1071,7 @@ function generate_way(listP) {
     $.each(listP, function (k, v) {
         left = parseFloat(v[0] / parseFloat(9798 / $('#mapdhc').width()));
         top = parseFloat(v[1] / parseFloat(7046 / $('#mapdhc').height()));
-        ctx.lineTo(Math.abs(left - minW) * scaleX*scale, Math.abs(top - minH) * scaleY*scale);
+        ctx.lineTo(Math.abs(left - minW) * scaleX * scale, Math.abs(top - minH) * scaleY * scale);
         // ctx.arc(Math.abs(left - minW) * scaleX, Math.abs(top - minH) * scaleY, 2, 0, 2 * Math.PI, false);
     });
     ctx.lineWidth = 4;
