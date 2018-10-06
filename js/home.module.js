@@ -315,6 +315,6 @@ function resetPoint() {
     $('#cachewidth').val( parseFloat(180 / scalehammer));
     $('.img_instant').hide();
     $('.label_instant').hide();
-    if(begin && end) generate_way(findPath(begin,end));
     reset = 0;
+    if(begin && end) generate_way(findPath(begin,end));
 }
