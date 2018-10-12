@@ -293,7 +293,14 @@ $(document).ready(function () {
             (document.getElementById('can')).remove();
         }
     });
-
+    $('body').on('dblclick','#mapdhc, #can', function(){
+        $('.img_instant').hide();
+        $('.label_instant').hide();
+    });
+    $('body').on('click','#mapdhc, #can', function(){
+        $('.img_instant').hide();
+        $('.label_instant').hide();
+    });
     function into_map() {
 
         $('#bookmark').modal('show');
