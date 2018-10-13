@@ -34,7 +34,7 @@ $(document).ready(function () {
     // alert('Click " + " hoặc " - " để phóng to hoặc thu nhỏ bản đồ' );
 
     var touchstartX, touchstartY, starttouch = true;
-    var scale = 1;
+    var scale = 1, first_into_map = true;
     sessionStorage.setItem('scale', 1);
     $('#tab2').prop('checked', true);
     $('main > label').hide();
@@ -56,6 +56,17 @@ $(document).ready(function () {
     $('#tab2').change(function () {
         into_map();
     });
+
+    $('body').on('dblclick','#mapdhc, #can', function(){
+        $('.img_instant').hide();
+        $('.label_instant').hide();
+        alert('an dc roi ma nhi');
+    });
+    $('body').on('click','#mapdhc, #can', function(){
+        $('.img_instant').hide();
+        $('.label_instant').hide();
+    });
+
     $('body').on('click', '#search_place1>li,#search_place2>li', function () {
         var id = 1;
         if (($($(this).parent()).attr('id')).includes('2')) id = 2;
@@ -293,14 +304,6 @@ $(document).ready(function () {
             (document.getElementById('can')).remove();
         }
     });
-    $('body').on('dblclick','#mapdhc, #can', function(){
-        $('.img_instant').hide();
-        $('.label_instant').hide();
-    });
-    $('body').on('click','#mapdhc, #can', function(){
-        $('.img_instant').hide();
-        $('.label_instant').hide();
-    });
     function into_map() {
 
         $('#bookmark').modal('show');
@@ -380,7 +383,8 @@ $(document).ready(function () {
                     $('#marker').show();
                     $('.label_instant').hide();
                     $('.img_instant').hide();
-                    scroll(x, y, x, y);
+                    if (first_into_map) scroll(x, y, x, y);
+                    first_into_map = false;
                 }
                 var elem = document.getElementById('mapdhc');
                 new Zoom(elem, {
