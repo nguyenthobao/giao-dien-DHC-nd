@@ -10,6 +10,10 @@ html {
     touch-action: manipulation;
 }
 
+#mapdhc, #can, #divmove {
+    cursor: pointer;
+}
+
 .height-screen {
     background-color: #8FB88F;
 }
@@ -357,10 +361,6 @@ main input:checked + label {
         margin-right: 20px;
     }
 
-    #mapdhc {
-        /*transform: scale(1.1);*/
-    }
-
     #download {
         border-radius: 8px;
         position: absolute;
@@ -408,6 +408,7 @@ main input:checked + label {
         margin-top: -250px;
         height: 1473px !important;
         width: 2048px !important;
+
     }
 
     .img-news {

@@ -60,7 +60,6 @@ $(document).ready(function () {
     $('body').on('dblclick','#mapdhc, #can, #divmove', function(){
         $('.img_instant').hide();
         $('.label_instant').hide();
-        alert('an dc roi ma nhi');
     });
     $('body').on('click','#mapdhc, #can, #divmove', function(){
         $('.img_instant').hide();
